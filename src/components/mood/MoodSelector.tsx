@@ -89,7 +89,7 @@ export default function MoodSelector() {
             className="w-full px-4 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-400 focus:outline-none transition-colors"
           />
           <p className="mt-2 text-xs text-gray-500">
-            예: "회식 후 해장이 필요해요", "비 오니까 칼칼한 거 먹고싶어"
+            예: &quot;회식 후 해장이 필요해요&quot;, &quot;비 오니까 칼칼한 거 먹고싶어&quot;
           </p>
         </div>
       )}

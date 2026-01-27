@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import WeatherCard from '@/components/weather/WeatherCard'
 import MoodSelector from '@/components/mood/MoodSelector'
 import DietSelector from '@/components/diet/DietSelector'
@@ -10,6 +11,7 @@ import { useUserInputStore } from '@/store/userInputStore'
 import { getTimeSlotLabel, getTimeSlotEmoji } from '@/utils/time'
 
 export default function Home() {
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const { location, timeSlot, setTimeSlot } = useUserInputStore()
   
@@ -29,9 +31,9 @@ export default function Home() {
 
   const handleRecommend = async () => {
     setIsLoading(true)
-    // TODO: 추천 로직 구현 후 결과 페이지로 이동
+    // SPA 방식으로 페이지 이동 (Zustand store 상태 유지)
     setTimeout(() => {
-      window.location.href = '/result'
+      router.push('/result')
     }, 1000)
   }
 

@@ -7,6 +7,7 @@ import MoodSelector from '@/components/mood/MoodSelector'
 import DietSelector from '@/components/diet/DietSelector'
 import RecentMealInput from '@/components/menu/RecentMealInput'
 import LocationSelector from '@/components/location/LocationSelector'
+import CategorySelector from '@/components/category/CategorySelector'
 import Footer from '@/components/common/Footer'
 import { useUserInputStore } from '@/store/userInputStore'
 import { getTimeSlotLabel, getTimeSlotEmoji } from '@/utils/time'
@@ -63,18 +64,23 @@ export default function Home() {
           <WeatherCard />
         </div>
 
-        {/* 기분 선택 */}
+        {/* 음식 카테고리 선택 */}
         <div className="opacity-0 animate-fade-in stagger-3">
+          <CategorySelector />
+        </div>
+
+        {/* 기분 선택 */}
+        <div className="opacity-0 animate-fade-in stagger-4">
           <MoodSelector />
         </div>
 
         {/* 식단 관리 모드 */}
-        <div className="opacity-0 animate-fade-in stagger-4">
+        <div className="opacity-0 animate-fade-in stagger-5">
           <DietSelector />
         </div>
 
         {/* 최근 먹은 메뉴 */}
-        <div className="opacity-0 animate-fade-in stagger-5">
+        <div className="opacity-0 animate-fade-in stagger-6">
           <RecentMealInput />
         </div>
 

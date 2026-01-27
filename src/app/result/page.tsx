@@ -66,6 +66,8 @@ export default function ResultPage() {
         dietMode: userInput.diet.mode,
         dietOptions: userInput.diet.options,
         excludeMenuIds: excludeIds,
+        foodCategory: userInput.foodCategory,
+        adventureMode: userInput.adventureMode,
       })
 
       setRecommendations(results)

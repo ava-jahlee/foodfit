@@ -3,6 +3,7 @@ import { create } from 'zustand'
 export type TimeSlot = 'breakfast' | 'lunch' | 'dinner' | 'latenight'
 export type MoodType = 'happy' | 'sad' | 'stressed' | 'tired' | 'special' | 'normal'
 export type DietMode = 'diet' | 'bulk' | 'keto' | 'lowfat' | 'vegan' | 'healthy' | 'none'
+export type FoodCategory = 'all' | 'korean' | 'western' | 'asian' | 'light'
 
 interface Location {
   name: string
@@ -49,6 +50,14 @@ interface UserInputState {
   setDietOption: (key: keyof DietOptions, value: boolean) => void
   setShowCalories: (show: boolean) => void
   
+  // 음식 카테고리
+  foodCategory: FoodCategory
+  setFoodCategory: (category: FoodCategory) => void
+  
+  // 모험 모드 (색다른 거 도전)
+  adventureMode: boolean
+  setAdventureMode: (mode: boolean) => void
+  
   // 최근 먹은 메뉴
   recentMeals: RecentMeal[]
   addRecentMeal: (name: string) => void
@@ -79,6 +88,8 @@ const initialState = {
     },
     showCalories: false,
   },
+  foodCategory: 'all' as FoodCategory,
+  adventureMode: false,
   recentMeals: [] as RecentMeal[],
 }
 
@@ -111,6 +122,10 @@ export const useUserInputStore = create<UserInputState>((set) => ({
   setShowCalories: (showCalories) => set((state) => ({
     diet: { ...state.diet, showCalories }
   })),
+  
+  setFoodCategory: (foodCategory) => set({ foodCategory }),
+  
+  setAdventureMode: (adventureMode) => set({ adventureMode }),
   
   addRecentMeal: (name) => set((state) => ({
     recentMeals: [

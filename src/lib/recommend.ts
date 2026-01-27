@@ -1,5 +1,14 @@
-import { TimeSlot, MoodType, DietMode } from '@/store/userInputStore'
+import { TimeSlot, MoodType, DietMode, FoodCategory } from '@/store/userInputStore'
 import menusData from '@/data/menus.json'
+
+// 카테고리 그룹 매핑
+const CATEGORY_GROUPS: Record<FoodCategory, string[]> = {
+  all: [], // 전체는 필터링 안함
+  korean: ['한식', '분식'],
+  western: ['양식', '건강식', '브런치'],
+  asian: ['일식', '중식', '아시안'],
+  light: ['카페', '간식', '샐러드', '건강식'],
+}
 
 export interface Menu {
   id: string
@@ -42,6 +51,8 @@ interface RecommendParams {
     noAlcohol: boolean
   }
   excludeMenuIds: string[]
+  foodCategory: FoodCategory
+  adventureMode: boolean
 }
 
 // 날씨 코드를 추천 조건으로 변환
@@ -90,6 +101,8 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     dietMode,
     dietOptions,
     excludeMenuIds,
+    foodCategory,
+    adventureMode,
   } = params
   
   const menus: Menu[] = menusData.menus as Menu[]
@@ -98,7 +111,15 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
   // 기분 분석
   const effectiveMoods = mood ? [mood] : analyzeMoodKeywords(moodCustom)
   
+  // 카테고리 필터 목록
+  const categoryFilter = CATEGORY_GROUPS[foodCategory]
+  
   for (const menu of menus) {
+    // 0. 카테고리 필터링 (all이 아닌 경우)
+    if (foodCategory !== 'all' && categoryFilter.length > 0) {
+      if (!categoryFilter.includes(menu.category)) continue
+    }
+    
     // 1. 제외 필터링 (부분 문자열 매칭 지원)
     // "찌개" 입력 시 김치찌개, 된장찌개 등 모두 제외
     const shouldExclude = excludeMenuIds.some(excludeText => {
@@ -155,12 +176,26 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     let score = 0
     const reasons: string[] = []
     
-    // 🔥 실제 트렌드 기반 인기도 점수 (0-30점)
-    // 블로그/커뮤니티 분석 결과 반영
-    const popularityBonus = menu.popularityScore 
-      ? Math.floor((menu.popularityScore / 100) * 30) 
-      : 15 // 기본값
-    score += popularityBonus
+    // 🔥 인기도 점수 (0-30점)
+    // 모험 모드: 인기도 낮은 메뉴에 보너스!
+    if (adventureMode) {
+      // 인기도가 낮을수록 점수 높음 (희귀템 발굴)
+      const rarityBonus = menu.popularityScore 
+        ? Math.floor((100 - menu.popularityScore) / 100 * 30) + 15 // 낮은 인기도 = 높은 점수
+        : 25 // 인기도 없는 메뉴는 새로운 메뉴일 가능성
+      score += rarityBonus
+      
+      // 이국적 카테고리 추가 보너스
+      if (['아시안', '양식'].includes(menu.category)) {
+        score += 10
+      }
+    } else {
+      // 일반 모드: 블로그/커뮤니티 분석 결과 반영
+      const popularityBonus = menu.popularityScore 
+        ? Math.floor((menu.popularityScore / 100) * 30) 
+        : 15 // 기본값
+      score += popularityBonus
+    }
     
     // 날씨 점수 (0-25점) - 계절 반대 음식은 강하게 페널티!
     const isWeatherMatch = menu.weather.includes(weatherCondition)

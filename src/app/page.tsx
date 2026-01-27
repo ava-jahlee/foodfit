@@ -7,6 +7,7 @@ import MoodSelector from '@/components/mood/MoodSelector'
 import DietSelector from '@/components/diet/DietSelector'
 import RecentMealInput from '@/components/menu/RecentMealInput'
 import LocationSelector from '@/components/location/LocationSelector'
+import Footer from '@/components/common/Footer'
 import { useUserInputStore } from '@/store/userInputStore'
 import { getTimeSlotLabel, getTimeSlotEmoji } from '@/utils/time'
 
@@ -80,6 +81,9 @@ export default function Home() {
 
         {/* 최근 먹은 메뉴 */}
         <RecentMealInput />
+
+        {/* 푸터 */}
+        <Footer />
       </div>
 
       {/* 하단 고정 버튼 */}

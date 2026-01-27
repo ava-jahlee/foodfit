@@ -5,6 +5,7 @@ import { useUserInputStore } from '@/store/userInputStore'
 import { getRecommendations, weatherCodeToCondition, RecommendationResult } from '@/lib/recommend'
 import { SelectionLog } from '@/lib/supabase'
 import Link from 'next/link'
+import Footer from '@/components/common/Footer'
 
 interface Place {
   place_name: string
@@ -348,6 +349,9 @@ export default function ResultPage() {
             </div>
           ))}
         </div>
+
+        {/* 푸터 */}
+        <Footer />
       </div>
 
       {/* 하단 버튼 */}

@@ -91,6 +91,9 @@ export default function MoodSelector() {
           <p className="mt-2 text-xs text-gray-500">
             예: &quot;회식 후 해장이 필요해요&quot;, &quot;비 오니까 칼칼한 거 먹고싶어&quot;
           </p>
+          <p className="mt-1 text-xs text-gray-400">
+            ⚠️ 개인정보(이름, 연락처 등)는 입력하지 마세요
+          </p>
         </div>
       )}
     </div>

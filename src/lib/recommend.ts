@@ -99,8 +99,21 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
   const effectiveMoods = mood ? [mood] : analyzeMoodKeywords(moodCustom)
   
   for (const menu of menus) {
-    // 1. 제외 필터링
-    if (excludeMenuIds.includes(menu.id)) continue
+    // 1. 제외 필터링 (부분 문자열 매칭 지원)
+    // "찌개" 입력 시 김치찌개, 된장찌개 등 모두 제외
+    const shouldExclude = excludeMenuIds.some(excludeText => {
+      const lowerExclude = excludeText.toLowerCase()
+      const lowerName = menu.name.toLowerCase()
+      const lowerSubCategory = menu.subCategory.toLowerCase()
+      const lowerKeywords = menu.keywords.map(k => k.toLowerCase())
+      
+      // ID 정확 매칭 OR 이름 포함 OR 카테고리 포함 OR 키워드 포함
+      return menu.id === excludeText ||
+             lowerName.includes(lowerExclude) ||
+             lowerSubCategory.includes(lowerExclude) ||
+             lowerKeywords.some(k => k.includes(lowerExclude))
+    })
+    if (shouldExclude) continue
     
     // 2. 시간대 필터링
     if (!menu.timeSlot.includes(timeSlot)) continue

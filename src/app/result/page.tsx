@@ -50,9 +50,11 @@ export default function ResultPage() {
       
       // 추천 생성
       const weatherCondition = weatherCodeToCondition(weatherInfo.code, weatherInfo.temp)
+      // 제외 메뉴: 원본 텍스트 그대로 전달 (부분 매칭 지원)
+      // "찌개" 입력 시 → 김치찌개, 된장찌개 등 모두 제외됨
       const excludeIds = userInput.recentMeals
         .filter(m => m.exclude)
-        .map(m => m.name.toLowerCase().replace(/\s/g, '-'))
+        .map(m => m.name)
 
       const results = getRecommendations({
         weatherCondition,

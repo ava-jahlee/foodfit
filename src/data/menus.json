@@ -1,7 +1,7 @@
 {
   "dataSource": {
     "description": "네이버 블로그/커뮤니티 분석 + 음식 트렌드 데이터 기반",
-    "lastUpdated": "2026-01-27",
+    "lastUpdated": "2026-01-28",
     "references": [
       "네이버 블로그 '비오는날 먹고싶은 음식' 검색결과",
       "네이버 블로그 '스트레스 음식' 검색결과",
@@ -15,11 +15,29 @@
       "name": "김치찌개",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["매운", "돼지고기", "국물", "칼칼한"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["stressed", "tired", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy"],
+      "keywords": [
+        "매운",
+        "돼지고기",
+        "국물",
+        "칼칼한"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
       "estimatedCalories": 450,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -29,18 +47,39 @@
       "controversial": false,
       "popularityScore": 95,
       "trendNote": "추운날/비오는날 국물요리 대표주자",
-      "searchKeywords": ["김치찌개", "김치찌게"]
+      "searchKeywords": [
+        "김치찌개",
+        "김치찌게"
+      ]
     },
     {
       "id": "doenjang-jjigae",
       "name": "된장찌개",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["구수한", "두부", "국물"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["tired", "normal", "sad"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy", "lowfat"],
+      "keywords": [
+        "구수한",
+        "두부",
+        "국물"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "tired",
+        "normal",
+        "sad"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 380,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -50,17 +89,37 @@
       "controversial": false,
       "popularityScore": 88,
       "trendNote": "엄마 밥상 감성, 위로되는 음식으로 언급",
-      "searchKeywords": ["된장찌개", "된장찌게"]
+      "searchKeywords": [
+        "된장찌개",
+        "된장찌게"
+      ]
     },
     {
       "id": "budae-jjigae",
       "name": "부대찌개",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["매운", "라면", "햄", "국물", "든든한"],
-      "weather": ["cold", "rainy"],
-      "mood": ["stressed", "happy", "tired"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "매운",
+        "라면",
+        "햄",
+        "국물",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 650,
       "isHighSodium": true,
@@ -71,18 +130,39 @@
       "controversial": false,
       "popularityScore": 90,
       "trendNote": "비오는날/추운날 국물요리 인기, 회식 메뉴로도 인기",
-      "searchKeywords": ["부대찌개", "부대찌게"]
+      "searchKeywords": [
+        "부대찌개",
+        "부대찌게"
+      ]
     },
     {
       "id": "samgyetang",
       "name": "삼계탕",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["보양식", "닭", "국물", "든든한", "이열치열"],
-      "weather": ["hot", "cold"],
-      "mood": ["tired", "special"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy", "bulk"],
+      "keywords": [
+        "보양식",
+        "닭",
+        "국물",
+        "든든한",
+        "이열치열"
+      ],
+      "weather": [
+        "hot",
+        "cold"
+      ],
+      "mood": [
+        "tired",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "bulk"
+      ],
       "estimatedCalories": 550,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -92,18 +172,41 @@
       "controversial": false,
       "popularityScore": 92,
       "trendNote": "여름 보양식 1위! 피곤할때 찾는 음식 TOP3",
-      "searchKeywords": ["삼계탕", "닭한마리"]
+      "searchKeywords": [
+        "삼계탕",
+        "닭한마리"
+      ]
     },
     {
       "id": "bibimbap",
       "name": "비빔밥",
       "category": "한식",
       "subCategory": "밥류",
-      "keywords": ["야채", "고추장", "건강한", "다이어트"],
-      "weather": ["sunny", "cloudy", "cold", "hot"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["breakfast", "lunch", "dinner"],
-      "dietCompatible": ["healthy", "diet"],
+      "keywords": [
+        "야채",
+        "고추장",
+        "건강한",
+        "다이어트"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy",
+        "cold",
+        "hot"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "diet"
+      ],
       "estimatedCalories": 500,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -113,18 +216,38 @@
       "controversial": false,
       "popularityScore": 85,
       "trendNote": "건강식으로 인기, 다이어트 식단에 자주 등장",
-      "searchKeywords": ["비빔밥", "전주비빔밥"]
+      "searchKeywords": [
+        "비빔밥",
+        "전주비빔밥"
+      ]
     },
     {
       "id": "naengmyeon",
       "name": "냉면",
       "category": "한식",
       "subCategory": "면류",
-      "keywords": ["시원한", "면", "여름", "고기 후"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "lowfat"],
+      "keywords": [
+        "시원한",
+        "면",
+        "여름",
+        "고기 후"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "lowfat"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -134,18 +257,41 @@
       "controversial": false,
       "popularityScore": 98,
       "trendNote": "더운날 먹고싶은 음식 1위! 삼겹살 후 냉면 조합 인기",
-      "searchKeywords": ["냉면", "물냉면", "비빔냉면", "평양냉면"]
+      "searchKeywords": [
+        "냉면",
+        "물냉면",
+        "비빔냉면",
+        "평양냉면"
+      ]
     },
     {
       "id": "kongguksu",
       "name": "콩국수",
       "category": "한식",
       "subCategory": "면류",
-      "keywords": ["시원한", "고소한", "여름", "건강"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "vegan"],
+      "keywords": [
+        "시원한",
+        "고소한",
+        "여름",
+        "건강"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "vegan"
+      ],
       "estimatedCalories": 450,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -155,18 +301,41 @@
       "controversial": false,
       "popularityScore": 85,
       "trendNote": "여름 별미 TOP5, 건강식으로 인기",
-      "searchKeywords": ["콩국수", "콩국"]
+      "searchKeywords": [
+        "콩국수",
+        "콩국"
+      ]
     },
     {
       "id": "samgyeopsal",
       "name": "삼겹살",
       "category": "한식",
       "subCategory": "고기",
-      "keywords": ["고기", "구이", "든든한", "회식", "술안주"],
-      "weather": ["cold", "cloudy", "rainy"],
-      "mood": ["stressed", "happy", "special"],
-      "timeSlot": ["dinner", "latenight"],
-      "dietCompatible": ["keto", "bulk"],
+      "keywords": [
+        "고기",
+        "구이",
+        "든든한",
+        "회식",
+        "술안주"
+      ],
+      "weather": [
+        "cold",
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
       "estimatedCalories": 800,
       "isHighSodium": false,
       "isAlcoholRelated": true,
@@ -176,18 +345,41 @@
       "controversial": false,
       "popularityScore": 97,
       "trendNote": "스트레스 해소 음식 TOP3, 회식 메뉴 1위",
-      "searchKeywords": ["삼겹살", "고기집", "구이"]
+      "searchKeywords": [
+        "삼겹살",
+        "고기집",
+        "구이"
+      ]
     },
     {
       "id": "chicken",
       "name": "치킨",
       "category": "한식",
       "subCategory": "튀김",
-      "keywords": ["치킨", "튀김", "맥주", "야식", "치맥"],
-      "weather": ["rainy", "cloudy", "cold"],
-      "mood": ["happy", "stressed", "sad"],
-      "timeSlot": ["dinner", "latenight"],
-      "dietCompatible": ["bulk"],
+      "keywords": [
+        "치킨",
+        "튀김",
+        "맥주",
+        "야식",
+        "치맥"
+      ],
+      "weather": [
+        "rainy",
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "stressed",
+        "sad"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "bulk"
+      ],
       "estimatedCalories": 900,
       "isHighSodium": true,
       "isAlcoholRelated": true,
@@ -197,18 +389,40 @@
       "controversial": false,
       "popularityScore": 99,
       "trendNote": "야식 1위! 비오는날 치맥 조합 인기, 우울할때 먹는 음식 TOP5",
-      "searchKeywords": ["치킨", "후라이드", "양념치킨"]
+      "searchKeywords": [
+        "치킨",
+        "후라이드",
+        "양념치킨"
+      ]
     },
     {
       "id": "gukbap",
       "name": "국밥",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["국물", "해장", "든든한", "보양"],
-      "weather": ["cold", "rainy"],
-      "mood": ["tired", "normal"],
-      "timeSlot": ["breakfast", "lunch", "dinner", "latenight"],
-      "dietCompatible": ["healthy"],
+      "keywords": [
+        "국물",
+        "해장",
+        "든든한",
+        "보양"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
       "estimatedCalories": 550,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -218,17 +432,37 @@
       "controversial": false,
       "popularityScore": 93,
       "trendNote": "피곤할때/추운날 가장 많이 찾는 음식 중 하나",
-      "searchKeywords": ["국밥", "돼지국밥", "순대국밥", "소머리국밥"]
+      "searchKeywords": [
+        "국밥",
+        "돼지국밥",
+        "순대국밥",
+        "소머리국밥"
+      ]
     },
     {
       "id": "gamjatang",
       "name": "감자탕",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["국물", "돼지등뼈", "든든한", "해장"],
-      "weather": ["cold", "rainy"],
-      "mood": ["tired", "normal", "happy"],
-      "timeSlot": ["dinner", "latenight"],
+      "keywords": [
+        "국물",
+        "돼지등뼈",
+        "든든한",
+        "해장"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 600,
       "isHighSodium": true,
@@ -239,18 +473,40 @@
       "controversial": false,
       "popularityScore": 88,
       "trendNote": "추운날/해장 음식으로 인기",
-      "searchKeywords": ["감자탕", "뼈해장국"]
+      "searchKeywords": [
+        "감자탕",
+        "뼈해장국"
+      ]
     },
     {
       "id": "seolleongtang",
       "name": "설렁탕",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["국물", "소고기", "담백한", "해장", "보양"],
-      "weather": ["cold", "rainy"],
-      "mood": ["tired", "normal"],
-      "timeSlot": ["breakfast", "lunch", "dinner"],
-      "dietCompatible": ["healthy", "keto"],
+      "keywords": [
+        "국물",
+        "소고기",
+        "담백한",
+        "해장",
+        "보양"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto"
+      ],
       "estimatedCalories": 480,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -260,18 +516,39 @@
       "controversial": false,
       "popularityScore": 86,
       "trendNote": "피곤할때 보양 국물요리로 인기",
-      "searchKeywords": ["설렁탕", "곰탕", "소머리국밥"]
+      "searchKeywords": [
+        "설렁탕",
+        "곰탕",
+        "소머리국밥"
+      ]
     },
     {
       "id": "yukgaejang",
       "name": "육개장",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["매운", "소고기", "국물", "해장"],
-      "weather": ["cold", "rainy"],
-      "mood": ["tired", "stressed"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy", "keto"],
+      "keywords": [
+        "매운",
+        "소고기",
+        "국물",
+        "해장"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "stressed"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto"
+      ],
       "estimatedCalories": 500,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -281,17 +558,35 @@
       "controversial": false,
       "popularityScore": 84,
       "trendNote": "피곤할때/추운날 얼큰한 국물로 인기",
-      "searchKeywords": ["육개장", "얼큰이국밥"]
+      "searchKeywords": [
+        "육개장",
+        "얼큰이국밥"
+      ]
     },
     {
       "id": "jjajangmyeon",
       "name": "짜장면",
       "category": "중식",
       "subCategory": "면류",
-      "keywords": ["면", "달콤한", "든든한", "위로"],
-      "weather": ["cloudy", "rainy"],
-      "mood": ["sad", "normal", "tired"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "면",
+        "달콤한",
+        "든든한",
+        "위로"
+      ],
+      "weather": [
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "sad",
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 650,
       "isHighSodium": true,
@@ -302,17 +597,36 @@
       "controversial": false,
       "popularityScore": 94,
       "trendNote": "우울할때 먹는 위로 음식 1위! 비오는날도 인기",
-      "searchKeywords": ["짜장면", "자장면", "중국집"]
+      "searchKeywords": [
+        "짜장면",
+        "자장면",
+        "중국집"
+      ]
     },
     {
       "id": "jjamppong",
       "name": "짬뽕",
       "category": "중식",
       "subCategory": "면류",
-      "keywords": ["매운", "해물", "국물", "칼칼한", "시원한"],
-      "weather": ["cold", "rainy"],
-      "mood": ["stressed", "tired"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "매운",
+        "해물",
+        "국물",
+        "칼칼한",
+        "시원한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 600,
       "isHighSodium": true,
@@ -323,17 +637,36 @@
       "controversial": false,
       "popularityScore": 90,
       "trendNote": "추운날 국물 + 매운맛 조합으로 인기",
-      "searchKeywords": ["짬뽕", "중국집"]
+      "searchKeywords": [
+        "짬뽕",
+        "중국집"
+      ]
     },
     {
       "id": "malatang",
       "name": "마라탕",
       "category": "중식",
       "subCategory": "탕류",
-      "keywords": ["매운", "얼얼한", "마라", "중독성"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["stressed", "happy"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "매운",
+        "얼얼한",
+        "마라",
+        "중독성"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 700,
       "isHighSodium": true,
@@ -345,17 +678,34 @@
       "controversialReason": "마라 향신료",
       "popularityScore": 96,
       "trendNote": "스트레스 해소 음식 TOP3! MZ세대 인기 메뉴",
-      "searchKeywords": ["마라탕", "마라샹궈"]
+      "searchKeywords": [
+        "마라탕",
+        "마라샹궈"
+      ]
     },
     {
       "id": "tangsuyuk",
       "name": "탕수육",
       "category": "중식",
       "subCategory": "튀김",
-      "keywords": ["달콤한", "새콤한", "튀김", "돼지고기"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "special"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "달콤한",
+        "새콤한",
+        "튀김",
+        "돼지고기"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 700,
       "isHighSodium": false,
@@ -366,18 +716,39 @@
       "controversial": false,
       "popularityScore": 88,
       "trendNote": "짜장면과 함께 주문하는 필수 메뉴",
-      "searchKeywords": ["탕수육", "중국집"]
+      "searchKeywords": [
+        "탕수육",
+        "중국집"
+      ]
     },
     {
       "id": "sushi",
       "name": "초밥",
       "category": "일식",
       "subCategory": "회/초밥",
-      "keywords": ["신선한", "회", "생선", "가벼운"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "special"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "keto"],
+      "keywords": [
+        "신선한",
+        "회",
+        "생선",
+        "가벼운"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "keto"
+      ],
       "estimatedCalories": 450,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -388,17 +759,37 @@
       "controversialReason": "날생선",
       "popularityScore": 90,
       "trendNote": "더운날 가볍게 먹기 좋은 메뉴",
-      "searchKeywords": ["초밥", "스시", "회전초밥"]
+      "searchKeywords": [
+        "초밥",
+        "스시",
+        "회전초밥"
+      ]
     },
     {
       "id": "ramen",
       "name": "라멘",
       "category": "일식",
       "subCategory": "면류",
-      "keywords": ["국물", "면", "진한", "든든한"],
-      "weather": ["cold", "rainy"],
-      "mood": ["normal", "tired", "sad"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "국물",
+        "면",
+        "진한",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired",
+        "sad"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 550,
       "isHighSodium": true,
@@ -409,18 +800,39 @@
       "controversial": false,
       "popularityScore": 91,
       "trendNote": "우울할때/비오는날 위로되는 국물 면요리",
-      "searchKeywords": ["라멘", "라면", "일본라멘"]
+      "searchKeywords": [
+        "라멘",
+        "라면",
+        "일본라멘"
+      ]
     },
     {
       "id": "udon",
       "name": "우동",
       "category": "일식",
       "subCategory": "면류",
-      "keywords": ["국물", "면", "담백한", "시원한"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["tired", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["lowfat"],
+      "keywords": [
+        "국물",
+        "면",
+        "담백한",
+        "시원한"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "lowfat"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -430,17 +842,34 @@
       "controversial": false,
       "popularityScore": 82,
       "trendNote": "추운날 간단히 먹기 좋은 국물 요리",
-      "searchKeywords": ["우동", "가케우동"]
+      "searchKeywords": [
+        "우동",
+        "가케우동"
+      ]
     },
     {
       "id": "donkatsu",
       "name": "돈까스",
       "category": "일식",
       "subCategory": "튀김",
-      "keywords": ["튀김", "돼지고기", "바삭한", "든든한"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "튀김",
+        "돼지고기",
+        "바삭한",
+        "든든한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 700,
       "isHighSodium": false,
@@ -451,17 +880,34 @@
       "controversial": false,
       "popularityScore": 86,
       "trendNote": "점심 메뉴로 인기",
-      "searchKeywords": ["돈까스", "돈가스", "카츠"]
+      "searchKeywords": [
+        "돈까스",
+        "돈가스",
+        "카츠"
+      ]
     },
     {
       "id": "pasta",
       "name": "파스타",
       "category": "양식",
       "subCategory": "면류",
-      "keywords": ["면", "이탈리안", "데이트"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "special"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "면",
+        "이탈리안",
+        "데이트"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 600,
       "isHighSodium": false,
@@ -472,18 +918,38 @@
       "controversial": false,
       "popularityScore": 87,
       "trendNote": "데이트/특별한 날 메뉴로 인기",
-      "searchKeywords": ["파스타", "스파게티", "이탈리안"]
+      "searchKeywords": [
+        "파스타",
+        "스파게티",
+        "이탈리안"
+      ]
     },
     {
       "id": "steak",
       "name": "스테이크",
       "category": "양식",
       "subCategory": "고기",
-      "keywords": ["고기", "소고기", "특별한", "고급"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["special", "happy"],
-      "timeSlot": ["dinner"],
-      "dietCompatible": ["keto", "bulk"],
+      "keywords": [
+        "고기",
+        "소고기",
+        "특별한",
+        "고급"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
       "estimatedCalories": 750,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -493,17 +959,35 @@
       "controversial": false,
       "popularityScore": 89,
       "trendNote": "기분 좋을때/특별한 날 메뉴 1위",
-      "searchKeywords": ["스테이크", "스테이크하우스"]
+      "searchKeywords": [
+        "스테이크",
+        "스테이크하우스"
+      ]
     },
     {
       "id": "burger",
       "name": "햄버거",
       "category": "양식",
       "subCategory": "패스트푸드",
-      "keywords": ["빵", "고기", "빠른", "가성비"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "빵",
+        "고기",
+        "빠른",
+        "가성비"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 700,
       "isHighSodium": true,
@@ -514,17 +998,36 @@
       "controversial": false,
       "popularityScore": 88,
       "trendNote": "빠르게 먹고 싶을 때, 수제버거 트렌드",
-      "searchKeywords": ["햄버거", "버거", "수제버거"]
+      "searchKeywords": [
+        "햄버거",
+        "버거",
+        "수제버거"
+      ]
     },
     {
       "id": "pizza",
       "name": "피자",
       "category": "양식",
       "subCategory": "패스트푸드",
-      "keywords": ["치즈", "빵", "함께먹는", "파티"],
-      "weather": ["cloudy", "rainy"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "치즈",
+        "빵",
+        "함께먹는",
+        "파티"
+      ],
+      "weather": [
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 850,
       "isHighSodium": true,
@@ -535,18 +1038,43 @@
       "controversial": false,
       "popularityScore": 90,
       "trendNote": "함께 나눠먹는 메뉴로 인기",
-      "searchKeywords": ["피자", "피자집"]
+      "searchKeywords": [
+        "피자",
+        "피자집"
+      ]
     },
     {
       "id": "salad",
       "name": "샐러드",
       "category": "양식",
       "subCategory": "건강식",
-      "keywords": ["야채", "건강", "가벼운", "다이어트"],
-      "weather": ["hot", "sunny", "cloudy", "cold"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["breakfast", "lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "vegan", "lowfat"],
+      "keywords": [
+        "야채",
+        "건강",
+        "가벼운",
+        "다이어트"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "vegan",
+        "lowfat"
+      ],
       "estimatedCalories": 300,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -556,18 +1084,43 @@
       "controversial": false,
       "popularityScore": 78,
       "trendNote": "다이어트/건강 식단으로 인기",
-      "searchKeywords": ["샐러드", "샐러디"]
+      "searchKeywords": [
+        "샐러드",
+        "샐러디"
+      ]
     },
     {
       "id": "chicken-breast",
       "name": "닭가슴살",
       "category": "건강식",
       "subCategory": "건강식",
-      "keywords": ["단백질", "다이어트", "건강", "운동"],
-      "weather": ["sunny", "cloudy", "hot", "cold"],
-      "mood": ["normal"],
-      "timeSlot": ["breakfast", "lunch", "dinner"],
-      "dietCompatible": ["diet", "bulk", "keto", "healthy", "lowfat"],
+      "keywords": [
+        "단백질",
+        "다이어트",
+        "건강",
+        "운동"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy",
+        "hot",
+        "cold"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "bulk",
+        "keto",
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 250,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -577,18 +1130,42 @@
       "controversial": false,
       "popularityScore": 80,
       "trendNote": "운동하는 사람들의 필수 메뉴",
-      "searchKeywords": ["닭가슴살", "샐러디", "다이어트 도시락"]
+      "searchKeywords": [
+        "닭가슴살",
+        "샐러디",
+        "다이어트 도시락"
+      ]
     },
     {
       "id": "poke",
       "name": "포케",
       "category": "건강식",
       "subCategory": "건강식",
-      "keywords": ["연어", "건강", "신선한", "하와이안"],
-      "weather": ["hot", "sunny", "cloudy", "cold"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "keto"],
+      "keywords": [
+        "연어",
+        "건강",
+        "신선한",
+        "하와이안"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "keto"
+      ],
       "estimatedCalories": 450,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -599,17 +1176,38 @@
       "controversialReason": "날생선",
       "popularityScore": 82,
       "trendNote": "건강식 트렌드 메뉴",
-      "searchKeywords": ["포케", "포케볼"]
+      "searchKeywords": [
+        "포케",
+        "포케볼"
+      ]
     },
     {
       "id": "tteokbokki",
       "name": "떡볶이",
       "category": "분식",
       "subCategory": "분식",
-      "keywords": ["매운", "떡", "간식", "스트레스해소"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["stressed", "sad", "normal", "happy"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "매운",
+        "떡",
+        "간식",
+        "스트레스해소"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "sad",
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 500,
       "isHighSodium": true,
@@ -620,18 +1218,37 @@
       "controversial": false,
       "popularityScore": 96,
       "trendNote": "스트레스 해소 음식 TOP5! 우울할때/비오는날 인기",
-      "searchKeywords": ["떡볶이", "분식"]
+      "searchKeywords": [
+        "떡볶이",
+        "분식"
+      ]
     },
     {
       "id": "kimbap",
       "name": "김밥",
       "category": "분식",
       "subCategory": "분식",
-      "keywords": ["밥", "간편한", "야채", "소풍"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["normal", "happy"],
-      "timeSlot": ["breakfast", "lunch"],
-      "dietCompatible": ["healthy"],
+      "keywords": [
+        "밥",
+        "간편한",
+        "야채",
+        "소풍"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -641,17 +1258,37 @@
       "controversial": false,
       "popularityScore": 84,
       "trendNote": "간편식의 정석",
-      "searchKeywords": ["김밥", "김밥천국", "분식"]
+      "searchKeywords": [
+        "김밥",
+        "김밥천국",
+        "분식"
+      ]
     },
     {
       "id": "ramyun",
       "name": "라면",
       "category": "분식",
       "subCategory": "면류",
-      "keywords": ["매운", "국물", "간편한", "야식"],
-      "weather": ["cold", "rainy"],
-      "mood": ["sad", "tired", "normal"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "매운",
+        "국물",
+        "간편한",
+        "야식"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "sad",
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 500,
       "isHighSodium": true,
@@ -662,17 +1299,34 @@
       "controversial": false,
       "popularityScore": 95,
       "trendNote": "비오는날/우울할때 찾는 위로 음식 TOP3",
-      "searchKeywords": ["라면", "라면집", "라면맛집"]
+      "searchKeywords": [
+        "라면",
+        "라면집",
+        "라면맛집"
+      ]
     },
     {
       "id": "pajeon",
       "name": "파전",
       "category": "한식",
       "subCategory": "전",
-      "keywords": ["비오는날", "막걸리", "바삭한", "전"],
-      "weather": ["rainy"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["dinner", "latenight"],
+      "keywords": [
+        "비오는날",
+        "막걸리",
+        "바삭한",
+        "전"
+      ],
+      "weather": [
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 450,
       "isHighSodium": false,
@@ -683,17 +1337,35 @@
       "controversial": false,
       "popularityScore": 99,
       "trendNote": "비오는날 먹고싶은 음식 부동의 1위!! 파전+막걸리 조합",
-      "searchKeywords": ["파전", "해물파전", "전집"]
+      "searchKeywords": [
+        "파전",
+        "해물파전",
+        "전집"
+      ]
     },
     {
       "id": "buchimgae",
       "name": "부침개/전",
       "category": "한식",
       "subCategory": "전",
-      "keywords": ["비오는날", "막걸리", "바삭한", "김치전", "감자전"],
-      "weather": ["rainy"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["dinner", "latenight"],
+      "keywords": [
+        "비오는날",
+        "막걸리",
+        "바삭한",
+        "김치전",
+        "감자전"
+      ],
+      "weather": [
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 400,
       "isHighSodium": false,
@@ -704,18 +1376,41 @@
       "controversial": false,
       "popularityScore": 94,
       "trendNote": "비오는날 필수 메뉴 TOP2",
-      "searchKeywords": ["부침개", "김치전", "감자전", "전집"]
+      "searchKeywords": [
+        "부침개",
+        "김치전",
+        "감자전",
+        "전집"
+      ]
     },
     {
       "id": "kalguksu",
       "name": "칼국수",
       "category": "한식",
       "subCategory": "면류",
-      "keywords": ["국물", "면", "시원한", "뜨끈한"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["tired", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy", "lowfat"],
+      "keywords": [
+        "국물",
+        "면",
+        "시원한",
+        "뜨끈한"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 450,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -725,18 +1420,41 @@
       "controversial": false,
       "popularityScore": 93,
       "trendNote": "비오는날 먹고싶은 음식 TOP3! 국물요리 대표",
-      "searchKeywords": ["칼국수", "손칼국수", "바지락칼국수"]
+      "searchKeywords": [
+        "칼국수",
+        "손칼국수",
+        "바지락칼국수"
+      ]
     },
     {
       "id": "sujebi",
       "name": "수제비",
       "category": "한식",
       "subCategory": "면류",
-      "keywords": ["국물", "면", "구수한", "따뜻한"],
-      "weather": ["cold", "rainy", "cloudy"],
-      "mood": ["tired", "normal", "sad"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy", "lowfat"],
+      "keywords": [
+        "국물",
+        "면",
+        "구수한",
+        "따뜻한"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "tired",
+        "normal",
+        "sad"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -746,18 +1464,39 @@
       "controversial": false,
       "popularityScore": 88,
       "trendNote": "비오는날 먹고싶은 음식 TOP5, 칼국수와 함께 인기",
-      "searchKeywords": ["수제비", "손수제비"]
+      "searchKeywords": [
+        "수제비",
+        "손수제비"
+      ]
     },
     {
       "id": "shabu",
       "name": "샤브샤브",
       "category": "일식",
       "subCategory": "찌개/탕",
-      "keywords": ["국물", "야채", "건강한", "데이트"],
-      "weather": ["cold"],
-      "mood": ["happy", "special"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "keto", "lowfat"],
+      "keywords": [
+        "국물",
+        "야채",
+        "건강한",
+        "데이트"
+      ],
+      "weather": [
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "keto",
+        "lowfat"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -767,18 +1506,37 @@
       "controversial": false,
       "popularityScore": 83,
       "trendNote": "건강하게 먹고싶을때, 데이트 메뉴",
-      "searchKeywords": ["샤브샤브", "샤브"]
+      "searchKeywords": [
+        "샤브샤브",
+        "샤브"
+      ]
     },
     {
       "id": "gopchang",
       "name": "곱창",
       "category": "한식",
       "subCategory": "고기",
-      "keywords": ["내장", "구이", "술안주", "야식"],
-      "weather": ["cold", "cloudy"],
-      "mood": ["stressed", "happy"],
-      "timeSlot": ["dinner", "latenight"],
-      "dietCompatible": ["keto"],
+      "keywords": [
+        "내장",
+        "구이",
+        "술안주",
+        "야식"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
       "estimatedCalories": 600,
       "isHighSodium": false,
       "isAlcoholRelated": true,
@@ -789,18 +1547,39 @@
       "controversialReason": "내장류",
       "popularityScore": 87,
       "trendNote": "스트레스 해소 야식 메뉴로 인기",
-      "searchKeywords": ["곱창", "막창", "대창"]
+      "searchKeywords": [
+        "곱창",
+        "막창",
+        "대창"
+      ]
     },
     {
       "id": "sashimi",
       "name": "회",
       "category": "일식",
       "subCategory": "회/초밥",
-      "keywords": ["신선한", "생선", "날것", "시원한"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "special"],
-      "timeSlot": ["dinner"],
-      "dietCompatible": ["diet", "keto", "healthy"],
+      "keywords": [
+        "신선한",
+        "생선",
+        "날것",
+        "시원한"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "keto",
+        "healthy"
+      ],
       "estimatedCalories": 300,
       "isHighSodium": false,
       "isAlcoholRelated": true,
@@ -811,18 +1590,40 @@
       "controversialReason": "날생선",
       "popularityScore": 88,
       "trendNote": "더운날 시원하게 먹기 좋은 메뉴",
-      "searchKeywords": ["회", "횟집", "사시미", "물회"]
+      "searchKeywords": [
+        "회",
+        "횟집",
+        "사시미",
+        "물회"
+      ]
     },
     {
       "id": "mulhoe",
       "name": "물회",
       "category": "한식",
       "subCategory": "회/초밥",
-      "keywords": ["시원한", "회", "여름", "새콤달콤"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy"],
+      "keywords": [
+        "시원한",
+        "회",
+        "여름",
+        "새콤달콤"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy"
+      ],
       "estimatedCalories": 350,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -833,17 +1634,34 @@
       "controversialReason": "날생선",
       "popularityScore": 85,
       "trendNote": "더운날 시원하게 먹는 여름 별미 TOP5",
-      "searchKeywords": ["물회", "회", "여름별미"]
+      "searchKeywords": [
+        "물회",
+        "회",
+        "여름별미"
+      ]
     },
     {
       "id": "sundae",
       "name": "순대",
       "category": "한식",
       "subCategory": "분식",
-      "keywords": ["간식", "내장", "떡볶이와함께"],
-      "weather": ["cold", "cloudy"],
-      "mood": ["normal"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
+      "keywords": [
+        "간식",
+        "내장",
+        "떡볶이와함께"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 400,
       "isHighSodium": false,
@@ -855,18 +1673,43 @@
       "controversialReason": "내장류",
       "popularityScore": 80,
       "trendNote": "떡볶이랑 같이 먹는 조합",
-      "searchKeywords": ["순대", "순대국", "분식"]
+      "searchKeywords": [
+        "순대",
+        "순대국",
+        "분식"
+      ]
     },
     {
       "id": "tofu",
       "name": "두부요리",
       "category": "한식",
       "subCategory": "건강식",
-      "keywords": ["두부", "건강", "담백한", "다이어트"],
-      "weather": ["sunny", "cloudy", "cold", "hot"],
-      "mood": ["normal", "tired"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "vegan", "healthy", "lowfat"],
+      "keywords": [
+        "두부",
+        "건강",
+        "담백한",
+        "다이어트"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy",
+        "cold",
+        "hot"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "vegan",
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 300,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -876,18 +1719,39 @@
       "controversial": false,
       "popularityScore": 75,
       "trendNote": "건강식/다이어트 식단 메뉴",
-      "searchKeywords": ["두부", "순두부", "두부요리"]
+      "searchKeywords": [
+        "두부",
+        "순두부",
+        "두부요리"
+      ]
     },
     {
       "id": "sundubu",
       "name": "순두부찌개",
       "category": "한식",
       "subCategory": "찌개/탕",
-      "keywords": ["두부", "매운", "국물", "뜨끈한"],
-      "weather": ["cold", "rainy"],
-      "mood": ["normal", "tired"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy", "lowfat"],
+      "keywords": [
+        "두부",
+        "매운",
+        "국물",
+        "뜨끈한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": true,
       "isAlcoholRelated": false,
@@ -897,18 +1761,38 @@
       "controversial": false,
       "popularityScore": 86,
       "trendNote": "추운날 먹고싶은 국물요리",
-      "searchKeywords": ["순두부찌개", "순두부", "해물순두부"]
+      "searchKeywords": [
+        "순두부찌개",
+        "순두부",
+        "해물순두부"
+      ]
     },
     {
       "id": "jangeo",
       "name": "장어",
       "category": "한식",
       "subCategory": "고기",
-      "keywords": ["보양식", "스태미나", "구이", "든든한"],
-      "weather": ["hot", "cold"],
-      "mood": ["tired", "special"],
-      "timeSlot": ["dinner"],
-      "dietCompatible": ["keto", "bulk"],
+      "keywords": [
+        "보양식",
+        "스태미나",
+        "구이",
+        "든든한"
+      ],
+      "weather": [
+        "hot",
+        "cold"
+      ],
+      "mood": [
+        "tired",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
       "estimatedCalories": 650,
       "isHighSodium": false,
       "isAlcoholRelated": true,
@@ -918,17 +1802,35 @@
       "controversial": false,
       "popularityScore": 84,
       "trendNote": "피곤할때 찾는 보양식 TOP3, 복날 인기메뉴",
-      "searchKeywords": ["장어", "민물장어", "장어구이"]
+      "searchKeywords": [
+        "장어",
+        "민물장어",
+        "장어구이"
+      ]
     },
     {
       "id": "thai",
       "name": "태국음식",
       "category": "아시안",
       "subCategory": "동남아",
-      "keywords": ["매운", "향신료", "쌀국수", "팟타이"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "special"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "매운",
+        "향신료",
+        "쌀국수",
+        "팟타이"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 550,
       "isHighSodium": true,
@@ -940,18 +1842,40 @@
       "controversialReason": "고수/향신료",
       "popularityScore": 82,
       "trendNote": "이국적인 맛을 원할때",
-      "searchKeywords": ["태국음식", "팟타이", "똠양꿍", "쌀국수"]
+      "searchKeywords": [
+        "태국음식",
+        "팟타이",
+        "똠양꿍",
+        "쌀국수"
+      ]
     },
     {
       "id": "vietnamese",
       "name": "베트남음식",
       "category": "아시안",
       "subCategory": "동남아",
-      "keywords": ["쌀국수", "신선한", "향신료", "가벼운"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy"],
+      "keywords": [
+        "쌀국수",
+        "신선한",
+        "향신료",
+        "가벼운"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy"
+      ],
       "estimatedCalories": 450,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -962,18 +1886,38 @@
       "controversialReason": "고수/향신료",
       "popularityScore": 84,
       "trendNote": "더운날 가볍게 먹기 좋은 메뉴",
-      "searchKeywords": ["베트남음식", "쌀국수", "분짜", "반미"]
+      "searchKeywords": [
+        "베트남음식",
+        "쌀국수",
+        "분짜",
+        "반미"
+      ]
     },
     {
       "id": "curry",
       "name": "카레",
       "category": "아시안",
       "subCategory": "인도/일본",
-      "keywords": ["향신료", "밥", "든든한"],
-      "weather": ["rainy", "cloudy"],
-      "mood": ["normal", "tired"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy"],
+      "keywords": [
+        "향신료",
+        "밥",
+        "든든한"
+      ],
+      "weather": [
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
       "estimatedCalories": 550,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -983,18 +1927,38 @@
       "controversial": false,
       "popularityScore": 81,
       "trendNote": "비오는날 따뜻하게 먹기 좋은 메뉴",
-      "searchKeywords": ["카레", "일본카레", "인도카레"]
+      "searchKeywords": [
+        "카레",
+        "일본카레",
+        "인도카레"
+      ]
     },
     {
       "id": "jokbal",
       "name": "족발",
       "category": "한식",
       "subCategory": "고기",
-      "keywords": ["야식", "술안주", "쫄깃한", "고기"],
-      "weather": ["cloudy", "cold"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["dinner", "latenight"],
-      "dietCompatible": ["keto"],
+      "keywords": [
+        "야식",
+        "술안주",
+        "쫄깃한",
+        "고기"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
       "estimatedCalories": 600,
       "isHighSodium": false,
       "isAlcoholRelated": true,
@@ -1004,18 +1968,38 @@
       "controversial": false,
       "popularityScore": 88,
       "trendNote": "야식 인기 메뉴",
-      "searchKeywords": ["족발", "보쌈", "족발보쌈"]
+      "searchKeywords": [
+        "족발",
+        "보쌈",
+        "족발보쌈"
+      ]
     },
     {
       "id": "bossam",
       "name": "보쌈",
       "category": "한식",
       "subCategory": "고기",
-      "keywords": ["야식", "술안주", "삶은고기", "쌈"],
-      "weather": ["cloudy", "cold"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["dinner", "latenight"],
-      "dietCompatible": ["keto"],
+      "keywords": [
+        "야식",
+        "술안주",
+        "삶은고기",
+        "쌈"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
       "estimatedCalories": 550,
       "isHighSodium": false,
       "isAlcoholRelated": true,
@@ -1025,18 +2009,40 @@
       "controversial": false,
       "popularityScore": 86,
       "trendNote": "족발과 함께 야식 메뉴로 인기",
-      "searchKeywords": ["보쌈", "족발", "족발보쌈"]
+      "searchKeywords": [
+        "보쌈",
+        "족발",
+        "족발보쌈"
+      ]
     },
     {
       "id": "taco",
       "name": "타코",
       "category": "양식",
       "subCategory": "멕시칸",
-      "keywords": ["멕시코", "이국적", "또띠아", "살사"],
-      "weather": ["sunny", "hot", "cloudy"],
-      "mood": ["happy", "special", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["healthy"],
+      "keywords": [
+        "멕시코",
+        "이국적",
+        "또띠아",
+        "살사"
+      ],
+      "weather": [
+        "sunny",
+        "hot",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
       "estimatedCalories": 380,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1046,18 +2052,39 @@
       "controversial": false,
       "popularityScore": 45,
       "trendNote": "멕시칸 음식 트렌드 상승 중",
-      "searchKeywords": ["타코", "멕시칸", "멕시코음식"]
+      "searchKeywords": [
+        "타코",
+        "멕시칸",
+        "멕시코음식"
+      ]
     },
     {
       "id": "burrito",
       "name": "부리또",
       "category": "양식",
       "subCategory": "멕시칸",
-      "keywords": ["멕시코", "이국적", "또띠아", "든든한"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "tired", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["bulk"],
+      "keywords": [
+        "멕시코",
+        "이국적",
+        "또띠아",
+        "든든한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "bulk"
+      ],
       "estimatedCalories": 650,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1067,18 +2094,42 @@
       "controversial": false,
       "popularityScore": 42,
       "trendNote": "든든하고 색다른 한끼",
-      "searchKeywords": ["부리또", "브리또", "멕시칸"]
+      "searchKeywords": [
+        "부리또",
+        "브리또",
+        "멕시칸"
+      ]
     },
     {
       "id": "poke",
       "name": "포케",
       "category": "건강식",
       "subCategory": "하와이안",
-      "keywords": ["하와이", "생선", "건강", "신선한", "샐러드"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal", "special"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "lowfat"],
+      "keywords": [
+        "하와이",
+        "생선",
+        "건강",
+        "신선한",
+        "샐러드"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "lowfat"
+      ],
       "estimatedCalories": 420,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1088,18 +2139,40 @@
       "controversial": false,
       "popularityScore": 55,
       "trendNote": "건강 트렌드와 함께 인기 상승",
-      "searchKeywords": ["포케", "포케볼", "하와이안"]
+      "searchKeywords": [
+        "포케",
+        "포케볼",
+        "하와이안"
+      ]
     },
     {
       "id": "acai-bowl",
       "name": "아사이볼",
       "category": "카페",
       "subCategory": "브런치",
-      "keywords": ["건강", "과일", "브런치", "가벼운"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["breakfast", "lunch"],
-      "dietCompatible": ["diet", "healthy", "vegan"],
+      "keywords": [
+        "건강",
+        "과일",
+        "브런치",
+        "가벼운"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "vegan"
+      ],
       "estimatedCalories": 350,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1109,17 +2182,35 @@
       "controversial": false,
       "popularityScore": 48,
       "trendNote": "인스타그래머블 건강식",
-      "searchKeywords": ["아사이볼", "아사이", "브런치"]
+      "searchKeywords": [
+        "아사이볼",
+        "아사이",
+        "브런치"
+      ]
     },
     {
       "id": "bagel",
       "name": "베이글",
       "category": "카페",
       "subCategory": "브런치",
-      "keywords": ["브런치", "간단한", "크림치즈", "가벼운"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["normal", "happy"],
-      "timeSlot": ["breakfast", "lunch"],
+      "keywords": [
+        "브런치",
+        "간단한",
+        "크림치즈",
+        "가벼운"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 400,
       "isHighSodium": false,
@@ -1130,17 +2221,35 @@
       "controversial": false,
       "popularityScore": 52,
       "trendNote": "뉴욕 감성 브런치",
-      "searchKeywords": ["베이글", "브런치", "베이글카페"]
+      "searchKeywords": [
+        "베이글",
+        "브런치",
+        "베이글카페"
+      ]
     },
     {
       "id": "croissant",
       "name": "크루아상",
       "category": "카페",
       "subCategory": "베이커리",
-      "keywords": ["빵", "버터", "간단한", "아침"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["normal", "happy"],
-      "timeSlot": ["breakfast", "lunch"],
+      "keywords": [
+        "빵",
+        "버터",
+        "간단한",
+        "아침"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 300,
       "isHighSodium": false,
@@ -1151,18 +2260,41 @@
       "controversial": false,
       "popularityScore": 58,
       "trendNote": "프랑스 감성 아침",
-      "searchKeywords": ["크루아상", "크로와상", "베이커리"]
+      "searchKeywords": [
+        "크루아상",
+        "크로와상",
+        "베이커리"
+      ]
     },
     {
       "id": "kebab",
       "name": "케밥",
       "category": "양식",
       "subCategory": "중동",
-      "keywords": ["터키", "이국적", "고기", "든든한"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "normal", "tired"],
-      "timeSlot": ["lunch", "dinner", "latenight"],
-      "dietCompatible": ["keto", "bulk"],
+      "keywords": [
+        "터키",
+        "이국적",
+        "고기",
+        "든든한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
       "estimatedCalories": 550,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1172,18 +2304,39 @@
       "controversial": false,
       "popularityScore": 40,
       "trendNote": "이국적인 길거리 음식",
-      "searchKeywords": ["케밥", "도너케밥", "터키음식"]
+      "searchKeywords": [
+        "케밥",
+        "도너케밥",
+        "터키음식"
+      ]
     },
     {
       "id": "falafel",
       "name": "팔라펠",
       "category": "양식",
       "subCategory": "중동",
-      "keywords": ["중동", "채식", "건강", "이국적"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["normal", "happy"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["vegan", "healthy"],
+      "keywords": [
+        "중동",
+        "채식",
+        "건강",
+        "이국적"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "vegan",
+        "healthy"
+      ],
       "estimatedCalories": 380,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1193,18 +2346,39 @@
       "controversial": false,
       "popularityScore": 25,
       "trendNote": "비건 친화적 중동 음식",
-      "searchKeywords": ["팔라펠", "중동음식", "비건"]
+      "searchKeywords": [
+        "팔라펠",
+        "중동음식",
+        "비건"
+      ]
     },
     {
       "id": "brunch-plate",
       "name": "브런치 플레이트",
       "category": "양식",
       "subCategory": "브런치",
-      "keywords": ["브런치", "에그베네딕트", "베이컨", "주말"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["happy", "special", "normal"],
-      "timeSlot": ["breakfast", "lunch"],
-      "dietCompatible": ["bulk"],
+      "keywords": [
+        "브런치",
+        "에그베네딕트",
+        "베이컨",
+        "주말"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [
+        "bulk"
+      ],
       "estimatedCalories": 650,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1214,18 +2388,38 @@
       "controversial": false,
       "popularityScore": 60,
       "trendNote": "주말 감성 브런치",
-      "searchKeywords": ["브런치", "에그베네딕트", "브런치카페"]
+      "searchKeywords": [
+        "브런치",
+        "에그베네딕트",
+        "브런치카페"
+      ]
     },
     {
       "id": "sandwich",
       "name": "샌드위치",
       "category": "카페",
       "subCategory": "간편식",
-      "keywords": ["간단한", "가벼운", "빵", "점심"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["normal", "tired"],
-      "timeSlot": ["breakfast", "lunch"],
-      "dietCompatible": ["healthy"],
+      "keywords": [
+        "간단한",
+        "가벼운",
+        "빵",
+        "점심"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
       "estimatedCalories": 400,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1235,17 +2429,35 @@
       "controversial": false,
       "popularityScore": 65,
       "trendNote": "간편하고 든든한 한끼",
-      "searchKeywords": ["샌드위치", "서브웨이", "델리"]
+      "searchKeywords": [
+        "샌드위치",
+        "서브웨이",
+        "델리"
+      ]
     },
     {
       "id": "banh-mi",
       "name": "반미",
       "category": "아시안",
       "subCategory": "베트남",
-      "keywords": ["베트남", "바게트", "이국적", "간단한"],
-      "weather": ["sunny", "cloudy"],
-      "mood": ["normal", "happy"],
-      "timeSlot": ["lunch", "dinner"],
+      "keywords": [
+        "베트남",
+        "바게트",
+        "이국적",
+        "간단한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
       "dietCompatible": [],
       "estimatedCalories": 420,
       "isHighSodium": false,
@@ -1256,18 +2468,40 @@
       "controversial": false,
       "popularityScore": 38,
       "trendNote": "베트남 길거리 음식",
-      "searchKeywords": ["반미", "반미샌드위치", "베트남"]
+      "searchKeywords": [
+        "반미",
+        "반미샌드위치",
+        "베트남"
+      ]
     },
     {
       "id": "thai-curry",
       "name": "태국 커리",
       "category": "아시안",
       "subCategory": "태국",
-      "keywords": ["태국", "코코넛", "매운", "향신료"],
-      "weather": ["rainy", "cold", "cloudy"],
-      "mood": ["stressed", "tired", "normal"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["keto"],
+      "keywords": [
+        "태국",
+        "코코넛",
+        "매운",
+        "향신료"
+      ],
+      "weather": [
+        "rainy",
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
       "estimatedCalories": 520,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1277,18 +2511,42 @@
       "controversial": false,
       "popularityScore": 50,
       "trendNote": "이국적인 향신료 요리",
-      "searchKeywords": ["태국커리", "그린커리", "레드커리", "태국음식"]
+      "searchKeywords": [
+        "태국커리",
+        "그린커리",
+        "레드커리",
+        "태국음식"
+      ]
     },
     {
       "id": "greek-salad",
       "name": "그릭 샐러드",
       "category": "건강식",
       "subCategory": "샐러드",
-      "keywords": ["건강", "가벼운", "치즈", "올리브"],
-      "weather": ["hot", "sunny"],
-      "mood": ["normal", "happy"],
-      "timeSlot": ["lunch", "dinner"],
-      "dietCompatible": ["diet", "healthy", "lowfat", "keto"],
+      "keywords": [
+        "건강",
+        "가벼운",
+        "치즈",
+        "올리브"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "lowfat",
+        "keto"
+      ],
       "estimatedCalories": 280,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1298,18 +2556,40 @@
       "controversial": false,
       "popularityScore": 45,
       "trendNote": "지중해식 건강 샐러드",
-      "searchKeywords": ["그릭샐러드", "샐러드", "지중해"]
+      "searchKeywords": [
+        "그릭샐러드",
+        "샐러드",
+        "지중해"
+      ]
     },
     {
       "id": "smoothie-bowl",
       "name": "스무디볼",
       "category": "카페",
       "subCategory": "브런치",
-      "keywords": ["건강", "과일", "가벼운", "인스타"],
-      "weather": ["hot", "sunny"],
-      "mood": ["happy", "normal"],
-      "timeSlot": ["breakfast", "lunch"],
-      "dietCompatible": ["diet", "healthy", "vegan"],
+      "keywords": [
+        "건강",
+        "과일",
+        "가벼운",
+        "인스타"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "vegan"
+      ],
       "estimatedCalories": 320,
       "isHighSodium": false,
       "isAlcoholRelated": false,
@@ -1319,7 +2599,5590 @@
       "controversial": false,
       "popularityScore": 42,
       "trendNote": "건강하고 예쁜 한끼",
-      "searchKeywords": ["스무디볼", "스무디", "브런치"]
+      "searchKeywords": [
+        "스무디볼",
+        "스무디",
+        "브런치"
+      ]
+    },
+    {
+      "id": "bulgogi",
+      "name": "불고기",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "달콤한",
+        "소고기",
+        "구이",
+        "밥도둑"
+      ],
+      "weather": [
+        "cold",
+        "cloudy",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "special",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 94,
+      "trendNote": "한국 대표 음식, 외국인도 사랑하는 맛",
+      "searchKeywords": [
+        "불고기",
+        "소불고기",
+        "불고기덮밥"
+      ]
+    },
+    {
+      "id": "galbi",
+      "name": "갈비",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "소고기",
+        "구이",
+        "특별한",
+        "고급"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
+      "estimatedCalories": 750,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 95,
+      "trendNote": "특별한 날 먹는 고기 1위",
+      "searchKeywords": [
+        "갈비",
+        "LA갈비",
+        "소갈비",
+        "갈비집"
+      ]
+    },
+    {
+      "id": "galbi-jjim",
+      "name": "갈비찜",
+      "category": "한식",
+      "subCategory": "찜",
+      "keywords": [
+        "소고기",
+        "달콤한",
+        "명절",
+        "특별한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 650,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "명절/특별한 날 음식",
+      "searchKeywords": [
+        "갈비찜",
+        "LA갈비찜"
+      ]
+    },
+    {
+      "id": "galbi-tang",
+      "name": "갈비탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "소고기",
+        "국물",
+        "보양",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "보양식으로 인기",
+      "searchKeywords": [
+        "갈비탕",
+        "소갈비탕"
+      ]
+    },
+    {
+      "id": "cheonggukjang",
+      "name": "청국장",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "구수한",
+        "발효",
+        "건강",
+        "냄새"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "강한 냄새",
+      "popularityScore": 70,
+      "trendNote": "건강식으로 인기, 냄새 호불호",
+      "searchKeywords": [
+        "청국장",
+        "청국장찌개"
+      ]
+    },
+    {
+      "id": "jeyuk-bokkeum",
+      "name": "제육볶음",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "돼지고기",
+        "밥도둑",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "bulk"
+      ],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 92,
+      "trendNote": "백반집 인기메뉴 1위",
+      "searchKeywords": [
+        "제육볶음",
+        "제육",
+        "돼지불백"
+      ]
+    },
+    {
+      "id": "dak-bokkeum-tang",
+      "name": "닭볶음탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "매운",
+        "닭",
+        "감자",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "tired"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 86,
+      "trendNote": "추운날 국물과 고기를 함께",
+      "searchKeywords": [
+        "닭볶음탕",
+        "닭도리탕",
+        "닭볶음"
+      ]
+    },
+    {
+      "id": "jjim-dak",
+      "name": "찜닭",
+      "category": "한식",
+      "subCategory": "찜",
+      "keywords": [
+        "달콤한",
+        "닭",
+        "당면",
+        "안동"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 89,
+      "trendNote": "안동 찜닭 유명",
+      "searchKeywords": [
+        "찜닭",
+        "안동찜닭",
+        "찜닭집"
+      ]
+    },
+    {
+      "id": "makguksu",
+      "name": "막국수",
+      "category": "한식",
+      "subCategory": "면류",
+      "keywords": [
+        "시원한",
+        "메밀",
+        "여름",
+        "춘천"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "lowfat"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "여름 별미, 닭갈비와 함께",
+      "searchKeywords": [
+        "막국수",
+        "춘천막국수",
+        "메밀국수"
+      ]
+    },
+    {
+      "id": "jjolmyeon",
+      "name": "쫄면",
+      "category": "분식",
+      "subCategory": "면류",
+      "keywords": [
+        "쫄깃한",
+        "매콤달콤",
+        "시원한",
+        "간식"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "분식집 인기메뉴",
+      "searchKeywords": [
+        "쫄면",
+        "비빔쫄면"
+      ]
+    },
+    {
+      "id": "milmyeon",
+      "name": "밀면",
+      "category": "한식",
+      "subCategory": "면류",
+      "keywords": [
+        "시원한",
+        "부산",
+        "여름"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "lowfat"
+      ],
+      "estimatedCalories": 420,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "부산 대표 여름 음식",
+      "searchKeywords": [
+        "밀면",
+        "부산밀면",
+        "물밀면",
+        "비빔밀면"
+      ]
+    },
+    {
+      "id": "haejangguk",
+      "name": "해장국",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "해장",
+        "국물",
+        "뜨끈한",
+        "숙취"
+      ],
+      "weather": [
+        "cold",
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "tired"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 90,
+      "trendNote": "술 마신 다음날 필수",
+      "searchKeywords": [
+        "해장국",
+        "뼈해장국",
+        "선지해장국",
+        "콩나물해장국"
+      ]
+    },
+    {
+      "id": "chueotang",
+      "name": "추어탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "보양",
+        "미꾸라지",
+        "국물",
+        "건강"
+      ],
+      "weather": [
+        "cold"
+      ],
+      "mood": [
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "미꾸라지",
+      "popularityScore": 72,
+      "trendNote": "보양식으로 인기",
+      "searchKeywords": [
+        "추어탕",
+        "미꾸라지탕"
+      ]
+    },
+    {
+      "id": "maeuntang",
+      "name": "매운탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "매운",
+        "생선",
+        "국물",
+        "칼칼한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "tired"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 83,
+      "trendNote": "회 먹고 마무리로 인기",
+      "searchKeywords": [
+        "매운탕",
+        "생선매운탕",
+        "대구매운탕"
+      ]
+    },
+    {
+      "id": "nakji-bokkeum",
+      "name": "낙지볶음",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "낙지",
+        "쫄깃한",
+        "밥도둑"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 84,
+      "trendNote": "매운맛 좋아하는 사람들에게 인기",
+      "searchKeywords": [
+        "낙지볶음",
+        "쭈꾸미",
+        "낙곱새"
+      ]
+    },
+    {
+      "id": "ojingeo-bokkeum",
+      "name": "오징어볶음",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "오징어",
+        "밥도둑"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 380,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "백반집 인기메뉴",
+      "searchKeywords": [
+        "오징어볶음",
+        "오삼불고기"
+      ]
+    },
+    {
+      "id": "kimchi-bokkeumbap",
+      "name": "김치볶음밥",
+      "category": "한식",
+      "subCategory": "밥류",
+      "keywords": [
+        "매운",
+        "김치",
+        "볶음밥",
+        "간단한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "간단히 먹기 좋은 한끼",
+      "searchKeywords": [
+        "김치볶음밥",
+        "볶음밥"
+      ]
+    },
+    {
+      "id": "cheese-buldak",
+      "name": "치즈불닭",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "치즈",
+        "닭",
+        "중독성"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 91,
+      "trendNote": "매운맛 + 치즈 조합 인기",
+      "searchKeywords": [
+        "치즈불닭",
+        "불닭",
+        "불닭볶음면"
+      ]
+    },
+    {
+      "id": "daepae-samgyeopsal",
+      "name": "대패삼겹살",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "삼겹살",
+        "얇은",
+        "가성비"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 750,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 89,
+      "trendNote": "가성비 고기집 인기",
+      "searchKeywords": [
+        "대패삼겹살",
+        "대패",
+        "삼겹살"
+      ]
+    },
+    {
+      "id": "hanwoo",
+      "name": "한우",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "소고기",
+        "고급",
+        "특별한",
+        "구이"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
+      "estimatedCalories": 800,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 93,
+      "trendNote": "특별한 날 먹는 고급 고기",
+      "searchKeywords": [
+        "한우",
+        "한우맛집",
+        "소고기"
+      ]
+    },
+    {
+      "id": "yukhoe",
+      "name": "육회",
+      "category": "한식",
+      "subCategory": "회/초밥",
+      "keywords": [
+        "생고기",
+        "소고기",
+        "고소한"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "생고기",
+      "popularityScore": 85,
+      "trendNote": "한우집 인기 안주",
+      "searchKeywords": [
+        "육회",
+        "육회비빔밥",
+        "육사시미"
+      ]
+    },
+    {
+      "id": "gomtang",
+      "name": "곰탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "국물",
+        "소고기",
+        "담백한",
+        "보양"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "healthy"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 86,
+      "trendNote": "속 편한 보양 국물",
+      "searchKeywords": [
+        "곰탕",
+        "소머리곰탕",
+        "꼬리곰탕"
+      ]
+    },
+    {
+      "id": "agujjim",
+      "name": "아귀찜",
+      "category": "한식",
+      "subCategory": "찜",
+      "keywords": [
+        "매운",
+        "아귀",
+        "콩나물",
+        "마산"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 83,
+      "trendNote": "마산 아귀찜 유명",
+      "searchKeywords": [
+        "아귀찜",
+        "아구찜",
+        "마산아구찜"
+      ]
+    },
+    {
+      "id": "haemul-jjim",
+      "name": "해물찜",
+      "category": "한식",
+      "subCategory": "찜",
+      "keywords": [
+        "매운",
+        "해물",
+        "푸짐한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 84,
+      "trendNote": "해물 좋아하는 사람들에게 인기",
+      "searchKeywords": [
+        "해물찜",
+        "해물탕"
+      ]
+    },
+    {
+      "id": "dakgalbi",
+      "name": "닭갈비",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "닭",
+        "치즈",
+        "춘천"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 90,
+      "trendNote": "춘천 닭갈비 유명",
+      "searchKeywords": [
+        "닭갈비",
+        "춘천닭갈비",
+        "철판닭갈비",
+        "치즈닭갈비"
+      ]
+    },
+    {
+      "id": "tteokgalbi",
+      "name": "떡갈비",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "소고기",
+        "달콤한",
+        "담양"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "담양 대표 음식",
+      "searchKeywords": [
+        "떡갈비",
+        "담양떡갈비"
+      ]
+    },
+    {
+      "id": "nakgopsae",
+      "name": "낙곱새",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "낙지",
+        "곱창",
+        "새우"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 87,
+      "trendNote": "매운 해물+곱창 조합 인기",
+      "searchKeywords": [
+        "낙곱새",
+        "낙지곱창새우"
+      ]
+    },
+    {
+      "id": "haemul-tang",
+      "name": "해물탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "해물",
+        "국물",
+        "푸짐한",
+        "칼칼한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 380,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "해물 좋아하는 분들 필수",
+      "searchKeywords": [
+        "해물탕",
+        "해물찜"
+      ]
+    },
+    {
+      "id": "altang",
+      "name": "알탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "알",
+        "국물",
+        "칼칼한",
+        "술안주"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "술안주로 인기",
+      "searchKeywords": [
+        "알탕",
+        "명란알탕"
+      ]
+    },
+    {
+      "id": "konggukbap",
+      "name": "콩나물국밥",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "해장",
+        "국밥",
+        "전주",
+        "콩나물"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 84,
+      "trendNote": "전주 콩나물국밥 유명, 해장 필수",
+      "searchKeywords": [
+        "콩나물국밥",
+        "전주콩나물국밥",
+        "해장국"
+      ]
+    },
+    {
+      "id": "gopchang-jeongol",
+      "name": "곱창전골",
+      "category": "한식",
+      "subCategory": "전골",
+      "keywords": [
+        "곱창",
+        "전골",
+        "국물",
+        "술안주"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "내장류",
+      "popularityScore": 82,
+      "trendNote": "추운날 곱창 국물로 인기",
+      "searchKeywords": [
+        "곱창전골",
+        "곱창"
+      ]
+    },
+    {
+      "id": "dakhanmari",
+      "name": "닭한마리",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "닭",
+        "국물",
+        "칼국수",
+        "동대문"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 500,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "동대문 닭한마리 골목 유명",
+      "searchKeywords": [
+        "닭한마리",
+        "동대문닭한마리"
+      ]
+    },
+    {
+      "id": "fried-chicken",
+      "name": "후라이드치킨",
+      "category": "한식",
+      "subCategory": "튀김",
+      "keywords": [
+        "치킨",
+        "바삭한",
+        "맥주",
+        "야식"
+      ],
+      "weather": [
+        "rainy",
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 850,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 97,
+      "trendNote": "치킨의 기본, 치맥 필수",
+      "searchKeywords": [
+        "후라이드치킨",
+        "후라이드",
+        "치킨"
+      ]
+    },
+    {
+      "id": "yangnyeom-chicken",
+      "name": "양념치킨",
+      "category": "한식",
+      "subCategory": "튀김",
+      "keywords": [
+        "치킨",
+        "달콤한",
+        "매콤한",
+        "야식"
+      ],
+      "weather": [
+        "rainy",
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 900,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 96,
+      "trendNote": "한국식 치킨의 대표",
+      "searchKeywords": [
+        "양념치킨",
+        "양념",
+        "치킨"
+      ]
+    },
+    {
+      "id": "ganjang-chicken",
+      "name": "간장치킨",
+      "category": "한식",
+      "subCategory": "튀김",
+      "keywords": [
+        "치킨",
+        "달콤한",
+        "짭짤한",
+        "간장"
+      ],
+      "weather": [
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 880,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "달짭한 맛으로 인기",
+      "searchKeywords": [
+        "간장치킨",
+        "간장",
+        "치킨"
+      ]
+    },
+    {
+      "id": "padak",
+      "name": "파닭",
+      "category": "한식",
+      "subCategory": "튀김",
+      "keywords": [
+        "치킨",
+        "파",
+        "바삭한"
+      ],
+      "weather": [
+        "rainy",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 900,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "파채와 치킨의 조합",
+      "searchKeywords": [
+        "파닭",
+        "파치킨",
+        "치킨"
+      ]
+    },
+    {
+      "id": "dakgangjeong",
+      "name": "닭강정",
+      "category": "한식",
+      "subCategory": "튀김",
+      "keywords": [
+        "달콤한",
+        "바삭한",
+        "닭",
+        "간식"
+      ],
+      "weather": [
+        "cloudy",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 650,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 84,
+      "trendNote": "속초 닭강정 유명",
+      "searchKeywords": [
+        "닭강정",
+        "속초닭강정"
+      ]
+    },
+    {
+      "id": "sundaeguk",
+      "name": "순대국",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "순대",
+        "국밥",
+        "해장",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": true,
+      "controversialReason": "내장류",
+      "popularityScore": 86,
+      "trendNote": "해장국으로 인기",
+      "searchKeywords": [
+        "순대국",
+        "순대국밥",
+        "병천순대"
+      ]
+    },
+    {
+      "id": "eomuk",
+      "name": "어묵",
+      "category": "분식",
+      "subCategory": "분식",
+      "keywords": [
+        "어묵",
+        "국물",
+        "간식",
+        "따뜻한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "lowfat"
+      ],
+      "estimatedCalories": 200,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "겨울 간식으로 인기",
+      "searchKeywords": [
+        "어묵",
+        "오뎅",
+        "어묵탕"
+      ]
+    },
+    {
+      "id": "hotdog",
+      "name": "핫도그",
+      "category": "분식",
+      "subCategory": "간식",
+      "keywords": [
+        "간식",
+        "튀김",
+        "소시지"
+      ],
+      "weather": [
+        "cloudy",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "명랑핫도그 등 인기",
+      "searchKeywords": [
+        "핫도그",
+        "명랑핫도그",
+        "감자핫도그"
+      ]
+    },
+    {
+      "id": "toast",
+      "name": "토스트",
+      "category": "분식",
+      "subCategory": "간식",
+      "keywords": [
+        "간단한",
+        "아침",
+        "길거리",
+        "계란"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "아침 간단히 먹기 좋은",
+      "searchKeywords": [
+        "토스트",
+        "길거리토스트",
+        "이삭토스트"
+      ]
+    },
+    {
+      "id": "hotteok",
+      "name": "호떡",
+      "category": "분식",
+      "subCategory": "간식",
+      "keywords": [
+        "달콤한",
+        "겨울",
+        "간식",
+        "길거리"
+      ],
+      "weather": [
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 300,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "겨울 대표 간식",
+      "searchKeywords": [
+        "호떡",
+        "씨앗호떡",
+        "꿀호떡"
+      ]
+    },
+    {
+      "id": "rabokki",
+      "name": "라볶이",
+      "category": "분식",
+      "subCategory": "분식",
+      "keywords": [
+        "라면",
+        "떡볶이",
+        "매운"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 86,
+      "trendNote": "라면 + 떡볶이 조합",
+      "searchKeywords": [
+        "라볶이",
+        "라면떡볶이"
+      ]
+    },
+    {
+      "id": "twigim",
+      "name": "튀김",
+      "category": "분식",
+      "subCategory": "분식",
+      "keywords": [
+        "바삭한",
+        "간식",
+        "떡볶이와함께"
+      ],
+      "weather": [
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "떡볶이랑 같이 먹는 조합",
+      "searchKeywords": [
+        "튀김",
+        "야채튀김",
+        "오징어튀김",
+        "김말이"
+      ]
+    },
+    {
+      "id": "mandu",
+      "name": "만두",
+      "category": "분식",
+      "subCategory": "분식",
+      "keywords": [
+        "간식",
+        "고기",
+        "찐만두",
+        "군만두"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 350,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "겨울 간식으로 인기",
+      "searchKeywords": [
+        "만두",
+        "군만두",
+        "찐만두",
+        "물만두"
+      ]
+    },
+    {
+      "id": "bibim-guksu",
+      "name": "비빔국수",
+      "category": "한식",
+      "subCategory": "면류",
+      "keywords": [
+        "매콤달콤",
+        "시원한",
+        "여름",
+        "간단한"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "lowfat"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 83,
+      "trendNote": "여름 별미로 인기",
+      "searchKeywords": [
+        "비빔국수",
+        "골동면"
+      ]
+    },
+    {
+      "id": "janchi-guksu",
+      "name": "잔치국수",
+      "category": "한식",
+      "subCategory": "면류",
+      "keywords": [
+        "국물",
+        "담백한",
+        "잔치",
+        "따뜻한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "lowfat"
+      ],
+      "estimatedCalories": 380,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "따뜻한 국물 면요리",
+      "searchKeywords": [
+        "잔치국수",
+        "국수"
+      ]
+    },
+    {
+      "id": "bokkeumbap",
+      "name": "볶음밥",
+      "category": "중식",
+      "subCategory": "밥류",
+      "keywords": [
+        "볶음밥",
+        "간단한",
+        "든든한"
+      ],
+      "weather": [
+        "cloudy",
+        "sunny"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "중국집 필수 메뉴",
+      "searchKeywords": [
+        "볶음밥",
+        "새우볶음밥",
+        "계란볶음밥"
+      ]
+    },
+    {
+      "id": "yangjanpi",
+      "name": "양장피",
+      "category": "중식",
+      "subCategory": "요리",
+      "keywords": [
+        "해물",
+        "야채",
+        "시원한",
+        "겨자"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "중국집 특별 메뉴",
+      "searchKeywords": [
+        "양장피",
+        "양장피잡채"
+      ]
+    },
+    {
+      "id": "ganjangjang",
+      "name": "간짜장",
+      "category": "중식",
+      "subCategory": "면류",
+      "keywords": [
+        "짜장",
+        "진한",
+        "고급"
+      ],
+      "weather": [
+        "cloudy",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "진한 짜장 좋아하는 분들에게",
+      "searchKeywords": [
+        "간짜장",
+        "짜장면"
+      ]
+    },
+    {
+      "id": "kkanpunggi",
+      "name": "깐풍기",
+      "category": "중식",
+      "subCategory": "튀김",
+      "keywords": [
+        "닭",
+        "매콤달콤",
+        "바삭한"
+      ],
+      "weather": [
+        "cloudy",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 83,
+      "trendNote": "중국집 인기 요리",
+      "searchKeywords": [
+        "깐풍기",
+        "깐풍"
+      ]
+    },
+    {
+      "id": "yuringi",
+      "name": "유린기",
+      "category": "중식",
+      "subCategory": "튀김",
+      "keywords": [
+        "닭",
+        "새콤달콤",
+        "바삭한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 580,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 81,
+      "trendNote": "깐풍기와 함께 인기",
+      "searchKeywords": [
+        "유린기",
+        "유린"
+      ]
+    },
+    {
+      "id": "kkansosaeu",
+      "name": "깐쇼새우",
+      "category": "중식",
+      "subCategory": "튀김",
+      "keywords": [
+        "새우",
+        "매콤달콤",
+        "바삭한"
+      ],
+      "weather": [
+        "cloudy",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "해물 좋아하는 분들에게",
+      "searchKeywords": [
+        "깐쇼새우",
+        "깐쇼"
+      ]
+    },
+    {
+      "id": "mapadubu",
+      "name": "마파두부",
+      "category": "중식",
+      "subCategory": "요리",
+      "keywords": [
+        "두부",
+        "매운",
+        "밥도둑"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 79,
+      "trendNote": "밥도둑 메뉴",
+      "searchKeywords": [
+        "마파두부",
+        "마파"
+      ]
+    },
+    {
+      "id": "gyudon",
+      "name": "규동",
+      "category": "일식",
+      "subCategory": "덮밥",
+      "keywords": [
+        "소고기",
+        "덮밥",
+        "간단한",
+        "달콤한"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "간단히 먹기 좋은 덮밥",
+      "searchKeywords": [
+        "규동",
+        "소고기덮밥",
+        "요시노야"
+      ]
+    },
+    {
+      "id": "katsudon",
+      "name": "가츠동",
+      "category": "일식",
+      "subCategory": "덮밥",
+      "keywords": [
+        "돈까스",
+        "덮밥",
+        "계란",
+        "든든한"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 750,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 84,
+      "trendNote": "든든한 덮밥",
+      "searchKeywords": [
+        "가츠동",
+        "돈카츠동",
+        "카츠동"
+      ]
+    },
+    {
+      "id": "tendon",
+      "name": "텐동",
+      "category": "일식",
+      "subCategory": "덮밥",
+      "keywords": [
+        "튀김",
+        "덮밥",
+        "바삭한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "튀김 덮밥",
+      "searchKeywords": [
+        "텐동",
+        "텐푸라동",
+        "튀김덮밥"
+      ]
+    },
+    {
+      "id": "oyakodon",
+      "name": "오야코동",
+      "category": "일식",
+      "subCategory": "덮밥",
+      "keywords": [
+        "닭",
+        "계란",
+        "덮밥",
+        "부드러운"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 76,
+      "trendNote": "부드러운 덮밥",
+      "searchKeywords": [
+        "오야코동",
+        "닭고기덮밥"
+      ]
+    },
+    {
+      "id": "soba",
+      "name": "소바",
+      "category": "일식",
+      "subCategory": "면류",
+      "keywords": [
+        "메밀",
+        "시원한",
+        "담백한"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "lowfat"
+      ],
+      "estimatedCalories": 380,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": true,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "여름에 시원하게",
+      "searchKeywords": [
+        "소바",
+        "메밀소바",
+        "자루소바"
+      ]
+    },
+    {
+      "id": "yakitori",
+      "name": "야키토리",
+      "category": "일식",
+      "subCategory": "구이",
+      "keywords": [
+        "닭꼬치",
+        "술안주",
+        "구이"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "일본식 술안주",
+      "searchKeywords": [
+        "야키토리",
+        "닭꼬치",
+        "꼬치"
+      ]
+    },
+    {
+      "id": "okonomiyaki",
+      "name": "오코노미야키",
+      "category": "일식",
+      "subCategory": "철판",
+      "keywords": [
+        "철판",
+        "오사카",
+        "밀가루"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 77,
+      "trendNote": "일본 철판요리",
+      "searchKeywords": [
+        "오코노미야키",
+        "오사카음식"
+      ]
+    },
+    {
+      "id": "takoyaki",
+      "name": "타코야끼",
+      "category": "일식",
+      "subCategory": "간식",
+      "keywords": [
+        "문어",
+        "간식",
+        "동글동글"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "일본 대표 간식",
+      "searchKeywords": [
+        "타코야끼",
+        "타코야키",
+        "문어빵"
+      ]
+    },
+    {
+      "id": "salmon-sashimi",
+      "name": "연어회",
+      "category": "일식",
+      "subCategory": "회/초밥",
+      "keywords": [
+        "연어",
+        "신선한",
+        "고소한"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "keto",
+        "healthy"
+      ],
+      "estimatedCalories": 300,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "날생선",
+      "popularityScore": 88,
+      "trendNote": "연어 좋아하는 분들 필수",
+      "searchKeywords": [
+        "연어회",
+        "연어",
+        "사시미"
+      ]
+    },
+    {
+      "id": "risotto",
+      "name": "리조또",
+      "category": "양식",
+      "subCategory": "밥류",
+      "keywords": [
+        "크림",
+        "치즈",
+        "이탈리안"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "이탈리안 레스토랑 인기메뉴",
+      "searchKeywords": [
+        "리조또",
+        "리소또",
+        "크림리조또"
+      ]
+    },
+    {
+      "id": "omelette",
+      "name": "오믈렛",
+      "category": "양식",
+      "subCategory": "브런치",
+      "keywords": [
+        "계란",
+        "브런치",
+        "부드러운"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [
+        "keto",
+        "lowfat"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "브런치 필수 메뉴",
+      "searchKeywords": [
+        "오믈렛",
+        "오므라이스",
+        "계란요리"
+      ]
+    },
+    {
+      "id": "gambas",
+      "name": "감바스",
+      "category": "양식",
+      "subCategory": "스페인",
+      "keywords": [
+        "새우",
+        "마늘",
+        "오일",
+        "와인"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "스페인 타파스 인기",
+      "searchKeywords": [
+        "감바스",
+        "감바스알아히요",
+        "새우요리"
+      ]
+    },
+    {
+      "id": "carbonara",
+      "name": "까르보나라",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "크림",
+        "베이컨",
+        "진한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "파스타 인기 1위",
+      "searchKeywords": [
+        "까르보나라",
+        "카르보나라",
+        "크림파스타"
+      ]
+    },
+    {
+      "id": "aglio-olio",
+      "name": "알리오올리오",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "마늘",
+        "올리브오일",
+        "담백한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "vegan"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": true,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 83,
+      "trendNote": "깔끔한 오일파스타",
+      "searchKeywords": [
+        "알리오올리오",
+        "아리오올리오",
+        "오일파스타"
+      ]
+    },
+    {
+      "id": "rose-pasta",
+      "name": "로제파스타",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "크림",
+        "토마토",
+        "분홍"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 650,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 90,
+      "trendNote": "MZ세대 인기 파스타",
+      "searchKeywords": [
+        "로제파스타",
+        "로제",
+        "핑크파스타"
+      ]
+    },
+    {
+      "id": "tomato-pasta",
+      "name": "토마토파스타",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "토마토",
+        "상큼한",
+        "가벼운"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "클래식 파스타",
+      "searchKeywords": [
+        "토마토파스타",
+        "아라비아따",
+        "마리나라"
+      ]
+    },
+    {
+      "id": "waffle",
+      "name": "와플",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "달콤한",
+        "브런치",
+        "아이스크림"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "카페 디저트 인기",
+      "searchKeywords": [
+        "와플",
+        "벨기에와플",
+        "크로플"
+      ]
+    },
+    {
+      "id": "pancake",
+      "name": "팬케이크",
+      "category": "카페",
+      "subCategory": "브런치",
+      "keywords": [
+        "달콤한",
+        "브런치",
+        "푹신한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "수플레 팬케이크 인기",
+      "searchKeywords": [
+        "팬케이크",
+        "핫케이크",
+        "수플레팬케이크"
+      ]
+    },
+    {
+      "id": "cake",
+      "name": "케이크",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "달콤한",
+        "기념일",
+        "디저트"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "카페 디저트 필수",
+      "searchKeywords": [
+        "케이크",
+        "케익",
+        "생크림케이크",
+        "치즈케이크"
+      ]
+    },
+    {
+      "id": "bingsu",
+      "name": "빙수",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "시원한",
+        "여름",
+        "팥",
+        "달콤한"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 92,
+      "trendNote": "여름 필수 디저트",
+      "searchKeywords": [
+        "빙수",
+        "팥빙수",
+        "망고빙수",
+        "설빙"
+      ]
+    },
+    {
+      "id": "donut",
+      "name": "도넛",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "달콤한",
+        "간식",
+        "튀김"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 300,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "노티드, 랜디스 도넛 인기",
+      "searchKeywords": [
+        "도넛",
+        "도너츠",
+        "노티드",
+        "크리스피크림"
+      ]
+    },
+    {
+      "id": "ssalguksu",
+      "name": "쌀국수",
+      "category": "아시안",
+      "subCategory": "베트남",
+      "keywords": [
+        "베트남",
+        "국물",
+        "가벼운",
+        "향신료"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "lowfat"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": true,
+      "controversialReason": "고수",
+      "popularityScore": 86,
+      "trendNote": "베트남 대표 음식",
+      "searchKeywords": [
+        "쌀국수",
+        "포",
+        "베트남쌀국수"
+      ]
+    },
+    {
+      "id": "pad-thai",
+      "name": "팟타이",
+      "category": "아시안",
+      "subCategory": "태국",
+      "keywords": [
+        "태국",
+        "볶음면",
+        "새콤달콤"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "태국 대표 볶음면",
+      "searchKeywords": [
+        "팟타이",
+        "팟타이면",
+        "태국볶음면"
+      ]
+    },
+    {
+      "id": "tom-yum-kung",
+      "name": "똠양꿍",
+      "category": "아시안",
+      "subCategory": "태국",
+      "keywords": [
+        "태국",
+        "새콤매콤",
+        "새우",
+        "국물"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "향신료",
+      "popularityScore": 78,
+      "trendNote": "태국 대표 수프",
+      "searchKeywords": [
+        "똠양꿍",
+        "톰얌꿍",
+        "태국수프"
+      ]
+    },
+    {
+      "id": "buncha",
+      "name": "분짜",
+      "category": "아시안",
+      "subCategory": "베트남",
+      "keywords": [
+        "베트남",
+        "쌀국수",
+        "숯불고기"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "하노이 대표 음식",
+      "searchKeywords": [
+        "분짜",
+        "분짜하노이",
+        "베트남음식"
+      ]
+    },
+    {
+      "id": "jjukkumi",
+      "name": "쭈꾸미",
+      "category": "한식",
+      "subCategory": "볶음",
+      "keywords": [
+        "매운",
+        "쫄깃한",
+        "삼겹살과함께"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "삼겹살과 함께 먹는 조합 인기",
+      "searchKeywords": [
+        "쭈꾸미",
+        "쭈삼",
+        "쭈꾸미삼겹살"
+      ]
+    },
+    {
+      "id": "dakbal",
+      "name": "닭발",
+      "category": "한식",
+      "subCategory": "안주",
+      "keywords": [
+        "매운",
+        "쫄깃한",
+        "야식",
+        "술안주"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 300,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "닭발",
+      "popularityScore": 78,
+      "trendNote": "매운맛 좋아하는 분들에게 인기",
+      "searchKeywords": [
+        "닭발",
+        "불닭발",
+        "무뼈닭발"
+      ]
+    },
+    {
+      "id": "golbaengi",
+      "name": "골뱅이무침",
+      "category": "한식",
+      "subCategory": "안주",
+      "keywords": [
+        "새콤달콤",
+        "쫄깃한",
+        "술안주",
+        "시원한"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 250,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "소주안주 인기메뉴",
+      "searchKeywords": [
+        "골뱅이무침",
+        "골뱅이",
+        "골뱅이소면"
+      ]
+    },
+    {
+      "id": "odolppyeo",
+      "name": "오돌뼈",
+      "category": "한식",
+      "subCategory": "안주",
+      "keywords": [
+        "오돌오돌",
+        "술안주",
+        "야식"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "포장마차 인기안주",
+      "searchKeywords": [
+        "오돌뼈",
+        "오돌뼈볶음"
+      ]
+    },
+    {
+      "id": "dubu-kimchi",
+      "name": "두부김치",
+      "category": "한식",
+      "subCategory": "안주",
+      "keywords": [
+        "두부",
+        "김치",
+        "술안주",
+        "삼겹살"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "삼겹살과 함께 인기",
+      "searchKeywords": [
+        "두부김치",
+        "두부"
+      ]
+    },
+    {
+      "id": "bindaetteok",
+      "name": "빈대떡",
+      "category": "한식",
+      "subCategory": "전",
+      "keywords": [
+        "녹두",
+        "전",
+        "막걸리안주"
+      ],
+      "weather": [
+        "rainy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "광장시장 빈대떡 유명",
+      "searchKeywords": [
+        "빈대떡",
+        "녹두전",
+        "광장시장"
+      ]
+    },
+    {
+      "id": "jeon-modeum",
+      "name": "모둠전",
+      "category": "한식",
+      "subCategory": "전",
+      "keywords": [
+        "전",
+        "명절",
+        "막걸리안주",
+        "다양한"
+      ],
+      "weather": [
+        "rainy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "normal",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "비오는날/명절 필수",
+      "searchKeywords": [
+        "모둠전",
+        "전",
+        "명절"
+      ]
+    },
+    {
+      "id": "hwangtae-gui",
+      "name": "황태구이",
+      "category": "한식",
+      "subCategory": "구이",
+      "keywords": [
+        "황태",
+        "건강",
+        "해장",
+        "담백한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "tired",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto",
+        "diet"
+      ],
+      "estimatedCalories": 300,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "해장/건강식으로 인기",
+      "searchKeywords": [
+        "황태구이",
+        "황태",
+        "북어"
+      ]
+    },
+    {
+      "id": "godeungeo-gui",
+      "name": "고등어구이",
+      "category": "한식",
+      "subCategory": "구이",
+      "keywords": [
+        "고등어",
+        "생선",
+        "건강",
+        "백반"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "건강한 백반집 메뉴",
+      "searchKeywords": [
+        "고등어구이",
+        "고등어",
+        "생선구이"
+      ]
+    },
+    {
+      "id": "saengseon-jjim",
+      "name": "생선찜",
+      "category": "한식",
+      "subCategory": "찜",
+      "keywords": [
+        "생선",
+        "매콤한",
+        "건강"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "keto"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "건강한 한정식 메뉴",
+      "searchKeywords": [
+        "생선찜",
+        "대구찜",
+        "아구찜"
+      ]
+    },
+    {
+      "id": "ttukbaegi-bulgogi",
+      "name": "뚝배기불고기",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "불고기",
+        "뚝배기",
+        "국물",
+        "달콤한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "뜨끈한 국물 불고기",
+      "searchKeywords": [
+        "뚝배기불고기",
+        "뚝불",
+        "불고기"
+      ]
+    },
+    {
+      "id": "kongbap",
+      "name": "콩밥/잡곡밥",
+      "category": "한식",
+      "subCategory": "밥류",
+      "keywords": [
+        "건강",
+        "담백한",
+        "식이섬유"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy",
+        "cold",
+        "hot"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "diet",
+        "vegan"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": true,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 70,
+      "trendNote": "건강식 트렌드",
+      "searchKeywords": [
+        "콩밥",
+        "잡곡밥",
+        "현미밥"
+      ]
+    },
+    {
+      "id": "sotbap",
+      "name": "솥밥",
+      "category": "한식",
+      "subCategory": "밥류",
+      "keywords": [
+        "솥밥",
+        "누룽지",
+        "전통"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "한정식 인기메뉴",
+      "searchKeywords": [
+        "솥밥",
+        "돌솥밥",
+        "전복솥밥"
+      ]
+    },
+    {
+      "id": "ssambap",
+      "name": "쌈밥",
+      "category": "한식",
+      "subCategory": "밥류",
+      "keywords": [
+        "쌈",
+        "야채",
+        "건강",
+        "고기"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "diet"
+      ],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "건강하게 먹는 밥",
+      "searchKeywords": [
+        "쌈밥",
+        "쌈밥집",
+        "보리밥"
+      ]
+    },
+    {
+      "id": "konnamul-bap",
+      "name": "콩나물밥",
+      "category": "한식",
+      "subCategory": "밥류",
+      "keywords": [
+        "콩나물",
+        "담백한",
+        "전주"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy",
+        "lowfat"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "전주 콩나물밥 유명",
+      "searchKeywords": [
+        "콩나물밥",
+        "전주콩나물밥"
+      ]
+    },
+    {
+      "id": "jeongol",
+      "name": "전골",
+      "category": "한식",
+      "subCategory": "전골",
+      "keywords": [
+        "전골",
+        "푸짐한",
+        "함께먹는"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "함께 나눠먹는 음식",
+      "searchKeywords": [
+        "전골",
+        "모둠전골",
+        "해물전골"
+      ]
+    },
+    {
+      "id": "hongeo",
+      "name": "홍어",
+      "category": "한식",
+      "subCategory": "회/초밥",
+      "keywords": [
+        "발효",
+        "삭힌",
+        "전라도"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 250,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "강한 냄새, 톡쏘는 맛",
+      "popularityScore": 60,
+      "trendNote": "홍어삼합으로 유명",
+      "searchKeywords": [
+        "홍어",
+        "홍어삼합",
+        "목포홍어"
+      ]
+    },
+    {
+      "id": "ganjang-gejang",
+      "name": "간장게장",
+      "category": "한식",
+      "subCategory": "회/초밥",
+      "keywords": [
+        "게",
+        "간장",
+        "밥도둑"
+      ],
+      "weather": [
+        "hot",
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 300,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "생게",
+      "popularityScore": 88,
+      "trendNote": "밥도둑 1위",
+      "searchKeywords": [
+        "간장게장",
+        "게장",
+        "양념게장"
+      ]
+    },
+    {
+      "id": "dakdoritang",
+      "name": "닭도리탕",
+      "category": "한식",
+      "subCategory": "찌개/탕",
+      "keywords": [
+        "닭",
+        "매운",
+        "감자",
+        "국물"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "tired"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "닭볶음탕과 같은 요리",
+      "searchKeywords": [
+        "닭도리탕",
+        "닭볶음탕"
+      ]
+    },
+    {
+      "id": "dwaeji-galbi",
+      "name": "돼지갈비",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "돼지",
+        "구이",
+        "달콤한",
+        "가성비"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 700,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "가성비 고기집 인기",
+      "searchKeywords": [
+        "돼지갈비",
+        "돼지양념갈비",
+        "등갈비"
+      ]
+    },
+    {
+      "id": "deungggalbi",
+      "name": "등갈비",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "돼지",
+        "바베큐",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 750,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "미국식 바베큐 스타일 인기",
+      "searchKeywords": [
+        "등갈비",
+        "바베큐등갈비",
+        "립"
+      ]
+    },
+    {
+      "id": "galmaegi",
+      "name": "갈매기살",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "돼지",
+        "특수부위",
+        "쫄깃한"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 650,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "특수부위 인기",
+      "searchKeywords": [
+        "갈매기살",
+        "특수부위"
+      ]
+    },
+    {
+      "id": "hangjeongsal",
+      "name": "항정살",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "돼지",
+        "특수부위",
+        "부드러운"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 700,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 83,
+      "trendNote": "부드러운 특수부위",
+      "searchKeywords": [
+        "항정살",
+        "특수부위"
+      ]
+    },
+    {
+      "id": "chadolbaegi",
+      "name": "차돌박이",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "소고기",
+        "얇은",
+        "구이"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 650,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 87,
+      "trendNote": "소고기 인기 부위",
+      "searchKeywords": [
+        "차돌박이",
+        "차돌",
+        "소고기"
+      ]
+    },
+    {
+      "id": "kkotsal",
+      "name": "꽃살",
+      "category": "한식",
+      "subCategory": "고기",
+      "keywords": [
+        "돼지",
+        "꽃모양",
+        "부드러운"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 680,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "삼겹살 대안으로 인기",
+      "searchKeywords": [
+        "꽃살",
+        "돼지꽃살"
+      ]
+    },
+    {
+      "id": "wangtang",
+      "name": "왕탕",
+      "category": "중식",
+      "subCategory": "탕류",
+      "keywords": [
+        "완탕",
+        "국물",
+        "담백한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "lowfat"
+      ],
+      "estimatedCalories": 350,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 72,
+      "trendNote": "중국집 국물요리",
+      "searchKeywords": [
+        "완탕",
+        "왕탕",
+        "완탕면"
+      ]
+    },
+    {
+      "id": "ulmeyon",
+      "name": "울면",
+      "category": "중식",
+      "subCategory": "면류",
+      "keywords": [
+        "걸쭉한",
+        "해물",
+        "국물"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "걸쭉한 국물 면요리",
+      "searchKeywords": [
+        "울면",
+        "중국집"
+      ]
+    },
+    {
+      "id": "gopbae",
+      "name": "고추잡채",
+      "category": "중식",
+      "subCategory": "볶음",
+      "keywords": [
+        "고추",
+        "돼지고기",
+        "매콤한"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "normal",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 450,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "중국집 볶음요리",
+      "searchKeywords": [
+        "고추잡채",
+        "잡채"
+      ]
+    },
+    {
+      "id": "palbochae",
+      "name": "팔보채",
+      "category": "중식",
+      "subCategory": "볶음",
+      "keywords": [
+        "해물",
+        "야채",
+        "푸짐한"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 400,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "중국집 해물요리",
+      "searchKeywords": [
+        "팔보채",
+        "해물볶음"
+      ]
+    },
+    {
+      "id": "yusanseul",
+      "name": "유산슬",
+      "category": "중식",
+      "subCategory": "볶음",
+      "keywords": [
+        "해물",
+        "야채",
+        "담백한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 380,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "low",
+      "controversial": false,
+      "popularityScore": 74,
+      "trendNote": "중국집 담백한 요리",
+      "searchKeywords": [
+        "유산슬",
+        "삼선볶음"
+      ]
+    },
+    {
+      "id": "lajogi",
+      "name": "라조기",
+      "category": "중식",
+      "subCategory": "튀김",
+      "keywords": [
+        "닭",
+        "매콤달콤",
+        "바삭한"
+      ],
+      "weather": [
+        "cloudy",
+        "cold"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "매운 중국식 닭요리",
+      "searchKeywords": [
+        "라조기",
+        "라조육"
+      ]
+    },
+    {
+      "id": "ggwobarow",
+      "name": "꿔바로우",
+      "category": "중식",
+      "subCategory": "튀김",
+      "keywords": [
+        "돼지고기",
+        "새콤달콤",
+        "바삭한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 650,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "탕수육 대안으로 인기",
+      "searchKeywords": [
+        "꿔바로우",
+        "꾸바로우",
+        "탕수육"
+      ]
+    },
+    {
+      "id": "dongpayuk",
+      "name": "동파육",
+      "category": "중식",
+      "subCategory": "찜",
+      "keywords": [
+        "삼겹살",
+        "부드러운",
+        "윤기"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "중국 전통 요리",
+      "searchKeywords": [
+        "동파육",
+        "동포육"
+      ]
+    },
+    {
+      "id": "baekjjamppong",
+      "name": "백짬뽕",
+      "category": "중식",
+      "subCategory": "면류",
+      "keywords": [
+        "해물",
+        "국물",
+        "담백한",
+        "하얀"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "매운거 못먹는 분들에게 인기",
+      "searchKeywords": [
+        "백짬뽕",
+        "흰짬뽕"
+      ]
+    },
+    {
+      "id": "unagi-don",
+      "name": "장어덮밥",
+      "category": "일식",
+      "subCategory": "덮밥",
+      "keywords": [
+        "장어",
+        "달콤한",
+        "보양"
+      ],
+      "weather": [
+        "hot",
+        "cold"
+      ],
+      "mood": [
+        "tired",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "일본식 장어요리",
+      "searchKeywords": [
+        "장어덮밥",
+        "우나기동",
+        "우나동"
+      ]
+    },
+    {
+      "id": "nagasaki-jjamppong",
+      "name": "나가사키짬뽕",
+      "category": "일식",
+      "subCategory": "면류",
+      "keywords": [
+        "해물",
+        "국물",
+        "담백한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "일본식 짬뽕",
+      "searchKeywords": [
+        "나가사키짬뽕",
+        "짬뽕"
+      ]
+    },
+    {
+      "id": "tonkotsu-ramen",
+      "name": "돈코츠라멘",
+      "category": "일식",
+      "subCategory": "면류",
+      "keywords": [
+        "돼지뼈",
+        "진한",
+        "국물"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 87,
+      "trendNote": "일본 라멘 인기 1위",
+      "searchKeywords": [
+        "돈코츠라멘",
+        "돈코츠",
+        "라멘"
+      ]
+    },
+    {
+      "id": "miso-ramen",
+      "name": "미소라멘",
+      "category": "일식",
+      "subCategory": "면류",
+      "keywords": [
+        "된장",
+        "국물",
+        "담백한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal",
+        "tired"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 520,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "일본 된장 라멘",
+      "searchKeywords": [
+        "미소라멘",
+        "된장라멘",
+        "라멘"
+      ]
+    },
+    {
+      "id": "shoyu-ramen",
+      "name": "쇼유라멘",
+      "category": "일식",
+      "subCategory": "면류",
+      "keywords": [
+        "간장",
+        "국물",
+        "깔끔한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 480,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 76,
+      "trendNote": "일본 간장 라멘",
+      "searchKeywords": [
+        "쇼유라멘",
+        "간장라멘",
+        "라멘"
+      ]
+    },
+    {
+      "id": "bongole",
+      "name": "봉골레",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "조개",
+        "오일",
+        "담백한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "healthy"
+      ],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 82,
+      "trendNote": "조개 파스타",
+      "searchKeywords": [
+        "봉골레",
+        "봉골레파스타",
+        "조개파스타"
+      ]
+    },
+    {
+      "id": "cream-pasta",
+      "name": "크림파스타",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "크림",
+        "진한",
+        "부드러운"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 680,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "크림 좋아하는 분들에게 인기",
+      "searchKeywords": [
+        "크림파스타",
+        "파스타"
+      ]
+    },
+    {
+      "id": "gnocchi",
+      "name": "뇨끼",
+      "category": "양식",
+      "subCategory": "면류",
+      "keywords": [
+        "감자",
+        "쫄깃한",
+        "이탈리안"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 72,
+      "trendNote": "감자로 만든 이탈리안 파스타",
+      "searchKeywords": [
+        "뇨끼",
+        "뇨키",
+        "감자파스타"
+      ]
+    },
+    {
+      "id": "lasagna",
+      "name": "라자냐",
+      "category": "양식",
+      "subCategory": "오븐",
+      "keywords": [
+        "치즈",
+        "오븐",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "이탈리안 오븐요리",
+      "searchKeywords": [
+        "라자냐",
+        "라자니아"
+      ]
+    },
+    {
+      "id": "gratin",
+      "name": "그라탕",
+      "category": "양식",
+      "subCategory": "오븐",
+      "keywords": [
+        "치즈",
+        "오븐",
+        "크림"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "치즈 오븐요리",
+      "searchKeywords": [
+        "그라탕",
+        "그라탕"
+      ]
+    },
+    {
+      "id": "fish-and-chips",
+      "name": "피쉬앤칩스",
+      "category": "양식",
+      "subCategory": "튀김",
+      "keywords": [
+        "생선",
+        "감자",
+        "영국",
+        "바삭한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 700,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "영국 대표 음식",
+      "searchKeywords": [
+        "피쉬앤칩스",
+        "피시앤칩스"
+      ]
+    },
+    {
+      "id": "nachos",
+      "name": "나쵸",
+      "category": "양식",
+      "subCategory": "멕시칸",
+      "keywords": [
+        "치즈",
+        "살사",
+        "간식"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": true,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "멕시칸 간식",
+      "searchKeywords": [
+        "나쵸",
+        "나초",
+        "치즈나쵸"
+      ]
+    },
+    {
+      "id": "quesadilla",
+      "name": "케사디아",
+      "category": "양식",
+      "subCategory": "멕시칸",
+      "keywords": [
+        "치즈",
+        "또띠아",
+        "멕시코"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 450,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 70,
+      "trendNote": "멕시칸 치즈요리",
+      "searchKeywords": [
+        "케사디아",
+        "퀘사디아"
+      ]
+    },
+    {
+      "id": "macaron",
+      "name": "마카롱",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "달콤한",
+        "예쁜",
+        "선물"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 100,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "인스타그래머블 디저트",
+      "searchKeywords": [
+        "마카롱",
+        "뚱카롱"
+      ]
+    },
+    {
+      "id": "tart",
+      "name": "타르트",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "과일",
+        "달콤한",
+        "바삭한"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 350,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "카페 디저트 인기",
+      "searchKeywords": [
+        "타르트",
+        "에그타르트",
+        "과일타르트"
+      ]
+    },
+    {
+      "id": "churro",
+      "name": "츄러스",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "달콤한",
+        "바삭한",
+        "스페인"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 300,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "스페인 디저트",
+      "searchKeywords": [
+        "츄러스",
+        "추로스"
+      ]
+    },
+    {
+      "id": "tiramisu",
+      "name": "티라미수",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "커피",
+        "달콤한",
+        "이탈리안"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 85,
+      "trendNote": "이탈리안 디저트",
+      "searchKeywords": [
+        "티라미수",
+        "티라미슈"
+      ]
+    },
+    {
+      "id": "croffle",
+      "name": "크로플",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "크루아상",
+        "와플",
+        "버터"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "크루아상+와플 조합",
+      "searchKeywords": [
+        "크로플",
+        "크로와플"
+      ]
+    },
+    {
+      "id": "scone",
+      "name": "스콘",
+      "category": "카페",
+      "subCategory": "베이커리",
+      "keywords": [
+        "빵",
+        "버터",
+        "클래식"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "normal",
+        "happy"
+      ],
+      "timeSlot": [
+        "breakfast",
+        "lunch"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 350,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 80,
+      "trendNote": "영국식 티타임",
+      "searchKeywords": [
+        "스콘",
+        "크림스콘"
+      ]
+    },
+    {
+      "id": "nasi-goreng",
+      "name": "나시고렝",
+      "category": "아시안",
+      "subCategory": "인도네시아",
+      "keywords": [
+        "볶음밥",
+        "매콤한",
+        "동남아"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 72,
+      "trendNote": "인도네시아 볶음밥",
+      "searchKeywords": [
+        "나시고렝",
+        "인도네시아음식"
+      ]
+    },
+    {
+      "id": "mi-goreng",
+      "name": "미고렝",
+      "category": "아시안",
+      "subCategory": "인도네시아",
+      "keywords": [
+        "볶음면",
+        "매콤한",
+        "동남아"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 500,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 75,
+      "trendNote": "인도네시아 볶음면, 편의점 인기",
+      "searchKeywords": [
+        "미고렝",
+        "인도미",
+        "인도네시아라면"
+      ]
+    },
+    {
+      "id": "khaopat",
+      "name": "카오팟",
+      "category": "아시안",
+      "subCategory": "태국",
+      "keywords": [
+        "볶음밥",
+        "태국",
+        "새우"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 520,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 70,
+      "trendNote": "태국 볶음밥",
+      "searchKeywords": [
+        "카오팟",
+        "태국볶음밥"
+      ]
+    },
+    {
+      "id": "cheesecake",
+      "name": "치즈케이크",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "달콤한",
+        "치즈",
+        "부드러운"
+      ],
+      "weather": [
+        "sunny",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "special"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 400,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 88,
+      "trendNote": "바스크 치즈케이크 인기",
+      "searchKeywords": [
+        "치즈케이크",
+        "바스크치즈케이크"
+      ]
+    },
+    {
+      "id": "ice-cream",
+      "name": "아이스크림",
+      "category": "카페",
+      "subCategory": "디저트",
+      "keywords": [
+        "시원한",
+        "달콤한",
+        "여름"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 250,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "low",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 90,
+      "trendNote": "여름 필수 디저트",
+      "searchKeywords": [
+        "아이스크림",
+        "베라",
+        "배스킨라빈스"
+      ]
+    },
+    {
+      "id": "indian-curry",
+      "name": "인도커리",
+      "category": "아시안",
+      "subCategory": "인도",
+      "keywords": [
+        "향신료",
+        "난",
+        "매운"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "stressed",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 600,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "medium",
+      "carbs": "high",
+      "controversial": true,
+      "controversialReason": "향신료",
+      "popularityScore": 75,
+      "trendNote": "본격 인도 커리",
+      "searchKeywords": [
+        "인도커리",
+        "버터치킨커리",
+        "난"
+      ]
+    },
+    {
+      "id": "spring-roll",
+      "name": "스프링롤",
+      "category": "아시안",
+      "subCategory": "베트남",
+      "keywords": [
+        "신선한",
+        "야채",
+        "가벼운"
+      ],
+      "weather": [
+        "hot",
+        "sunny"
+      ],
+      "mood": [
+        "happy",
+        "normal"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [
+        "diet",
+        "healthy",
+        "lowfat"
+      ],
+      "estimatedCalories": 200,
+      "isHighSodium": false,
+      "isAlcoholRelated": false,
+      "isVegan": true,
+      "protein": "low",
+      "carbs": "medium",
+      "controversial": false,
+      "popularityScore": 72,
+      "trendNote": "베트남 대표 간식",
+      "searchKeywords": [
+        "스프링롤",
+        "월남쌈",
+        "라이스페이퍼"
+      ]
+    },
+    {
+      "id": "lamb",
+      "name": "양고기",
+      "category": "양식",
+      "subCategory": "고기",
+      "keywords": [
+        "양",
+        "구이",
+        "이국적"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "special",
+        "happy"
+      ],
+      "timeSlot": [
+        "dinner"
+      ],
+      "dietCompatible": [
+        "keto",
+        "bulk"
+      ],
+      "estimatedCalories": 700,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "양고기 냄새",
+      "popularityScore": 70,
+      "trendNote": "양꼬치 인기 상승",
+      "searchKeywords": [
+        "양고기",
+        "양꼬치",
+        "램"
+      ]
+    },
+    {
+      "id": "yangkkochi",
+      "name": "양꼬치",
+      "category": "중식",
+      "subCategory": "구이",
+      "keywords": [
+        "양고기",
+        "꼬치",
+        "쯔란"
+      ],
+      "weather": [
+        "cold",
+        "cloudy"
+      ],
+      "mood": [
+        "happy",
+        "stressed"
+      ],
+      "timeSlot": [
+        "dinner",
+        "latenight"
+      ],
+      "dietCompatible": [
+        "keto"
+      ],
+      "estimatedCalories": 500,
+      "isHighSodium": false,
+      "isAlcoholRelated": true,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "low",
+      "controversial": true,
+      "controversialReason": "양고기 냄새",
+      "popularityScore": 85,
+      "trendNote": "중국식 양꼬치 인기",
+      "searchKeywords": [
+        "양꼬치",
+        "꼬치",
+        "양고기"
+      ]
+    },
+    {
+      "id": "yukgye-deopbap",
+      "name": "육계장밥",
+      "category": "한식",
+      "subCategory": "밥류",
+      "keywords": [
+        "매운",
+        "소고기",
+        "든든한"
+      ],
+      "weather": [
+        "cold",
+        "rainy"
+      ],
+      "mood": [
+        "tired",
+        "stressed"
+      ],
+      "timeSlot": [
+        "lunch",
+        "dinner"
+      ],
+      "dietCompatible": [],
+      "estimatedCalories": 550,
+      "isHighSodium": true,
+      "isAlcoholRelated": false,
+      "isVegan": false,
+      "protein": "high",
+      "carbs": "high",
+      "controversial": false,
+      "popularityScore": 78,
+      "trendNote": "육개장에 밥말아먹기",
+      "searchKeywords": [
+        "육계장밥",
+        "육개장밥"
+      ]
     }
   ]
 }

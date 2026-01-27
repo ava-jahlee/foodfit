@@ -1,0 +1,38 @@
+name: 🔄 주간 트렌드 업데이트
+
+on:
+  # 매주 월요일 새벽 4시 (한국시간 기준, UTC 19:00 일요일)
+  schedule:
+    - cron: '0 19 * * 0'
+  
+  # 수동 실행도 가능
+  workflow_dispatch:
+
+jobs:
+  update-trends:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 코드 체크아웃
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 📦 Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 🔍 트렌드 데이터 수집
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: node scripts/updateTrends.js
+      
+      - name: 📝 변경사항 커밋 & 푸시
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/data/menus.json
+          git diff --staged --quiet || git commit -m "🔄 주간 트렌드 데이터 자동 업데이트 $(date +'%Y-%m-%d')"
+          git push

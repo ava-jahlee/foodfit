@@ -13,6 +13,7 @@ interface Place {
   phone: string
   category: string
   link: string
+  distanceText?: string  // 거리 (예: "500m", "1.2km")
 }
 
 export default function ResultPage() {
@@ -79,8 +80,8 @@ export default function ResultPage() {
 
   const getTimeBasedKeyword = () => {
     const hour = new Date().getHours()
-    if (hour >= 21 || hour < 5) return '24시'
-    if (hour >= 5 && hour < 9) return '24시 아침'
+    // 심야/새벽에만 24시 키워드, 나머지는 맛집
+    if (hour >= 23 || hour < 6) return '24시'
     return '맛집'
   }
 
@@ -94,38 +95,47 @@ export default function ResultPage() {
       setSelectedMenuId(menuId)
       
       const logData = {
-        weather_condition: weatherCondition,
-        temperature: weatherData?.temp || 15,
-        mood: userInput.mood.preset || 'normal',
-        mood_custom: userInput.mood.custom,
-        time_slot: userInput.timeSlot,
-        diet_mode: userInput.diet.mode,
+      weather_condition: weatherCondition,
+      temperature: weatherData?.temp || 15,
+      mood: userInput.mood.preset || 'normal',
+      mood_custom: userInput.mood.custom,
+      time_slot: userInput.timeSlot,
+      diet_mode: userInput.diet.mode,
         selected_menu: menuName,
         selected_menu_category: menuCategory,
-        location: userInput.location.name,
-        was_recommended: true,
-      }
-
-      try {
-        await fetch('/api/log-selection', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(logData),
-        })
-      } catch (err) {
-        console.error('선택 로그 저장 실패:', err)
-      }
+      location: userInput.location.name,
+      was_recommended: true,
     }
+
+    try {
+      await fetch('/api/log-selection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(logData),
+      })
+    } catch (err) {
+      console.error('선택 로그 저장 실패:', err)
+    }
+  }
 
     setPlacesLoading(prev => ({ ...prev, [menuId]: true }))
     setExpandedMenu(menuId)
 
-    const locationShort = userInput.location.name.replace('역', '')
+    // 위치 이름 정제 (역 제거, GPS 위치는 전체 사용)
+    const isGPS = userInput.location.region === 'GPS'
+    const locationName = isGPS 
+      ? userInput.location.name  // GPS: "강남구 역삼동" 그대로 사용
+      : userInput.location.name.replace('역', '')  // 역: "선릉역" → "선릉"
+    
     const timeKeyword = getTimeBasedKeyword()
-    const searchQuery = `${locationShort} ${menuName} ${timeKeyword}`
+    const searchQuery = `${locationName} ${menuName} ${timeKeyword}`
     
     try {
-      const placesRes = await fetch(`/api/places?query=${encodeURIComponent(searchQuery)}`)
+      // 좌표도 함께 전송해서 거리순 정렬
+      const { lat, lng } = userInput.location
+      const placesRes = await fetch(
+        `/api/places?query=${encodeURIComponent(searchQuery)}&lat=${lat}&lng=${lng}`
+      )
       const placesJson = await placesRes.json()
       
       setPlaces(prev => ({
@@ -198,7 +208,7 @@ export default function ResultPage() {
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl font-bold text-orange-500">{index + 1}</span>
-                    <div>
+                  <div>
                       <h3 className="text-lg font-bold text-gray-800">{result.menu.name}</h3>
                       <p className="text-xs text-gray-400">
                         {result.menu.category} · {result.menu.subCategory}
@@ -267,38 +277,45 @@ export default function ResultPage() {
                 </button>
               </div>
 
-              {/* 펼쳐지는 맛집 리스트 */}
+                {/* 펼쳐지는 맛집 리스트 */}
               {expandedMenu === result.menu.id && !placesLoading[result.menu.id] && (
                 <div className="border-t border-gray-100 bg-gray-50/50 p-4 animate-fade-in">
                   {places[result.menu.id]?.length > 0 ? (
-                    <div className="space-y-2">
-                      {places[result.menu.id].map((place, i) => (
-                        <a
-                          key={i}
-                          href={place.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                      <div className="space-y-2">
+                        {places[result.menu.id].map((place, i) => (
+                          <a
+                            key={i}
+                            href={place.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           className="block p-3 bg-white rounded-xl hover:shadow-md transition-all border border-gray-100"
-                        >
+                          >
                           <div className="flex items-start justify-between gap-3">
-                            <div className="flex-1 min-w-0">
-                              <p className="font-medium text-gray-800 text-sm">{place.place_name}</p>
-                              <p className="text-xs text-gray-400 mt-1">{place.address_name}</p>
-                            </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2">
+                                  <p className="font-medium text-gray-800 text-sm">{place.place_name}</p>
+                                  {place.distanceText && (
+                                    <span className="text-xs text-blue-500 font-medium">
+                                      📍 {place.distanceText}
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-xs text-gray-400 mt-1">{place.address_name}</p>
+                              </div>
                             <span className="text-xs text-orange-500 font-medium flex-shrink-0">
                               지도 →
                             </span>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  ) : (
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
                     <p className="text-sm text-gray-400 text-center py-4">
                       주변에 검색 결과가 없어요
-                    </p>
-                  )}
-                </div>
-              )}
+                      </p>
+                    )}
+                  </div>
+                )}
             </div>
           ))}
         </div>

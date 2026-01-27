@@ -57,12 +57,12 @@ export default function Home() {
       <div className="max-w-lg mx-auto px-4 py-6 space-y-4">
         {/* 위치 + 날씨 */}
         <div className="opacity-0 animate-fade-in stagger-1">
-          <LocationSelector />
+        <LocationSelector />
         </div>
 
         <div className="opacity-0 animate-fade-in stagger-2">
-          <WeatherCard />
-        </div>
+        <WeatherCard />
+            </div>
 
         {/* 음식 카테고리 선택 */}
         <div className="opacity-0 animate-fade-in stagger-3">
@@ -71,17 +71,17 @@ export default function Home() {
 
         {/* 기분 선택 */}
         <div className="opacity-0 animate-fade-in stagger-4">
-          <MoodSelector />
+        <MoodSelector />
         </div>
 
         {/* 식단 관리 모드 */}
         <div className="opacity-0 animate-fade-in stagger-5">
-          <DietSelector />
+        <DietSelector />
         </div>
 
         {/* 최근 먹은 메뉴 */}
         <div className="opacity-0 animate-fade-in stagger-6">
-          <RecentMealInput />
+        <RecentMealInput />
         </div>
 
         {/* 푸터 */}

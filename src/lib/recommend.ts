@@ -191,10 +191,10 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
       }
     } else {
       // 일반 모드: 블로그/커뮤니티 분석 결과 반영
-      const popularityBonus = menu.popularityScore 
-        ? Math.floor((menu.popularityScore / 100) * 30) 
-        : 15 // 기본값
-      score += popularityBonus
+    const popularityBonus = menu.popularityScore 
+      ? Math.floor((menu.popularityScore / 100) * 30) 
+      : 15 // 기본값
+    score += popularityBonus
     }
     
     // 날씨 점수 (0-25점) - 계절 반대 음식은 강하게 페널티!

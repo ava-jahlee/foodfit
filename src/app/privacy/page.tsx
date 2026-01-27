@@ -68,10 +68,40 @@ export default function PrivacyPage() {
             </div>
           </section>
 
-          {/* 3. 수집하지 않는 정보 */}
+          {/* 3. 위치 정보 안내 */}
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <span className="text-orange-500">3.</span> 수집하지 않는 정보
+              <span className="text-orange-500">3.</span> 위치 정보 안내
+            </h2>
+            <div className="bg-blue-50 rounded-xl p-4">
+              <p className="text-sm text-gray-600 mb-3">
+                &quot;현재 위치 사용하기&quot; 기능 사용 시:
+              </p>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">📍</span>
+                  브라우저가 위치 권한을 요청합니다
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">🔒</span>
+                  위치 정보는 <strong>서버에 저장되지 않습니다</strong>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">🍽️</span>
+                  근처 맛집 검색 목적으로만 사용됩니다
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">💾</span>
+                  최근 선택 위치는 브라우저 로컬에만 저장됩니다
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          {/* 4. 수집하지 않는 정보 */}
+          <section>
+            <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <span className="text-orange-500">4.</span> 수집하지 않는 정보
             </h2>
             <div className="bg-red-50 rounded-xl p-4">
               <ul className="space-y-2 text-gray-600">
@@ -81,7 +111,7 @@ export default function PrivacyPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-red-500">✗</span>
-                  정밀 GPS 위치 정보
+                  정밀 GPS 좌표 (서버 전송 안 함)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-red-500">✗</span>
@@ -95,10 +125,10 @@ export default function PrivacyPage() {
             </div>
           </section>
 
-          {/* 4. 수집 목적 */}
+          {/* 5. 수집 목적 */}
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <span className="text-orange-500">4.</span> 수집 목적
+              <span className="text-orange-500">5.</span> 수집 목적
             </h2>
             <p className="text-gray-600 leading-relaxed">
               수집된 익명 데이터는 다음 목적으로만 활용됩니다:
@@ -119,20 +149,20 @@ export default function PrivacyPage() {
             </ul>
           </section>
 
-          {/* 5. 제3자 제공 */}
+          {/* 6. 제3자 제공 */}
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <span className="text-orange-500">5.</span> 제3자 제공
+              <span className="text-orange-500">6.</span> 제3자 제공
             </h2>
             <p className="text-gray-600 leading-relaxed">
               수집된 데이터는 <strong>제3자에게 제공되지 않습니다.</strong>
             </p>
           </section>
 
-          {/* 6. 데이터 보관 */}
+          {/* 7. 데이터 보관 */}
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <span className="text-orange-500">6.</span> 데이터 보관
+              <span className="text-orange-500">7.</span> 데이터 보관
             </h2>
             <p className="text-gray-600 leading-relaxed">
               익명 통계 데이터는 서비스 운영 기간 동안 보관되며, 
@@ -140,10 +170,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 7. 문의 */}
+          {/* 8. 문의 */}
           <section>
             <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <span className="text-orange-500">7.</span> 문의
+              <span className="text-orange-500">8.</span> 문의
             </h2>
             <p className="text-gray-600 leading-relaxed">
               개인정보 관련 문의사항은 아래로 연락해 주세요:

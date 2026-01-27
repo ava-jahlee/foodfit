@@ -9,6 +9,7 @@ interface Location {
   name: string
   lat: number
   lng: number
+  region?: string  // 지역 구분 (서울, 부산, GPS 등)
 }
 
 interface RecentMeal {
@@ -73,6 +74,7 @@ const initialState = {
     name: '선릉역',
     lat: 37.5045,
     lng: 127.0494,
+    region: '서울',
   },
   timeSlot: 'lunch' as TimeSlot,
   mood: {

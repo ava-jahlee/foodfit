@@ -30,8 +30,7 @@ export default function ResultPage() {
     async function fetchData() {
       setLoading(true)
 
-      // 날씨 데이터 가져오기 (5초 타임아웃)
-      let weatherInfo = { code: 0, temp: 15 } // 기본값
+      let weatherInfo = { code: 0, temp: 15 }
       try {
         const controller = new AbortController()
         const timeoutId = setTimeout(() => controller.abort(), 5000)
@@ -52,11 +51,9 @@ export default function ResultPage() {
       }
       setWeatherData(weatherInfo)
       
-      // 추천 생성
       const condition = weatherCodeToCondition(weatherInfo.code, weatherInfo.temp)
       setWeatherCondition(condition)
-      // 제외 메뉴: 원본 텍스트 그대로 전달 (부분 매칭 지원)
-      // "찌개" 입력 시 → 김치찌개, 된장찌개 등 모두 제외됨
+      
       const excludeIds = userInput.recentMeals
         .filter(m => m.exclude)
         .map(m => m.name)
@@ -73,37 +70,24 @@ export default function ResultPage() {
 
       setRecommendations(results)
       setLoading(false)
-      // 맛집 검색은 사용자가 버튼 클릭 시에만!
     }
 
     fetchData()
   }, [userInput])
 
-  // 시간대별 검색 키워드 생성
   const getTimeBasedKeyword = () => {
     const hour = new Date().getHours()
-    
-    // 야식 시간 (21시 ~ 05시): 심야영업/24시 키워드 추가
-    if (hour >= 21 || hour < 5) {
-      return '24시'
-    }
-    // 아침 시간 (05시 ~ 09시): 아침식사 가능한 곳
-    if (hour >= 5 && hour < 9) {
-      return '24시 아침'
-    }
-    // 점심/저녁은 대부분 영업하므로 기본
+    if (hour >= 21 || hour < 5) return '24시'
+    if (hour >= 5 && hour < 9) return '24시 아침'
     return '맛집'
   }
 
-  // 사용자가 "이거 먹으러 갈래!" 클릭 시 호출 (데이터 수집 + 맛집 검색)
   const handleFindNearby = async (menuId: string, menuName: string, menuCategory: string) => {
-    // 이미 검색했으면 토글만
     if (places[menuId]) {
       setExpandedMenu(expandedMenu === menuId ? null : menuId)
       return
     }
 
-    // 데이터 수집 (처음 클릭할 때만)
     if (!selectedMenuId || selectedMenuId !== menuId) {
       setSelectedMenuId(menuId)
       
@@ -126,20 +110,18 @@ export default function ResultPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(logData),
         })
-        console.log('✅ 선택 로그 저장됨:', menuName)
       } catch (err) {
         console.error('선택 로그 저장 실패:', err)
       }
     }
 
-    // 로딩 시작
     setPlacesLoading(prev => ({ ...prev, [menuId]: true }))
     setExpandedMenu(menuId)
 
-    // 검색어: 시간대에 따라 영업 중일 가능성 높은 키워드 추가
-    const locationShort = userInput.location.name.replace('역', '') // "선릉역" → "선릉"
+    const locationShort = userInput.location.name.replace('역', '')
     const timeKeyword = getTimeBasedKeyword()
     const searchQuery = `${locationShort} ${menuName} ${timeKeyword}`
+    
     try {
       const placesRes = await fetch(`/api/places?query=${encodeURIComponent(searchQuery)}`)
       const placesJson = await placesRes.json()
@@ -163,87 +145,78 @@ export default function ResultPage() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="text-6xl mb-4 animate-bounce">🍽️</div>
-          <p className="text-lg text-gray-600">맛있는 메뉴를 찾고 있어요...</p>
+          <div className="text-6xl mb-4 animate-float">🍽️</div>
+          <p className="text-gray-500">맛있는 메뉴를 찾고 있어요...</p>
         </div>
       </main>
     )
   }
 
   return (
-    <main className="min-h-screen pb-24">
+    <main className="min-h-screen pb-28">
       {/* 헤더 */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-100">
+      <header className="sticky top-0 z-50 glass-strong border-b border-white/20">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center gap-4">
-          <Link href="/" className="p-2 rounded-full hover:bg-orange-100 transition-colors">
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <Link href="/" className="p-2 -ml-2 rounded-xl hover:bg-gray-100/50 transition-colors">
+            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </Link>
-          <h1 className="text-xl font-bold text-gray-800">추천 결과</h1>
+          <h1 className="text-lg font-semibold text-gray-800">추천 결과</h1>
         </div>
       </header>
 
-      <div className="max-w-lg mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-lg mx-auto px-4 py-6 space-y-4">
         {/* 추천 조건 요약 */}
-        <div className="bg-gradient-to-r from-orange-100 to-rose-100 rounded-2xl p-4">
-          <p className="text-sm text-gray-700">
+        <div className="glass-card p-4 opacity-0 animate-fade-in">
+          <div className="flex items-center gap-2 text-sm text-gray-600 flex-wrap">
             <span className="font-medium">📍 {userInput.location.name}</span>
             {weatherData && (
-              <span> · {weatherData.temp}°C</span>
+              <span className="text-gray-400">· {weatherData.temp}°C</span>
             )}
             {userInput.mood.preset && (
-              <span> · {getMoodEmoji(userInput.mood.preset)}</span>
+              <span className="text-gray-400">· {getMoodEmoji(userInput.mood.preset)}</span>
             )}
             {userInput.diet.mode !== 'none' && (
-              <span> · {getDietEmoji(userInput.diet.mode)}</span>
+              <span className="text-gray-400">· {getDietLabel(userInput.diet.mode)}</span>
             )}
-          </p>
+          </div>
         </div>
 
         {/* 추천 메뉴 카드들 */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-            <span>🎯</span>
-            <span>오늘의 추천 메뉴</span>
-          </h2>
-
+        <div className="space-y-3">
           {recommendations.map((result, index) => (
             <div
               key={result.menu.id}
-              className="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden card-hover"
+              className="glass-card overflow-hidden opacity-0 animate-slide-up"
+              style={{ animationDelay: `${(index + 1) * 0.1}s` }}
             >
               {/* 메뉴 헤더 */}
               <div className="p-5">
                 <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-2xl font-bold text-orange-500">{index + 1}</span>
-                      <h3 className="text-xl font-bold text-gray-800">{result.menu.name}</h3>
-                      {result.menu.controversial && (
-                        <span className="px-2 py-0.5 bg-yellow-100 text-yellow-700 text-xs rounded-full">
-                          ⚠️ {result.menu.controversialReason}
-                        </span>
-                      )}
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl font-bold text-orange-500">{index + 1}</span>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-800">{result.menu.name}</h3>
+                      <p className="text-xs text-gray-400">
+                        {result.menu.category} · {result.menu.subCategory}
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-500">
-                      {result.menu.category} · {result.menu.subCategory}
-                    </p>
                   </div>
                   {userInput.diet.showCalories && (
-                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-lg">
-                      🔥 약 {result.menu.estimatedCalories}kcal
+                    <span className="text-xs text-gray-400 bg-gray-100/80 px-2 py-1 rounded-lg">
+                      {result.menu.estimatedCalories}kcal
                     </span>
                   )}
                 </div>
 
-                {/* 추천 이유 */}
+                {/* 추천 이유 태그 */}
                 {result.reasons.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {result.reasons.map((reason, i) => (
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {result.reasons.slice(0, 3).map((reason, i) => (
                       <span
                         key={i}
-                        className="text-xs px-2 py-1 bg-orange-50 text-orange-700 rounded-full"
+                        className="text-xs px-2 py-1 bg-orange-50 text-orange-600 rounded-full"
                       >
                         {reason}
                       </span>
@@ -251,23 +224,12 @@ export default function ResultPage() {
                   </div>
                 )}
 
-                {/* 트렌드 노트 (실제 사람들 의견) */}
-                {result.menu.trendNote && (
-                  <div className="mb-3 p-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
-                    <p className="text-xs text-blue-700 flex items-center gap-1">
-                      <span>📈</span>
-                      <span className="font-medium">트렌드:</span>
-                      <span>{result.menu.trendNote}</span>
-                    </p>
-                  </div>
-                )}
-
-                {/* 키워드 태그 */}
+                {/* 키워드 */}
                 <div className="flex flex-wrap gap-1">
                   {result.menu.keywords.slice(0, 4).map((keyword) => (
                     <span
                       key={keyword}
-                      className="text-xs px-2 py-0.5 bg-gray-100 text-gray-600 rounded"
+                      className="text-xs text-gray-400"
                     >
                       #{keyword}
                     </span>
@@ -275,33 +237,29 @@ export default function ResultPage() {
                 </div>
               </div>
 
-              {/* 이거 먹으러 갈래! 버튼 (데이터 수집 + 맛집 검색 통합) */}
+              {/* 이거 먹으러 갈래! 버튼 */}
               <div className="px-5 pb-4">
                 <button
                   onClick={() => handleFindNearby(result.menu.id, result.menu.name, result.menu.category)}
-                  className={`w-full py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 ${
+                  className={`w-full py-3.5 rounded-xl font-medium text-sm transition-all flex items-center justify-center gap-2 ${
                     selectedMenuId === result.menu.id
-                      ? 'bg-green-500 text-white shadow-lg shadow-green-500/30'
-                      : 'bg-gradient-to-r from-orange-400 to-rose-400 text-white hover:from-orange-500 hover:to-rose-500 shadow-lg shadow-orange-500/30 hover:shadow-xl'
+                      ? 'bg-gray-800 text-white'
+                      : 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg shadow-orange-500/20'
                   }`}
                 >
                   {placesLoading[result.menu.id] ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>맛집 찾는 중...</span>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <span>찾는 중...</span>
                     </>
                   ) : selectedMenuId === result.menu.id ? (
                     <>
-                      <span>📍</span>
-                      <span>{userInput.location.name} 근처 맛집 보기</span>
-                      {(new Date().getHours() >= 21 || new Date().getHours() < 9) && (
-                        <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded">🌙 영업중</span>
-                      )}
+                      <span>📍 {userInput.location.name} 근처 맛집</span>
                     </>
                   ) : (
                     <>
-                      <span>🍴</span>
                       <span>이거 먹으러 갈래!</span>
+                      <span>→</span>
                     </>
                   )}
                 </button>
@@ -309,41 +267,34 @@ export default function ResultPage() {
 
               {/* 펼쳐지는 맛집 리스트 */}
               {expandedMenu === result.menu.id && !placesLoading[result.menu.id] && (
-                <div className="border-t border-gray-100 bg-gray-50 p-4">
+                <div className="border-t border-gray-100 bg-gray-50/50 p-4 animate-fade-in">
                   {places[result.menu.id]?.length > 0 ? (
-                      <div className="space-y-2">
-                        {places[result.menu.id].map((place, i) => (
-                          <a
-                            key={i}
-                            href={place.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block p-3 bg-white rounded-lg hover:bg-green-50 transition-colors shadow-sm border border-gray-100 hover:border-green-200"
-                          >
-                            <div className="flex items-start justify-between">
-                              <div className="flex-1 min-w-0">
-                                <p className="font-medium text-gray-800">{place.place_name}</p>
-                                <p className="text-xs text-gray-500 mt-1">📍 {place.address_name}</p>
-                                {place.phone && (
-                                  <p className="text-xs text-gray-400 mt-1">📞 {place.phone}</p>
-                                )}
-                              </div>
-                              <div className="flex items-center gap-1 text-green-600 bg-green-50 px-2 py-1 rounded-lg text-xs font-medium flex-shrink-0 ml-2">
-                                <span>🗺️</span>
-                                <span>지도</span>
-                              </div>
+                    <div className="space-y-2">
+                      {places[result.menu.id].map((place, i) => (
+                        <a
+                          key={i}
+                          href={place.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block p-3 bg-white rounded-xl hover:shadow-md transition-all border border-gray-100"
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex-1 min-w-0">
+                              <p className="font-medium text-gray-800 text-sm">{place.place_name}</p>
+                              <p className="text-xs text-gray-400 mt-1">{place.address_name}</p>
                             </div>
-                          </a>
-                        ))}
-                        <p className="text-xs text-center text-gray-400 pt-1">
-                          클릭하면 네이버 지도에서 리뷰와 상세정보를 볼 수 있어요
-                        </p>
-                      </div>
-                    ) : (
-                      <p className="text-sm text-gray-500 text-center py-4">
-                        😢 주변에 검색 결과가 없어요
-                      </p>
-                    )}
+                            <span className="text-xs text-orange-500 font-medium flex-shrink-0">
+                              지도 →
+                            </span>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-gray-400 text-center py-4">
+                      주변에 검색 결과가 없어요
+                    </p>
+                  )}
                 </div>
               )}
             </div>
@@ -355,17 +306,18 @@ export default function ResultPage() {
       </div>
 
       {/* 하단 버튼 */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white via-white to-transparent">
-        <div className="max-w-lg mx-auto flex gap-3">
+      <div className="fixed bottom-0 left-0 right-0 p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-100/95 to-transparent pointer-events-none" />
+        <div className="max-w-lg mx-auto flex gap-3 relative">
           <Link
             href="/"
-            className="flex-1 py-4 px-6 bg-gray-100 text-gray-700 font-bold text-center rounded-2xl hover:bg-gray-200 transition-colors"
+            className="flex-1 py-3.5 px-6 glass text-gray-600 font-medium text-center rounded-xl hover:bg-white transition-colors"
           >
             ← 다시 설정
           </Link>
           <button
             onClick={() => window.location.reload()}
-            className="flex-1 py-4 px-6 btn-gradient text-white font-bold rounded-2xl shadow-lg shadow-orange-500/30"
+            className="flex-1 py-3.5 px-6 btn-primary rounded-xl"
           >
             🔄 다시 추천
           </button>
@@ -377,24 +329,24 @@ export default function ResultPage() {
 
 function getMoodEmoji(mood: string): string {
   const emojis: Record<string, string> = {
-    happy: '😊 기분좋음',
-    sad: '😢 우울',
-    stressed: '😤 스트레스',
-    tired: '🤒 피곤',
-    special: '🎉 특별한날',
-    normal: '🤔 평범',
+    happy: '😊',
+    sad: '😢',
+    stressed: '😤',
+    tired: '🤒',
+    special: '🎉',
+    normal: '🤔',
   }
   return emojis[mood] || mood
 }
 
-function getDietEmoji(diet: string): string {
-  const emojis: Record<string, string> = {
-    diet: '🏃 다이어트',
-    bulk: '💪 벌크업',
-    keto: '🥬 키토',
-    lowfat: '🍚 저지방',
-    vegan: '🌱 채식',
-    healthy: '🩺 건강식',
+function getDietLabel(diet: string): string {
+  const labels: Record<string, string> = {
+    diet: '다이어트',
+    bulk: '벌크업',
+    keto: '키토',
+    lowfat: '저지방',
+    vegan: '채식',
+    healthy: '건강식',
   }
-  return emojis[diet] || diet
+  return labels[diet] || diet
 }

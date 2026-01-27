@@ -80,12 +80,12 @@ export default function WeatherCard() {
 
   if (loading) {
     return (
-      <div className="bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl p-6 text-white shadow-lg">
+      <div className="glass-card p-5">
         <div className="animate-pulse flex items-center gap-4">
-          <div className="w-16 h-16 bg-white/20 rounded-full"></div>
-          <div className="space-y-2">
-            <div className="h-4 w-20 bg-white/20 rounded"></div>
-            <div className="h-8 w-24 bg-white/20 rounded"></div>
+          <div className="w-14 h-14 bg-gray-200/50 rounded-2xl"></div>
+          <div className="space-y-2 flex-1">
+            <div className="h-3 w-16 bg-gray-200/50 rounded"></div>
+            <div className="h-7 w-24 bg-gray-200/50 rounded"></div>
           </div>
         </div>
       </div>
@@ -94,52 +94,59 @@ export default function WeatherCard() {
 
   if (error || !weather) {
     return (
-      <div className="bg-gradient-to-br from-gray-400 to-gray-500 rounded-2xl p-6 text-white shadow-lg">
-        <p className="text-center">{error || '날씨 정보를 불러올 수 없습니다'}</p>
+      <div className="glass-card p-5">
+        <p className="text-center text-gray-500 text-sm">{error || '날씨 정보를 불러올 수 없습니다'}</p>
       </div>
     )
   }
 
   const weatherInfo = getWeatherInfo(weather.weatherCode)
   
-  // 온도에 따른 배경색
-  const getBgGradient = () => {
-    if (weather.temperature >= 30) return 'from-orange-400 to-red-500'
-    if (weather.temperature >= 20) return 'from-amber-400 to-orange-500'
-    if (weather.temperature >= 10) return 'from-sky-400 to-blue-500'
-    if (weather.temperature >= 0) return 'from-blue-400 to-indigo-500'
-    return 'from-indigo-400 to-purple-500'
+  // 온도에 따른 악센트 색상
+  const getAccentColor = () => {
+    if (weather.temperature >= 30) return 'text-red-500'
+    if (weather.temperature >= 20) return 'text-orange-500'
+    if (weather.temperature >= 10) return 'text-blue-500'
+    return 'text-indigo-500'
+  }
+
+  // 날씨 힌트 메시지
+  const getWeatherHint = () => {
+    if (weather.rain > 0) return '비 오는 날엔 따끈한 국물이 생각나요'
+    if (weather.temperature >= 28) return '더운 날엔 시원한 메뉴가 좋겠어요'
+    if (weather.temperature >= 20) return '야외에서 먹기 좋은 날씨예요'
+    if (weather.temperature >= 10) return '쌀쌀하니 따뜻한 음식 어때요?'
+    return '추운 날엔 뜨끈한 국물이 최고!'
   }
 
   return (
-    <div className={`bg-gradient-to-br ${getBgGradient()} rounded-2xl p-6 text-white shadow-lg relative overflow-hidden`}>
-      {/* 배경 장식 */}
-      <div className="absolute top-0 right-0 opacity-10">
-        <span className="text-[120px]">{weatherInfo.emoji}</span>
-      </div>
-      
-      <div className="relative z-10 flex items-center justify-between">
+    <div className="glass-card p-5">
+      <div className="flex items-center justify-between">
+        {/* 왼쪽: 날씨 아이콘 + 온도 */}
         <div className="flex items-center gap-4">
-          <span className="text-6xl animate-float">{weatherInfo.emoji}</span>
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-sky-100 flex items-center justify-center">
+            <span className="text-3xl">{weatherInfo.emoji}</span>
+          </div>
           <div>
-            <p className="text-white/80 text-sm">{weather.description}</p>
-            <p className="text-4xl font-bold">{weather.temperature}°C</p>
+            <p className="text-xs text-gray-400 font-medium">{weather.description}</p>
+            <p className={`text-3xl font-bold ${getAccentColor()}`}>
+              {weather.temperature}°
+            </p>
           </div>
         </div>
         
-        <div className="text-right text-sm text-white/80 space-y-1">
-          <p>💧 습도 {weather.humidity}%</p>
-          {weather.rain > 0 && <p>🌧️ 강수 {weather.rain}mm</p>}
+        {/* 오른쪽: 습도 등 */}
+        <div className="text-right text-sm text-gray-400 space-y-0.5">
+          <p>습도 {weather.humidity}%</p>
+          {weather.rain > 0 && <p>강수 {weather.rain}mm</p>}
         </div>
       </div>
       
-      {/* 날씨 기반 메뉴 힌트 */}
-      <div className="mt-4 pt-4 border-t border-white/20 text-sm text-white/90">
-        {weather.temperature >= 28 && '🥶 더운 날엔 시원한 냉면, 빙수 어때요?'}
-        {weather.temperature >= 20 && weather.temperature < 28 && '😊 선선한 날씨, 뭐든 좋아요!'}
-        {weather.temperature >= 10 && weather.temperature < 20 && '🍜 쌀쌀하니 따뜻한 국물 어때요?'}
-        {weather.temperature < 10 && '🔥 추운 날엔 뜨끈한 찌개가 딱!'}
-        {weather.rain > 0 && ' 비 오는 날엔 파전도 좋겠네요!'}
+      {/* 날씨 기반 힌트 */}
+      <div className="mt-4 pt-3 border-t border-gray-100">
+        <p className="text-sm text-gray-500">
+          💡 {getWeatherHint()}
+        </p>
       </div>
     </div>
   )

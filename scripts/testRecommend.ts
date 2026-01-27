@@ -20,6 +20,8 @@ const test1 = getRecommendations({
   dietMode: 'keto',
   dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: false },
   excludeMenuIds: [],
+  foodCategory: 'all',
+  adventureMode: false,
 })
 
 console.log('추천 메뉴:')
@@ -43,6 +45,8 @@ const test2 = getRecommendations({
   dietMode: 'diet',
   dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: false },
   excludeMenuIds: [],
+  foodCategory: 'all',
+  adventureMode: false,
 })
 
 console.log('추천 메뉴:')
@@ -64,6 +68,8 @@ const test3 = getRecommendations({
   dietMode: 'none',
   dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: false },
   excludeMenuIds: ['찌개'],  // "찌개" 키워드로 제외
+  foodCategory: 'all',
+  adventureMode: false,
 })
 
 console.log('추천 메뉴 (찌개 제외):')
@@ -88,6 +94,8 @@ const test4 = getRecommendations({
   dietMode: 'none',
   dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: true },  // 술 안 먹음
   excludeMenuIds: [],
+  foodCategory: 'all',
+  adventureMode: false,
 })
 
 console.log('추천 메뉴 (술안주 제외):')
@@ -111,12 +119,57 @@ const test5 = getRecommendations({
   dietMode: 'none',
   dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: false },
   excludeMenuIds: [],
+  foodCategory: 'all',
+  adventureMode: false,
 })
 
 console.log('추천 메뉴 (비오는 날):')
 test5.forEach((r, i) => {
   console.log(`  ${i + 1}. ${r.menu.name}`)
   console.log(`     - 비오는날 매칭: ${r.menu.weather.includes('rainy') ? '✅' : '❌'}`)
+  console.log(`     - 이유: ${r.reasons.join(', ')}`)
+})
+
+// 테스트 6: 카테고리 필터 (한식만)
+console.log('\n\n📋 테스트 6: 한식만 추천')
+console.log('-'.repeat(50))
+
+const test6 = getRecommendations({
+  weatherCondition: 'normal',
+  mood: 'normal',
+  moodCustom: '',
+  timeSlot: 'lunch',
+  dietMode: 'none',
+  dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: false },
+  excludeMenuIds: [],
+  foodCategory: 'korean',
+  adventureMode: false,
+})
+
+console.log('추천 메뉴 (한식):')
+test6.forEach((r, i) => {
+  console.log(`  ${i + 1}. ${r.menu.name} (${r.menu.category})`)
+})
+
+// 테스트 7: 모험 모드
+console.log('\n\n📋 테스트 7: 모험 모드 (색다른 거 도전)')
+console.log('-'.repeat(50))
+
+const test7 = getRecommendations({
+  weatherCondition: 'normal',
+  mood: 'normal',
+  moodCustom: '',
+  timeSlot: 'lunch',
+  dietMode: 'none',
+  dietOptions: { lowSodium: false, noLateNight: false, noAlcohol: false },
+  excludeMenuIds: [],
+  foodCategory: 'all',
+  adventureMode: true,
+})
+
+console.log('추천 메뉴 (모험 모드):')
+test7.forEach((r, i) => {
+  console.log(`  ${i + 1}. ${r.menu.name} (${r.menu.category})`)
   console.log(`     - 이유: ${r.reasons.join(', ')}`)
 })
 

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useUserInputStore } from '@/store/userInputStore'
 import { getRecommendations, weatherCodeToCondition, RecommendationResult } from '@/lib/recommend'
+import { SelectionLog } from '@/lib/supabase'
 import Link from 'next/link'
 
 interface Place {
@@ -21,6 +22,8 @@ export default function ResultPage() {
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [weatherData, setWeatherData] = useState<{ code: number; temp: number } | null>(null)
+  const [selectedMenuId, setSelectedMenuId] = useState<string | null>(null)
+  const [weatherCondition, setWeatherCondition] = useState<string>('normal')
 
   useEffect(() => {
     async function fetchData() {
@@ -49,7 +52,8 @@ export default function ResultPage() {
       setWeatherData(weatherInfo)
       
       // 추천 생성
-      const weatherCondition = weatherCodeToCondition(weatherInfo.code, weatherInfo.temp)
+      const condition = weatherCodeToCondition(weatherInfo.code, weatherInfo.temp)
+      setWeatherCondition(condition)
       // 제외 메뉴: 원본 텍스트 그대로 전달 (부분 매칭 지원)
       // "찌개" 입력 시 → 김치찌개, 된장찌개 등 모두 제외됨
       const excludeIds = userInput.recentMeals
@@ -57,7 +61,7 @@ export default function ResultPage() {
         .map(m => m.name)
 
       const results = getRecommendations({
-        weatherCondition,
+        weatherCondition: condition,
         mood: userInput.mood.preset,
         moodCustom: userInput.mood.custom,
         timeSlot: userInput.timeSlot,
@@ -73,6 +77,36 @@ export default function ResultPage() {
 
     fetchData()
   }, [userInput])
+
+  // 사용자가 메뉴 선택 시 호출 (데이터 수집)
+  const handleSelectMenu = async (result: RecommendationResult) => {
+    setSelectedMenuId(result.menu.id)
+    
+    // 선택 로그 데이터 구성
+    const logData: Omit<SelectionLog, 'id' | 'created_at'> = {
+      weather_condition: weatherCondition,
+      temperature: weatherData?.temp || 15,
+      mood: userInput.mood.preset || 'normal',
+      mood_custom: userInput.mood.custom,
+      time_slot: userInput.timeSlot,
+      diet_mode: userInput.diet.mode,
+      selected_menu: result.menu.name,
+      selected_menu_category: result.menu.category,
+      location: userInput.location.name,
+      was_recommended: true,
+    }
+
+    try {
+      await fetch('/api/log-selection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(logData),
+      })
+      console.log('✅ 선택 로그 저장됨:', result.menu.name)
+    } catch (err) {
+      console.error('선택 로그 저장 실패:', err)
+    }
+  }
 
   // 사용자가 "근처에서 찾기" 클릭 시 호출 (네이버 API)
   const handleFindNearby = async (menuId: string, menuName: string) => {
@@ -222,6 +256,21 @@ export default function ResultPage() {
                     </span>
                   ))}
                 </div>
+              </div>
+
+              {/* 이거 먹을래요! 버튼 */}
+              <div className="px-5 pb-3">
+                <button
+                  onClick={() => handleSelectMenu(result)}
+                  disabled={selectedMenuId === result.menu.id}
+                  className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${
+                    selectedMenuId === result.menu.id
+                      ? 'bg-green-500 text-white'
+                      : 'bg-gradient-to-r from-orange-400 to-rose-400 text-white hover:from-orange-500 hover:to-rose-500 shadow-md hover:shadow-lg'
+                  }`}
+                >
+                  {selectedMenuId === result.menu.id ? '✅ 선택 완료!' : '🍴 이거 먹을래요!'}
+                </button>
               </div>
 
               {/* 근처에서 찾기 버튼 */}

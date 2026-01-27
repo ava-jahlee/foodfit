@@ -118,11 +118,32 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     // 2. 시간대 필터링
     if (!menu.timeSlot.includes(timeSlot)) continue
     
-    // 3. 식단 모드 필터링
+    // 3. 식단 모드 필터링 (강화)
     if (dietMode !== 'none') {
-      // 완전 비호환이면 제외 (일부 허용)
+      // 채식: 비건 음식만
       if (dietMode === 'vegan' && !menu.isVegan) continue
+      // 키토: 고탄수화물 제외
       if (dietMode === 'keto' && menu.carbs === 'high') continue
+      // 다이어트: dietCompatible에 'diet' 포함 또는 저칼로리(500 이하)만
+      if (dietMode === 'diet') {
+        const isDietFriendly = menu.dietCompatible.includes('diet') || menu.estimatedCalories <= 500
+        if (!isDietFriendly) continue
+      }
+      // 벌크업: 고단백 메뉴만
+      if (dietMode === 'bulk') {
+        const isBulkFriendly = menu.dietCompatible.includes('bulk') || menu.protein === 'high'
+        if (!isBulkFriendly) continue
+      }
+      // 저지방: dietCompatible에 'lowfat' 포함 또는 저칼로리
+      if (dietMode === 'lowfat') {
+        const isLowFatFriendly = menu.dietCompatible.includes('lowfat') || menu.estimatedCalories <= 450
+        if (!isLowFatFriendly) continue
+      }
+      // 건강식: dietCompatible에 'healthy' 포함
+      if (dietMode === 'healthy') {
+        const isHealthyFriendly = menu.dietCompatible.includes('healthy')
+        if (!isHealthyFriendly) continue
+      }
     }
     
     // 4. 식단 옵션 필터링

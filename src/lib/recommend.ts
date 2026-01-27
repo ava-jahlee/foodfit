@@ -141,17 +141,34 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
       : 15 // 기본값
     score += popularityBonus
     
-    // 날씨 점수 (0-25점)
-    if (menu.weather.includes(weatherCondition)) {
+    // 날씨 점수 (0-25점) - 계절 반대 음식은 강하게 페널티!
+    const isWeatherMatch = menu.weather.includes(weatherCondition)
+    const isOppositeWeather = (
+      (weatherCondition === 'cold' && menu.weather.includes('hot') && !menu.weather.includes('cold')) ||
+      (weatherCondition === 'hot' && menu.weather.includes('cold') && !menu.weather.includes('hot'))
+    )
+    
+    if (isWeatherMatch) {
       score += 25
-      // 트렌드 노트가 있으면 더 구체적인 이유 제공
-      if (menu.trendNote && menu.trendNote.includes('날')) {
+      // 트렌드 노트가 있고 현재 날씨에 맞는 내용이면 표시
+      const weatherKeywords = {
+        cold: ['추운', '겨울', '뜨끈', '따뜻'],
+        hot: ['더운', '여름', '시원', '냉'],
+        rainy: ['비오는', '비 오는', '막걸리'],
+      }
+      const currentKeywords = weatherKeywords[weatherCondition as keyof typeof weatherKeywords] || []
+      const matchesTrendWeather = menu.trendNote && currentKeywords.some(kw => menu.trendNote!.includes(kw))
+      
+      if (matchesTrendWeather) {
         reasons.push(`🔥 ${menu.trendNote}`)
       } else {
         reasons.push(`${getWeatherEmoji(weatherCondition)} 날씨에 딱 맞아요`)
       }
+    } else if (isOppositeWeather) {
+      // 계절 반대 음식은 큰 페널티 (한겨울 냉면, 한여름 찌개 등)
+      score -= 20
     } else {
-      score += 10 // 기본 점수
+      score += 5 // 기본 점수 (낮춤)
     }
     
     // 기분 점수 (0-20점)

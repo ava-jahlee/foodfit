@@ -78,51 +78,67 @@ export default function ResultPage() {
     fetchData()
   }, [userInput])
 
-  // 사용자가 메뉴 선택 시 호출 (데이터 수집)
-  const handleSelectMenu = async (result: RecommendationResult) => {
-    setSelectedMenuId(result.menu.id)
+  // 시간대별 검색 키워드 생성
+  const getTimeBasedKeyword = () => {
+    const hour = new Date().getHours()
     
-    // 선택 로그 데이터 구성
-    const logData: Omit<SelectionLog, 'id' | 'created_at'> = {
-      weather_condition: weatherCondition,
-      temperature: weatherData?.temp || 15,
-      mood: userInput.mood.preset || 'normal',
-      mood_custom: userInput.mood.custom,
-      time_slot: userInput.timeSlot,
-      diet_mode: userInput.diet.mode,
-      selected_menu: result.menu.name,
-      selected_menu_category: result.menu.category,
-      location: userInput.location.name,
-      was_recommended: true,
+    // 야식 시간 (21시 ~ 05시): 심야영업/24시 키워드 추가
+    if (hour >= 21 || hour < 5) {
+      return '24시'
     }
-
-    try {
-      await fetch('/api/log-selection', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(logData),
-      })
-      console.log('✅ 선택 로그 저장됨:', result.menu.name)
-    } catch (err) {
-      console.error('선택 로그 저장 실패:', err)
+    // 아침 시간 (05시 ~ 09시): 아침식사 가능한 곳
+    if (hour >= 5 && hour < 9) {
+      return '24시 아침'
     }
+    // 점심/저녁은 대부분 영업하므로 기본
+    return '맛집'
   }
 
-  // 사용자가 "근처에서 찾기" 클릭 시 호출 (네이버 API)
-  const handleFindNearby = async (menuId: string, menuName: string) => {
+  // 사용자가 "이거 먹으러 갈래!" 클릭 시 호출 (데이터 수집 + 맛집 검색)
+  const handleFindNearby = async (menuId: string, menuName: string, menuCategory: string) => {
     // 이미 검색했으면 토글만
     if (places[menuId]) {
       setExpandedMenu(expandedMenu === menuId ? null : menuId)
       return
     }
 
+    // 데이터 수집 (처음 클릭할 때만)
+    if (!selectedMenuId || selectedMenuId !== menuId) {
+      setSelectedMenuId(menuId)
+      
+      const logData = {
+        weather_condition: weatherCondition,
+        temperature: weatherData?.temp || 15,
+        mood: userInput.mood.preset || 'normal',
+        mood_custom: userInput.mood.custom,
+        time_slot: userInput.timeSlot,
+        diet_mode: userInput.diet.mode,
+        selected_menu: menuName,
+        selected_menu_category: menuCategory,
+        location: userInput.location.name,
+        was_recommended: true,
+      }
+
+      try {
+        await fetch('/api/log-selection', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(logData),
+        })
+        console.log('✅ 선택 로그 저장됨:', menuName)
+      } catch (err) {
+        console.error('선택 로그 저장 실패:', err)
+      }
+    }
+
     // 로딩 시작
     setPlacesLoading(prev => ({ ...prev, [menuId]: true }))
     setExpandedMenu(menuId)
 
-    // 검색어: "선릉 우동 맛집" 형태로 변환
+    // 검색어: 시간대에 따라 영업 중일 가능성 높은 키워드 추가
     const locationShort = userInput.location.name.replace('역', '') // "선릉역" → "선릉"
-    const searchQuery = `${locationShort} ${menuName} 맛집`
+    const timeKeyword = getTimeBasedKeyword()
+    const searchQuery = `${locationShort} ${menuName} ${timeKeyword}`
     try {
       const placesRes = await fetch(`/api/places?query=${encodeURIComponent(searchQuery)}`)
       const placesJson = await placesRes.json()
@@ -258,55 +274,42 @@ export default function ResultPage() {
                 </div>
               </div>
 
-              {/* 이거 먹을래요! 버튼 */}
-              <div className="px-5 pb-3">
+              {/* 이거 먹으러 갈래! 버튼 (데이터 수집 + 맛집 검색 통합) */}
+              <div className="px-5 pb-4">
                 <button
-                  onClick={() => handleSelectMenu(result)}
-                  disabled={selectedMenuId === result.menu.id}
-                  className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${
+                  onClick={() => handleFindNearby(result.menu.id, result.menu.name, result.menu.category)}
+                  className={`w-full py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 ${
                     selectedMenuId === result.menu.id
-                      ? 'bg-green-500 text-white'
-                      : 'bg-gradient-to-r from-orange-400 to-rose-400 text-white hover:from-orange-500 hover:to-rose-500 shadow-md hover:shadow-lg'
+                      ? 'bg-green-500 text-white shadow-lg shadow-green-500/30'
+                      : 'bg-gradient-to-r from-orange-400 to-rose-400 text-white hover:from-orange-500 hover:to-rose-500 shadow-lg shadow-orange-500/30 hover:shadow-xl'
                   }`}
                 >
-                  {selectedMenuId === result.menu.id ? '✅ 선택 완료!' : '🍴 이거 먹을래요!'}
+                  {placesLoading[result.menu.id] ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>맛집 찾는 중...</span>
+                    </>
+                  ) : selectedMenuId === result.menu.id ? (
+                    <>
+                      <span>📍</span>
+                      <span>{userInput.location.name} 근처 맛집 보기</span>
+                      {(new Date().getHours() >= 21 || new Date().getHours() < 9) && (
+                        <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded">🌙 영업중</span>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <span>🍴</span>
+                      <span>이거 먹으러 갈래!</span>
+                    </>
+                  )}
                 </button>
               </div>
 
-              {/* 근처에서 찾기 버튼 */}
-              <div className="border-t border-gray-100">
-                <button
-                  onClick={() => handleFindNearby(result.menu.id, result.menu.name)}
-                  className="w-full p-4 flex items-center justify-between hover:bg-orange-50 transition-colors"
-                >
-                  <span className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                    📍 {userInput.location.name} 근처에서 찾기
-                  </span>
-                  <span className="flex items-center gap-1 text-orange-500">
-                    {placesLoading[result.menu.id] ? (
-                      <div className="w-4 h-4 border-2 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
-                    ) : (
-                      <svg 
-                        className={`w-5 h-5 transition-transform ${expandedMenu === result.menu.id ? 'rotate-180' : ''}`} 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    )}
-                  </span>
-                </button>
-
-                {/* 펼쳐지는 맛집 리스트 */}
-                {expandedMenu === result.menu.id && (
-                  <div className="bg-gray-50 p-4 pt-0">
-                    {placesLoading[result.menu.id] ? (
-                      <div className="flex items-center justify-center gap-2 py-4">
-                        <div className="w-4 h-4 border-2 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
-                        <p className="text-sm text-gray-500">주변 맛집 검색 중...</p>
-                      </div>
-                    ) : places[result.menu.id]?.length > 0 ? (
+              {/* 펼쳐지는 맛집 리스트 */}
+              {expandedMenu === result.menu.id && !placesLoading[result.menu.id] && (
+                <div className="border-t border-gray-100 bg-gray-50 p-4">
+                  {places[result.menu.id]?.length > 0 ? (
                       <div className="space-y-2">
                         {places[result.menu.id].map((place, i) => (
                           <a
@@ -340,9 +343,8 @@ export default function ResultPage() {
                         😢 주변에 검색 결과가 없어요
                       </p>
                     )}
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

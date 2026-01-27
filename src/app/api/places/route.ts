@@ -48,8 +48,8 @@ export async function GET(request: NextRequest) {
       const placeName = item.title.replace(/<[^>]*>/g, '') // HTML 태그 제거
       const address = item.roadAddress || item.address
       
-      // 네이버 지도 검색 링크 생성 (리뷰, 지도, 상세정보 바로 확인 가능)
-      const naverMapLink = `https://map.naver.com/p/search/${encodeURIComponent(placeName + ' ' + address)}`
+      // 네이버 지도 검색 링크 생성 (가게 이름만으로 검색)
+      const naverMapLink = `https://map.naver.com/p/search/${encodeURIComponent(placeName)}`
       
       return {
         place_name: placeName,

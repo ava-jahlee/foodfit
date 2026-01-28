@@ -89,6 +89,25 @@ export default function ResultPage() {
         .map(m => m.name)
 
       // 🔥 다변량 분석 파라미터 포함
+      // 주말/공휴일 체크
+      const today = new Date()
+      const dayOfWeek = today.getDay()
+      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6
+      
+      // 2024-2025 공휴일 (간단 버전)
+      const holidays = [
+        '01-01', // 신정
+        '03-01', // 삼일절
+        '05-05', // 어린이날
+        '06-06', // 현충일
+        '08-15', // 광복절
+        '10-03', // 개천절
+        '10-09', // 한글날
+        '12-25', // 크리스마스
+      ]
+      const todayMMDD = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
+      const isHoliday = holidays.includes(todayMMDD)
+      
       const results = getRecommendations({
         weatherCondition: condition,
         temperature: weatherInfo.temp,
@@ -102,6 +121,8 @@ export default function ResultPage() {
         excludeMenuIds: excludeIds,
         foodCategory: userInput.foodCategory,
         adventureMode: userInput.adventureMode,
+        isWeekend,
+        isHoliday,
       })
 
       setRecommendations(results)

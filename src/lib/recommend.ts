@@ -56,6 +56,65 @@ interface RecommendParams {
   excludeMenuIds: string[]
   foodCategory: FoodCategory
   adventureMode: boolean
+  isWeekend?: boolean       // 주말 여부
+  isHoliday?: boolean       // 공휴일 여부
+}
+
+// ========================================
+// 주말/평일 가중치 (예상 선호도 기반)
+// 양수: 주말 선호 / 음수: 평일 선호
+// ========================================
+const WEEKEND_PREFERENCE: Record<string, number> = {
+  // 주말에 더 인기 (외식, 여유, 특별한 날)
+  '삼겹살': 0.4,
+  '스테이크': 0.5,
+  '회': 0.5,
+  '초밥': 0.4,
+  '파스타': 0.3,
+  '피자': 0.3,
+  '치킨': 0.25,
+  '족발': 0.35,
+  '보쌈': 0.35,
+  '곱창': 0.4,
+  '막창': 0.4,
+  '양꼬치': 0.35,
+  '샤브샤브': 0.3,
+  '뷔페': 0.5,
+  '브런치': 0.4,
+  '파전': 0.3,      // 주말에 막걸리와 함께
+  '막걸리': 0.35,
+  
+  // 평일에 더 인기 (빠른 식사, 간편)
+  '김밥': -0.3,
+  '라면': -0.2,
+  '국밥': -0.25,
+  '김치찌개': -0.15,
+  '된장찌개': -0.15,
+  '백반': -0.3,
+  '비빔밥': -0.2,
+  '제육볶음': -0.15,
+  '돈까스': -0.1,
+  '우동': -0.2,
+  '샌드위치': -0.25,
+  '샐러드': -0.2,
+  
+  // 중립 (계절/날씨 영향이 더 큼)
+  '냉면': 0,
+  '빙수': 0.1,
+  '설렁탕': -0.1,
+  '칼국수': 0,
+}
+
+// 공휴일 가중치 (공휴일에 더 인기인 음식)
+const HOLIDAY_PREFERENCE: Record<string, number> = {
+  '치킨': 0.4,
+  '피자': 0.35,
+  '삼겹살': 0.3,
+  '족발': 0.35,
+  '보쌈': 0.35,
+  '파전': 0.3,
+  '막걸리': 0.3,
+  '라면': 0.2,    // 집콕할 때
 }
 
 // 다변량 분석 기반 날씨 가중치 (구글 트렌드 분석 결과)
@@ -302,6 +361,37 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
       score -= 20
     } else {
       score += 5 // 기본 점수 (낮춤)
+    }
+    
+    // 📅 주말/평일 점수 (최대 ±10점)
+    if (params.isWeekend !== undefined || params.isHoliday !== undefined) {
+      const weekendPref = WEEKEND_PREFERENCE[menu.name] || 0
+      const holidayPref = HOLIDAY_PREFERENCE[menu.name] || 0
+      
+      if (params.isHoliday) {
+        // 공휴일: 공휴일 선호도 적용 + 주말 선호도 절반
+        const holidayScore = holidayPref * 15 + weekendPref * 5
+        score += holidayScore
+        if (holidayScore > 5) {
+          reasons.push('🎉 공휴일에 인기 메뉴!')
+        }
+      } else if (params.isWeekend) {
+        // 주말: 주말 선호도 적용
+        const weekendScore = weekendPref * 10
+        score += weekendScore
+        if (weekendScore > 3) {
+          reasons.push('📅 주말에 딱 맞는 메뉴')
+        } else if (weekendScore < -2) {
+          // 평일 음식은 주말에 살짝 페널티 (하지만 제외는 안함)
+        }
+      } else {
+        // 평일: 반대로 적용
+        const weekdayScore = -weekendPref * 8
+        score += weekdayScore
+        if (weekdayScore > 2) {
+          reasons.push('⚡ 평일 점심으로 딱!')
+        }
+      }
     }
     
     // 기분 점수 (0-20점)

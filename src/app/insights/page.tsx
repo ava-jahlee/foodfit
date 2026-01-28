@@ -196,385 +196,193 @@ export default function InsightsPage() {
     )
   }
 
-  // 탭별 설명
-  const tabDescriptions: Record<string, { title: string; desc: string; tip: string }> = {
-    insights: {
-      title: '💡 핵심 발견',
-      desc: '구글 트렌드와 날씨 데이터를 분석해 발견한 흥미로운 사실들!',
-      tip: '💬 "비 오면 파전" 정말일까요? 데이터로 확인해보세요!'
-    },
-    trend: {
-      title: '📈 월별 트렌드',
-      desc: '음식별 검색량이 월마다 어떻게 변하는지 확인하세요.',
-      tip: '💬 키워드를 클릭해서 비교해보세요!'
-    },
-    correlation: {
-      title: '🔬 상관관계 분석',
-      desc: '기온/강수량과 음식 검색량의 상관관계를 분석했어요.',
-      tip: '💬 +1에 가까울수록 양의 상관, -1에 가까울수록 음의 상관!'
-    },
-    regional: {
-      title: '🗺️ 지역별 분석',
-      desc: '서울, 부산, 대구, 광주, 대전의 음식 트렌드를 비교해요.',
-      tip: '💬 같은 음식도 지역마다 인기 시즌이 달라요!'
-    },
-    multivariate: {
-      title: '🧠 다변량 분석',
-      desc: '기온+강수+습도+일조량을 모두 고려한 심층 분석이에요.',
-      tip: '💬 R² 값이 높을수록 날씨로 예측이 잘 돼요!'
-    },
-    monthly: {
-      title: '📅 월별 TOP 음식',
-      desc: '매달 가장 많이 검색되는 음식 TOP 3를 확인하세요.',
-      tip: '💬 계절마다 인기 음식이 확 달라요!'
-    },
-  }
+  // 탭 정보
+  const tabs = [
+    { id: 'insights', icon: '💡', label: '핵심' },
+    { id: 'trend', icon: '📈', label: '트렌드' },
+    { id: 'correlation', icon: '🔬', label: '상관관계' },
+    { id: 'regional', icon: '🗺️', label: '지역별' },
+    { id: 'multivariate', icon: '🧠', label: '다변량' },
+    { id: 'monthly', icon: '📅', label: '월별TOP' },
+  ]
 
   return (
-    <main className="min-h-screen pb-28">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
       {/* 헤더 */}
-      <header className="sticky top-0 z-50 glass-strong border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
-            <span className="text-lg">←</span>
-            <span className="text-sm">홈으로</span>
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href="/" className="text-gray-500 hover:text-gray-800 transition-colors text-sm">
+            ← 홈
           </Link>
-          <h1 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-            <span>📊</span> 데이터 인사이트
-          </h1>
-          <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">
-            {new Date(data.generatedAt).toLocaleDateString('ko-KR')} 기준
-          </div>
+          <h1 className="text-base font-bold text-gray-800">📊 인사이트</h1>
+          <span className="text-[10px] text-gray-400">
+            {new Date(data.generatedAt).toLocaleDateString('ko-KR')}
+          </span>
         </div>
       </header>
 
-      {/* 페이지 소개 */}
-      <div className="max-w-4xl mx-auto px-4 pt-6 pb-2">
-        <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl p-5 border border-blue-100 opacity-0 animate-fade-in">
-          <div className="flex items-start gap-4">
-            <div className="text-4xl">🔬</div>
-            <div className="flex-1">
-              <h2 className="text-lg font-bold text-gray-800 mb-1">FoodFit 데이터 연구소</h2>
-              <p className="text-sm text-gray-600 mb-2">
-                구글 트렌드 + 날씨 API 데이터를 분석해서 <strong>음식과 날씨의 상관관계</strong>를 연구했어요!
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="bg-white/80 px-2 py-1 rounded-full text-gray-500">📊 15개 음식 분석</span>
-                <span className="bg-white/80 px-2 py-1 rounded-full text-gray-500">🗺️ 5개 도시</span>
-                <span className="bg-white/80 px-2 py-1 rounded-full text-gray-500">📅 12개월 데이터</span>
-              </div>
-            </div>
+      <div className="max-w-3xl mx-auto px-4 py-6">
+        {/* 요약 - 한 줄로 */}
+        <div className="flex gap-3 mb-6 overflow-x-auto pb-2">
+          <div className="flex items-center gap-2 bg-red-50 px-4 py-2 rounded-full border border-red-100 whitespace-nowrap">
+            <span>🔥</span>
+            <span className="text-xs text-red-600 font-medium">
+              더운 날: {correlationData.filter(d => d.temp > 0.5).map(d => d.keyword).slice(0, 2).join(', ') || '냉면, 빙수'}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 whitespace-nowrap">
+            <span>❄️</span>
+            <span className="text-xs text-blue-600 font-medium">
+              추운 날: {correlationData.filter(d => d.temp < -0.3).map(d => d.keyword).slice(0, 2).join(', ') || '김치찌개'}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 bg-cyan-50 px-4 py-2 rounded-full border border-cyan-100 whitespace-nowrap">
+            <span>🌧️</span>
+            <span className="text-xs text-cyan-600 font-medium">
+              비: {correlationData.filter(d => d.rain > 0.3).map(d => d.keyword).slice(0, 2).join(', ') || '파전'}
+            </span>
           </div>
         </div>
-      </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-4 space-y-4">
-        {/* 요약 카드 - 접을 수 있게 */}
-        <details className="group opacity-0 animate-fade-in stagger-1" open>
-          <summary className="flex items-center justify-between cursor-pointer list-none mb-3">
-            <span className="text-sm font-medium text-gray-600 flex items-center gap-2">
-              ⚡ 한눈에 보기
-            </span>
-            <span className="text-gray-400 text-xs group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div className="grid grid-cols-3 gap-2">
-            <div className="glass-card p-3 text-center hover:scale-105 transition-transform cursor-default">
-              <div className="text-2xl mb-1">🔥</div>
-              <h3 className="text-gray-700 font-bold text-xs mb-1">더운 날</h3>
-              <p className="text-red-500 text-[10px] font-medium leading-tight">
-                {correlationData.filter(d => d.temp > 0.5).map(d => d.keyword).slice(0, 3).join(', ') || '냉면, 빙수'}
-              </p>
-            </div>
-            
-            <div className="glass-card p-3 text-center hover:scale-105 transition-transform cursor-default">
-              <div className="text-2xl mb-1">❄️</div>
-              <h3 className="text-gray-700 font-bold text-xs mb-1">추운 날</h3>
-              <p className="text-blue-500 text-[10px] font-medium leading-tight">
-                {correlationData.filter(d => d.temp < -0.3).map(d => d.keyword).slice(0, 3).join(', ') || '김치찌개, 설렁탕'}
-              </p>
-            </div>
-            
-            <div className="glass-card p-3 text-center hover:scale-105 transition-transform cursor-default">
-              <div className="text-2xl mb-1">🌧️</div>
-              <h3 className="text-gray-700 font-bold text-xs mb-1">비 오는 날</h3>
-              <p className="text-teal-500 text-[10px] font-medium leading-tight">
-                {correlationData.filter(d => d.rain > 0.3).map(d => d.keyword).slice(0, 3).join(', ') || '파전, 막걸리'}
-              </p>
-            </div>
-          </div>
-        </details>
-
-        {/* 탭 네비게이션 */}
-        <div className="opacity-0 animate-fade-in stagger-2">
-          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-            {[
-              { id: 'insights', label: '💡 핵심', fullLabel: '핵심 발견' },
-              { id: 'trend', label: '📈 트렌드', fullLabel: '월별 트렌드' },
-              { id: 'correlation', label: '🔬 상관', fullLabel: '상관관계' },
-              { id: 'regional', label: '🗺️ 지역', fullLabel: '지역별' },
-              { id: 'multivariate', label: '🧠 다변량', fullLabel: '다변량 분석' },
-              { id: 'monthly', label: '📅 TOP', fullLabel: '월별 TOP' },
-            ].map(tab => (
+        {/* 📁 폴더 탭 + 컨텐츠 카드 */}
+        <div className="relative">
+          {/* 폴더 탭 */}
+          <div className="flex -mb-px relative z-10">
+            {tabs.map((tab, i) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-3 py-2 rounded-xl text-xs font-medium transition-all whitespace-nowrap ${
+                className={`relative px-4 py-2 text-xs font-medium transition-all rounded-t-xl border-t border-l border-r ${
                   activeTab === tab.id
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-200'
-                    : 'bg-white/60 text-gray-500 hover:bg-white/90 hover:text-gray-700'
+                    ? 'bg-white text-gray-800 border-gray-200 z-20'
+                    : 'bg-gray-100 text-gray-500 border-transparent hover:bg-gray-50 -ml-1'
                 }`}
+                style={{ marginLeft: i > 0 && activeTab !== tab.id ? '-4px' : '0' }}
               >
-                <span className="md:hidden">{tab.label}</span>
-                <span className="hidden md:inline">{tab.label.split(' ')[0]} {tab.fullLabel}</span>
+                <span className="mr-1">{tab.icon}</span>
+                <span className="hidden sm:inline">{tab.label}</span>
               </button>
             ))}
           </div>
           
-          {/* 선택된 탭 설명 */}
-          <div className="mt-3 bg-white/40 rounded-xl p-3 border border-white/60">
-            <div className="flex items-start gap-3">
-              <div className="flex-1">
-                <h3 className="font-bold text-gray-800 text-sm">{tabDescriptions[activeTab].title}</h3>
-                <p className="text-gray-500 text-xs mt-0.5">{tabDescriptions[activeTab].desc}</p>
-              </div>
-              <div className="bg-yellow-50 text-yellow-700 text-[10px] px-2 py-1 rounded-lg border border-yellow-200 whitespace-nowrap">
-                {tabDescriptions[activeTab].tip}
-              </div>
-            </div>
-          </div>
-        </div>
+          {/* 컨텐츠 카드 */}
+          <div className="bg-white rounded-b-2xl rounded-tr-2xl border border-gray-200 shadow-sm p-5">
 
-        {/* 💡 핵심 발견 탭 */}
-        {activeTab === 'insights' && (
-          <div className="space-y-6 opacity-0 animate-fade-in stagger-3">
-            {/* 주요 인사이트 */}
-            <div className="glass-card p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span>🔬</span> 데이터가 밝힌 진실
-              </h2>
-              
+            {/* 💡 핵심 발견 탭 */}
+            {activeTab === 'insights' && (
               <div className="space-y-4">
-                {/* 인사이트 1 */}
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border border-yellow-200">
-                  <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">🤔</span> &ldquo;비 오면 파전&rdquo;은 마케팅?
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-white/60 rounded-lg p-3">
-                      <p className="text-sm text-gray-600 mb-2">파전의 강수량 상관계수</p>
-                      <p className="text-2xl font-bold text-cyan-500">+0.06 <span className="text-sm font-normal text-gray-400">(거의 무관)</span></p>
-                    </div>
-                    <div className="bg-white/60 rounded-lg p-3">
-                      <p className="text-sm text-gray-600 mb-2">파전의 기온 상관계수</p>
-                      <p className="text-2xl font-bold text-red-500">+0.42 <span className="text-sm font-normal text-gray-400">(양의 상관)</span></p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-3">
-                    → 실제로는 <strong className="text-red-500">&ldquo;따뜻한 날&rdquo;</strong>에 더 많이 검색됨! 비보다는 기온의 영향이 큼.
-                  </p>
-                </div>
-                
-                {/* 인사이트 2 */}
-                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-200">
-                  <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">☕</span> 라떼 vs 아메리카노
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-white/60 rounded-lg p-3">
-                      <p className="text-sm text-gray-600 mb-2">라떼 기온 상관계수</p>
-                      <p className="text-2xl font-bold text-blue-500">-0.41 <span className="text-sm font-normal text-gray-400">(추운 날 ↑)</span></p>
-                    </div>
-                    <div className="bg-white/60 rounded-lg p-3">
-                      <p className="text-sm text-gray-600 mb-2">아메리카노 기온 상관계수</p>
-                      <p className="text-2xl font-bold text-red-500">+0.75 <span className="text-sm font-normal text-gray-400">(더운 날 ↑)</span></p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-3">
-                    → 추울 땐 따뜻한 라떼, 더울 땐 시원한 아이스 아메리카노!
-                  </p>
-                </div>
-                
-                {/* 인사이트 3 */}
-                <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-4 border border-red-200">
-                  <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">📊</span> 예측력의 차이
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-white/60 rounded-lg p-3">
-                      <p className="text-sm text-gray-600 mb-2">더운 날 음식 R²</p>
-                      <p className="text-2xl font-bold text-green-500">0.70~0.83 <span className="text-sm font-normal text-gray-400">(높은 예측력)</span></p>
-                      <p className="text-xs text-gray-500 mt-1">빙수, 냉면, 콩국수 등</p>
-                    </div>
-                    <div className="bg-white/60 rounded-lg p-3">
-                      <p className="text-sm text-gray-600 mb-2">추운 날 음식 R²</p>
-                      <p className="text-2xl font-bold text-orange-500">0.20~0.30 <span className="text-sm font-normal text-gray-400">(낮은 예측력)</span></p>
-                      <p className="text-xs text-gray-500 mt-1">김치찌개, 설렁탕, 라면 등</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-3">
-                    → 추운 날은 선택지가 많아서 분산됨! 더운 날은 &ldquo;시원한 것&rdquo; 하나로 수렴.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            {/* 지역별 특색 */}
-            <div className="glass-card p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span>🗺️</span> 지역별 특색
-              </h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl p-4 border border-blue-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">🌊</span>
-                    <h3 className="font-bold text-gray-800">부산</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">밀면 기온 상관계수</p>
-                  <p className="text-xl font-bold text-blue-600">+0.82</p>
-                  <p className="text-xs text-gray-500 mt-2">지역 특산물의 강한 계절성!</p>
-                </div>
-                
-                <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-4 border border-orange-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">🔥</span>
-                    <h3 className="font-bold text-gray-800">대구</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">막창, 설렁탕, 막걸리</p>
-                  <p className="text-xl font-bold text-orange-600">추운 날 인기 ❄️</p>
-                  <p className="text-xs text-gray-500 mt-2">겨울 음식 선호도 높음</p>
-                </div>
-                
-                <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-xl p-4 border border-green-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">🌿</span>
-                    <h3 className="font-bold text-gray-800">대전</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">냉면 기온 상관계수</p>
-                  <p className="text-xl font-bold text-green-600">+0.88 (전국 최고!)</p>
-                  <p className="text-xs text-gray-500 mt-2">기온에 가장 민감한 지역</p>
-                </div>
-                
-                <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl p-4 border border-purple-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">🎭</span>
-                    <h3 className="font-bold text-gray-800">광주</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">국밥 기온 상관계수</p>
-                  <p className="text-xl font-bold text-purple-600">-0.33</p>
-                  <p className="text-xs text-gray-500 mt-2">추운 날 국밥 선호!</p>
-                </div>
-                
-                <div className="bg-gradient-to-br from-rose-100 to-rose-50 rounded-xl p-4 border border-rose-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">🏙️</span>
-                    <h3 className="font-bold text-gray-800">서울</h3>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">막걸리 기온 상관계수</p>
-                  <p className="text-xl font-bold text-rose-600">+0.39</p>
-                  <p className="text-xs text-gray-500 mt-2">따뜻한 날 막걸리 인기!</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* 알고리즘 적용 */}
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span>⚙️</span> FoodFit 알고리즘 적용
-              </h2>
-              <p className="text-gray-600 mb-4">
-                이 인사이트들은 FoodFit의 추천 알고리즘에 반영되어 있어요!
-              </p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white/60 rounded-xl p-4">
-                  <h3 className="font-bold text-red-500 mb-2">🔥 더운 날 (25°C+)</h3>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• 빙수, 냉면: +25% 가중치</li>
-                    <li>• 콩국수, 아이스 음료: +20%</li>
-                    <li>• 국물 요리: -15%</li>
-                  </ul>
-                </div>
-                <div className="bg-white/60 rounded-xl p-4">
-                  <h3 className="font-bold text-blue-500 mb-2">❄️ 추운 날 (5°C-)</h3>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• 김치찌개, 설렁탕: +20%</li>
-                    <li>• 라면, 칼국수: +15%</li>
-                    <li>• 냉면, 빙수: -30%</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* 🗺️ 지역별 분석 탭 */}
-        {activeTab === 'regional' && regionalData && (
-          <div className="space-y-6 opacity-0 animate-fade-in stagger-3">
-            {/* 지역 선택 */}
-            <div className="flex gap-2 flex-wrap">
-              {Object.keys(regionalData.regions).map(region => (
-                <button
-                  key={region}
-                  onClick={() => setSelectedRegion(region)}
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-                    selectedRegion === region
-                      ? 'bg-green-500 text-white shadow-md'
-                      : 'bg-white/60 text-gray-600 hover:bg-white/80'
-                  }`}
-                >
-                  {region === '서울' && '🏙️'}
-                  {region === '부산' && '🌊'}
-                  {region === '대구' && '🔥'}
-                  {region === '광주' && '🎭'}
-                  {region === '대전' && '🌿'}
-                  {' '}{region}
-                </button>
-              ))}
-            </div>
-            
-            {/* 선택된 지역 요약 */}
-            {regionalData.regions[selectedRegion] && (
-              <div className="glass-card p-5">
-                <h2 className="text-lg font-bold text-gray-800 mb-4">
-                  {selectedRegion} 음식 트렌드
+                <h2 className="text-base font-bold text-gray-800 border-b border-gray-100 pb-2">
+                  🔬 데이터가 밝힌 진실
                 </h2>
                 
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="bg-red-50 rounded-xl p-4 text-center border border-red-200">
-                    <div className="text-2xl mb-2">🔥</div>
-                    <div className="text-sm text-gray-600 mb-1">더운 날 인기</div>
-                    <div className="text-xs font-medium text-red-600">
-                      {regionalData.regions[selectedRegion].summary.hotWeatherFoods.join(', ') || '데이터 부족'}
+                {/* 인사이트 카드들 */}
+                <div className="space-y-3">
+                  {/* 파전 */}
+                  <div className="flex items-center gap-4 p-3 bg-yellow-50 rounded-lg">
+                    <span className="text-2xl">🤔</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-800">&ldquo;비 오면 파전&rdquo; = 마케팅!</p>
+                      <p className="text-xs text-gray-500">강수량 상관 +0.06 (무관) vs 기온 상관 +0.42 (양의 상관)</p>
                     </div>
                   </div>
-                  <div className="bg-blue-50 rounded-xl p-4 text-center border border-blue-200">
-                    <div className="text-2xl mb-2">❄️</div>
-                    <div className="text-sm text-gray-600 mb-1">추운 날 인기</div>
-                    <div className="text-xs font-medium text-blue-600">
-                      {regionalData.regions[selectedRegion].summary.coldWeatherFoods.join(', ') || '데이터 부족'}
+                  
+                  {/* 커피 */}
+                  <div className="flex items-center gap-4 p-3 bg-blue-50 rounded-lg">
+                    <span className="text-2xl">☕</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-800">라떼 vs 아메리카노</p>
+                      <p className="text-xs text-gray-500">라떼 -0.41 (추운 날) vs 아메리카노 +0.75 (더운 날)</p>
                     </div>
                   </div>
-                  <div className="bg-cyan-50 rounded-xl p-4 text-center border border-cyan-200">
-                    <div className="text-2xl mb-2">🌧️</div>
-                    <div className="text-sm text-gray-600 mb-1">비 오는 날</div>
-                    <div className="text-xs font-medium text-cyan-600">
-                      {regionalData.regions[selectedRegion].summary.rainyDayFoods.join(', ') || '데이터 부족'}
+                  
+                  {/* 예측력 */}
+                  <div className="flex items-center gap-4 p-3 bg-green-50 rounded-lg">
+                    <span className="text-2xl">📊</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-800">더운 날 음식이 예측 쉬움</p>
+                      <p className="text-xs text-gray-500">더운 날 R² 0.7~0.8 vs 추운 날 R² 0.2~0.3 (선택지 분산)</p>
                     </div>
                   </div>
                 </div>
                 
-                {/* 상관관계 테이블 */}
-                <h3 className="text-md font-bold text-gray-700 mb-3">📊 {selectedRegion} 음식별 상관계수</h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-gray-500 border-b border-gray-200">
-                        <th className="text-left py-2 px-2">음식</th>
-                        <th className="text-center py-2 px-2">🌡️ 기온</th>
-                        <th className="text-center py-2 px-2">🌧️ 강수</th>
-                        <th className="text-center py-2 px-2">평균 검색량</th>
-                      </tr>
-                    </thead>
+                {/* 지역별 한줄 요약 */}
+                <h3 className="text-sm font-bold text-gray-700 mt-4 border-b border-gray-100 pb-2">🗺️ 지역별</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                  <div className="p-2 bg-blue-50 rounded-lg text-center">
+                    <span>🌊 부산</span><br/>
+                    <span className="text-blue-600 font-medium">밀면 +0.82</span>
+                  </div>
+                  <div className="p-2 bg-orange-50 rounded-lg text-center">
+                    <span>🔥 대구</span><br/>
+                    <span className="text-orange-600 font-medium">추운날 음식↑</span>
+                  </div>
+                  <div className="p-2 bg-green-50 rounded-lg text-center">
+                    <span>🌿 대전</span><br/>
+                    <span className="text-green-600 font-medium">냉면 +0.88</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* 🗺️ 지역별 분석 탭 */}
+            {activeTab === 'regional' && regionalData && (
+              <div className="space-y-4">
+                {/* 지역 선택 */}
+                <div className="flex gap-1 border-b border-gray-100 pb-3">
+                  {Object.keys(regionalData.regions).map(region => (
+                    <button
+                      key={region}
+                      onClick={() => setSelectedRegion(region)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                        selectedRegion === region
+                          ? 'bg-gray-800 text-white'
+                          : 'text-gray-500 hover:bg-gray-100'
+                      }`}
+                    >
+                      {region === '서울' && '🏙️'}
+                      {region === '부산' && '🌊'}
+                      {region === '대구' && '🔥'}
+                      {region === '광주' && '🎭'}
+                      {region === '대전' && '🌿'}
+                      {' '}{region}
+                    </button>
+                  ))}
+                </div>
+                
+                {/* 선택된 지역 요약 */}
+                {regionalData.regions[selectedRegion] && (
+                  <div>
+                    <div className="grid grid-cols-3 gap-2 mb-4">
+                      <div className="bg-red-50 rounded-lg p-2 text-center">
+                        <div className="text-lg">🔥</div>
+                        <div className="text-[10px] text-red-600 font-medium">
+                          {regionalData.regions[selectedRegion].summary.hotWeatherFoods.slice(0,2).join(', ') || '-'}
+                        </div>
+                      </div>
+                      <div className="bg-blue-50 rounded-lg p-2 text-center">
+                        <div className="text-lg">❄️</div>
+                        <div className="text-[10px] text-blue-600 font-medium">
+                          {regionalData.regions[selectedRegion].summary.coldWeatherFoods.slice(0,2).join(', ') || '-'}
+                        </div>
+                      </div>
+                      <div className="bg-cyan-50 rounded-lg p-2 text-center">
+                        <div className="text-lg">🌧️</div>
+                        <div className="text-[10px] text-cyan-600 font-medium">
+                          {regionalData.regions[selectedRegion].summary.rainyDayFoods.slice(0,2).join(', ') || '-'}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* 상관관계 테이블 */}
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-xs">
+                        <thead>
+                          <tr className="text-gray-500 border-b border-gray-200">
+                            <th className="text-left py-2 px-2">음식</th>
+                            <th className="text-center py-2 px-2">🌡️</th>
+                            <th className="text-center py-2 px-2">🌧️</th>
+                          </tr>
+                        </thead>
                     <tbody>
                       {regionalData.regions[selectedRegion].trends
                         .filter(t => t.correlationWithTemp !== 0 || t.correlationWithRain !== 0)
@@ -1128,6 +936,9 @@ export default function InsightsPage() {
             </div>
           </div>
         )}
+
+          </div> {/* 컨텐츠 카드 닫기 */}
+        </div> {/* relative 닫기 */}
 
         {/* CTA 섹션 */}
         <div className="mt-8 glass-card p-6 text-center">

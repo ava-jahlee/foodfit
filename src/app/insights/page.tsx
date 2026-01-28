@@ -196,14 +196,14 @@ export default function InsightsPage() {
     )
   }
 
-  // 탭 정보
+  // 탭 정보 - 직관적인 이름으로!
   const tabs = [
-    { id: 'insights', icon: '💡', label: '핵심' },
-    { id: 'trend', icon: '📈', label: '트렌드' },
-    { id: 'correlation', icon: '🔬', label: '상관관계' },
-    { id: 'regional', icon: '🗺️', label: '지역별' },
-    { id: 'multivariate', icon: '🧠', label: '다변량' },
-    { id: 'monthly', icon: '📅', label: '월별TOP' },
+    { id: 'insights', icon: '💡', label: '재밌는 발견' },
+    { id: 'correlation', icon: '🌡️', label: '날씨 영향' },
+    { id: 'regional', icon: '🗺️', label: '지역 차이' },
+    { id: 'trend', icon: '📈', label: '월별 변화' },
+    { id: 'monthly', icon: '🏆', label: '월별 1위' },
+    { id: 'multivariate', icon: '🔬', label: '심층 분석' },
   ]
 
   return (

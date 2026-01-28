@@ -1,6 +1,64 @@
-# 🍽️ FoodFit - 맞춤형 식사 메뉴 추천 앱
+# 🍽️ FoodFit - 데이터 기반 맞춤형 음식 추천
 
-> **"오늘 뭐 먹지?"** 고민을 해결해주는 스마트 메뉴 추천 서비스
+> **"오늘 뭐 먹지?"** 고민을 데이터로 해결하는 스마트 메뉴 추천 서비스
+
+🔗 **Live Demo**: [https://foodfit.forx.kr](https://foodfit.forx.kr)
+
+![FoodFit Screenshot](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
+
+---
+
+## ✨ 주요 기능
+
+### 🎯 맞춤형 추천
+| 기능 | 설명 |
+|------|------|
+| 🌤️ **날씨 기반** | 기온, 습도, 강수량에 따른 추천 |
+| 📍 **GPS 위치** | 현재 위치 자동 감지 + 주변 맛집 연동 |
+| 💭 **기분 기반** | 6가지 기분 프리셋 + 자유 입력 |
+| 🍜 **카테고리** | 한식/양식/일식/중식/아시안/카페 |
+| 🥗 **식단 관리** | 다이어트, 벌크업, 키토제닉 등 |
+| ⏰ **시간대** | 아침/점심/저녁/야식 자동 감지 |
+
+### 📊 데이터 분석 & 인사이트
+| 분석 | 내용 |
+|------|------|
+| 🔬 **날씨-음식 상관관계** | Google Trends + Open-Meteo 데이터 분석 |
+| 🗺️ **지역별 분석** | 9개 지역 (서울, 부산, 대구, 인천, 광주, 대전, 울산, 경기, 제주) |
+| 👥 **인구통계 분석** | 연령대, 1인가구 비율과 음식 선호도 상관관계 |
+| 🧠 **다변량 분석** | 기온+습도+강수량+일조량 복합 분석 |
+
+### 💡 재밌는 발견들
+- 🤔 **"비 오면 파전"은 마케팅?** - 강수량 상관계수 +0.06 (무관!)
+- ☕ **라떼 vs 아메리카노** - 정반대 계절 선호 (라떼 -0.41, 아아 +0.75)
+- 🏙️ **서울만 상관계수 0** - 다양성으로 인한 평균화 현상
+- 🏝️ **제주만 냉면 반대** - 따뜻한 겨울 기후 영향 (-0.31)
+- 🧓 **고령 인구 ↑ → 국밥** (+0.87)
+
+---
+
+## 🛠️ 기술 스택
+
+### Frontend
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS (Glassmorphism UI)
+- **State**: Zustand
+- **Charts**: Recharts
+
+### Backend & Data
+- **Database**: Supabase (PostgreSQL)
+- **APIs**: Open-Meteo (날씨), Naver Local API (맛집)
+- **Analysis**: Google Trends API
+
+### DevOps
+- **Hosting**: Vercel
+- **Domain**: Custom (forx.kr)
+- **CI/CD**: GitHub Actions (자동 트렌드 분석)
+
+---
 
 ## 🚀 시작하기
 
@@ -12,12 +70,16 @@ npm install
 
 ### 2. 환경 변수 설정
 
-프로젝트 루트에 `.env.local` 파일을 생성하고 아래 내용을 입력하세요:
+`.env.local` 파일 생성:
 
 ```env
-# 카카오 API
-KAKAO_REST_API_KEY=your_kakao_rest_api_key
-NEXT_PUBLIC_KAKAO_JS_KEY=your_kakao_js_key
+# Naver API (맛집 검색)
+NAVER_CLIENT_ID=your_naver_client_id
+NAVER_CLIENT_SECRET=your_naver_client_secret
+
+# Supabase (데이터 수집)
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
 ### 3. 개발 서버 실행
@@ -26,39 +88,86 @@ NEXT_PUBLIC_KAKAO_JS_KEY=your_kakao_js_key
 npm run dev
 ```
 
-http://localhost:4000 에서 확인하세요!
+http://localhost:4000 에서 확인!
 
-## ✨ 주요 기능
-
-- 🌤️ **날씨 기반 추천** - Open-Meteo API 연동
-- 💭 **기분 기반 추천** - 6가지 기분 프리셋 + 자유 입력
-- 🥗 **식단 관리 모드** - 다이어트, 벌크업, 키토 등
-- 🍜 **최근 메뉴 제외** - 제외/포함 토글 가능
-- 📍 **주변 맛집 연동** - 카카오맵 API
-
-## 🛠️ 기술 스택
-
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State**: Zustand
-- **APIs**: Open-Meteo, 카카오맵
+---
 
 ## 📁 프로젝트 구조
 
 ```
 src/
-├── app/              # Next.js App Router
-│   ├── page.tsx      # 메인 페이지
-│   ├── result/       # 추천 결과 페이지
-│   └── api/          # API Routes
-├── components/       # React 컴포넌트
-├── data/             # 메뉴 데이터 (JSON)
-├── lib/              # 유틸리티 함수
-├── store/            # Zustand 스토어
-└── utils/            # 헬퍼 함수
+├── app/
+│   ├── page.tsx          # 메인 페이지
+│   ├── result/           # 추천 결과
+│   ├── insights/         # 데이터 인사이트
+│   ├── privacy/          # 개인정보처리방침
+│   └── api/              # API Routes
+├── components/
+│   ├── weather/          # 날씨 카드
+│   ├── mood/             # 기분 선택
+│   ├── diet/             # 식단 관리
+│   ├── category/         # 카테고리 선택
+│   └── location/         # 위치 선택
+├── data/
+│   ├── menus.json        # 메뉴 데이터 (200+)
+│   ├── trend-analysis.json
+│   ├── regional-analysis.json
+│   └── demographic-analysis.json
+├── lib/
+│   ├── recommend.ts      # 추천 알고리즘
+│   └── supabase.ts       # DB 연동
+└── scripts/
+    ├── analyzeTrends.ts      # 트렌드 분석
+    ├── analyzeByRegion.ts    # 지역별 분석
+    └── analyzeDemographics.ts # 인구통계 분석
 ```
 
-## 📝 라이선스
+---
 
-MIT
+## 📊 데이터 분석 스크립트
+
+```bash
+# 날씨-음식 트렌드 분석
+npx ts-node scripts/analyzeTrends.ts
+
+# 지역별 분석 (9개 지역)
+npx ts-node scripts/analyzeByRegion.ts
+
+# 인구통계 분석
+npx ts-node scripts/analyzeDemographics.ts
+
+# 다변량 분석
+npx ts-node scripts/analyzeMultivariate.ts
+```
+
+---
+
+## 🔄 자동 업데이트
+
+GitHub Actions로 3일마다 자동 트렌드 분석:
+- `.github/workflows/update-trends.yml`
+- 최신 Google Trends 데이터 반영
+- 추천 알고리즘 자동 개선
+
+---
+
+## 📝 문서
+
+- [Supabase 설정 가이드](docs/SUPABASE_SETUP.md)
+- [GitHub Actions 설정](docs/GITHUB_ACTIONS_SETUP.md)
+- [데이터 인사이트 리포트](docs/INSIGHTS.md)
+- [배포 계획](docs/DEPLOYMENT_PLAN.md)
+
+---
+
+## 📜 라이선스
+
+MIT License
+
+---
+
+## 👨‍💻 개발자
+
+취미로 만든 사이드 프로젝트입니다! 🍜
+
+**GitHub**: [@ava-jahlee](https://github.com/ava-jahlee)

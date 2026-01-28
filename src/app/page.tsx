@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import WeatherCard from '@/components/weather/WeatherCard'
 import MoodSelector from '@/components/mood/MoodSelector'
 import DietSelector from '@/components/diet/DietSelector'
@@ -91,7 +92,17 @@ export default function Home() {
       {/* 하단 고정 버튼 */}
       <div className="fixed bottom-0 left-0 right-0 p-4">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-100/95 to-transparent pointer-events-none" />
-        <div className="max-w-lg mx-auto relative">
+        <div className="max-w-lg mx-auto relative space-y-2">
+          {/* 인사이트 힌트 */}
+          <Link 
+            href="/insights"
+            className="flex items-center justify-center gap-2 text-xs text-gray-400 hover:text-orange-500 transition-colors py-1"
+          >
+            <span>📊</span>
+            <span>날씨별 음식 트렌드가 궁금하다면?</span>
+            <span className="text-orange-400">→</span>
+          </Link>
+          
           <button
             onClick={handleRecommend}
             disabled={isLoading}

@@ -549,13 +549,19 @@ export default function InsightsPage() {
             {/* 🗺️ 지역별 분석 탭 */}
             {activeTab === 'regional' && regionalData && (
               <div className="space-y-4">
+                {/* 신뢰도 주의 문구 */}
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-700">
+                  ⚠️ <span className="font-medium">데이터 신뢰도 안내:</span> 광주, 울산, 제주 지역은 검색량이 적어 상관계수가 부정확할 수 있어요. 
+                  <span className="text-amber-500">(회색 = 표본 부족)</span>
+                </div>
+                
                 {/* 지역 선택 */}
-                <div className="flex gap-1 border-b border-gray-100 pb-3">
+                <div className="flex gap-1 border-b border-gray-100 pb-3 overflow-x-auto">
                   {Object.keys(regionalData.regions).map(region => (
                     <button
                       key={region}
                       onClick={() => setSelectedRegion(region)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                      className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
                         selectedRegion === region
                           ? 'bg-gray-800 text-white'
                           : 'text-gray-500 hover:bg-gray-100'
@@ -564,8 +570,12 @@ export default function InsightsPage() {
                       {region === '서울' && '🏙️'}
                       {region === '부산' && '🌊'}
                       {region === '대구' && '🔥'}
+                      {region === '인천' && '🌉'}
                       {region === '광주' && '🎭'}
                       {region === '대전' && '🌿'}
+                      {region === '울산' && '🏭'}
+                      {region === '경기' && '🏘️'}
+                      {region === '제주' && '🏝️'}
                       {' '}{region}
                     </button>
                   ))}
@@ -601,23 +611,40 @@ export default function InsightsPage() {
                         <thead>
                           <tr className="text-gray-500 border-b border-gray-200">
                             <th className="text-left py-2 px-2">음식</th>
-                            <th className="text-center py-2 px-2">🌡️</th>
-                            <th className="text-center py-2 px-2">🌧️</th>
+                            <th className="text-center py-2 px-2">🌡️ 기온</th>
+                            <th className="text-center py-2 px-2">🌧️ 강수</th>
+                            <th className="text-center py-2 px-2">📊 n</th>
                           </tr>
                         </thead>
                     <tbody>
                       {regionalData.regions[selectedRegion].trends
-                        .filter(t => t.correlationWithTemp !== 0 || t.correlationWithRain !== 0)
-                        .sort((a, b) => Math.abs(b.correlationWithTemp) - Math.abs(a.correlationWithTemp))
+                        .sort((a, b) => {
+                          // 표본 수로 정렬 (많은 순) 후, 상관계수로 정렬
+                          const avgA = a.monthlyValues.reduce((sum, v) => sum + v.value, 0) / 12
+                          const avgB = b.monthlyValues.reduce((sum, v) => sum + v.value, 0) / 12
+                          if (avgA < 10 && avgB >= 10) return 1
+                          if (avgA >= 10 && avgB < 10) return -1
+                          return Math.abs(b.correlationWithTemp) - Math.abs(a.correlationWithTemp)
+                        })
                         .map(trend => {
                           const avgSearch = Math.round(
                             trend.monthlyValues.reduce((sum, v) => sum + v.value, 0) / 12
                           )
+                          const isLowSample = avgSearch < 10
                           return (
-                            <tr key={trend.keyword} className="border-b border-gray-100 hover:bg-gray-50">
-                              <td className="py-2 px-2 text-gray-800 font-medium">{trend.keyword}</td>
+                            <tr 
+                              key={trend.keyword} 
+                              className={`border-b border-gray-100 ${
+                                isLowSample ? 'opacity-50 bg-gray-50' : 'hover:bg-gray-50'
+                              }`}
+                            >
+                              <td className={`py-2 px-2 font-medium ${isLowSample ? 'text-gray-400' : 'text-gray-800'}`}>
+                                {trend.keyword}
+                                {isLowSample && <span className="ml-1 text-[10px]">⚠️</span>}
+                              </td>
                               <td className="py-2 px-2 text-center">
                                 <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                  isLowSample ? 'text-gray-400' :
                                   trend.correlationWithTemp > 0.5 ? 'bg-red-100 text-red-600' :
                                   trend.correlationWithTemp < -0.3 ? 'bg-blue-100 text-blue-600' :
                                   'text-gray-500'
@@ -627,13 +654,16 @@ export default function InsightsPage() {
                               </td>
                               <td className="py-2 px-2 text-center">
                                 <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                  isLowSample ? 'text-gray-400' :
                                   trend.correlationWithRain > 0.5 ? 'bg-cyan-100 text-cyan-600' :
                                   'text-gray-500'
                                 }`}>
                                   {trend.correlationWithRain > 0 ? '+' : ''}{trend.correlationWithRain.toFixed(2)}
                                 </span>
                               </td>
-                              <td className="py-2 px-2 text-center text-gray-600">{avgSearch}</td>
+                              <td className={`py-2 px-2 text-center ${isLowSample ? 'text-gray-400' : 'text-gray-600'}`}>
+                                {avgSearch}
+                              </td>
                             </tr>
                           )
                         })}
@@ -651,11 +681,13 @@ export default function InsightsPage() {
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
-                    data={Object.entries(regionalData.comparison['밀면'] || {}).map(([region, data]) => ({
-                      region,
-                      검색량: data.avgSearchVolume,
-                      상관계수: data.tempCorrelation,
-                    }))}
+                    data={Object.entries(regionalData.comparison['밀면'] || {})
+                      .filter(([_, data]) => data.avgSearchVolume >= 10) // 표본 < 10 제외
+                      .map(([region, data]) => ({
+                        region,
+                        검색량: data.avgSearchVolume,
+                        상관계수: Math.round(data.tempCorrelation * 100) / 100,
+                      }))}
                   >
                     <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                     <XAxis dataKey="region" stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
@@ -675,6 +707,8 @@ export default function InsightsPage() {
               </div>
               <p className="text-center text-gray-500 text-xs mt-2">
                 부산에서 밀면은 지역 특산물! 서울에서도 인기 상승 중 📈
+                <br/>
+                <span className="text-gray-400">(검색량 10 미만 지역 제외)</span>
               </p>
             </div>
           </div>

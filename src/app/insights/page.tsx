@@ -196,74 +196,152 @@ export default function InsightsPage() {
     )
   }
 
+  // 탭별 설명
+  const tabDescriptions: Record<string, { title: string; desc: string; tip: string }> = {
+    insights: {
+      title: '💡 핵심 발견',
+      desc: '구글 트렌드와 날씨 데이터를 분석해 발견한 흥미로운 사실들!',
+      tip: '💬 "비 오면 파전" 정말일까요? 데이터로 확인해보세요!'
+    },
+    trend: {
+      title: '📈 월별 트렌드',
+      desc: '음식별 검색량이 월마다 어떻게 변하는지 확인하세요.',
+      tip: '💬 키워드를 클릭해서 비교해보세요!'
+    },
+    correlation: {
+      title: '🔬 상관관계 분석',
+      desc: '기온/강수량과 음식 검색량의 상관관계를 분석했어요.',
+      tip: '💬 +1에 가까울수록 양의 상관, -1에 가까울수록 음의 상관!'
+    },
+    regional: {
+      title: '🗺️ 지역별 분석',
+      desc: '서울, 부산, 대구, 광주, 대전의 음식 트렌드를 비교해요.',
+      tip: '💬 같은 음식도 지역마다 인기 시즌이 달라요!'
+    },
+    multivariate: {
+      title: '🧠 다변량 분석',
+      desc: '기온+강수+습도+일조량을 모두 고려한 심층 분석이에요.',
+      tip: '💬 R² 값이 높을수록 날씨로 예측이 잘 돼요!'
+    },
+    monthly: {
+      title: '📅 월별 TOP 음식',
+      desc: '매달 가장 많이 검색되는 음식 TOP 3를 확인하세요.',
+      tip: '💬 계절마다 인기 음식이 확 달라요!'
+    },
+  }
+
   return (
     <main className="min-h-screen pb-28">
       {/* 헤더 */}
       <header className="sticky top-0 z-50 glass-strong border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
-            <span className="text-xl">←</span>
-            <span>돌아가기</span>
+            <span className="text-lg">←</span>
+            <span className="text-sm">홈으로</span>
           </Link>
-          <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-            <span>📊</span> 인사이트
+          <h1 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+            <span>📊</span> 데이터 인사이트
           </h1>
-          <div className="text-sm text-gray-400">
+          <div className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">
             {new Date(data.generatedAt).toLocaleDateString('ko-KR')} 기준
           </div>
         </div>
       </header>
 
-      <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
-        {/* 요약 카드 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 opacity-0 animate-fade-in stagger-1">
-          <div className="glass-card p-4">
-            <div className="text-2xl mb-1">🔥</div>
-            <h3 className="text-gray-800 font-bold text-sm mb-1">더운 날 인기</h3>
-            <p className="text-red-500 text-xs font-medium">
-              {correlationData.filter(d => d.temp > 0.5).map(d => d.keyword).join(', ') || '냉면, 빙수'}
-            </p>
-          </div>
-          
-          <div className="glass-card p-4">
-            <div className="text-2xl mb-1">❄️</div>
-            <h3 className="text-gray-800 font-bold text-sm mb-1">추운 날 인기</h3>
-            <p className="text-blue-500 text-xs font-medium">
-              {correlationData.filter(d => d.temp < -0.3).map(d => d.keyword).join(', ') || '김치찌개, 설렁탕'}
-            </p>
-          </div>
-          
-          <div className="glass-card p-4">
-            <div className="text-2xl mb-1">🌧️</div>
-            <h3 className="text-gray-800 font-bold text-sm mb-1">비 오는 날 인기</h3>
-            <p className="text-teal-500 text-xs font-medium">
-              {correlationData.filter(d => d.rain > 0.5).map(d => d.keyword).slice(0, 3).join(', ') || '파전, 막걸리'}
-            </p>
+      {/* 페이지 소개 */}
+      <div className="max-w-4xl mx-auto px-4 pt-6 pb-2">
+        <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl p-5 border border-blue-100 opacity-0 animate-fade-in">
+          <div className="flex items-start gap-4">
+            <div className="text-4xl">🔬</div>
+            <div className="flex-1">
+              <h2 className="text-lg font-bold text-gray-800 mb-1">FoodFit 데이터 연구소</h2>
+              <p className="text-sm text-gray-600 mb-2">
+                구글 트렌드 + 날씨 API 데이터를 분석해서 <strong>음식과 날씨의 상관관계</strong>를 연구했어요!
+              </p>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <span className="bg-white/80 px-2 py-1 rounded-full text-gray-500">📊 15개 음식 분석</span>
+                <span className="bg-white/80 px-2 py-1 rounded-full text-gray-500">🗺️ 5개 도시</span>
+                <span className="bg-white/80 px-2 py-1 rounded-full text-gray-500">📅 12개월 데이터</span>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 py-4 space-y-4">
+        {/* 요약 카드 - 접을 수 있게 */}
+        <details className="group opacity-0 animate-fade-in stagger-1" open>
+          <summary className="flex items-center justify-between cursor-pointer list-none mb-3">
+            <span className="text-sm font-medium text-gray-600 flex items-center gap-2">
+              ⚡ 한눈에 보기
+            </span>
+            <span className="text-gray-400 text-xs group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="glass-card p-3 text-center hover:scale-105 transition-transform cursor-default">
+              <div className="text-2xl mb-1">🔥</div>
+              <h3 className="text-gray-700 font-bold text-xs mb-1">더운 날</h3>
+              <p className="text-red-500 text-[10px] font-medium leading-tight">
+                {correlationData.filter(d => d.temp > 0.5).map(d => d.keyword).slice(0, 3).join(', ') || '냉면, 빙수'}
+              </p>
+            </div>
+            
+            <div className="glass-card p-3 text-center hover:scale-105 transition-transform cursor-default">
+              <div className="text-2xl mb-1">❄️</div>
+              <h3 className="text-gray-700 font-bold text-xs mb-1">추운 날</h3>
+              <p className="text-blue-500 text-[10px] font-medium leading-tight">
+                {correlationData.filter(d => d.temp < -0.3).map(d => d.keyword).slice(0, 3).join(', ') || '김치찌개, 설렁탕'}
+              </p>
+            </div>
+            
+            <div className="glass-card p-3 text-center hover:scale-105 transition-transform cursor-default">
+              <div className="text-2xl mb-1">🌧️</div>
+              <h3 className="text-gray-700 font-bold text-xs mb-1">비 오는 날</h3>
+              <p className="text-teal-500 text-[10px] font-medium leading-tight">
+                {correlationData.filter(d => d.rain > 0.3).map(d => d.keyword).slice(0, 3).join(', ') || '파전, 막걸리'}
+              </p>
+            </div>
+          </div>
+        </details>
 
         {/* 탭 네비게이션 */}
-        <div className="flex gap-2 overflow-x-auto pb-2 opacity-0 animate-fade-in stagger-2">
-          {[
-            { id: 'insights', label: '💡 핵심 발견' },
-            { id: 'trend', label: '📈 월별 트렌드' },
-            { id: 'correlation', label: '🔬 상관관계' },
-            { id: 'regional', label: '🗺️ 지역별' },
-            { id: 'multivariate', label: '🧠 다변량' },
-            { id: 'monthly', label: '📅 월별 TOP' },
-          ].map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
-                activeTab === tab.id
-                  ? 'bg-blue-500 text-white shadow-md'
-                  : 'glass text-gray-600 hover:bg-white/80'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        <div className="opacity-0 animate-fade-in stagger-2">
+          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            {[
+              { id: 'insights', label: '💡 핵심', fullLabel: '핵심 발견' },
+              { id: 'trend', label: '📈 트렌드', fullLabel: '월별 트렌드' },
+              { id: 'correlation', label: '🔬 상관', fullLabel: '상관관계' },
+              { id: 'regional', label: '🗺️ 지역', fullLabel: '지역별' },
+              { id: 'multivariate', label: '🧠 다변량', fullLabel: '다변량 분석' },
+              { id: 'monthly', label: '📅 TOP', fullLabel: '월별 TOP' },
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`px-3 py-2 rounded-xl text-xs font-medium transition-all whitespace-nowrap ${
+                  activeTab === tab.id
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-200'
+                    : 'bg-white/60 text-gray-500 hover:bg-white/90 hover:text-gray-700'
+                }`}
+              >
+                <span className="md:hidden">{tab.label}</span>
+                <span className="hidden md:inline">{tab.label.split(' ')[0]} {tab.fullLabel}</span>
+              </button>
+            ))}
+          </div>
+          
+          {/* 선택된 탭 설명 */}
+          <div className="mt-3 bg-white/40 rounded-xl p-3 border border-white/60">
+            <div className="flex items-start gap-3">
+              <div className="flex-1">
+                <h3 className="font-bold text-gray-800 text-sm">{tabDescriptions[activeTab].title}</h3>
+                <p className="text-gray-500 text-xs mt-0.5">{tabDescriptions[activeTab].desc}</p>
+              </div>
+              <div className="bg-yellow-50 text-yellow-700 text-[10px] px-2 py-1 rounded-lg border border-yellow-200 whitespace-nowrap">
+                {tabDescriptions[activeTab].tip}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 💡 핵심 발견 탭 */}
@@ -1058,35 +1136,53 @@ export default function InsightsPage() {
           </div>
         )}
 
-        {/* 인사이트 요약 */}
-        <div className="mt-8 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl p-6 border border-gray-200">
-          <h2 className="text-xl font-bold text-gray-700 mb-4">💡 알고리즘 적용 인사이트</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <h3 className="text-purple-300 font-semibold mb-2">🔥 더운 날 (25°C+) 가중치</h3>
-              <ul className="text-gray-500 text-sm space-y-1">
-                {correlationData.filter(d => d.temp > 0.5).map(d => (
-                  <li key={d.keyword}>• {d.keyword}: +{Math.round(d.temp * 30)}%</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-blue-300 font-semibold mb-2">❄️ 추운 날 (5°C-) 가중치</h3>
-              <ul className="text-gray-500 text-sm space-y-1">
-                {correlationData.filter(d => d.temp < -0.3).map(d => (
-                  <li key={d.keyword}>• {d.keyword}: +{Math.round(Math.abs(d.temp) * 30)}%</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        {/* CTA 섹션 */}
+        <div className="mt-8 glass-card p-6 text-center">
+          <h2 className="text-lg font-bold text-gray-800 mb-2">🍽️ 오늘 뭐 먹지?</h2>
+          <p className="text-gray-500 text-sm mb-4">
+            이 분석 결과가 FoodFit 추천 알고리즘에 적용되어 있어요!
+          </p>
+          <Link 
+            href="/"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-medium shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-105 transition-all"
+          >
+            <span>🍜</span> 오늘의 메뉴 추천받기
+          </Link>
         </div>
 
         {/* 데이터 출처 */}
-        <div className="mt-6 text-center text-gray-700/30 text-sm">
-          <p>📊 데이터 출처: Google Trends (2024년 한국)</p>
-          <p>🌡️ 기온 데이터: 서울 월별 평균 기온</p>
+        <div className="mt-6 glass-card p-4">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-lg">📚</span>
+            <span className="text-sm font-medium text-gray-700">데이터 출처</span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-500">
+            <span className="bg-white/60 px-3 py-1 rounded-full">📊 Google Trends API</span>
+            <span className="bg-white/60 px-3 py-1 rounded-full">🌡️ Open-Meteo API</span>
+            <span className="bg-white/60 px-3 py-1 rounded-full">🗓️ 2024~2025 데이터</span>
+          </div>
+          <p className="text-center text-[10px] text-gray-400 mt-3">
+            이 분석은 참고용이며, 실제 소비 패턴과 다를 수 있습니다.
+          </p>
         </div>
       </div>
+      
+      {/* Footer */}
+      <footer className="mt-8 border-t border-gray-200 bg-white/40 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-center md:text-left">
+              <p className="text-sm font-medium text-gray-700">🍽️ FoodFit</p>
+              <p className="text-xs text-gray-400">데이터 기반 음식 추천 서비스</p>
+            </div>
+            <div className="flex items-center gap-4 text-xs text-gray-500">
+              <Link href="/" className="hover:text-gray-700 transition-colors">홈</Link>
+              <Link href="/privacy" className="hover:text-gray-700 transition-colors">개인정보처리방침</Link>
+              <a href="https://github.com/ava-jahlee/foodfit" target="_blank" rel="noopener" className="hover:text-gray-700 transition-colors">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }

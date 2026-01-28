@@ -6,6 +6,7 @@ import { getRecommendations, weatherCodeToCondition, RecommendationResult } from
 import { SelectionLog } from '@/lib/supabase'
 import Link from 'next/link'
 import Footer from '@/components/common/Footer'
+import DarkModeToggle from '@/components/common/DarkModeToggle'
 
 interface Place {
   place_name: string
@@ -14,6 +15,33 @@ interface Place {
   category: string
   link: string
   distanceText?: string  // 거리 (예: "500m", "1.2km")
+}
+
+// 네이버 지도 앱으로 열기 (모바일) 또는 웹으로 열기 (데스크톱)
+function openNaverMap(placeName: string, webLink: string) {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  const encodedQuery = encodeURIComponent(placeName)
+  
+  if (isMobile) {
+    // 네이버 지도 앱 딥링크
+    const appLink = `nmap://search?query=${encodedQuery}&appname=com.foodfit.app`
+    const webFallback = `https://map.naver.com/v5/search/${encodedQuery}`
+    
+    // 앱 열기 시도
+    const startTime = Date.now()
+    window.location.href = appLink
+    
+    // 앱이 없으면 웹으로 (2초 후)
+    setTimeout(() => {
+      // 페이지가 아직 보이면 앱이 안 열린 것
+      if (Date.now() - startTime < 2500) {
+        window.open(webFallback, '_blank')
+      }
+    }, 2000)
+  } else {
+    // 데스크톱은 웹으로
+    window.open(webLink || `https://map.naver.com/v5/search/${encodedQuery}`, '_blank')
+  }
 }
 
 export default function ResultPage() {
@@ -174,13 +202,16 @@ export default function ResultPage() {
     <main className="min-h-screen pb-28">
       {/* 헤더 */}
       <header className="sticky top-0 z-50 glass-strong border-b border-white/20">
-        <div className="max-w-lg mx-auto px-4 py-4 flex items-center gap-4">
-          <Link href="/" className="p-2 -ml-2 rounded-xl hover:bg-gray-100/50 transition-colors">
-            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </Link>
-          <h1 className="text-lg font-semibold text-gray-800">추천 결과</h1>
+        <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="p-2 -ml-2 rounded-xl hover:bg-gray-100/50 dark:hover:bg-slate-700/50 transition-colors">
+              <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </Link>
+            <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-100">추천 결과</h1>
+          </div>
+          <DarkModeToggle />
         </div>
       </header>
 
@@ -289,17 +320,15 @@ export default function ResultPage() {
                   {places[result.menu.id]?.length > 0 ? (
                       <div className="space-y-2">
                         {places[result.menu.id].map((place, i) => (
-                          <a
+                          <button
                             key={i}
-                            href={place.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          className="block p-3 bg-white rounded-xl hover:shadow-md transition-all border border-gray-100"
+                            onClick={() => openNaverMap(place.place_name, place.link)}
+                            className="w-full text-left p-3 bg-white dark:bg-slate-800 rounded-xl hover:shadow-md transition-all border border-gray-100 dark:border-slate-700"
                           >
                           <div className="flex items-start justify-between gap-3">
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-2">
-                                  <p className="font-medium text-gray-800 text-sm">{place.place_name}</p>
+                                  <p className="font-medium text-gray-800 dark:text-gray-200 text-sm">{place.place_name}</p>
                                   {place.distanceText && (
                                     <span className="text-xs text-blue-500 font-medium">
                                       📍 {place.distanceText}
@@ -309,10 +338,10 @@ export default function ResultPage() {
                                 <p className="text-xs text-gray-400 mt-1">{place.address_name}</p>
                               </div>
                             <span className="text-xs text-orange-500 font-medium flex-shrink-0">
-                              지도 →
+                              지도 앱 →
                             </span>
                             </div>
-                          </a>
+                          </button>
                         ))}
                       </div>
                     ) : (

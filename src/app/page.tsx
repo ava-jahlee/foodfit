@@ -9,6 +9,7 @@ import RecentMealInput from '@/components/menu/RecentMealInput'
 import LocationSelector from '@/components/location/LocationSelector'
 import CategorySelector from '@/components/category/CategorySelector'
 import Footer from '@/components/common/Footer'
+import DarkModeToggle from '@/components/common/DarkModeToggle'
 import { useUserInputStore } from '@/store/userInputStore'
 import { getTimeSlotLabel, getTimeSlotEmoji } from '@/utils/time'
 
@@ -47,9 +48,12 @@ export default function Home() {
             <span className="text-2xl">🍽️</span>
             <span>FoodFit</span>
           </h1>
-          <div className="flex items-center gap-2 text-sm text-gray-500">
-            <span>{getTimeSlotEmoji(timeSlot)}</span>
-            <span>{getTimeSlotLabel(timeSlot)}</span>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <span>{getTimeSlotEmoji(timeSlot)}</span>
+              <span>{getTimeSlotLabel(timeSlot)}</span>
+            </div>
+            <DarkModeToggle />
           </div>
         </div>
       </header>

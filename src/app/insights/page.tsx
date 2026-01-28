@@ -424,6 +424,85 @@ export default function InsightsPage() {
                     <span className="text-green-600 font-medium">냉면 +0.88</span>
                   </div>
                 </div>
+                
+                {/* 인구통계 인사이트 - 토글 */}
+                <h3 className="text-sm font-bold text-gray-700 mt-4 border-b border-gray-100 pb-2">👥 인구통계 × 음식</h3>
+                <div className="space-y-2">
+                  {/* 고령 */}
+                  <div className="bg-amber-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'elderly' ? null : 'elderly')}
+                      className="w-full flex items-center gap-3 p-3 text-left hover:bg-amber-100 transition-colors"
+                    >
+                      <span className="text-xl">🧓</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">고령 인구 ↑ → 국밥 +0.87</p>
+                        <p className="text-xs text-gray-500">나이 들수록 전통 음식 선호</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform text-xs ${expandedInsight === 'elderly' ? 'rotate-180' : ''}`}>▼</span>
+                    </button>
+                    {expandedInsight === 'elderly' && (
+                      <div className="px-4 pb-3 text-xs text-gray-600 border-t border-amber-200">
+                        <div className="flex gap-2 mt-2">
+                          <span className="bg-amber-100 px-2 py-1 rounded">국밥 +0.87</span>
+                          <span className="bg-amber-100 px-2 py-1 rounded">막걸리 +0.61</span>
+                          <span className="bg-amber-100 px-2 py-1 rounded">밀면 +0.60</span>
+                        </div>
+                        <p className="mt-2 text-gray-500">부산(고령22%) &gt; 대구(20%) &gt; 서울(18.5%)</p>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* 1인가구 */}
+                  <div className="bg-pink-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'single' ? null : 'single')}
+                      className="w-full flex items-center gap-3 p-3 text-left hover:bg-pink-100 transition-colors"
+                    >
+                      <span className="text-xl">🏠</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">1인가구 ↑ → 김치찌개 +0.99</p>
+                        <p className="text-xs text-gray-500">혼밥러들의 간편 메뉴</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform text-xs ${expandedInsight === 'single' ? 'rotate-180' : ''}`}>▼</span>
+                    </button>
+                    {expandedInsight === 'single' && (
+                      <div className="px-4 pb-3 text-xs text-gray-600 border-t border-pink-200">
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <span className="bg-pink-100 px-2 py-1 rounded">김치찌개 +0.99</span>
+                          <span className="bg-pink-100 px-2 py-1 rounded">냉면 +0.99</span>
+                          <span className="bg-pink-100 px-2 py-1 rounded">치킨 +0.91</span>
+                        </div>
+                        <p className="mt-2 text-gray-500">서울 1인가구 35% (전국 최고)</p>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* 청년 */}
+                  <div className="bg-cyan-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'youth' ? null : 'youth')}
+                      className="w-full flex items-center gap-3 p-3 text-left hover:bg-cyan-100 transition-colors"
+                    >
+                      <span className="text-xl">👶</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">청년 ↑ → 막걸리 -0.85</p>
+                        <p className="text-xs text-gray-500">젊을수록 전통주 기피?!</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform text-xs ${expandedInsight === 'youth' ? 'rotate-180' : ''}`}>▼</span>
+                    </button>
+                    {expandedInsight === 'youth' && (
+                      <div className="px-4 pb-3 text-xs text-gray-600 border-t border-cyan-200">
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <span className="bg-cyan-100 px-2 py-1 rounded">막걸리 -0.85</span>
+                          <span className="bg-cyan-100 px-2 py-1 rounded">국밥 -0.76</span>
+                          <span className="bg-cyan-100 px-2 py-1 rounded">밀면 -0.74</span>
+                        </div>
+                        <p className="mt-2 text-gray-500">대전 청년14% &gt; 광주13% &gt; 대구11.5%</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             )}
 

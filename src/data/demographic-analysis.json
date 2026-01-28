@@ -1,0 +1,251 @@
+{
+  "generatedAt": "2026-01-28T11:04:11.782Z",
+  "demographics": {
+    "서울": {
+      "population": 9411000,
+      "density": 15500,
+      "medianAge": 44.2,
+      "youthRatio": 11.2,
+      "elderlyRatio": 18.5,
+      "singleHousehold": 35.1,
+      "maleRatio": 48.8,
+      "avgIncome": 4200
+    },
+    "부산": {
+      "population": 3290000,
+      "density": 4300,
+      "medianAge": 47.1,
+      "youthRatio": 10.8,
+      "elderlyRatio": 22.3,
+      "singleHousehold": 33.8,
+      "maleRatio": 48.5,
+      "avgIncome": 3400
+    },
+    "대구": {
+      "population": 2350000,
+      "density": 2700,
+      "medianAge": 45.8,
+      "youthRatio": 11.5,
+      "elderlyRatio": 19.8,
+      "singleHousehold": 31.2,
+      "maleRatio": 49.1,
+      "avgIncome": 3200
+    },
+    "광주": {
+      "population": 1420000,
+      "density": 2800,
+      "medianAge": 43.2,
+      "youthRatio": 13.2,
+      "elderlyRatio": 16.4,
+      "singleHousehold": 30.5,
+      "maleRatio": 49.3,
+      "avgIncome": 3100
+    },
+    "대전": {
+      "population": 1440000,
+      "density": 2700,
+      "medianAge": 42.8,
+      "youthRatio": 14.1,
+      "elderlyRatio": 15.8,
+      "singleHousehold": 32.1,
+      "maleRatio": 49.5,
+      "avgIncome": 3300
+    }
+  },
+  "correlations": {
+    "medianAge": {
+      "name": "중위연령",
+      "description": "높을수록 고령",
+      "topPositive": [
+        {
+          "food": "국밥",
+          "corr": 0.813634219619722
+        },
+        {
+          "food": "막걸리",
+          "corr": 0.5146361067736794
+        },
+        {
+          "food": "밀면",
+          "corr": 0.4771691809842442
+        },
+        {
+          "food": "칼국수",
+          "corr": 0.3729923490086052
+        },
+        {
+          "food": "막창",
+          "corr": 0.36891564569414814
+        }
+      ],
+      "topNegative": []
+    },
+    "youthRatio": {
+      "name": "청년비율",
+      "description": "20~29세 비율",
+      "topPositive": [],
+      "topNegative": [
+        {
+          "food": "막걸리",
+          "corr": -0.8471837114449012
+        },
+        {
+          "food": "국밥",
+          "corr": -0.7584964787451246
+        },
+        {
+          "food": "밀면",
+          "corr": -0.73693394960029
+        },
+        {
+          "food": "막창",
+          "corr": -0.6824322273698414
+        },
+        {
+          "food": "김치찌개",
+          "corr": -0.6354720723357454
+        }
+      ]
+    },
+    "elderlyRatio": {
+      "name": "고령비율",
+      "description": "65세+ 비율",
+      "topPositive": [
+        {
+          "food": "국밥",
+          "corr": 0.8662389781107507
+        },
+        {
+          "food": "막걸리",
+          "corr": 0.6144109301123966
+        },
+        {
+          "food": "밀면",
+          "corr": 0.5975568160596082
+        },
+        {
+          "food": "김치찌개",
+          "corr": 0.4891202605646279
+        },
+        {
+          "food": "막창",
+          "corr": 0.39584585402129013
+        }
+      ],
+      "topNegative": []
+    },
+    "singleHousehold": {
+      "name": "1인가구비율",
+      "description": "1인가구 비율",
+      "topPositive": [
+        {
+          "food": "김치찌개",
+          "corr": 0.9930289353110334
+        },
+        {
+          "food": "냉면",
+          "corr": 0.9916807843264177
+        },
+        {
+          "food": "밀면",
+          "corr": 0.9378776698317762
+        },
+        {
+          "food": "빙수",
+          "corr": 0.917597446484028
+        },
+        {
+          "food": "치킨",
+          "corr": 0.905727811133312
+        }
+      ],
+      "topNegative": [
+        {
+          "food": "라면",
+          "corr": -0.39135531136014284
+        }
+      ]
+    },
+    "density": {
+      "name": "인구밀도",
+      "description": "명/km²",
+      "topPositive": [
+        {
+          "food": "콩국수",
+          "corr": 0.9985054513506796
+        },
+        {
+          "food": "파전",
+          "corr": 0.993096533064071
+        },
+        {
+          "food": "아이스아메리카노",
+          "corr": 0.9914999455208481
+        },
+        {
+          "food": "설렁탕",
+          "corr": 0.9900652531423861
+        },
+        {
+          "food": "빙수",
+          "corr": 0.9702835409324844
+        }
+      ],
+      "topNegative": [
+        {
+          "food": "라면",
+          "corr": -0.8463878234573105
+        }
+      ]
+    },
+    "avgIncome": {
+      "name": "평균소득",
+      "description": "월 평균 소득",
+      "topPositive": [
+        {
+          "food": "빙수",
+          "corr": 0.997156703885447
+        },
+        {
+          "food": "콩국수",
+          "corr": 0.9798204129377956
+        },
+        {
+          "food": "파전",
+          "corr": 0.9741692540564847
+        },
+        {
+          "food": "아이스아메리카노",
+          "corr": 0.9656128171791106
+        },
+        {
+          "food": "설렁탕",
+          "corr": 0.9637666785541127
+        }
+      ],
+      "topNegative": [
+        {
+          "food": "라면",
+          "corr": -0.7454710203773632
+        }
+      ]
+    }
+  },
+  "insights": [
+    {
+      "title": "고령 인구 ↑ → 전통 음식 선호",
+      "finding": "고령비율이 높은 지역에서 국밥, 막걸리, 밀면, 김치찌개, 막창 검색 ↑",
+      "correlation": "0.87"
+    },
+    {
+      "title": "1인가구 ↑ → 간편식/배달 선호",
+      "finding": "1인가구 비율이 높은 지역에서 김치찌개, 냉면, 밀면, 빙수, 치킨 검색 ↑",
+      "correlation": "0.99"
+    },
+    {
+      "title": "인구밀도 ↑ → 다양성으로 평균화",
+      "finding": "인구밀도가 높은 지역(서울)에서 특정 음식 선호도가 분산됨",
+      "note": "서울의 모든 음식 상관계수가 0인 이유와 일치"
+    }
+  ]
+}

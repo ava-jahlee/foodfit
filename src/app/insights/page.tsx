@@ -110,10 +110,10 @@ export default function InsightsPage() {
 
   if (!data) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white/70">분석 데이터 로딩 중...</p>
+          <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-500 rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-gray-500">분석 데이터 로딩 중...</p>
         </div>
       </main>
     )
@@ -160,69 +160,66 @@ export default function InsightsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <main className="min-h-screen pb-28">
       {/* 헤더 */}
-      <header className="sticky top-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-white hover:text-purple-300 transition-colors">
+      <header className="sticky top-0 z-50 glass-strong border-b border-white/20">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
             <span className="text-xl">←</span>
             <span>돌아가기</span>
           </Link>
-          <h1 className="text-xl font-bold text-white flex items-center gap-2">
-            <span>📊</span> 날씨-음식 인사이트
+          <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+            <span>📊</span> 인사이트
           </h1>
-          <div className="text-sm text-white/50">
+          <div className="text-sm text-gray-400">
             {new Date(data.generatedAt).toLocaleDateString('ko-KR')} 기준
           </div>
         </div>
       </header>
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
         {/* 요약 카드 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="text-4xl mb-2">🔥</div>
-            <h3 className="text-white font-bold mb-1">더운 날 인기</h3>
-            <p className="text-purple-300 text-lg font-semibold">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 opacity-0 animate-fade-in stagger-1">
+          <div className="glass-card p-4">
+            <div className="text-2xl mb-1">🔥</div>
+            <h3 className="text-gray-800 font-bold text-sm mb-1">더운 날 인기</h3>
+            <p className="text-red-500 text-xs font-medium">
               {correlationData.filter(d => d.temp > 0.5).map(d => d.keyword).join(', ') || '냉면, 빙수'}
             </p>
-            <p className="text-white/50 text-sm mt-2">기온 ↑ = 검색량 ↑</p>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="text-4xl mb-2">❄️</div>
-            <h3 className="text-white font-bold mb-1">추운 날 인기</h3>
-            <p className="text-blue-300 text-lg font-semibold">
+          <div className="glass-card p-4">
+            <div className="text-2xl mb-1">❄️</div>
+            <h3 className="text-gray-800 font-bold text-sm mb-1">추운 날 인기</h3>
+            <p className="text-blue-500 text-xs font-medium">
               {correlationData.filter(d => d.temp < -0.3).map(d => d.keyword).join(', ') || '김치찌개, 설렁탕'}
             </p>
-            <p className="text-white/50 text-sm mt-2">기온 ↓ = 검색량 ↑</p>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="text-4xl mb-2">🌧️</div>
-            <h3 className="text-white font-bold mb-1">비 오는 날 인기</h3>
-            <p className="text-cyan-300 text-lg font-semibold">
+          <div className="glass-card p-4">
+            <div className="text-2xl mb-1">🌧️</div>
+            <h3 className="text-gray-800 font-bold text-sm mb-1">비 오는 날 인기</h3>
+            <p className="text-teal-500 text-xs font-medium">
               {correlationData.filter(d => d.rain > 0.5).map(d => d.keyword).slice(0, 3).join(', ') || '파전, 막걸리'}
             </p>
-            <p className="text-white/50 text-sm mt-2">강수량 ↑ = 검색량 ↑</p>
           </div>
         </div>
 
         {/* 탭 네비게이션 */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+        <div className="flex gap-2 overflow-x-auto pb-2 opacity-0 animate-fade-in stagger-2">
           {[
-            { id: 'trend', label: '📈 월별 트렌드', emoji: '📈' },
-            { id: 'correlation', label: '🔬 상관관계 분석', emoji: '🔬' },
-            { id: 'monthly', label: '📅 월별 TOP', emoji: '📅' },
-            { id: 'multivariate', label: '🧠 다변량 분석', emoji: '🧠' },
+            { id: 'trend', label: '📈 월별 트렌드' },
+            { id: 'correlation', label: '🔬 상관관계' },
+            { id: 'monthly', label: '📅 월별 TOP' },
+            { id: 'multivariate', label: '🧠 다변량' },
           ].map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-6 py-3 rounded-xl font-medium transition-all whitespace-nowrap ${
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/30'
-                  : 'bg-white/10 text-white/70 hover:bg-white/20'
+                  ? 'bg-blue-500 text-gray-700 shadow-md'
+                  : 'glass text-gray-600 hover:bg-white/80'
               }`}
             >
               {tab.label}
@@ -232,19 +229,19 @@ export default function InsightsPage() {
 
         {/* 월별 트렌드 차트 */}
         {activeTab === 'trend' && (
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h2 className="text-xl font-bold text-white mb-4">📈 월별 검색량 트렌드</h2>
+          <div className="glass-card p-5 opacity-0 animate-fade-in stagger-3">
+            <h2 className="text-lg font-bold text-gray-800 mb-4">📈 월별 검색량 트렌드</h2>
             
             {/* 키워드 선택 */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-4">
               {data.trends.map((trend, i) => (
                 <button
                   key={trend.keyword}
                   onClick={() => toggleKeyword(trend.keyword)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                     selectedKeywords.includes(trend.keyword)
-                      ? 'text-white shadow-md'
-                      : 'bg-white/10 text-white/50 hover:bg-white/20'
+                      ? 'text-gray-700 shadow-sm'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                   style={{
                     backgroundColor: selectedKeywords.includes(trend.keyword)
@@ -291,7 +288,7 @@ export default function InsightsPage() {
 
             {/* 기온 서브차트 */}
             <div className="mt-4 pt-4 border-t border-white/10">
-              <p className="text-white/50 text-sm mb-2">📊 월별 평균 기온 (서울)</p>
+              <p className="text-gray-400 text-sm mb-2">📊 월별 평균 기온 (서울)</p>
               <div className="h-[100px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={trendChartData}>
@@ -315,9 +312,9 @@ export default function InsightsPage() {
         {activeTab === 'correlation' && (
           <div className="space-y-6">
             {/* 기온 상관관계 */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h2 className="text-xl font-bold text-white mb-4">🌡️ 기온과의 상관관계</h2>
-              <p className="text-white/50 text-sm mb-4">
+            <div className="glass-card p-5">
+              <h2 className="text-xl font-bold text-gray-700 mb-4">🌡️ 기온과의 상관관계</h2>
+              <p className="text-gray-400 text-sm mb-4">
                 +1.0 = 기온↑ 검색↑ (더울수록 인기) | -1.0 = 기온↓ 검색↑ (추울수록 인기)
               </p>
               
@@ -349,9 +346,9 @@ export default function InsightsPage() {
             </div>
 
             {/* 강수량 상관관계 */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h2 className="text-xl font-bold text-white mb-4">🌧️ 강수량과의 상관관계</h2>
-              <p className="text-white/50 text-sm mb-4">
+            <div className="glass-card p-5">
+              <h2 className="text-xl font-bold text-gray-700 mb-4">🌧️ 강수량과의 상관관계</h2>
+              <p className="text-gray-400 text-sm mb-4">
                 +1.0 = 비↑ 검색↑ (비 올수록 인기) | 0 = 관계 없음
               </p>
               
@@ -383,8 +380,8 @@ export default function InsightsPage() {
 
         {/* 월별 TOP */}
         {activeTab === 'monthly' && (
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h2 className="text-xl font-bold text-white mb-6">📅 월별 검색량 TOP 3</h2>
+          <div className="glass-card p-5">
+            <h2 className="text-xl font-bold text-gray-700 mb-6">📅 월별 검색량 TOP 3</h2>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {MONTH_NAMES.map((monthName, monthIndex) => {
@@ -407,8 +404,8 @@ export default function InsightsPage() {
                     className="bg-white/5 rounded-xl p-4 border border-white/10"
                   >
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-white font-bold">{monthName}</span>
-                      <span className="text-white/50 text-sm">{temp}°C {tempEmoji}</span>
+                      <span className="text-gray-800 font-bold">{monthName}</span>
+                      <span className="text-gray-400 text-sm">{temp}°C {tempEmoji}</span>
                     </div>
                     <div className="space-y-2">
                       {monthTop.map((item, rank) => (
@@ -420,8 +417,8 @@ export default function InsightsPage() {
                           }`}>
                             {rank + 1}
                           </span>
-                          <span className="text-white text-sm">{item.keyword}</span>
-                          <span className="text-white/30 text-xs ml-auto">{item.value}</span>
+                          <span className="text-gray-700 text-sm">{item.keyword}</span>
+                          <span className="text-gray-700/30 text-xs ml-auto">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -436,32 +433,32 @@ export default function InsightsPage() {
         {activeTab === 'multivariate' && multiData && (
           <div className="space-y-6">
             {/* 요약 통계 */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h2 className="text-xl font-bold text-white mb-4">🧠 다변량 분석 개요</h2>
-              <p className="text-white/60 mb-4">
+            <div className="glass-card p-5">
+              <h2 className="text-xl font-bold text-gray-700 mb-4">🧠 다변량 분석 개요</h2>
+              <p className="text-gray-700/60 mb-4">
                 기온 + 강수량 + 습도 + 일조시간을 동시에 고려한 분석 (총 {multiData.totalMenus}개 메뉴)
               </p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-red-500/20 rounded-xl p-4 text-center">
                   <div className="text-3xl mb-2">🔥</div>
-                  <div className="text-white font-bold">{multiData.summary.hotWeatherFoods.length}개</div>
-                  <div className="text-white/50 text-sm">더운 날 메뉴</div>
+                  <div className="text-gray-800 font-bold">{multiData.summary.hotWeatherFoods.length}개</div>
+                  <div className="text-gray-400 text-sm">더운 날 메뉴</div>
                 </div>
                 <div className="bg-blue-500/20 rounded-xl p-4 text-center">
                   <div className="text-3xl mb-2">❄️</div>
-                  <div className="text-white font-bold">{multiData.summary.coldWeatherFoods.length}개</div>
-                  <div className="text-white/50 text-sm">추운 날 메뉴</div>
+                  <div className="text-gray-800 font-bold">{multiData.summary.coldWeatherFoods.length}개</div>
+                  <div className="text-gray-400 text-sm">추운 날 메뉴</div>
                 </div>
                 <div className="bg-cyan-500/20 rounded-xl p-4 text-center">
                   <div className="text-3xl mb-2">🌧️</div>
-                  <div className="text-white font-bold">{multiData.summary.rainyDayFoods.length}개</div>
-                  <div className="text-white/50 text-sm">비 오는 날 메뉴</div>
+                  <div className="text-gray-800 font-bold">{multiData.summary.rainyDayFoods.length}개</div>
+                  <div className="text-gray-400 text-sm">비 오는 날 메뉴</div>
                 </div>
                 <div className="bg-purple-500/20 rounded-xl p-4 text-center">
                   <div className="text-3xl mb-2">💧</div>
-                  <div className="text-white font-bold">{multiData.summary.humidDayFoods.length}개</div>
-                  <div className="text-white/50 text-sm">습한 날 메뉴</div>
+                  <div className="text-gray-800 font-bold">{multiData.summary.humidDayFoods.length}개</div>
+                  <div className="text-gray-400 text-sm">습한 날 메뉴</div>
                 </div>
               </div>
             </div>
@@ -472,8 +469,8 @@ export default function InsightsPage() {
                 onClick={() => setSelectedCategory('all')}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   selectedCategory === 'all' 
-                    ? 'bg-purple-500 text-white' 
-                    : 'bg-white/10 text-white/70 hover:bg-white/20'
+                    ? 'bg-purple-500 text-gray-700' 
+                    : 'bg-white/10 text-gray-500 hover:bg-white/20'
                 }`}
               >
                 전체
@@ -484,8 +481,8 @@ export default function InsightsPage() {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                     selectedCategory === cat 
-                      ? 'bg-purple-500 text-white' 
-                      : 'bg-white/10 text-white/70 hover:bg-white/20'
+                      ? 'bg-purple-500 text-gray-700' 
+                      : 'bg-white/10 text-gray-500 hover:bg-white/20'
                   }`}
                 >
                   {cat}
@@ -494,11 +491,11 @@ export default function InsightsPage() {
             </div>
 
             {/* 다변량 상관관계 테이블 */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 overflow-x-auto">
-              <h3 className="text-lg font-bold text-white mb-4">📊 변수별 상관계수</h3>
+            <div className="glass-card p-5 overflow-x-auto">
+              <h3 className="text-lg font-bold text-gray-700 mb-4">📊 변수별 상관계수</h3>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-white/50 border-b border-white/10">
+                  <tr className="text-gray-400 border-b border-white/10">
                     <th className="text-left py-3 px-2">메뉴</th>
                     <th className="text-center py-3 px-2">🌡️ 기온</th>
                     <th className="text-center py-3 px-2">🌧️ 강수</th>
@@ -515,12 +512,12 @@ export default function InsightsPage() {
                     .slice(0, 20)
                     .map(item => (
                       <tr key={item.keyword} className="border-b border-white/5 hover:bg-white/5">
-                        <td className="py-3 px-2 text-white font-medium">{item.keyword}</td>
+                        <td className="py-3 px-2 text-gray-700 font-medium">{item.keyword}</td>
                         <td className="py-3 px-2 text-center">
                           <span className={`px-2 py-1 rounded ${
                             item.correlations.temp > 0.5 ? 'bg-red-500/30 text-red-300' :
                             item.correlations.temp < -0.3 ? 'bg-blue-500/30 text-blue-300' :
-                            'text-white/50'
+                            'text-gray-400'
                           }`}>
                             {item.correlations.temp > 0 ? '+' : ''}{item.correlations.temp.toFixed(2)}
                           </span>
@@ -528,7 +525,7 @@ export default function InsightsPage() {
                         <td className="py-3 px-2 text-center">
                           <span className={`px-2 py-1 rounded ${
                             item.correlations.rain > 0.3 ? 'bg-cyan-500/30 text-cyan-300' :
-                            'text-white/50'
+                            'text-gray-400'
                           }`}>
                             {item.correlations.rain > 0 ? '+' : ''}{item.correlations.rain.toFixed(2)}
                           </span>
@@ -536,24 +533,24 @@ export default function InsightsPage() {
                         <td className="py-3 px-2 text-center">
                           <span className={`px-2 py-1 rounded ${
                             item.correlations.humidity > 0.5 ? 'bg-purple-500/30 text-purple-300' :
-                            'text-white/50'
+                            'text-gray-400'
                           }`}>
                             {item.correlations.humidity > 0 ? '+' : ''}{item.correlations.humidity.toFixed(2)}
                           </span>
                         </td>
-                        <td className="py-3 px-2 text-center text-white/50">
+                        <td className="py-3 px-2 text-center text-gray-400">
                           {item.correlations.sunshine > 0 ? '+' : ''}{item.correlations.sunshine.toFixed(2)}
                         </td>
                         <td className="py-3 px-2 text-center">
                           <span className={`font-bold ${
                             item.regression.rSquared > 0.5 ? 'text-green-400' :
                             item.regression.rSquared > 0.2 ? 'text-yellow-400' :
-                            'text-white/30'
+                            'text-gray-700/30'
                           }`}>
                             {item.regression.rSquared.toFixed(2)}
                           </span>
                         </td>
-                        <td className="py-3 px-2 text-white/70 text-xs">
+                        <td className="py-3 px-2 text-gray-500 text-xs">
                           {item.optimalConditions.tempRange}
                         </td>
                       </tr>
@@ -563,17 +560,17 @@ export default function InsightsPage() {
             </div>
 
             {/* 🔥 히트맵 */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-lg font-bold text-white mb-2">🔥 상관관계 히트맵</h3>
-              <p className="text-white/50 text-sm mb-4">색상이 진할수록 상관관계가 강함 (빨강=양의 상관, 파랑=음의 상관)</p>
+            <div className="glass-card p-5">
+              <h3 className="text-lg font-bold text-gray-700 mb-2">🔥 상관관계 히트맵</h3>
+              <p className="text-gray-400 text-sm mb-4">색상이 진할수록 상관관계가 강함 (빨강=양의 상관, 파랑=음의 상관)</p>
               
               <div className="overflow-x-auto">
                 {/* 헤더 */}
                 <div className="flex items-center gap-1 mb-1 ml-24">
-                  <div className="w-16 text-center text-white/50 text-xs">🌡️기온</div>
-                  <div className="w-16 text-center text-white/50 text-xs">🌧️강수</div>
-                  <div className="w-16 text-center text-white/50 text-xs">💧습도</div>
-                  <div className="w-16 text-center text-white/50 text-xs">☀️일조</div>
+                  <div className="w-16 text-center text-gray-400 text-xs">🌡️기온</div>
+                  <div className="w-16 text-center text-gray-400 text-xs">🌧️강수</div>
+                  <div className="w-16 text-center text-gray-400 text-xs">💧습도</div>
+                  <div className="w-16 text-center text-gray-400 text-xs">☀️일조</div>
                 </div>
                 
                 {/* 히트맵 그리드 */}
@@ -596,27 +593,27 @@ export default function InsightsPage() {
                       
                       return (
                         <div key={item.keyword} className="flex items-center gap-1">
-                          <div className="w-24 text-white text-xs truncate pr-2">{item.keyword}</div>
+                          <div className="w-24 text-gray-700 text-xs truncate pr-2">{item.keyword}</div>
                           <div 
-                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.temp)}`}
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-gray-700 ${getHeatColor(item.correlations.temp)}`}
                             title={`기온: ${item.correlations.temp.toFixed(2)}`}
                           >
                             {item.correlations.temp.toFixed(2)}
                           </div>
                           <div 
-                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.rain)}`}
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-gray-700 ${getHeatColor(item.correlations.rain)}`}
                             title={`강수: ${item.correlations.rain.toFixed(2)}`}
                           >
                             {item.correlations.rain.toFixed(2)}
                           </div>
                           <div 
-                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.humidity)}`}
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-gray-700 ${getHeatColor(item.correlations.humidity)}`}
                             title={`습도: ${item.correlations.humidity.toFixed(2)}`}
                           >
                             {item.correlations.humidity.toFixed(2)}
                           </div>
                           <div 
-                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.sunshine)}`}
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-gray-700 ${getHeatColor(item.correlations.sunshine)}`}
                             title={`일조: ${item.correlations.sunshine.toFixed(2)}`}
                           >
                             {item.correlations.sunshine.toFixed(2)}
@@ -628,7 +625,7 @@ export default function InsightsPage() {
                 
                 {/* 범례 */}
                 <div className="flex items-center justify-center gap-2 mt-4 text-xs">
-                  <span className="text-white/50">음의 상관</span>
+                  <span className="text-gray-400">음의 상관</span>
                   <div className="flex gap-0.5">
                     <div className="w-6 h-4 bg-blue-500 rounded-l"></div>
                     <div className="w-6 h-4 bg-blue-400"></div>
@@ -639,15 +636,15 @@ export default function InsightsPage() {
                     <div className="w-6 h-4 bg-red-400"></div>
                     <div className="w-6 h-4 bg-red-500 rounded-r"></div>
                   </div>
-                  <span className="text-white/50">양의 상관</span>
+                  <span className="text-gray-400">양의 상관</span>
                 </div>
               </div>
             </div>
 
             {/* R² 설명력 차트 */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-lg font-bold text-white mb-2">🏆 날씨 예측력 TOP 10</h3>
-              <p className="text-white/50 text-sm mb-4">R² = 날씨 변수로 검색량을 얼마나 설명할 수 있는가 (높을수록 날씨 영향 큼)</p>
+            <div className="glass-card p-5">
+              <h3 className="text-lg font-bold text-gray-700 mb-2">🏆 날씨 예측력 TOP 10</h3>
+              <p className="text-gray-400 text-sm mb-4">R² = 날씨 변수로 검색량을 얼마나 설명할 수 있는가 (높을수록 날씨 영향 큼)</p>
               
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
@@ -684,11 +681,11 @@ export default function InsightsPage() {
 
             {/* 의외의 발견 */}
             <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-lg font-bold text-white mb-4">🤔 의외의 발견!</h3>
+              <h3 className="text-lg font-bold text-gray-700 mb-4">🤔 의외의 발견!</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-black/20 rounded-xl p-4">
                   <h4 className="text-yellow-300 font-semibold mb-2">&ldquo;비 오면 파전&rdquo;은 마케팅?</h4>
-                  <p className="text-white/70 text-sm">
+                  <p className="text-gray-500 text-sm">
                     파전의 강수량 상관계수: <span className="text-yellow-300 font-bold">+0.06</span><br/>
                     파전의 기온 상관계수: <span className="text-red-300 font-bold">+0.42</span><br/>
                     → 실제로는 &ldquo;따뜻한 날&rdquo;에 더 많이 검색!
@@ -696,7 +693,7 @@ export default function InsightsPage() {
                 </div>
                 <div className="bg-black/20 rounded-xl p-4">
                   <h4 className="text-cyan-300 font-semibold mb-2">라떼는 추운 날 인기</h4>
-                  <p className="text-white/70 text-sm">
+                  <p className="text-gray-500 text-sm">
                     라떼의 기온 상관계수: <span className="text-blue-300 font-bold">-0.41</span><br/>
                     아메리카노 기온 상관계수: <span className="text-red-300 font-bold">+0.75</span><br/>
                     → 따뜻한 라떼 vs 시원한 아메리카노!
@@ -709,11 +706,11 @@ export default function InsightsPage() {
 
         {/* 인사이트 요약 */}
         <div className="mt-8 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-          <h2 className="text-xl font-bold text-white mb-4">💡 알고리즘 적용 인사이트</h2>
+          <h2 className="text-xl font-bold text-gray-700 mb-4">💡 알고리즘 적용 인사이트</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <h3 className="text-purple-300 font-semibold mb-2">🔥 더운 날 (25°C+) 가중치</h3>
-              <ul className="text-white/70 text-sm space-y-1">
+              <ul className="text-gray-500 text-sm space-y-1">
                 {correlationData.filter(d => d.temp > 0.5).map(d => (
                   <li key={d.keyword}>• {d.keyword}: +{Math.round(d.temp * 30)}%</li>
                 ))}
@@ -721,7 +718,7 @@ export default function InsightsPage() {
             </div>
             <div>
               <h3 className="text-blue-300 font-semibold mb-2">❄️ 추운 날 (5°C-) 가중치</h3>
-              <ul className="text-white/70 text-sm space-y-1">
+              <ul className="text-gray-500 text-sm space-y-1">
                 {correlationData.filter(d => d.temp < -0.3).map(d => (
                   <li key={d.keyword}>• {d.keyword}: +{Math.round(Math.abs(d.temp) * 30)}%</li>
                 ))}
@@ -731,7 +728,7 @@ export default function InsightsPage() {
         </div>
 
         {/* 데이터 출처 */}
-        <div className="mt-6 text-center text-white/30 text-sm">
+        <div className="mt-6 text-center text-gray-700/30 text-sm">
           <p>📊 데이터 출처: Google Trends (2024년 한국)</p>
           <p>🌡️ 기온 데이터: 서울 월별 평균 기온</p>
         </div>

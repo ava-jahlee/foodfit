@@ -162,7 +162,7 @@ export default function InsightsPage() {
   return (
     <main className="min-h-screen pb-28">
       {/* 헤더 */}
-      <header className="sticky top-0 z-50 glass-strong border-b border-white/20">
+      <header className="sticky top-0 z-50 glass-strong border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
             <span className="text-xl">←</span>
@@ -240,7 +240,7 @@ export default function InsightsPage() {
                   onClick={() => toggleKeyword(trend.keyword)}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                     selectedKeywords.includes(trend.keyword)
-                      ? 'text-gray-700 shadow-sm'
+                      ? 'text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                   style={{
@@ -257,17 +257,19 @@ export default function InsightsPage() {
             <div className="h-[400px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={trendChartData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-                  <XAxis dataKey="name" stroke="rgba(255,255,255,0.5)" />
-                  <YAxis stroke="rgba(255,255,255,0.5)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.08)" />
+                  <XAxis dataKey="name" stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
+                  <YAxis stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: 'rgba(0,0,0,0.8)',
-                      border: '1px solid rgba(255,255,255,0.2)',
-                      borderRadius: '8px',
+                      backgroundColor: 'rgba(255,255,255,0.95)',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '12px',
+                      boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
                     }}
+                    labelStyle={{ color: '#374151', fontWeight: 600 }}
                   />
-                  <Legend />
+                  <Legend wrapperStyle={{ color: '#6b7280' }} />
                   {selectedKeywords.map((keyword, i) => {
                     const colorIndex = data.trends.findIndex(t => t.keyword === keyword)
                     return (
@@ -287,12 +289,12 @@ export default function InsightsPage() {
             </div>
 
             {/* 기온 서브차트 */}
-            <div className="mt-4 pt-4 border-t border-white/10">
-              <p className="text-gray-400 text-sm mb-2">📊 월별 평균 기온 (서울)</p>
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <p className="text-gray-500 text-sm mb-2">📊 월별 평균 기온 (서울)</p>
               <div className="h-[100px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={trendChartData}>
-                    <XAxis dataKey="name" stroke="rgba(255,255,255,0.3)" tick={{ fontSize: 10 }} />
+                    <XAxis dataKey="name" stroke="#d1d5db" tick={{ fill: '#9ca3af', fontSize: 10 }} />
                     <Bar dataKey="temp" radius={[4, 4, 0, 0]}>
                       {trendChartData.map((entry, i) => (
                         <Cell
@@ -321,12 +323,12 @@ export default function InsightsPage() {
               <div className="h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={correlationData} layout="vertical">
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-                    <XAxis type="number" domain={[-1, 1]} stroke="rgba(255,255,255,0.5)" />
-                    <YAxis dataKey="keyword" type="category" stroke="rgba(255,255,255,0.5)" width={80} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#d1d5db" />
+                    <XAxis type="number" domain={[-1, 1]} stroke="#d1d5db" />
+                    <YAxis dataKey="keyword" type="category" stroke="#d1d5db" width={80} />
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        backgroundColor: 'rgba(255,255,255,0.95)',
                         border: '1px solid rgba(255,255,255,0.2)',
                         borderRadius: '8px',
                       }}
@@ -355,12 +357,12 @@ export default function InsightsPage() {
               <div className="h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={[...correlationData].sort((a, b) => b.rain - a.rain)} layout="vertical">
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-                    <XAxis type="number" domain={[-1, 1]} stroke="rgba(255,255,255,0.5)" />
-                    <YAxis dataKey="keyword" type="category" stroke="rgba(255,255,255,0.5)" width={80} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#d1d5db" />
+                    <XAxis type="number" domain={[-1, 1]} stroke="#d1d5db" />
+                    <YAxis dataKey="keyword" type="category" stroke="#d1d5db" width={80} />
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        backgroundColor: 'rgba(255,255,255,0.95)',
                         border: '1px solid rgba(255,255,255,0.2)',
                         borderRadius: '8px',
                       }}
@@ -401,7 +403,7 @@ export default function InsightsPage() {
                 return (
                   <div
                     key={month}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    className="bg-white/5 rounded-xl p-4 border border-gray-100"
                   >
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-gray-800 font-bold">{monthName}</span>
@@ -495,7 +497,7 @@ export default function InsightsPage() {
               <h3 className="text-lg font-bold text-gray-700 mb-4">📊 변수별 상관계수</h3>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-gray-400 border-b border-white/10">
+                  <tr className="text-gray-400 border-b border-gray-100">
                     <th className="text-left py-3 px-2">메뉴</th>
                     <th className="text-center py-3 px-2">🌡️ 기온</th>
                     <th className="text-center py-3 px-2">🌧️ 강수</th>
@@ -511,7 +513,7 @@ export default function InsightsPage() {
                     .sort((a, b) => b.regression.rSquared - a.regression.rSquared)
                     .slice(0, 20)
                     .map(item => (
-                      <tr key={item.keyword} className="border-b border-white/5 hover:bg-white/5">
+                      <tr key={item.keyword} className="border-b border-gray-50 hover:bg-white/5">
                         <td className="py-3 px-2 text-gray-700 font-medium">{item.keyword}</td>
                         <td className="py-3 px-2 text-center">
                           <span className={`px-2 py-1 rounded ${
@@ -655,12 +657,12 @@ export default function InsightsPage() {
                       .map(r => ({ name: r.keyword, rSquared: r.regression.rSquared }))}
                     layout="vertical"
                   >
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-                    <XAxis type="number" domain={[0, 1]} stroke="rgba(255,255,255,0.5)" />
-                    <YAxis dataKey="name" type="category" stroke="rgba(255,255,255,0.5)" width={80} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#d1d5db" />
+                    <XAxis type="number" domain={[0, 1]} stroke="#d1d5db" />
+                    <YAxis dataKey="name" type="category" stroke="#d1d5db" width={80} />
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        backgroundColor: 'rgba(255,255,255,0.95)',
                         border: '1px solid rgba(255,255,255,0.2)',
                         borderRadius: '8px',
                       }}
@@ -680,7 +682,7 @@ export default function InsightsPage() {
             </div>
 
             {/* 의외의 발견 */}
-            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-md rounded-2xl p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-700 mb-4">🤔 의외의 발견!</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-black/20 rounded-xl p-4">
@@ -705,7 +707,7 @@ export default function InsightsPage() {
         )}
 
         {/* 인사이트 요약 */}
-        <div className="mt-8 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+        <div className="mt-8 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl p-6 border border-gray-200">
           <h2 className="text-xl font-bold text-gray-700 mb-4">💡 알고리즘 적용 인사이트</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div>

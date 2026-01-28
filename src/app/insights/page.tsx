@@ -110,6 +110,7 @@ export default function InsightsPage() {
   const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights'>('insights')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedRegion, setSelectedRegion] = useState<string>('서울')
+  const [expandedInsight, setExpandedInsight] = useState<string | null>(null)
 
   useEffect(() => {
     // 분석 데이터 로드
@@ -277,13 +278,44 @@ export default function InsightsPage() {
                 
                 {/* 인사이트 카드들 */}
                 <div className="space-y-3">
-                  {/* 파전 */}
-                  <div className="flex items-center gap-4 p-3 bg-yellow-50 rounded-lg">
-                    <span className="text-2xl">🤔</span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-800">&ldquo;비 오면 파전&rdquo; = 마케팅!</p>
-                      <p className="text-xs text-gray-500">강수량 상관 +0.06 (무관) vs 기온 상관 +0.42 (양의 상관)</p>
-                    </div>
+                  {/* 파전 - 토글 */}
+                  <div className="bg-yellow-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'pajeon' ? null : 'pajeon')}
+                      className="w-full flex items-center gap-4 p-3 text-left hover:bg-yellow-100 transition-colors"
+                    >
+                      <span className="text-2xl">🤔</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">&ldquo;비 오면 파전&rdquo; = 마케팅?!</p>
+                        <p className="text-xs text-gray-500">강수량 상관 +0.06 (무관) vs 기온 상관 +0.42 (양의 상관)</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform ${expandedInsight === 'pajeon' ? 'rotate-180' : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+                    {expandedInsight === 'pajeon' && (
+                      <div className="px-4 pb-4 pt-1 border-t border-yellow-200 text-xs text-gray-600 space-y-3">
+                        <p className="font-medium text-gray-700">🔍 유래 추측들:</p>
+                        <div className="space-y-2 pl-2">
+                          <div>
+                            <span className="font-medium">1. 소리 유사성 설</span>
+                            <p className="text-gray-500">빗소리 🌧️ ≈ 지글지글 기름 소리 🍳 → 무의식적 연상?</p>
+                          </div>
+                          <div>
+                            <span className="font-medium">2. 농경사회 설</span>
+                            <p className="text-gray-500">비 오면 농사 못함 → 집에서 파, 밀가루로 부침개</p>
+                          </div>
+                          <div>
+                            <span className="font-medium">3. 마케팅 설 🎯</span>
+                            <p className="text-gray-500">90~2000년대 막걸리/파전 프랜차이즈 광고로 각인</p>
+                          </div>
+                        </div>
+                        <div className="bg-yellow-100 rounded p-2 mt-2">
+                          <p className="font-medium text-yellow-800">📊 데이터 결론:</p>
+                          <p className="text-yellow-700">비 때문이 아니라 <strong>따뜻한 계절</strong>에 더 먹음! → 마케팅 + 문화적 각인 가능성 ↑</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
                   {/* 커피 */}

@@ -347,20 +347,20 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
   // 점수순 정렬
   results.sort((a, b) => b.score - a.score)
   
-  // 상위 결과 선택
-  let topResults = results.slice(0, 3)
+  // 상위 결과 선택 (10개)
+  let topResults = results.slice(0, 7)
   
   // 호불호 음식이 포함되어 있으면 대안 추가
   const hasControversial = topResults.some(r => r.menu.controversial)
   if (hasControversial) {
-    // 호불호 아닌 메뉴 2개 추가
+    // 호불호 아닌 메뉴 3개 추가
     const alternatives = results
       .filter(r => !r.menu.controversial && !topResults.includes(r))
-      .slice(0, 2)
+      .slice(0, 3)
     topResults = [...topResults, ...alternatives]
   }
   
-  return topResults
+  return topResults.slice(0, 10) // 최대 10개
 }
 
 function getWeatherEmoji(condition: string): string {

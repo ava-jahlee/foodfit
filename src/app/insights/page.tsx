@@ -504,13 +504,6 @@ export default function InsightsPage() {
                 </div>
               </div>
             </div>
-            
-            {/* 데이터 출처 */}
-            <div className="text-center text-gray-500 text-sm">
-              <p>📊 데이터 출처: Google Trends (2024~2025년 한국)</p>
-              <p>🌡️ 기온 데이터: Open-Meteo API (서울, 부산, 대구, 광주, 대전)</p>
-              <p>🔄 마지막 분석: {data ? new Date(data.generatedAt).toLocaleDateString('ko-KR') : '-'}</p>
-            </div>
           </div>
         )}
 

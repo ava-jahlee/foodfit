@@ -2,8 +2,22 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
-export async function GET() {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const type = searchParams.get('type') || 'simple'
+  
   try {
+    if (type === 'multivariate') {
+      // 다변량 분석 데이터
+      const filePath = path.join(process.cwd(), 'src/data/multivariate-analysis.json')
+      if (fs.existsSync(filePath)) {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+        return NextResponse.json(data)
+      }
+      return NextResponse.json({ error: 'Multivariate data not found' }, { status: 404 })
+    }
+    
+    // 기본 단순 상관관계 데이터
     const filePath = path.join(process.cwd(), 'src/data/trend-analysis.json')
     
     // 파일이 없으면 기본 데이터 반환

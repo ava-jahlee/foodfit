@@ -45,10 +45,44 @@ const COLORS = [
 
 const MONTH_NAMES = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
 
+// 다변량 분석 데이터 타입
+interface MultivariateItem {
+  keyword: string
+  category: string
+  correlations: {
+    temp: number
+    rain: number
+    humidity: number
+    sunshine: number
+  }
+  regression: {
+    rSquared: number
+  }
+  optimalConditions: {
+    tempRange: string
+    bestMonths: number[]
+  }
+}
+
+interface MultivariateData {
+  generatedAt: string
+  totalMenus: number
+  categories: string[]
+  results: MultivariateItem[]
+  summary: {
+    hotWeatherFoods: string[]
+    coldWeatherFoods: string[]
+    rainyDayFoods: string[]
+    humidDayFoods: string[]
+  }
+}
+
 export default function InsightsPage() {
   const [data, setData] = useState<TrendData | null>(null)
+  const [multiData, setMultiData] = useState<MultivariateData | null>(null)
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([])
-  const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly'>('trend')
+  const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate'>('trend')
+  const [selectedCategory, setSelectedCategory] = useState<string>('all')
 
   useEffect(() => {
     // 분석 데이터 로드
@@ -62,6 +96,16 @@ export default function InsightsPage() {
         }
       })
       .catch(err => console.error('Failed to load insights:', err))
+    
+    // 다변량 분석 데이터 로드
+    fetch('/api/insights?type=multivariate')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          setMultiData(data)
+        }
+      })
+      .catch(err => console.error('Failed to load multivariate data:', err))
   }, [])
 
   if (!data) {
@@ -170,6 +214,7 @@ export default function InsightsPage() {
             { id: 'trend', label: '📈 월별 트렌드', emoji: '📈' },
             { id: 'correlation', label: '🔬 상관관계 분석', emoji: '🔬' },
             { id: 'monthly', label: '📅 월별 TOP', emoji: '📅' },
+            { id: 'multivariate', label: '🧠 다변량 분석', emoji: '🧠' },
           ].map(tab => (
             <button
               key={tab.id}
@@ -383,6 +428,199 @@ export default function InsightsPage() {
                   </div>
                 )
               })}
+            </div>
+          </div>
+        )}
+
+        {/* 다변량 분석 */}
+        {activeTab === 'multivariate' && multiData && (
+          <div className="space-y-6">
+            {/* 요약 통계 */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <h2 className="text-xl font-bold text-white mb-4">🧠 다변량 분석 개요</h2>
+              <p className="text-white/60 mb-4">
+                기온 + 강수량 + 습도 + 일조시간을 동시에 고려한 분석 (총 {multiData.totalMenus}개 메뉴)
+              </p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-red-500/20 rounded-xl p-4 text-center">
+                  <div className="text-3xl mb-2">🔥</div>
+                  <div className="text-white font-bold">{multiData.summary.hotWeatherFoods.length}개</div>
+                  <div className="text-white/50 text-sm">더운 날 메뉴</div>
+                </div>
+                <div className="bg-blue-500/20 rounded-xl p-4 text-center">
+                  <div className="text-3xl mb-2">❄️</div>
+                  <div className="text-white font-bold">{multiData.summary.coldWeatherFoods.length}개</div>
+                  <div className="text-white/50 text-sm">추운 날 메뉴</div>
+                </div>
+                <div className="bg-cyan-500/20 rounded-xl p-4 text-center">
+                  <div className="text-3xl mb-2">🌧️</div>
+                  <div className="text-white font-bold">{multiData.summary.rainyDayFoods.length}개</div>
+                  <div className="text-white/50 text-sm">비 오는 날 메뉴</div>
+                </div>
+                <div className="bg-purple-500/20 rounded-xl p-4 text-center">
+                  <div className="text-3xl mb-2">💧</div>
+                  <div className="text-white font-bold">{multiData.summary.humidDayFoods.length}개</div>
+                  <div className="text-white/50 text-sm">습한 날 메뉴</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 카테고리 필터 */}
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                  selectedCategory === 'all' 
+                    ? 'bg-purple-500 text-white' 
+                    : 'bg-white/10 text-white/70 hover:bg-white/20'
+                }`}
+              >
+                전체
+              </button>
+              {multiData.categories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                    selectedCategory === cat 
+                      ? 'bg-purple-500 text-white' 
+                      : 'bg-white/10 text-white/70 hover:bg-white/20'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            {/* 다변량 상관관계 테이블 */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 overflow-x-auto">
+              <h3 className="text-lg font-bold text-white mb-4">📊 변수별 상관계수</h3>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-white/50 border-b border-white/10">
+                    <th className="text-left py-3 px-2">메뉴</th>
+                    <th className="text-center py-3 px-2">🌡️ 기온</th>
+                    <th className="text-center py-3 px-2">🌧️ 강수</th>
+                    <th className="text-center py-3 px-2">💧 습도</th>
+                    <th className="text-center py-3 px-2">☀️ 일조</th>
+                    <th className="text-center py-3 px-2">R²</th>
+                    <th className="text-left py-3 px-2">최적 조건</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {multiData.results
+                    .filter(r => selectedCategory === 'all' || r.category === selectedCategory)
+                    .sort((a, b) => b.regression.rSquared - a.regression.rSquared)
+                    .slice(0, 20)
+                    .map(item => (
+                      <tr key={item.keyword} className="border-b border-white/5 hover:bg-white/5">
+                        <td className="py-3 px-2 text-white font-medium">{item.keyword}</td>
+                        <td className="py-3 px-2 text-center">
+                          <span className={`px-2 py-1 rounded ${
+                            item.correlations.temp > 0.5 ? 'bg-red-500/30 text-red-300' :
+                            item.correlations.temp < -0.3 ? 'bg-blue-500/30 text-blue-300' :
+                            'text-white/50'
+                          }`}>
+                            {item.correlations.temp > 0 ? '+' : ''}{item.correlations.temp.toFixed(2)}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2 text-center">
+                          <span className={`px-2 py-1 rounded ${
+                            item.correlations.rain > 0.3 ? 'bg-cyan-500/30 text-cyan-300' :
+                            'text-white/50'
+                          }`}>
+                            {item.correlations.rain > 0 ? '+' : ''}{item.correlations.rain.toFixed(2)}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2 text-center">
+                          <span className={`px-2 py-1 rounded ${
+                            item.correlations.humidity > 0.5 ? 'bg-purple-500/30 text-purple-300' :
+                            'text-white/50'
+                          }`}>
+                            {item.correlations.humidity > 0 ? '+' : ''}{item.correlations.humidity.toFixed(2)}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2 text-center text-white/50">
+                          {item.correlations.sunshine > 0 ? '+' : ''}{item.correlations.sunshine.toFixed(2)}
+                        </td>
+                        <td className="py-3 px-2 text-center">
+                          <span className={`font-bold ${
+                            item.regression.rSquared > 0.5 ? 'text-green-400' :
+                            item.regression.rSquared > 0.2 ? 'text-yellow-400' :
+                            'text-white/30'
+                          }`}>
+                            {item.regression.rSquared.toFixed(2)}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2 text-white/70 text-xs">
+                          {item.optimalConditions.tempRange}
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* R² 설명력 차트 */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <h3 className="text-lg font-bold text-white mb-2">🏆 날씨 예측력 TOP 10</h3>
+              <p className="text-white/50 text-sm mb-4">R² = 날씨 변수로 검색량을 얼마나 설명할 수 있는가 (높을수록 날씨 영향 큼)</p>
+              
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart 
+                    data={multiData.results
+                      .sort((a, b) => b.regression.rSquared - a.regression.rSquared)
+                      .slice(0, 10)
+                      .map(r => ({ name: r.keyword, rSquared: r.regression.rSquared }))}
+                    layout="vertical"
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                    <XAxis type="number" domain={[0, 1]} stroke="rgba(255,255,255,0.5)" />
+                    <YAxis dataKey="name" type="category" stroke="rgba(255,255,255,0.5)" width={80} />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        borderRadius: '8px',
+                      }}
+                      formatter={(value) => [Number(value).toFixed(2), 'R²']}
+                    />
+                    <Bar dataKey="rSquared" radius={[0, 4, 4, 0]}>
+                      {multiData.results
+                        .sort((a, b) => b.regression.rSquared - a.regression.rSquared)
+                        .slice(0, 10)
+                        .map((_, i) => (
+                          <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                        ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* 의외의 발견 */}
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <h3 className="text-lg font-bold text-white mb-4">🤔 의외의 발견!</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-black/20 rounded-xl p-4">
+                  <h4 className="text-yellow-300 font-semibold mb-2">&ldquo;비 오면 파전&rdquo;은 마케팅?</h4>
+                  <p className="text-white/70 text-sm">
+                    파전의 강수량 상관계수: <span className="text-yellow-300 font-bold">+0.06</span><br/>
+                    파전의 기온 상관계수: <span className="text-red-300 font-bold">+0.42</span><br/>
+                    → 실제로는 &ldquo;따뜻한 날&rdquo;에 더 많이 검색!
+                  </p>
+                </div>
+                <div className="bg-black/20 rounded-xl p-4">
+                  <h4 className="text-cyan-300 font-semibold mb-2">라떼는 추운 날 인기</h4>
+                  <p className="text-white/70 text-sm">
+                    라떼의 기온 상관계수: <span className="text-blue-300 font-bold">-0.41</span><br/>
+                    아메리카노 기온 상관계수: <span className="text-red-300 font-bold">+0.75</span><br/>
+                    → 따뜻한 라떼 vs 시원한 아메리카노!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )}

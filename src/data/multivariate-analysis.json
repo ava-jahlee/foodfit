@@ -1,0 +1,4557 @@
+{
+  "generatedAt": "2026-01-28T01:10:25.600Z",
+  "analysisType": "multivariate",
+  "variables": [
+    "temperature",
+    "rainfall",
+    "humidity",
+    "sunshine"
+  ],
+  "monthlyWeather": {
+    "1": {
+      "temp": -2,
+      "rain": 6,
+      "humidity": 55,
+      "sunshine": 180
+    },
+    "2": {
+      "temp": 1,
+      "rain": 5,
+      "humidity": 52,
+      "sunshine": 190
+    },
+    "3": {
+      "temp": 7,
+      "rain": 7,
+      "humidity": 55,
+      "sunshine": 210
+    },
+    "4": {
+      "temp": 13,
+      "rain": 9,
+      "humidity": 58,
+      "sunshine": 220
+    },
+    "5": {
+      "temp": 18,
+      "rain": 9,
+      "humidity": 60,
+      "sunshine": 240
+    },
+    "6": {
+      "temp": 23,
+      "rain": 11,
+      "humidity": 70,
+      "sunshine": 180
+    },
+    "7": {
+      "temp": 27,
+      "rain": 16,
+      "humidity": 80,
+      "sunshine": 150
+    },
+    "8": {
+      "temp": 28,
+      "rain": 14,
+      "humidity": 78,
+      "sunshine": 170
+    },
+    "9": {
+      "temp": 23,
+      "rain": 10,
+      "humidity": 68,
+      "sunshine": 190
+    },
+    "10": {
+      "temp": 16,
+      "rain": 6,
+      "humidity": 60,
+      "sunshine": 210
+    },
+    "11": {
+      "temp": 8,
+      "rain": 8,
+      "humidity": 58,
+      "sunshine": 180
+    },
+    "12": {
+      "temp": 1,
+      "rain": 7,
+      "humidity": 55,
+      "sunshine": 170
+    }
+  },
+  "totalMenus": 54,
+  "categories": [
+    "국물",
+    "시원한음식",
+    "비오는날",
+    "이열치열",
+    "고기",
+    "양식",
+    "분식",
+    "일식",
+    "중식",
+    "카페"
+  ],
+  "results": [
+    {
+      "keyword": "김치찌개",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 81
+        },
+        {
+          "month": 2,
+          "value": 73
+        },
+        {
+          "month": 3,
+          "value": 75
+        },
+        {
+          "month": 4,
+          "value": 72
+        },
+        {
+          "month": 5,
+          "value": 69
+        },
+        {
+          "month": 6,
+          "value": 66
+        },
+        {
+          "month": 7,
+          "value": 65
+        },
+        {
+          "month": 8,
+          "value": 74
+        },
+        {
+          "month": 9,
+          "value": 79
+        },
+        {
+          "month": 10,
+          "value": 75
+        },
+        {
+          "month": 11,
+          "value": 81
+        },
+        {
+          "month": 12,
+          "value": 92
+        }
+      ],
+      "correlations": {
+        "temp": -0.62,
+        "rain": -0.51,
+        "humidity": -0.5,
+        "sunshine": -0.17
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.44,
+          "rain": -1.14,
+          "humidity": -0.4
+        },
+        "rSquared": 0.3
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          3,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "된장찌개",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 73
+        },
+        {
+          "month": 2,
+          "value": 72
+        },
+        {
+          "month": 3,
+          "value": 79
+        },
+        {
+          "month": 4,
+          "value": 72
+        },
+        {
+          "month": 5,
+          "value": 71
+        },
+        {
+          "month": 6,
+          "value": 75
+        },
+        {
+          "month": 7,
+          "value": 69
+        },
+        {
+          "month": 8,
+          "value": 77
+        },
+        {
+          "month": 9,
+          "value": 84
+        },
+        {
+          "month": 10,
+          "value": 78
+        },
+        {
+          "month": 11,
+          "value": 68
+        },
+        {
+          "month": 12,
+          "value": 86
+        }
+      ],
+      "correlations": {
+        "temp": -0.05,
+        "rain": -0.18,
+        "humidity": -0.07,
+        "sunshine": -0.05
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.03,
+          "rain": -0.3,
+          "humidity": -0.04
+        },
+        "rSquared": 0.01
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "부대찌개",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 21
+        },
+        {
+          "month": 2,
+          "value": 20
+        },
+        {
+          "month": 3,
+          "value": 20
+        },
+        {
+          "month": 4,
+          "value": 18
+        },
+        {
+          "month": 5,
+          "value": 21
+        },
+        {
+          "month": 6,
+          "value": 18
+        },
+        {
+          "month": 7,
+          "value": 21
+        },
+        {
+          "month": 8,
+          "value": 28
+        },
+        {
+          "month": 9,
+          "value": 22
+        },
+        {
+          "month": 10,
+          "value": 25
+        },
+        {
+          "month": 11,
+          "value": 24
+        },
+        {
+          "month": 12,
+          "value": 39
+        }
+      ],
+      "correlations": {
+        "temp": -0.19,
+        "rain": -0.07,
+        "humidity": -0.06,
+        "sunshine": -0.35
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.11,
+          "rain": -0.12,
+          "humidity": -0.03
+        },
+        "rSquared": 0.02
+      },
+      "optimalConditions": {
+        "tempRange": "추운 날 (10°C-)",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "순두부찌개",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 80
+        },
+        {
+          "month": 2,
+          "value": 59
+        },
+        {
+          "month": 3,
+          "value": 76
+        },
+        {
+          "month": 4,
+          "value": 60
+        },
+        {
+          "month": 5,
+          "value": 63
+        },
+        {
+          "month": 6,
+          "value": 59
+        },
+        {
+          "month": 7,
+          "value": 60
+        },
+        {
+          "month": 8,
+          "value": 69
+        },
+        {
+          "month": 9,
+          "value": 68
+        },
+        {
+          "month": 10,
+          "value": 72
+        },
+        {
+          "month": 11,
+          "value": 73
+        },
+        {
+          "month": 12,
+          "value": 82
+        }
+      ],
+      "correlations": {
+        "temp": -0.54,
+        "rain": -0.43,
+        "humidity": -0.39,
+        "sunshine": -0.14
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.42,
+          "rain": -1.07,
+          "humidity": -0.35
+        },
+        "rSquared": 0.21
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          3,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "설렁탕",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 83
+        },
+        {
+          "month": 2,
+          "value": 84
+        },
+        {
+          "month": 3,
+          "value": 75
+        },
+        {
+          "month": 4,
+          "value": 73
+        },
+        {
+          "month": 5,
+          "value": 68
+        },
+        {
+          "month": 6,
+          "value": 69
+        },
+        {
+          "month": 7,
+          "value": 74
+        },
+        {
+          "month": 8,
+          "value": 83
+        },
+        {
+          "month": 9,
+          "value": 84
+        },
+        {
+          "month": 10,
+          "value": 72
+        },
+        {
+          "month": 11,
+          "value": 78
+        },
+        {
+          "month": 12,
+          "value": 89
+        }
+      ],
+      "correlations": {
+        "temp": -0.43,
+        "rain": -0.21,
+        "humidity": -0.18,
+        "sunshine": -0.51
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.28,
+          "rain": -0.43,
+          "humidity": -0.13
+        },
+        "rSquared": 0.09
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "갈비탕",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 35
+        },
+        {
+          "month": 2,
+          "value": 30
+        },
+        {
+          "month": 3,
+          "value": 30
+        },
+        {
+          "month": 4,
+          "value": 47
+        },
+        {
+          "month": 5,
+          "value": 27
+        },
+        {
+          "month": 6,
+          "value": 27
+        },
+        {
+          "month": 7,
+          "value": 31
+        },
+        {
+          "month": 8,
+          "value": 31
+        },
+        {
+          "month": 9,
+          "value": 35
+        },
+        {
+          "month": 10,
+          "value": 32
+        },
+        {
+          "month": 11,
+          "value": 34
+        },
+        {
+          "month": 12,
+          "value": 37
+        }
+      ],
+      "correlations": {
+        "temp": -0.26,
+        "rain": -0.14,
+        "humidity": -0.25,
+        "sunshine": 0.07
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.13,
+          "rain": -0.23,
+          "humidity": -0.15
+        },
+        "rSquared": 0.05
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          4
+        ]
+      }
+    },
+    {
+      "keyword": "육개장",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 72
+        },
+        {
+          "month": 2,
+          "value": 67
+        },
+        {
+          "month": 3,
+          "value": 73
+        },
+        {
+          "month": 4,
+          "value": 75
+        },
+        {
+          "month": 5,
+          "value": 72
+        },
+        {
+          "month": 6,
+          "value": 66
+        },
+        {
+          "month": 7,
+          "value": 74
+        },
+        {
+          "month": 8,
+          "value": 66
+        },
+        {
+          "month": 9,
+          "value": 81
+        },
+        {
+          "month": 10,
+          "value": 74
+        },
+        {
+          "month": 11,
+          "value": 75
+        },
+        {
+          "month": 12,
+          "value": 88
+        }
+      ],
+      "correlations": {
+        "temp": -0.26,
+        "rain": -0.18,
+        "humidity": -0.25,
+        "sunshine": -0.07
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.16,
+          "rain": -0.34,
+          "humidity": -0.16
+        },
+        "rSquared": 0.05
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "감자탕",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 81
+        },
+        {
+          "month": 2,
+          "value": 71
+        },
+        {
+          "month": 3,
+          "value": 69
+        },
+        {
+          "month": 4,
+          "value": 67
+        },
+        {
+          "month": 5,
+          "value": 72
+        },
+        {
+          "month": 6,
+          "value": 73
+        },
+        {
+          "month": 7,
+          "value": 74
+        },
+        {
+          "month": 8,
+          "value": 74
+        },
+        {
+          "month": 9,
+          "value": 79
+        },
+        {
+          "month": 10,
+          "value": 78
+        },
+        {
+          "month": 11,
+          "value": 81
+        },
+        {
+          "month": 12,
+          "value": 90
+        }
+      ],
+      "correlations": {
+        "temp": -0.32,
+        "rain": -0.2,
+        "humidity": -0.13,
+        "sunshine": -0.45
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.19,
+          "rain": -0.39,
+          "humidity": -0.09
+        },
+        "rSquared": 0.05
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "칼국수",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 85
+        },
+        {
+          "month": 2,
+          "value": 61
+        },
+        {
+          "month": 3,
+          "value": 58
+        },
+        {
+          "month": 4,
+          "value": 59
+        },
+        {
+          "month": 5,
+          "value": 71
+        },
+        {
+          "month": 6,
+          "value": 59
+        },
+        {
+          "month": 7,
+          "value": 61
+        },
+        {
+          "month": 8,
+          "value": 60
+        },
+        {
+          "month": 9,
+          "value": 63
+        },
+        {
+          "month": 10,
+          "value": 65
+        },
+        {
+          "month": 11,
+          "value": 64
+        },
+        {
+          "month": 12,
+          "value": 76
+        }
+      ],
+      "correlations": {
+        "temp": -0.55,
+        "rain": -0.39,
+        "humidity": -0.38,
+        "sunshine": -0.05
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.42,
+          "rain": -0.97,
+          "humidity": -0.34
+        },
+        "rSquared": 0.2
+      },
+      "optimalConditions": {
+        "tempRange": "추운 날 (10°C-)",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          1,
+          5,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "수제비",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 73
+        },
+        {
+          "month": 2,
+          "value": 65
+        },
+        {
+          "month": 3,
+          "value": 74
+        },
+        {
+          "month": 4,
+          "value": 69
+        },
+        {
+          "month": 5,
+          "value": 67
+        },
+        {
+          "month": 6,
+          "value": 78
+        },
+        {
+          "month": 7,
+          "value": 88
+        },
+        {
+          "month": 8,
+          "value": 62
+        },
+        {
+          "month": 9,
+          "value": 75
+        },
+        {
+          "month": 10,
+          "value": 85
+        },
+        {
+          "month": 11,
+          "value": 77
+        },
+        {
+          "month": 12,
+          "value": 79
+        }
+      ],
+      "correlations": {
+        "temp": 0.12,
+        "rain": 0.14,
+        "humidity": 0.2,
+        "sunshine": -0.36
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.09,
+          "rain": 0.33,
+          "humidity": 0.16
+        },
+        "rSquared": 0.02
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          3,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "라면",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 62
+        },
+        {
+          "month": 2,
+          "value": 58
+        },
+        {
+          "month": 3,
+          "value": 62
+        },
+        {
+          "month": 4,
+          "value": 66
+        },
+        {
+          "month": 5,
+          "value": 64
+        },
+        {
+          "month": 6,
+          "value": 67
+        },
+        {
+          "month": 7,
+          "value": 67
+        },
+        {
+          "month": 8,
+          "value": 64
+        },
+        {
+          "month": 9,
+          "value": 73
+        },
+        {
+          "month": 10,
+          "value": 81
+        },
+        {
+          "month": 11,
+          "value": 81
+        },
+        {
+          "month": 12,
+          "value": 85
+        }
+      ],
+      "correlations": {
+        "temp": -0.05,
+        "rain": -0.12,
+        "humidity": -0.07,
+        "sunshine": -0.17
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.04,
+          "rain": -0.33,
+          "humidity": -0.07
+        },
+        "rSquared": 0.01
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "우동",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 69
+        },
+        {
+          "month": 2,
+          "value": 68
+        },
+        {
+          "month": 3,
+          "value": 64
+        },
+        {
+          "month": 4,
+          "value": 64
+        },
+        {
+          "month": 5,
+          "value": 62
+        },
+        {
+          "month": 6,
+          "value": 64
+        },
+        {
+          "month": 7,
+          "value": 68
+        },
+        {
+          "month": 8,
+          "value": 71
+        },
+        {
+          "month": 9,
+          "value": 75
+        },
+        {
+          "month": 10,
+          "value": 81
+        },
+        {
+          "month": 11,
+          "value": 81
+        },
+        {
+          "month": 12,
+          "value": 87
+        }
+      ],
+      "correlations": {
+        "temp": -0.24,
+        "rain": -0.24,
+        "humidity": -0.14,
+        "sunshine": -0.36
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.18,
+          "rain": -0.58,
+          "humidity": -0.12
+        },
+        "rSquared": 0.04
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "국밥",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 33
+        },
+        {
+          "month": 2,
+          "value": 32
+        },
+        {
+          "month": 3,
+          "value": 36
+        },
+        {
+          "month": 4,
+          "value": 32
+        },
+        {
+          "month": 5,
+          "value": 33
+        },
+        {
+          "month": 6,
+          "value": 46
+        },
+        {
+          "month": 7,
+          "value": 34
+        },
+        {
+          "month": 8,
+          "value": 35
+        },
+        {
+          "month": 9,
+          "value": 35
+        },
+        {
+          "month": 10,
+          "value": 36
+        },
+        {
+          "month": 11,
+          "value": 39
+        },
+        {
+          "month": 12,
+          "value": 43
+        }
+      ],
+      "correlations": {
+        "temp": 0.05,
+        "rain": 0.05,
+        "humidity": 0.1,
+        "sunshine": -0.34
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.02,
+          "rain": 0.07,
+          "humidity": 0.04
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          6,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "해장국",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 80
+        },
+        {
+          "month": 2,
+          "value": 73
+        },
+        {
+          "month": 3,
+          "value": 72
+        },
+        {
+          "month": 4,
+          "value": 78
+        },
+        {
+          "month": 5,
+          "value": 71
+        },
+        {
+          "month": 6,
+          "value": 75
+        },
+        {
+          "month": 7,
+          "value": 80
+        },
+        {
+          "month": 8,
+          "value": 81
+        },
+        {
+          "month": 9,
+          "value": 83
+        },
+        {
+          "month": 10,
+          "value": 87
+        },
+        {
+          "month": 11,
+          "value": 79
+        },
+        {
+          "month": 12,
+          "value": 89
+        }
+      ],
+      "correlations": {
+        "temp": 0.01,
+        "rain": 0.02,
+        "humidity": 0.13,
+        "sunshine": -0.42
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.01,
+          "rain": 0.03,
+          "humidity": 0.08
+        },
+        "rSquared": 0.01
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "곰탕",
+      "category": "국물",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 79
+        },
+        {
+          "month": 2,
+          "value": 80
+        },
+        {
+          "month": 3,
+          "value": 65
+        },
+        {
+          "month": 4,
+          "value": 48
+        },
+        {
+          "month": 5,
+          "value": 58
+        },
+        {
+          "month": 6,
+          "value": 67
+        },
+        {
+          "month": 7,
+          "value": 63
+        },
+        {
+          "month": 8,
+          "value": 69
+        },
+        {
+          "month": 9,
+          "value": 79
+        },
+        {
+          "month": 10,
+          "value": 70
+        },
+        {
+          "month": 11,
+          "value": 80
+        },
+        {
+          "month": 12,
+          "value": 81
+        }
+      ],
+      "correlations": {
+        "temp": -0.43,
+        "rain": -0.37,
+        "humidity": -0.23,
+        "sunshine": -0.5
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.42,
+          "rain": -1.15,
+          "humidity": -0.25
+        },
+        "rSquared": 0.12
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "냉면",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 17
+        },
+        {
+          "month": 2,
+          "value": 21
+        },
+        {
+          "month": 3,
+          "value": 24
+        },
+        {
+          "month": 4,
+          "value": 39
+        },
+        {
+          "month": 5,
+          "value": 62
+        },
+        {
+          "month": 6,
+          "value": 63
+        },
+        {
+          "month": 7,
+          "value": 67
+        },
+        {
+          "month": 8,
+          "value": 65
+        },
+        {
+          "month": 9,
+          "value": 37
+        },
+        {
+          "month": 10,
+          "value": 24
+        },
+        {
+          "month": 11,
+          "value": 21
+        },
+        {
+          "month": 12,
+          "value": 23
+        }
+      ],
+      "correlations": {
+        "temp": 0.86,
+        "rain": 0.87,
+        "humidity": 0.83,
+        "sunshine": -0.11
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 1.63,
+          "rain": 5.2,
+          "humidity": 1.77
+        },
+        "rSquared": 0.72
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "막국수",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 37
+        },
+        {
+          "month": 2,
+          "value": 42
+        },
+        {
+          "month": 3,
+          "value": 42
+        },
+        {
+          "month": 4,
+          "value": 60
+        },
+        {
+          "month": 5,
+          "value": 65
+        },
+        {
+          "month": 6,
+          "value": 81
+        },
+        {
+          "month": 7,
+          "value": 82
+        },
+        {
+          "month": 8,
+          "value": 78
+        },
+        {
+          "month": 9,
+          "value": 58
+        },
+        {
+          "month": 10,
+          "value": 47
+        },
+        {
+          "month": 11,
+          "value": 37
+        },
+        {
+          "month": 12,
+          "value": 37
+        }
+      ],
+      "correlations": {
+        "temp": 0.9,
+        "rain": 0.88,
+        "humidity": 0.88,
+        "sunshine": -0.18
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 1.51,
+          "rain": 4.66,
+          "humidity": 1.66
+        },
+        "rSquared": 0.78
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "콩국수",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 7
+        },
+        {
+          "month": 2,
+          "value": 2
+        },
+        {
+          "month": 3,
+          "value": 9
+        },
+        {
+          "month": 4,
+          "value": 23
+        },
+        {
+          "month": 5,
+          "value": 44
+        },
+        {
+          "month": 6,
+          "value": 82
+        },
+        {
+          "month": 7,
+          "value": 76
+        },
+        {
+          "month": 8,
+          "value": 68
+        },
+        {
+          "month": 9,
+          "value": 20
+        },
+        {
+          "month": 10,
+          "value": 9
+        },
+        {
+          "month": 11,
+          "value": 11
+        },
+        {
+          "month": 12,
+          "value": 8
+        }
+      ],
+      "correlations": {
+        "temp": 0.82,
+        "rain": 0.88,
+        "humidity": 0.87,
+        "sunshine": -0.32
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 2.29,
+          "rain": 7.83,
+          "humidity": 2.75
+        },
+        "rSquared": 0.73
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "밀면",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 26
+        },
+        {
+          "month": 2,
+          "value": 34
+        },
+        {
+          "month": 3,
+          "value": 42
+        },
+        {
+          "month": 4,
+          "value": 60
+        },
+        {
+          "month": 5,
+          "value": 70
+        },
+        {
+          "month": 6,
+          "value": 75
+        },
+        {
+          "month": 7,
+          "value": 78
+        },
+        {
+          "month": 8,
+          "value": 75
+        },
+        {
+          "month": 9,
+          "value": 50
+        },
+        {
+          "month": 10,
+          "value": 35
+        },
+        {
+          "month": 11,
+          "value": 34
+        },
+        {
+          "month": 12,
+          "value": 38
+        }
+      ],
+      "correlations": {
+        "temp": 0.85,
+        "rain": 0.87,
+        "humidity": 0.8,
+        "sunshine": -0.08
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 1.54,
+          "rain": 4.98,
+          "humidity": 1.64
+        },
+        "rSquared": 0.7
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "냉모밀",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 7
+        },
+        {
+          "month": 2,
+          "value": 0
+        },
+        {
+          "month": 3,
+          "value": 0
+        },
+        {
+          "month": 4,
+          "value": 41
+        },
+        {
+          "month": 5,
+          "value": 49
+        },
+        {
+          "month": 6,
+          "value": 82
+        },
+        {
+          "month": 7,
+          "value": 67
+        },
+        {
+          "month": 8,
+          "value": 54
+        },
+        {
+          "month": 9,
+          "value": 24
+        },
+        {
+          "month": 10,
+          "value": 8
+        },
+        {
+          "month": 11,
+          "value": 0
+        },
+        {
+          "month": 12,
+          "value": 0
+        }
+      ],
+      "correlations": {
+        "temp": 0.81,
+        "rain": 0.81,
+        "humidity": 0.79,
+        "sunshine": -0.13
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 2.27,
+          "rain": 7.23,
+          "humidity": 2.49
+        },
+        "rSquared": 0.64
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "keyword": "빙수",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 24
+        },
+        {
+          "month": 2,
+          "value": 22
+        },
+        {
+          "month": 3,
+          "value": 23
+        },
+        {
+          "month": 4,
+          "value": 36
+        },
+        {
+          "month": 5,
+          "value": 48
+        },
+        {
+          "month": 6,
+          "value": 89
+        },
+        {
+          "month": 7,
+          "value": 95
+        },
+        {
+          "month": 8,
+          "value": 81
+        },
+        {
+          "month": 9,
+          "value": 44
+        },
+        {
+          "month": 10,
+          "value": 29
+        },
+        {
+          "month": 11,
+          "value": 25
+        },
+        {
+          "month": 12,
+          "value": 27
+        }
+      ],
+      "correlations": {
+        "temp": 0.84,
+        "rain": 0.92,
+        "humidity": 0.93,
+        "sunshine": -0.43
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 2.18,
+          "rain": 7.54,
+          "humidity": 2.72
+        },
+        "rSquared": 0.8
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "아이스아메리카노",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 46
+        },
+        {
+          "month": 2,
+          "value": 49
+        },
+        {
+          "month": 3,
+          "value": 61
+        },
+        {
+          "month": 4,
+          "value": 67
+        },
+        {
+          "month": 5,
+          "value": 76
+        },
+        {
+          "month": 6,
+          "value": 79
+        },
+        {
+          "month": 7,
+          "value": 87
+        },
+        {
+          "month": 8,
+          "value": 76
+        },
+        {
+          "month": 9,
+          "value": 68
+        },
+        {
+          "month": 10,
+          "value": 58
+        },
+        {
+          "month": 11,
+          "value": 64
+        },
+        {
+          "month": 12,
+          "value": 64
+        }
+      ],
+      "correlations": {
+        "temp": 0.85,
+        "rain": 0.89,
+        "humidity": 0.81,
+        "sunshine": -0.19
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.97,
+          "rain": 3.22,
+          "humidity": 1.05
+        },
+        "rSquared": 0.72
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "아이스크림",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 42
+        },
+        {
+          "month": 2,
+          "value": 49
+        },
+        {
+          "month": 3,
+          "value": 89
+        },
+        {
+          "month": 4,
+          "value": 84
+        },
+        {
+          "month": 5,
+          "value": 79
+        },
+        {
+          "month": 6,
+          "value": 92
+        },
+        {
+          "month": 7,
+          "value": 81
+        },
+        {
+          "month": 8,
+          "value": 80
+        },
+        {
+          "month": 9,
+          "value": 85
+        },
+        {
+          "month": 10,
+          "value": 82
+        },
+        {
+          "month": 11,
+          "value": 86
+        },
+        {
+          "month": 12,
+          "value": 81
+        }
+      ],
+      "correlations": {
+        "temp": 0.58,
+        "rain": 0.43,
+        "humidity": 0.39,
+        "sunshine": 0.11
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.86,
+          "rain": 1.98,
+          "humidity": 0.64
+        },
+        "rSquared": 0.22
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "수박",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 41
+        },
+        {
+          "month": 2,
+          "value": 43
+        },
+        {
+          "month": 3,
+          "value": 46
+        },
+        {
+          "month": 4,
+          "value": 42
+        },
+        {
+          "month": 5,
+          "value": 59
+        },
+        {
+          "month": 6,
+          "value": 93
+        },
+        {
+          "month": 7,
+          "value": 80
+        },
+        {
+          "month": 8,
+          "value": 56
+        },
+        {
+          "month": 9,
+          "value": 38
+        },
+        {
+          "month": 10,
+          "value": 32
+        },
+        {
+          "month": 11,
+          "value": 29
+        },
+        {
+          "month": 12,
+          "value": 38
+        }
+      ],
+      "correlations": {
+        "temp": 0.58,
+        "rain": 0.67,
+        "humidity": 0.65,
+        "sunshine": -0.27
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 1.07,
+          "rain": 3.9,
+          "humidity": 1.34
+        },
+        "rSquared": 0.4
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "keyword": "팥빙수",
+      "category": "시원한음식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 5
+        },
+        {
+          "month": 2,
+          "value": 8
+        },
+        {
+          "month": 3,
+          "value": 13
+        },
+        {
+          "month": 4,
+          "value": 24
+        },
+        {
+          "month": 5,
+          "value": 34
+        },
+        {
+          "month": 6,
+          "value": 78
+        },
+        {
+          "month": 7,
+          "value": 81
+        },
+        {
+          "month": 8,
+          "value": 72
+        },
+        {
+          "month": 9,
+          "value": 38
+        },
+        {
+          "month": 10,
+          "value": 15
+        },
+        {
+          "month": 11,
+          "value": 12
+        },
+        {
+          "month": 12,
+          "value": 13
+        }
+      ],
+      "correlations": {
+        "temp": 0.88,
+        "rain": 0.92,
+        "humidity": 0.94,
+        "sunshine": -0.41
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 2.36,
+          "rain": 7.91,
+          "humidity": 2.86
+        },
+        "rSquared": 0.83
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "keyword": "파전",
+      "category": "비오는날",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 49
+        },
+        {
+          "month": 2,
+          "value": 47
+        },
+        {
+          "month": 3,
+          "value": 59
+        },
+        {
+          "month": 4,
+          "value": 51
+        },
+        {
+          "month": 5,
+          "value": 68
+        },
+        {
+          "month": 6,
+          "value": 60
+        },
+        {
+          "month": 7,
+          "value": 59
+        },
+        {
+          "month": 8,
+          "value": 53
+        },
+        {
+          "month": 9,
+          "value": 58
+        },
+        {
+          "month": 10,
+          "value": 75
+        },
+        {
+          "month": 11,
+          "value": 65
+        },
+        {
+          "month": 12,
+          "value": 46
+        }
+      ],
+      "correlations": {
+        "temp": 0.42,
+        "rain": 0.06,
+        "humidity": 0.17,
+        "sunshine": 0.39
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.35,
+          "rain": 0.17,
+          "humidity": 0.16
+        },
+        "rSquared": 0.07
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          5,
+          6,
+          10,
+          11
+        ]
+      }
+    },
+    {
+      "keyword": "막걸리",
+      "category": "비오는날",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 63
+        },
+        {
+          "month": 2,
+          "value": 77
+        },
+        {
+          "month": 3,
+          "value": 78
+        },
+        {
+          "month": 4,
+          "value": 82
+        },
+        {
+          "month": 5,
+          "value": 81
+        },
+        {
+          "month": 6,
+          "value": 78
+        },
+        {
+          "month": 7,
+          "value": 78
+        },
+        {
+          "month": 8,
+          "value": 74
+        },
+        {
+          "month": 9,
+          "value": 83
+        },
+        {
+          "month": 10,
+          "value": 84
+        },
+        {
+          "month": 11,
+          "value": 80
+        },
+        {
+          "month": 12,
+          "value": 84
+        }
+      ],
+      "correlations": {
+        "temp": 0.26,
+        "rain": 0.01,
+        "humidity": -0.01,
+        "sunshine": 0.3
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.14,
+          "rain": 0.02,
+          "humidity": -0.01
+        },
+        "rSquared": 0.02
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "부침개",
+      "category": "비오는날",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 67
+        },
+        {
+          "month": 2,
+          "value": 56
+        },
+        {
+          "month": 3,
+          "value": 49
+        },
+        {
+          "month": 4,
+          "value": 56
+        },
+        {
+          "month": 5,
+          "value": 63
+        },
+        {
+          "month": 6,
+          "value": 64
+        },
+        {
+          "month": 7,
+          "value": 66
+        },
+        {
+          "month": 8,
+          "value": 58
+        },
+        {
+          "month": 9,
+          "value": 73
+        },
+        {
+          "month": 10,
+          "value": 62
+        },
+        {
+          "month": 11,
+          "value": 45
+        },
+        {
+          "month": 12,
+          "value": 67
+        }
+      ],
+      "correlations": {
+        "temp": 0.26,
+        "rain": 0.22,
+        "humidity": 0.32,
+        "sunshine": -0.21
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.2,
+          "rain": 0.53,
+          "humidity": 0.28
+        },
+        "rSquared": 0.07
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          5,
+          6,
+          7,
+          9,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "전",
+      "category": "비오는날",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 64
+        },
+        {
+          "month": 2,
+          "value": 68
+        },
+        {
+          "month": 3,
+          "value": 75
+        },
+        {
+          "month": 4,
+          "value": 63
+        },
+        {
+          "month": 5,
+          "value": 62
+        },
+        {
+          "month": 6,
+          "value": 63
+        },
+        {
+          "month": 7,
+          "value": 67
+        },
+        {
+          "month": 8,
+          "value": 76
+        },
+        {
+          "month": 9,
+          "value": 83
+        },
+        {
+          "month": 10,
+          "value": 70
+        },
+        {
+          "month": 11,
+          "value": 70
+        },
+        {
+          "month": 12,
+          "value": 77
+        }
+      ],
+      "correlations": {
+        "temp": 0.09,
+        "rain": 0.04,
+        "humidity": 0.13,
+        "sunshine": -0.28
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.06,
+          "rain": 0.08,
+          "humidity": 0.09
+        },
+        "rSquared": 0.01
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          2,
+          3,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "삼계탕",
+      "category": "이열치열",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 11
+        },
+        {
+          "month": 2,
+          "value": 11
+        },
+        {
+          "month": 3,
+          "value": 12
+        },
+        {
+          "month": 4,
+          "value": 13
+        },
+        {
+          "month": 5,
+          "value": 15
+        },
+        {
+          "month": 6,
+          "value": 26
+        },
+        {
+          "month": 7,
+          "value": 62
+        },
+        {
+          "month": 8,
+          "value": 30
+        },
+        {
+          "month": 9,
+          "value": 22
+        },
+        {
+          "month": 10,
+          "value": 23
+        },
+        {
+          "month": 11,
+          "value": 16
+        },
+        {
+          "month": 12,
+          "value": 15
+        }
+      ],
+      "correlations": {
+        "temp": 0.7,
+        "rain": 0.85,
+        "humidity": 0.86,
+        "sunshine": -0.58
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.95,
+          "rain": 3.62,
+          "humidity": 1.31
+        },
+        "rSquared": 0.65
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          7
+        ]
+      }
+    },
+    {
+      "keyword": "보양식",
+      "category": "이열치열",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 9
+        },
+        {
+          "month": 2,
+          "value": 20
+        },
+        {
+          "month": 3,
+          "value": 17
+        },
+        {
+          "month": 4,
+          "value": 9
+        },
+        {
+          "month": 5,
+          "value": 0
+        },
+        {
+          "month": 6,
+          "value": 58
+        },
+        {
+          "month": 7,
+          "value": 86
+        },
+        {
+          "month": 8,
+          "value": 65
+        },
+        {
+          "month": 9,
+          "value": 16
+        },
+        {
+          "month": 10,
+          "value": 28
+        },
+        {
+          "month": 11,
+          "value": 0
+        },
+        {
+          "month": 12,
+          "value": 27
+        }
+      ],
+      "correlations": {
+        "temp": 0.63,
+        "rain": 0.78,
+        "humidity": 0.83,
+        "sunshine": -0.67
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 1.64,
+          "rain": 6.39,
+          "humidity": 2.43
+        },
+        "rSquared": 0.56
+      },
+      "optimalConditions": {
+        "tempRange": "더운 날 (20°C+)",
+        "rainLevel": "장마/비 많은 시기",
+        "humidityRange": "습한 날",
+        "bestMonths": [
+          7
+        ]
+      }
+    },
+    {
+      "keyword": "추어탕",
+      "category": "이열치열",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 76
+        },
+        {
+          "month": 2,
+          "value": 65
+        },
+        {
+          "month": 3,
+          "value": 62
+        },
+        {
+          "month": 4,
+          "value": 66
+        },
+        {
+          "month": 5,
+          "value": 70
+        },
+        {
+          "month": 6,
+          "value": 78
+        },
+        {
+          "month": 7,
+          "value": 81
+        },
+        {
+          "month": 8,
+          "value": 93
+        },
+        {
+          "month": 9,
+          "value": 82
+        },
+        {
+          "month": 10,
+          "value": 81
+        },
+        {
+          "month": 11,
+          "value": 87
+        },
+        {
+          "month": 12,
+          "value": 86
+        }
+      ],
+      "correlations": {
+        "temp": 0.38,
+        "rain": 0.44,
+        "humidity": 0.54,
+        "sunshine": -0.62
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.34,
+          "rain": 1.28,
+          "humidity": 0.56
+        },
+        "rSquared": 0.21
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "삼겹살",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 28
+        },
+        {
+          "month": 2,
+          "value": 29
+        },
+        {
+          "month": 3,
+          "value": 32
+        },
+        {
+          "month": 4,
+          "value": 48
+        },
+        {
+          "month": 5,
+          "value": 33
+        },
+        {
+          "month": 6,
+          "value": 32
+        },
+        {
+          "month": 7,
+          "value": 29
+        },
+        {
+          "month": 8,
+          "value": 28
+        },
+        {
+          "month": 9,
+          "value": 28
+        },
+        {
+          "month": 10,
+          "value": 32
+        },
+        {
+          "month": 11,
+          "value": 31
+        },
+        {
+          "month": 12,
+          "value": 31
+        }
+      ],
+      "correlations": {
+        "temp": -0.04,
+        "rain": -0.09,
+        "humidity": -0.25,
+        "sunshine": 0.54
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.02,
+          "rain": -0.15,
+          "humidity": -0.14
+        },
+        "rSquared": 0.02
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          4
+        ]
+      }
+    },
+    {
+      "keyword": "갈비",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 70
+        },
+        {
+          "month": 2,
+          "value": 76
+        },
+        {
+          "month": 3,
+          "value": 63
+        },
+        {
+          "month": 4,
+          "value": 66
+        },
+        {
+          "month": 5,
+          "value": 72
+        },
+        {
+          "month": 6,
+          "value": 69
+        },
+        {
+          "month": 7,
+          "value": 70
+        },
+        {
+          "month": 8,
+          "value": 75
+        },
+        {
+          "month": 9,
+          "value": 84
+        },
+        {
+          "month": 10,
+          "value": 68
+        },
+        {
+          "month": 11,
+          "value": 65
+        },
+        {
+          "month": 12,
+          "value": 78
+        }
+      ],
+      "correlations": {
+        "temp": 0.14,
+        "rain": 0.1,
+        "humidity": 0.19,
+        "sunshine": -0.25
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.08,
+          "rain": 0.18,
+          "humidity": 0.12
+        },
+        "rSquared": 0.02
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "소고기",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 64
+        },
+        {
+          "month": 2,
+          "value": 66
+        },
+        {
+          "month": 3,
+          "value": 59
+        },
+        {
+          "month": 4,
+          "value": 60
+        },
+        {
+          "month": 5,
+          "value": 63
+        },
+        {
+          "month": 6,
+          "value": 63
+        },
+        {
+          "month": 7,
+          "value": 61
+        },
+        {
+          "month": 8,
+          "value": 64
+        },
+        {
+          "month": 9,
+          "value": 81
+        },
+        {
+          "month": 10,
+          "value": 70
+        },
+        {
+          "month": 11,
+          "value": 76
+        },
+        {
+          "month": 12,
+          "value": 83
+        }
+      ],
+      "correlations": {
+        "temp": -0.18,
+        "rain": -0.24,
+        "humidity": -0.16,
+        "sunshine": -0.25
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.14,
+          "rain": -0.59,
+          "humidity": -0.14
+        },
+        "rSquared": 0.04
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "치킨",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 68
+        },
+        {
+          "month": 2,
+          "value": 69
+        },
+        {
+          "month": 3,
+          "value": 69
+        },
+        {
+          "month": 4,
+          "value": 74
+        },
+        {
+          "month": 5,
+          "value": 74
+        },
+        {
+          "month": 6,
+          "value": 77
+        },
+        {
+          "month": 7,
+          "value": 76
+        },
+        {
+          "month": 8,
+          "value": 79
+        },
+        {
+          "month": 9,
+          "value": 75
+        },
+        {
+          "month": 10,
+          "value": 74
+        },
+        {
+          "month": 11,
+          "value": 75
+        },
+        {
+          "month": 12,
+          "value": 89
+        }
+      ],
+      "correlations": {
+        "temp": 0.2,
+        "rain": 0.31,
+        "humidity": 0.28,
+        "sunshine": -0.37
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.11,
+          "rain": 0.52,
+          "humidity": 0.17
+        },
+        "rSquared": 0.07
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "족발",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 79
+        },
+        {
+          "month": 2,
+          "value": 63
+        },
+        {
+          "month": 3,
+          "value": 59
+        },
+        {
+          "month": 4,
+          "value": 64
+        },
+        {
+          "month": 5,
+          "value": 62
+        },
+        {
+          "month": 6,
+          "value": 63
+        },
+        {
+          "month": 7,
+          "value": 69
+        },
+        {
+          "month": 8,
+          "value": 67
+        },
+        {
+          "month": 9,
+          "value": 60
+        },
+        {
+          "month": 10,
+          "value": 56
+        },
+        {
+          "month": 11,
+          "value": 63
+        },
+        {
+          "month": 12,
+          "value": 70
+        }
+      ],
+      "correlations": {
+        "temp": -0.32,
+        "rain": 0.12,
+        "humidity": 0.04,
+        "sunshine": -0.53
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.18,
+          "rain": 0.21,
+          "humidity": 0.03
+        },
+        "rSquared": 0.04
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          4,
+          7,
+          8,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "보쌈",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 76
+        },
+        {
+          "month": 2,
+          "value": 57
+        },
+        {
+          "month": 3,
+          "value": 61
+        },
+        {
+          "month": 4,
+          "value": 54
+        },
+        {
+          "month": 5,
+          "value": 56
+        },
+        {
+          "month": 6,
+          "value": 54
+        },
+        {
+          "month": 7,
+          "value": 55
+        },
+        {
+          "month": 8,
+          "value": 61
+        },
+        {
+          "month": 9,
+          "value": 60
+        },
+        {
+          "month": 10,
+          "value": 62
+        },
+        {
+          "month": 11,
+          "value": 86
+        },
+        {
+          "month": 12,
+          "value": 86
+        }
+      ],
+      "correlations": {
+        "temp": -0.59,
+        "rain": -0.38,
+        "humidity": -0.4,
+        "sunshine": -0.32
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.66,
+          "rain": -1.34,
+          "humidity": -0.51
+        },
+        "rSquared": 0.22
+      },
+      "optimalConditions": {
+        "tempRange": "추운 날 (10°C-)",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          1,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "곱창",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 74
+        },
+        {
+          "month": 2,
+          "value": 72
+        },
+        {
+          "month": 3,
+          "value": 69
+        },
+        {
+          "month": 4,
+          "value": 66
+        },
+        {
+          "month": 5,
+          "value": 70
+        },
+        {
+          "month": 6,
+          "value": 71
+        },
+        {
+          "month": 7,
+          "value": 75
+        },
+        {
+          "month": 8,
+          "value": 70
+        },
+        {
+          "month": 9,
+          "value": 83
+        },
+        {
+          "month": 10,
+          "value": 70
+        },
+        {
+          "month": 11,
+          "value": 69
+        },
+        {
+          "month": 12,
+          "value": 83
+        }
+      ],
+      "correlations": {
+        "temp": -0.06,
+        "rain": 0.04,
+        "humidity": 0.09,
+        "sunshine": -0.45
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.03,
+          "rain": 0.06,
+          "humidity": 0.05
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "닭발",
+      "category": "고기",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 69
+        },
+        {
+          "month": 2,
+          "value": 73
+        },
+        {
+          "month": 3,
+          "value": 69
+        },
+        {
+          "month": 4,
+          "value": 59
+        },
+        {
+          "month": 5,
+          "value": 65
+        },
+        {
+          "month": 6,
+          "value": 77
+        },
+        {
+          "month": 7,
+          "value": 71
+        },
+        {
+          "month": 8,
+          "value": 76
+        },
+        {
+          "month": 9,
+          "value": 79
+        },
+        {
+          "month": 10,
+          "value": 76
+        },
+        {
+          "month": 11,
+          "value": 73
+        },
+        {
+          "month": 12,
+          "value": 85
+        }
+      ],
+      "correlations": {
+        "temp": 0.04,
+        "rain": 0.01,
+        "humidity": 0.17,
+        "sunshine": -0.56
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.02,
+          "rain": 0.02,
+          "humidity": 0.12
+        },
+        "rSquared": 0.01
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "피자",
+      "category": "양식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 60
+        },
+        {
+          "month": 2,
+          "value": 64
+        },
+        {
+          "month": 3,
+          "value": 60
+        },
+        {
+          "month": 4,
+          "value": 62
+        },
+        {
+          "month": 5,
+          "value": 68
+        },
+        {
+          "month": 6,
+          "value": 69
+        },
+        {
+          "month": 7,
+          "value": 73
+        },
+        {
+          "month": 8,
+          "value": 76
+        },
+        {
+          "month": 9,
+          "value": 68
+        },
+        {
+          "month": 10,
+          "value": 69
+        },
+        {
+          "month": 11,
+          "value": 76
+        },
+        {
+          "month": 12,
+          "value": 87
+        }
+      ],
+      "correlations": {
+        "temp": 0.16,
+        "rain": 0.29,
+        "humidity": 0.28,
+        "sunshine": -0.5
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.12,
+          "rain": 0.69,
+          "humidity": 0.24
+        },
+        "rSquared": 0.06
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          7,
+          8,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "파스타",
+      "category": "양식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 50
+        },
+        {
+          "month": 2,
+          "value": 50
+        },
+        {
+          "month": 3,
+          "value": 50
+        },
+        {
+          "month": 4,
+          "value": 50
+        },
+        {
+          "month": 5,
+          "value": 50
+        },
+        {
+          "month": 6,
+          "value": 50
+        },
+        {
+          "month": 7,
+          "value": 50
+        },
+        {
+          "month": 8,
+          "value": 50
+        },
+        {
+          "month": 9,
+          "value": 50
+        },
+        {
+          "month": 10,
+          "value": 50
+        },
+        {
+          "month": 11,
+          "value": 50
+        },
+        {
+          "month": 12,
+          "value": 50
+        }
+      ],
+      "correlations": {
+        "temp": 0,
+        "rain": 0,
+        "humidity": 0,
+        "sunshine": 0
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0,
+          "rain": 0,
+          "humidity": 0
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "햄버거",
+      "category": "양식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 50
+        },
+        {
+          "month": 2,
+          "value": 50
+        },
+        {
+          "month": 3,
+          "value": 50
+        },
+        {
+          "month": 4,
+          "value": 50
+        },
+        {
+          "month": 5,
+          "value": 50
+        },
+        {
+          "month": 6,
+          "value": 50
+        },
+        {
+          "month": 7,
+          "value": 50
+        },
+        {
+          "month": 8,
+          "value": 50
+        },
+        {
+          "month": 9,
+          "value": 50
+        },
+        {
+          "month": 10,
+          "value": 50
+        },
+        {
+          "month": 11,
+          "value": 50
+        },
+        {
+          "month": 12,
+          "value": 50
+        }
+      ],
+      "correlations": {
+        "temp": 0,
+        "rain": 0,
+        "humidity": 0,
+        "sunshine": 0
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0,
+          "rain": 0,
+          "humidity": 0
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "떡볶이",
+      "category": "분식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 50
+        },
+        {
+          "month": 2,
+          "value": 50
+        },
+        {
+          "month": 3,
+          "value": 50
+        },
+        {
+          "month": 4,
+          "value": 50
+        },
+        {
+          "month": 5,
+          "value": 50
+        },
+        {
+          "month": 6,
+          "value": 50
+        },
+        {
+          "month": 7,
+          "value": 50
+        },
+        {
+          "month": 8,
+          "value": 50
+        },
+        {
+          "month": 9,
+          "value": 50
+        },
+        {
+          "month": 10,
+          "value": 50
+        },
+        {
+          "month": 11,
+          "value": 50
+        },
+        {
+          "month": 12,
+          "value": 50
+        }
+      ],
+      "correlations": {
+        "temp": 0,
+        "rain": 0,
+        "humidity": 0,
+        "sunshine": 0
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0,
+          "rain": 0,
+          "humidity": 0
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "순대",
+      "category": "분식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 50
+        },
+        {
+          "month": 2,
+          "value": 50
+        },
+        {
+          "month": 3,
+          "value": 50
+        },
+        {
+          "month": 4,
+          "value": 50
+        },
+        {
+          "month": 5,
+          "value": 50
+        },
+        {
+          "month": 6,
+          "value": 50
+        },
+        {
+          "month": 7,
+          "value": 50
+        },
+        {
+          "month": 8,
+          "value": 50
+        },
+        {
+          "month": 9,
+          "value": 50
+        },
+        {
+          "month": 10,
+          "value": 50
+        },
+        {
+          "month": 11,
+          "value": 50
+        },
+        {
+          "month": 12,
+          "value": 50
+        }
+      ],
+      "correlations": {
+        "temp": 0,
+        "rain": 0,
+        "humidity": 0,
+        "sunshine": 0
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0,
+          "rain": 0,
+          "humidity": 0
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "김밥",
+      "category": "분식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 50
+        },
+        {
+          "month": 2,
+          "value": 50
+        },
+        {
+          "month": 3,
+          "value": 50
+        },
+        {
+          "month": 4,
+          "value": 50
+        },
+        {
+          "month": 5,
+          "value": 50
+        },
+        {
+          "month": 6,
+          "value": 50
+        },
+        {
+          "month": 7,
+          "value": 50
+        },
+        {
+          "month": 8,
+          "value": 50
+        },
+        {
+          "month": 9,
+          "value": 50
+        },
+        {
+          "month": 10,
+          "value": 50
+        },
+        {
+          "month": 11,
+          "value": 50
+        },
+        {
+          "month": 12,
+          "value": 50
+        }
+      ],
+      "correlations": {
+        "temp": 0,
+        "rain": 0,
+        "humidity": 0,
+        "sunshine": 0
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0,
+          "rain": 0,
+          "humidity": 0
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "초밥",
+      "category": "일식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 66
+        },
+        {
+          "month": 2,
+          "value": 67
+        },
+        {
+          "month": 3,
+          "value": 64
+        },
+        {
+          "month": 4,
+          "value": 70
+        },
+        {
+          "month": 5,
+          "value": 68
+        },
+        {
+          "month": 6,
+          "value": 68
+        },
+        {
+          "month": 7,
+          "value": 70
+        },
+        {
+          "month": 8,
+          "value": 72
+        },
+        {
+          "month": 9,
+          "value": 75
+        },
+        {
+          "month": 10,
+          "value": 79
+        },
+        {
+          "month": 11,
+          "value": 76
+        },
+        {
+          "month": 12,
+          "value": 84
+        }
+      ],
+      "correlations": {
+        "temp": 0,
+        "rain": -0.06,
+        "humidity": 0,
+        "sunshine": -0.23
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0,
+          "rain": -0.11,
+          "humidity": 0
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "돈카츠",
+      "category": "일식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 58
+        },
+        {
+          "month": 2,
+          "value": 59
+        },
+        {
+          "month": 3,
+          "value": 54
+        },
+        {
+          "month": 4,
+          "value": 52
+        },
+        {
+          "month": 5,
+          "value": 58
+        },
+        {
+          "month": 6,
+          "value": 57
+        },
+        {
+          "month": 7,
+          "value": 60
+        },
+        {
+          "month": 8,
+          "value": 55
+        },
+        {
+          "month": 9,
+          "value": 57
+        },
+        {
+          "month": 10,
+          "value": 60
+        },
+        {
+          "month": 11,
+          "value": 68
+        },
+        {
+          "month": 12,
+          "value": 76
+        }
+      ],
+      "correlations": {
+        "temp": -0.39,
+        "rain": -0.22,
+        "humidity": -0.24,
+        "sunshine": -0.39
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.24,
+          "rain": -0.43,
+          "humidity": -0.17
+        },
+        "rSquared": 0.09
+      },
+      "optimalConditions": {
+        "tempRange": "추운 날 (10°C-)",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "짜장면",
+      "category": "중식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 64
+        },
+        {
+          "month": 2,
+          "value": 82
+        },
+        {
+          "month": 3,
+          "value": 71
+        },
+        {
+          "month": 4,
+          "value": 71
+        },
+        {
+          "month": 5,
+          "value": 72
+        },
+        {
+          "month": 6,
+          "value": 79
+        },
+        {
+          "month": 7,
+          "value": 74
+        },
+        {
+          "month": 8,
+          "value": 73
+        },
+        {
+          "month": 9,
+          "value": 75
+        },
+        {
+          "month": 10,
+          "value": 72
+        },
+        {
+          "month": 11,
+          "value": 78
+        },
+        {
+          "month": 12,
+          "value": 88
+        }
+      ],
+      "correlations": {
+        "temp": -0.13,
+        "rain": -0.07,
+        "humidity": -0.09,
+        "sunshine": -0.32
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.08,
+          "rain": -0.13,
+          "humidity": -0.06
+        },
+        "rSquared": 0.01
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "짬뽕",
+      "category": "중식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 68
+        },
+        {
+          "month": 2,
+          "value": 69
+        },
+        {
+          "month": 3,
+          "value": 70
+        },
+        {
+          "month": 4,
+          "value": 69
+        },
+        {
+          "month": 5,
+          "value": 67
+        },
+        {
+          "month": 6,
+          "value": 71
+        },
+        {
+          "month": 7,
+          "value": 74
+        },
+        {
+          "month": 8,
+          "value": 74
+        },
+        {
+          "month": 9,
+          "value": 80
+        },
+        {
+          "month": 10,
+          "value": 77
+        },
+        {
+          "month": 11,
+          "value": 77
+        },
+        {
+          "month": 12,
+          "value": 90
+        }
+      ],
+      "correlations": {
+        "temp": -0.04,
+        "rain": 0.01,
+        "humidity": 0.05,
+        "sunshine": -0.43
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.02,
+          "rain": 0.02,
+          "humidity": 0.04
+        },
+        "rSquared": 0
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "탕수육",
+      "category": "중식",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 65
+        },
+        {
+          "month": 2,
+          "value": 70
+        },
+        {
+          "month": 3,
+          "value": 75
+        },
+        {
+          "month": 4,
+          "value": 72
+        },
+        {
+          "month": 5,
+          "value": 77
+        },
+        {
+          "month": 6,
+          "value": 79
+        },
+        {
+          "month": 7,
+          "value": 76
+        },
+        {
+          "month": 8,
+          "value": 76
+        },
+        {
+          "month": 9,
+          "value": 80
+        },
+        {
+          "month": 10,
+          "value": 84
+        },
+        {
+          "month": 11,
+          "value": 81
+        },
+        {
+          "month": 12,
+          "value": 89
+        }
+      ],
+      "correlations": {
+        "temp": 0.21,
+        "rain": 0.06,
+        "humidity": 0.11,
+        "sunshine": -0.1
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.13,
+          "rain": 0.11,
+          "humidity": 0.08
+        },
+        "rSquared": 0.02
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "아메리카노",
+      "category": "카페",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 65
+        },
+        {
+          "month": 2,
+          "value": 64
+        },
+        {
+          "month": 3,
+          "value": 75
+        },
+        {
+          "month": 4,
+          "value": 78
+        },
+        {
+          "month": 5,
+          "value": 80
+        },
+        {
+          "month": 6,
+          "value": 83
+        },
+        {
+          "month": 7,
+          "value": 82
+        },
+        {
+          "month": 8,
+          "value": 85
+        },
+        {
+          "month": 9,
+          "value": 86
+        },
+        {
+          "month": 10,
+          "value": 89
+        },
+        {
+          "month": 11,
+          "value": 79
+        },
+        {
+          "month": 12,
+          "value": 81
+        }
+      ],
+      "correlations": {
+        "temp": 0.75,
+        "rain": 0.5,
+        "humidity": 0.59,
+        "sunshine": -0.02
+      },
+      "regression": {
+        "coefficients": {
+          "temp": 0.55,
+          "rain": 1.16,
+          "humidity": 0.49
+        },
+        "rSquared": 0.39
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "보통",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "라떼",
+      "category": "카페",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 69
+        },
+        {
+          "month": 2,
+          "value": 72
+        },
+        {
+          "month": 3,
+          "value": 81
+        },
+        {
+          "month": 4,
+          "value": 72
+        },
+        {
+          "month": 5,
+          "value": 69
+        },
+        {
+          "month": 6,
+          "value": 65
+        },
+        {
+          "month": 7,
+          "value": 71
+        },
+        {
+          "month": 8,
+          "value": 69
+        },
+        {
+          "month": 9,
+          "value": 78
+        },
+        {
+          "month": 10,
+          "value": 83
+        },
+        {
+          "month": 11,
+          "value": 87
+        },
+        {
+          "month": 12,
+          "value": 93
+        }
+      ],
+      "correlations": {
+        "temp": -0.41,
+        "rain": -0.41,
+        "humidity": -0.42,
+        "sunshine": -0.07
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.34,
+          "rain": -1.06,
+          "humidity": -0.38
+        },
+        "rSquared": 0.17
+      },
+      "optimalConditions": {
+        "tempRange": "온화한 날씨",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          3,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "keyword": "케이크",
+      "category": "카페",
+      "monthlyValues": [
+        {
+          "month": 1,
+          "value": 36
+        },
+        {
+          "month": 2,
+          "value": 33
+        },
+        {
+          "month": 3,
+          "value": 31
+        },
+        {
+          "month": 4,
+          "value": 34
+        },
+        {
+          "month": 5,
+          "value": 36
+        },
+        {
+          "month": 6,
+          "value": 32
+        },
+        {
+          "month": 7,
+          "value": 31
+        },
+        {
+          "month": 8,
+          "value": 32
+        },
+        {
+          "month": 9,
+          "value": 33
+        },
+        {
+          "month": 10,
+          "value": 37
+        },
+        {
+          "month": 11,
+          "value": 46
+        },
+        {
+          "month": 12,
+          "value": 66
+        }
+      ],
+      "correlations": {
+        "temp": -0.48,
+        "rain": -0.32,
+        "humidity": -0.38,
+        "sunshine": -0.19
+      },
+      "regression": {
+        "coefficients": {
+          "temp": -0.45,
+          "rain": -0.96,
+          "humidity": -0.4
+        },
+        "rSquared": 0.16
+      },
+      "optimalConditions": {
+        "tempRange": "추운 날 (10°C-)",
+        "rainLevel": "보통",
+        "humidityRange": "건조한 날",
+        "bestMonths": [
+          12
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "hotWeatherFoods": [
+      "냉면",
+      "막국수",
+      "콩국수",
+      "밀면",
+      "냉모밀",
+      "빙수",
+      "아이스아메리카노",
+      "아이스크림",
+      "수박",
+      "팥빙수",
+      "삼계탕",
+      "보양식",
+      "아메리카노"
+    ],
+    "coldWeatherFoods": [
+      "김치찌개",
+      "순두부찌개",
+      "설렁탕",
+      "감자탕",
+      "칼국수",
+      "곰탕",
+      "족발",
+      "보쌈",
+      "돈카츠",
+      "라떼",
+      "케이크"
+    ],
+    "rainyDayFoods": [
+      "냉면",
+      "막국수",
+      "콩국수",
+      "밀면",
+      "냉모밀",
+      "빙수",
+      "아이스아메리카노",
+      "아이스크림",
+      "수박",
+      "팥빙수",
+      "삼계탕",
+      "보양식",
+      "추어탕",
+      "치킨",
+      "아메리카노"
+    ],
+    "humidDayFoods": [
+      "냉면",
+      "막국수",
+      "콩국수",
+      "밀면",
+      "냉모밀",
+      "빙수",
+      "아이스아메리카노",
+      "수박",
+      "팥빙수",
+      "삼계탕",
+      "보양식",
+      "추어탕",
+      "아메리카노"
+    ]
+  }
+}

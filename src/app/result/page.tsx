@@ -290,8 +290,8 @@ export default function ResultPage() {
                   </div>
                 )}
 
-                {/* 키워드 */}
-                <div className="flex flex-wrap gap-1">
+                {/* 키워드 + 신뢰도 */}
+                <div className="flex flex-wrap gap-1 items-center">
                   {result.menu.keywords.slice(0, 4).map((keyword) => (
                     <span
                       key={keyword}
@@ -300,6 +300,11 @@ export default function ResultPage() {
                       #{keyword}
                     </span>
                   ))}
+                  {result.dataConfidence === 'high' && (
+                    <span className="text-[10px] text-blue-500 bg-blue-50 px-1.5 py-0.5 rounded-full ml-1">
+                      📊 트렌드 분석
+                    </span>
+                  )}
                 </div>
               </div>
 

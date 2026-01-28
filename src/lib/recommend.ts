@@ -33,10 +33,28 @@ export interface Menu {
   searchKeywords: string[]
 }
 
+// 데이터 신뢰도 타입
+export type DataConfidence = 'high' | 'medium' | 'low'
+
+// 메뉴별 데이터 신뢰도 판단
+export function getMenuDataConfidence(menuName: string): DataConfidence {
+  // WEATHER_CORRELATION에 있으면 트렌드 분석 데이터 있음 = high
+  if (WEATHER_CORRELATION[menuName]) {
+    return 'high'
+  }
+  // WEEKEND_PREFERENCE에 있으면 주말/평일 데이터 있음 = medium
+  if (WEEKEND_PREFERENCE[menuName]) {
+    return 'medium'
+  }
+  // 둘 다 없으면 기본 로직만 = low
+  return 'low'
+}
+
 export interface RecommendationResult {
   menu: Menu
   score: number
   reasons: string[]
+  dataConfidence: DataConfidence  // 추천 신뢰도
 }
 
 interface RecommendParams {
@@ -431,7 +449,8 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     // 약간의 랜덤 요소 (0-5점) - 다양성 위해
     score += Math.floor(Math.random() * 5)
     
-    results.push({ menu, score, reasons })
+    const confidence = getMenuDataConfidence(menu.name)
+    results.push({ menu, score, reasons, dataConfidence: confidence })
   }
   
   // 점수순 정렬

@@ -6,7 +6,6 @@ import { getRecommendations, weatherCodeToCondition, RecommendationResult } from
 import { SelectionLog } from '@/lib/supabase'
 import Link from 'next/link'
 import Footer from '@/components/common/Footer'
-import DarkModeToggle from '@/components/common/DarkModeToggle'
 
 interface Place {
   place_name: string
@@ -202,16 +201,13 @@ export default function ResultPage() {
     <main className="min-h-screen pb-28">
       {/* 헤더 */}
       <header className="sticky top-0 z-50 glass-strong border-b border-white/20">
-        <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="p-2 -ml-2 rounded-xl hover:bg-gray-100/50 dark:hover:bg-slate-700/50 transition-colors">
-              <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </Link>
-            <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-100">추천 결과</h1>
-          </div>
-          <DarkModeToggle />
+        <div className="max-w-lg mx-auto px-4 py-4 flex items-center gap-4">
+          <Link href="/" className="p-2 -ml-2 rounded-xl hover:bg-gray-100/50 transition-colors">
+            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </Link>
+          <h1 className="text-lg font-semibold text-gray-800">추천 결과</h1>
         </div>
       </header>
 

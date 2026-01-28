@@ -41,6 +41,9 @@ export interface RecommendationResult {
 
 interface RecommendParams {
   weatherCondition: string
+  temperature: number       // 기온 (°C)
+  humidity: number          // 습도 (%)
+  precipitation: number     // 강수량 (mm)
   mood: MoodType | null
   moodCustom: string
   timeSlot: TimeSlot
@@ -53,6 +56,30 @@ interface RecommendParams {
   excludeMenuIds: string[]
   foodCategory: FoodCategory
   adventureMode: boolean
+}
+
+// 다변량 분석 기반 날씨 가중치 (구글 트렌드 분석 결과)
+const WEATHER_CORRELATION: Record<string, { tempCoef: number; humidityCoef: number; rainCoef: number }> = {
+  // 시원한 음식 (더울수록, 습할수록 인기)
+  '냉면': { tempCoef: 0.86, humidityCoef: 0.83, rainCoef: 0.87 },
+  '빙수': { tempCoef: 0.84, humidityCoef: 0.93, rainCoef: 0.92 },
+  '콩국수': { tempCoef: 0.82, humidityCoef: 0.87, rainCoef: 0.88 },
+  '아이스아메리카노': { tempCoef: 0.85, humidityCoef: 0.81, rainCoef: 0.89 },
+  '막국수': { tempCoef: 0.90, humidityCoef: 0.88, rainCoef: 0.88 },
+  '밀면': { tempCoef: 0.85, humidityCoef: 0.80, rainCoef: 0.87 },
+  '삼계탕': { tempCoef: 0.70, humidityCoef: 0.86, rainCoef: 0.85 },
+  // 국물 음식 (추울수록 인기)
+  '김치찌개': { tempCoef: -0.62, humidityCoef: -0.50, rainCoef: -0.51 },
+  '설렁탕': { tempCoef: -0.43, humidityCoef: -0.18, rainCoef: -0.21 },
+  '칼국수': { tempCoef: -0.55, humidityCoef: -0.38, rainCoef: -0.39 },
+  '국밥': { tempCoef: -0.38, humidityCoef: 0.18, rainCoef: 0.18 },
+  '라면': { tempCoef: -0.28, humidityCoef: -0.07, rainCoef: -0.12 },
+  // 기타
+  '파전': { tempCoef: 0.42, humidityCoef: 0.17, rainCoef: 0.06 },
+  '막걸리': { tempCoef: 0.26, humidityCoef: -0.01, rainCoef: 0.01 },
+  '치킨': { tempCoef: 0.20, humidityCoef: 0.28, rainCoef: 0.31 },
+  '아메리카노': { tempCoef: 0.75, humidityCoef: 0.59, rainCoef: 0.50 },
+  '라떼': { tempCoef: -0.41, humidityCoef: -0.42, rainCoef: -0.41 },
 }
 
 // 날씨 코드를 추천 조건으로 변환
@@ -95,6 +122,9 @@ function analyzeMoodKeywords(customMood: string): MoodType[] {
 export function getRecommendations(params: RecommendParams): RecommendationResult[] {
   const {
     weatherCondition,
+    temperature,
+    humidity,
+    precipitation,
     mood,
     moodCustom,
     timeSlot,
@@ -113,6 +143,46 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
   
   // 카테고리 필터 목록
   const categoryFilter = CATEGORY_GROUPS[foodCategory]
+  
+  // 🔥 다변량 점수 계산 함수
+  const calculateMultivariateScore = (menuName: string): { score: number; reason: string | null } => {
+    const correlation = WEATHER_CORRELATION[menuName]
+    if (!correlation) return { score: 0, reason: null }
+    
+    // 온도 정규화: -10°C ~ 35°C → -1 ~ 1
+    const normalizedTemp = (temperature - 12.5) / 22.5
+    // 습도 정규화: 30% ~ 90% → -1 ~ 1
+    const normalizedHumidity = (humidity - 60) / 30
+    // 강수량: 0mm = 0, 10mm+ = 1
+    const normalizedRain = Math.min(precipitation / 10, 1)
+    
+    // 다변량 점수 계산 (최대 15점)
+    const tempScore = correlation.tempCoef * normalizedTemp * 5
+    const humidityScore = correlation.humidityCoef * normalizedHumidity * 5
+    const rainScore = correlation.rainCoef * normalizedRain * 5
+    
+    const totalScore = tempScore + humidityScore + rainScore
+    
+    // 이유 생성
+    let reason: string | null = null
+    if (Math.abs(totalScore) > 5) {
+      if (totalScore > 0) {
+        if (humidity > 70 && correlation.humidityCoef > 0.5) {
+          reason = '🌡️ 습한 날씨에 딱 맞는 메뉴!'
+        } else if (temperature > 25 && correlation.tempCoef > 0.5) {
+          reason = '☀️ 더운 날씨에 최고의 선택!'
+        } else if (precipitation > 0 && correlation.rainCoef > 0.5) {
+          reason = '🌧️ 비 오는 날 생각나는 메뉴'
+        }
+      } else {
+        if (temperature < 10 && correlation.tempCoef < -0.3) {
+          reason = '❄️ 추운 날씨에 딱인 따끈한 메뉴!'
+        }
+      }
+    }
+    
+    return { score: totalScore, reason }
+  }
   
   for (const menu of menus) {
     // 0. 카테고리 필터링 (all이 아닌 경우)
@@ -195,6 +265,13 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
       ? Math.floor((menu.popularityScore / 100) * 30) 
       : 15 // 기본값
     score += popularityBonus
+    }
+    
+    // 🔥 다변량 날씨 점수 (구글 트렌드 분석 기반)
+    const multivariateResult = calculateMultivariateScore(menu.name)
+    score += multivariateResult.score
+    if (multivariateResult.reason) {
+      reasons.push(multivariateResult.reason)
     }
     
     // 날씨 점수 (0-25점) - 계절 반대 음식은 강하게 페널티!

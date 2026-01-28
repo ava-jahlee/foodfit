@@ -1,11 +1,11 @@
-name: 🔄 주간 트렌드 업데이트
+name: 🔄 자동 트렌드 분석 업데이트
 
 on:
-  # 매주 월요일 새벽 4시 (한국시간 기준, UTC 19:00 일요일)
+  # 3일마다 실행 (UTC 기준 00:00 = 한국시간 09:00)
   schedule:
-    - cron: '0 19 * * 0'
+    - cron: '0 0 */3 * *'
   
-  # 수동 실행도 가능
+  # 수동 실행 가능
   workflow_dispatch:
 
 jobs:
@@ -13,26 +13,56 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: 📥 코드 체크아웃
+      - name: 📥 체크아웃
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: 📦 Node.js 설정
+
+      - name: 🟢 Node.js 설정
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
-      - name: 🔍 트렌드 데이터 수집
-        env:
-          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
-          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: node scripts/updateTrends.js
-      
-      - name: 📝 변경사항 커밋 & 푸시
+          cache: 'npm'
+
+      - name: 📦 의존성 설치
+        run: npm ci
+
+      - name: 🔬 트렌드 분석 실행
+        run: |
+          echo "🚀 구글 트렌드 데이터 수집 시작..."
+          npx ts-node scripts/analyzeTrends.ts || echo "⚠️ 분석 스크립트 실패 (Rate limit일 수 있음)"
+        continue-on-error: true
+
+      - name: 📊 분석 결과 확인
+        run: |
+          if [ -f src/data/trend-analysis.json ]; then
+            echo "✅ trend-analysis.json 생성됨"
+            echo "📅 생성 시간: $(cat src/data/trend-analysis.json | jq -r '.generatedAt')"
+            echo "📊 분석된 메뉴 수: $(cat src/data/trend-analysis.json | jq '.trends | length')"
+          else
+            echo "⚠️ trend-analysis.json 파일 없음"
+          fi
+
+      - name: 💾 변경사항 커밋 & 푸시
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add src/data/menus.json
-          git diff --staged --quiet || git commit -m "🔄 주간 트렌드 데이터 자동 업데이트 $(date +'%Y-%m-%d')"
-          git push
+          
+          # 변경된 파일이 있는지 확인
+          if git diff --quiet src/data/; then
+            echo "📭 변경사항 없음"
+          else
+            git add src/data/
+            git commit -m "🔄 트렌드 데이터 자동 업데이트 ($(date +'%Y-%m-%d'))"
+            git push
+            echo "✅ 커밋 완료!"
+          fi
+
+      - name: 🔔 완료 알림
+        run: |
+          echo "=========================================="
+          echo "🎉 트렌드 분석 자동 업데이트 완료!"
+          echo "=========================================="
+          echo ""
+          echo "📅 실행 시간: $(TZ='Asia/Seoul' date)"
+          echo "🔗 다음 실행: 3일 후"

@@ -10,7 +10,15 @@
 const googleTrends = require('google-trends-api');
 
 // ========================================
-// 📊 확장된 음식 키워드 (50개+)
+// 🗺️ 지역별 분석 설정
+// ========================================
+const REGIONS = [
+  { code: 'KR', name: '전국', city: '서울' },
+  // 추가 가능: 부산, 대구, 광주, 대전 등
+];
+
+// ========================================
+// 📊 확장된 음식 키워드 (100개+)
 // ========================================
 const FOOD_KEYWORDS = [
   // 🍜 국물/따뜻한 음식 (추운 날)
@@ -82,6 +90,118 @@ const FOOD_KEYWORDS = [
   { keyword: '아메리카노', category: '카페', season: 'all' },
   { keyword: '라떼', category: '카페', season: 'all' },
   { keyword: '케이크', category: '카페', season: 'all' },
+  { keyword: '마카롱', category: '카페', season: 'all' },
+  { keyword: '크로플', category: '카페', season: 'all' },
+  { keyword: '스무디', category: '카페', season: 'summer' },
+  { keyword: '프라푸치노', category: '카페', season: 'summer' },
+  
+  // 🍜 추가 국물/면류
+  { keyword: '뼈해장국', category: '국물', season: 'winter' },
+  { keyword: '선지해장국', category: '국물', season: 'winter' },
+  { keyword: '순대국', category: '국물', season: 'winter' },
+  { keyword: '돼지국밥', category: '국물', season: 'winter' },
+  { keyword: '소머리국밥', category: '국물', season: 'winter' },
+  { keyword: '뚝배기불고기', category: '국물', season: 'winter' },
+  { keyword: '샤브샤브', category: '국물', season: 'winter' },
+  { keyword: '전골', category: '국물', season: 'winter' },
+  { keyword: '매운탕', category: '국물', season: 'winter' },
+  { keyword: '알탕', category: '국물', season: 'winter' },
+  
+  // 🍧 추가 시원한 음식
+  { keyword: '화채', category: '시원한음식', season: 'summer' },
+  { keyword: '과일빙수', category: '시원한음식', season: 'summer' },
+  { keyword: '망고빙수', category: '시원한음식', season: 'summer' },
+  { keyword: '냉우동', category: '시원한음식', season: 'summer' },
+  { keyword: '냉소바', category: '시원한음식', season: 'summer' },
+  { keyword: '비빔냉면', category: '시원한음식', season: 'summer' },
+  { keyword: '물냉면', category: '시원한음식', season: 'summer' },
+  
+  // 🍖 추가 고기류
+  { keyword: '양고기', category: '고기', season: 'all' },
+  { keyword: '양갈비', category: '고기', season: 'all' },
+  { keyword: '오리고기', category: '고기', season: 'all' },
+  { keyword: '닭갈비', category: '고기', season: 'all' },
+  { keyword: '불닭', category: '고기', season: 'all' },
+  { keyword: '훈제오리', category: '고기', season: 'all' },
+  { keyword: '생갈비', category: '고기', season: 'all' },
+  { keyword: '등심', category: '고기', season: 'all' },
+  { keyword: '차돌박이', category: '고기', season: 'all' },
+  { keyword: '양념갈비', category: '고기', season: 'all' },
+  
+  // 🍕 추가 양식
+  { keyword: '스테이크', category: '양식', season: 'all' },
+  { keyword: '리조또', category: '양식', season: 'all' },
+  { keyword: '오믈렛', category: '양식', season: 'all' },
+  { keyword: '브런치', category: '양식', season: 'all' },
+  { keyword: '샐러드', category: '양식', season: 'summer' },
+  { keyword: '수프', category: '양식', season: 'winter' },
+  { keyword: '그라탕', category: '양식', season: 'winter' },
+  
+  // 🍣 추가 일식
+  { keyword: '라멘', category: '일식', season: 'winter' },
+  { keyword: '규동', category: '일식', season: 'all' },
+  { keyword: '우동', category: '일식', season: 'winter' },
+  { keyword: '텐동', category: '일식', season: 'all' },
+  { keyword: '가츠동', category: '일식', season: 'all' },
+  { keyword: '오코노미야끼', category: '일식', season: 'all' },
+  { keyword: '타코야끼', category: '일식', season: 'all' },
+  { keyword: '사시미', category: '일식', season: 'summer' },
+  
+  // 🥡 추가 중식
+  { keyword: '마라탕', category: '중식', season: 'all' },
+  { keyword: '마라샹궈', category: '중식', season: 'all' },
+  { keyword: '양꼬치', category: '중식', season: 'all' },
+  { keyword: '깐풍기', category: '중식', season: 'all' },
+  { keyword: '유린기', category: '중식', season: 'all' },
+  { keyword: '꿔바로우', category: '중식', season: 'all' },
+  { keyword: '볶음밥', category: '중식', season: 'all' },
+  
+  // 🌏 아시안
+  { keyword: '쌀국수', category: '아시안', season: 'all' },
+  { keyword: '팟타이', category: '아시안', season: 'all' },
+  { keyword: '분짜', category: '아시안', season: 'all' },
+  { keyword: '반미', category: '아시안', season: 'all' },
+  { keyword: '똠양꿍', category: '아시안', season: 'all' },
+  { keyword: '카레', category: '아시안', season: 'all' },
+  { keyword: '나시고렝', category: '아시안', season: 'all' },
+  
+  // 🍚 밥류
+  { keyword: '비빔밥', category: '한식', season: 'all' },
+  { keyword: '돌솥비빔밥', category: '한식', season: 'winter' },
+  { keyword: '제육볶음', category: '한식', season: 'all' },
+  { keyword: '불고기', category: '한식', season: 'all' },
+  { keyword: '갈비찜', category: '한식', season: 'winter' },
+  { keyword: '찜닭', category: '한식', season: 'all' },
+  { keyword: '닭도리탕', category: '한식', season: 'all' },
+  { keyword: '백반', category: '한식', season: 'all' },
+  
+  // 🍜 분식 추가
+  { keyword: '라볶이', category: '분식', season: 'all' },
+  { keyword: '쫄면', category: '분식', season: 'summer' },
+  { keyword: '비빔국수', category: '분식', season: 'summer' },
+  { keyword: '잔치국수', category: '분식', season: 'all' },
+  { keyword: '튀김', category: '분식', season: 'all' },
+  { keyword: '오뎅', category: '분식', season: 'winter' },
+  { keyword: '호떡', category: '분식', season: 'winter' },
+  { keyword: '붕어빵', category: '분식', season: 'winter' },
+  
+  // 🦐 해산물
+  { keyword: '회', category: '해산물', season: 'summer' },
+  { keyword: '새우', category: '해산물', season: 'all' },
+  { keyword: '랍스터', category: '해산물', season: 'all' },
+  { keyword: '조개구이', category: '해산물', season: 'all' },
+  { keyword: '전복', category: '해산물', season: 'all' },
+  { keyword: '굴', category: '해산물', season: 'winter' },
+  { keyword: '대게', category: '해산물', season: 'winter' },
+  { keyword: '킹크랩', category: '해산물', season: 'winter' },
+  
+  // 🍺 안주류
+  { keyword: '감자튀김', category: '안주', season: 'all' },
+  { keyword: '소세지', category: '안주', season: 'all' },
+  { keyword: '나초', category: '안주', season: 'all' },
+  { keyword: '육회', category: '안주', season: 'all' },
+  { keyword: '골뱅이', category: '안주', season: 'all' },
+  { keyword: '오징어', category: '안주', season: 'all' },
 ];
 
 // ========================================

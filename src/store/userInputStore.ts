@@ -24,10 +24,23 @@ interface DietOptions {
   noAlcohol: boolean
 }
 
+// 날씨 정보 (다변량 분석용)
+interface WeatherData {
+  temperature: number      // 기온 (°C)
+  humidity: number         // 습도 (%)
+  precipitation: number    // 강수량 (mm)
+  weatherCode: number      // 날씨 코드
+  condition: string        // 날씨 상태 (hot, cold, rainy 등)
+}
+
 interface UserInputState {
   // 위치
   location: Location
   setLocation: (location: Location) => void
+  
+  // 날씨 (다변량 분석용)
+  weather: WeatherData
+  setWeather: (weather: Partial<WeatherData>) => void
   
   // 시간대
   timeSlot: TimeSlot
@@ -76,6 +89,13 @@ const initialState = {
     lng: 127.0494,
     region: '서울',
   },
+  weather: {
+    temperature: 15,
+    humidity: 50,
+    precipitation: 0,
+    weatherCode: 0,
+    condition: 'cloudy',
+  } as WeatherData,
   timeSlot: 'lunch' as TimeSlot,
   mood: {
     preset: null as MoodType | null,
@@ -99,6 +119,10 @@ export const useUserInputStore = create<UserInputState>((set) => ({
   ...initialState,
   
   setLocation: (location) => set({ location }),
+  
+  setWeather: (weatherUpdate) => set((state) => ({
+    weather: { ...state.weather, ...weatherUpdate }
+  })),
   
   setTimeSlot: (timeSlot) => set({ timeSlot }),
   

@@ -31,13 +31,13 @@ export default function ResultPage() {
     async function fetchData() {
       setLoading(true)
 
-      let weatherInfo = { code: 0, temp: 15 }
+      let weatherInfo = { code: 0, temp: 15, humidity: 50, rain: 0 }
       try {
         const controller = new AbortController()
         const timeoutId = setTimeout(() => controller.abort(), 5000)
         
         const weatherRes = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${userInput.location.lat}&longitude=${userInput.location.lng}&current=temperature_2m,weather_code&timezone=Asia/Seoul`,
+          `https://api.open-meteo.com/v1/forecast?latitude=${userInput.location.lat}&longitude=${userInput.location.lng}&current=temperature_2m,weather_code,relative_humidity_2m,rain&timezone=Asia/Seoul`,
           { signal: controller.signal }
         )
         clearTimeout(timeoutId)
@@ -46,6 +46,8 @@ export default function ResultPage() {
         weatherInfo = {
           code: weatherJson.current.weather_code,
           temp: weatherJson.current.temperature_2m,
+          humidity: weatherJson.current.relative_humidity_2m || 50,
+          rain: weatherJson.current.rain || 0,
         }
       } catch (weatherError) {
         console.log('날씨 API 실패, 기본값 사용:', weatherError)
@@ -59,8 +61,12 @@ export default function ResultPage() {
         .filter(m => m.exclude)
         .map(m => m.name)
 
+      // 🔥 다변량 분석 파라미터 포함
       const results = getRecommendations({
         weatherCondition: condition,
+        temperature: weatherInfo.temp,
+        humidity: weatherInfo.humidity,
+        precipitation: weatherInfo.rain,
         mood: userInput.mood.preset,
         moodCustom: userInput.mood.custom,
         timeSlot: userInput.timeSlot,

@@ -40,8 +40,18 @@ function getWeatherInfo(code: number) {
   return weatherCodeMap[code] || { description: '알 수 없음', emoji: '❓' }
 }
 
+// 날씨 코드를 condition으로 변환
+function weatherCodeToCondition(code: number, temperature: number): string {
+  if ([51, 53, 55, 61, 63, 65, 80, 81, 82, 95, 96, 99].includes(code)) return 'rainy'
+  if ([71, 73, 75, 77].includes(code)) return 'cold'
+  if (temperature >= 28) return 'hot'
+  if (temperature >= 20) return 'sunny'
+  if (temperature >= 10) return 'cloudy'
+  return 'cold'
+}
+
 export default function WeatherCard() {
-  const { location } = useUserInputStore()
+  const { location, setWeather: setStoreWeather } = useUserInputStore()
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -60,12 +70,26 @@ export default function WeatherCard() {
         
         const data = await response.json()
         
+        const temp = Math.round(data.current.temperature_2m)
+        const code = data.current.weather_code
+        const humidity = data.current.relative_humidity_2m
+        const rain = data.current.rain || 0
+        
         setWeather({
-          temperature: Math.round(data.current.temperature_2m),
-          weatherCode: data.current.weather_code,
-          description: getWeatherInfo(data.current.weather_code).description,
-          humidity: data.current.relative_humidity_2m,
-          rain: data.current.rain || 0,
+          temperature: temp,
+          weatherCode: code,
+          description: getWeatherInfo(code).description,
+          humidity: humidity,
+          rain: rain,
+        })
+        
+        // 🔥 Store에 날씨 정보 저장 (다변량 분석용)
+        setStoreWeather({
+          temperature: temp,
+          humidity: humidity,
+          precipitation: rain,
+          weatherCode: code,
+          condition: weatherCodeToCondition(code, temp),
         })
       } catch (err) {
         setError('날씨 정보를 불러오는데 실패했습니다')
@@ -76,7 +100,7 @@ export default function WeatherCard() {
     }
 
     fetchWeather()
-  }, [location.lat, location.lng])
+  }, [location.lat, location.lng, setStoreWeather])
 
   if (loading) {
     return (

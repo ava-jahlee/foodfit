@@ -318,22 +318,93 @@ export default function InsightsPage() {
                     )}
                   </div>
                   
-                  {/* 커피 */}
-                  <div className="flex items-center gap-4 p-3 bg-blue-50 rounded-lg">
-                    <span className="text-2xl">☕</span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-800">라떼 vs 아메리카노</p>
-                      <p className="text-xs text-gray-500">라떼 -0.41 (추운 날) vs 아메리카노 +0.75 (더운 날)</p>
-                    </div>
+                  {/* 커피 - 토글 */}
+                  <div className="bg-blue-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'coffee' ? null : 'coffee')}
+                      className="w-full flex items-center gap-4 p-3 text-left hover:bg-blue-100 transition-colors"
+                    >
+                      <span className="text-2xl">☕</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">라떼 vs 아메리카노: 완전 반대!</p>
+                        <p className="text-xs text-gray-500">라떼 -0.41 (추운 날) vs 아메리카노 +0.75 (더운 날)</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform ${expandedInsight === 'coffee' ? 'rotate-180' : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+                    {expandedInsight === 'coffee' && (
+                      <div className="px-4 pb-4 pt-1 border-t border-blue-200 text-xs text-gray-600 space-y-2">
+                        <p className="font-medium text-gray-700">🔍 왜 그럴까?</p>
+                        <div className="space-y-1 pl-2">
+                          <p><strong>아이스 아메리카노</strong>: 더울수록 시원한 음료 ↑</p>
+                          <p><strong>라떼</strong>: 추울수록 따뜻하고 부드러운 음료 ↑</p>
+                        </div>
+                        <div className="bg-blue-100 rounded p-2 mt-2">
+                          <p className="text-blue-700">💡 같은 커피인데 <strong>계절 선호가 정반대</strong>! 카페 운영자라면 계절별 메뉴 푸시 전략에 참고할 만 함</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
-                  {/* 예측력 */}
-                  <div className="flex items-center gap-4 p-3 bg-green-50 rounded-lg">
-                    <span className="text-2xl">📊</span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-800">더운 날 음식이 예측 쉬움</p>
-                      <p className="text-xs text-gray-500">더운 날 R² 0.7~0.8 vs 추운 날 R² 0.2~0.3 (선택지 분산)</p>
-                    </div>
+                  {/* 예측력 - 토글 */}
+                  <div className="bg-green-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'predict' ? null : 'predict')}
+                      className="w-full flex items-center gap-4 p-3 text-left hover:bg-green-100 transition-colors"
+                    >
+                      <span className="text-2xl">📊</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">더운 날 음식이 예측 쉬움</p>
+                        <p className="text-xs text-gray-500">더운 날 R² 0.7~0.8 vs 추운 날 R² 0.2~0.3</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform ${expandedInsight === 'predict' ? 'rotate-180' : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+                    {expandedInsight === 'predict' && (
+                      <div className="px-4 pb-4 pt-1 border-t border-green-200 text-xs text-gray-600 space-y-2">
+                        <p className="font-medium text-gray-700">🔍 R² (결정계수)란?</p>
+                        <p className="pl-2">날씨로 음식 선택을 얼마나 설명할 수 있는지 (0~1)</p>
+                        <div className="space-y-1 pl-2 mt-2">
+                          <p><strong>여름 (R² 높음)</strong>: 냉면, 빙수, 아이스커피 → 예측 쉬움!</p>
+                          <p><strong>겨울 (R² 낮음)</strong>: 선택지가 분산됨 (찌개? 탕? 전골? 라면?)</p>
+                        </div>
+                        <div className="bg-green-100 rounded p-2 mt-2">
+                          <p className="text-green-700">💡 추운 날은 &ldquo;뭐든 따뜻하면 OK&rdquo; → 선택지 분산 → 예측 어려움</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* 서울 - 토글 (새로 추가) */}
+                  <div className="bg-purple-50 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setExpandedInsight(expandedInsight === 'seoul' ? null : 'seoul')}
+                      className="w-full flex items-center gap-4 p-3 text-left hover:bg-purple-100 transition-colors"
+                    >
+                      <span className="text-2xl">🏙️</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-800">서울만 상관계수가 0?!</p>
+                        <p className="text-xs text-gray-500">지방이 오히려 계절 특색 뚜렷함</p>
+                      </div>
+                      <span className={`text-gray-400 transition-transform ${expandedInsight === 'seoul' ? 'rotate-180' : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+                    {expandedInsight === 'seoul' && (
+                      <div className="px-4 pb-4 pt-1 border-t border-purple-200 text-xs text-gray-600 space-y-2">
+                        <p className="font-medium text-gray-700">🔍 왜 서울만 특이할까?</p>
+                        <div className="space-y-1 pl-2">
+                          <p><strong>1. 베이스라인 높음</strong>: 항상 검색량 많아서 계절 변동폭 상대적으로 작음</p>
+                          <p><strong>2. 다양한 인구</strong>: 계절 무관 모든 음식 꾸준히 검색</p>
+                          <p><strong>3. 옵션 많음</strong>: 배달/외식 선택지 풍부 → 날씨 영향 분산</p>
+                        </div>
+                        <div className="bg-purple-100 rounded p-2 mt-2">
+                          <p className="text-purple-700">💡 반면 지방은 <strong>계절 음식 선호 뚜렷</strong>! (부산 밀면 +0.82, 대전 냉면 +0.88)</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
                 

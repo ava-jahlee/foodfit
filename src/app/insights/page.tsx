@@ -562,6 +562,88 @@ export default function InsightsPage() {
               </table>
             </div>
 
+            {/* 🔥 히트맵 */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <h3 className="text-lg font-bold text-white mb-2">🔥 상관관계 히트맵</h3>
+              <p className="text-white/50 text-sm mb-4">색상이 진할수록 상관관계가 강함 (빨강=양의 상관, 파랑=음의 상관)</p>
+              
+              <div className="overflow-x-auto">
+                {/* 헤더 */}
+                <div className="flex items-center gap-1 mb-1 ml-24">
+                  <div className="w-16 text-center text-white/50 text-xs">🌡️기온</div>
+                  <div className="w-16 text-center text-white/50 text-xs">🌧️강수</div>
+                  <div className="w-16 text-center text-white/50 text-xs">💧습도</div>
+                  <div className="w-16 text-center text-white/50 text-xs">☀️일조</div>
+                </div>
+                
+                {/* 히트맵 그리드 */}
+                <div className="space-y-1">
+                  {multiData.results
+                    .filter(r => selectedCategory === 'all' || r.category === selectedCategory)
+                    .sort((a, b) => b.regression.rSquared - a.regression.rSquared)
+                    .slice(0, 15)
+                    .map(item => {
+                      const getHeatColor = (value: number) => {
+                        if (value > 0.7) return 'bg-red-500';
+                        if (value > 0.5) return 'bg-red-400';
+                        if (value > 0.3) return 'bg-orange-400';
+                        if (value > 0.1) return 'bg-orange-300/50';
+                        if (value > -0.1) return 'bg-gray-500/30';
+                        if (value > -0.3) return 'bg-cyan-300/50';
+                        if (value > -0.5) return 'bg-blue-400';
+                        return 'bg-blue-500';
+                      };
+                      
+                      return (
+                        <div key={item.keyword} className="flex items-center gap-1">
+                          <div className="w-24 text-white text-xs truncate pr-2">{item.keyword}</div>
+                          <div 
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.temp)}`}
+                            title={`기온: ${item.correlations.temp.toFixed(2)}`}
+                          >
+                            {item.correlations.temp.toFixed(2)}
+                          </div>
+                          <div 
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.rain)}`}
+                            title={`강수: ${item.correlations.rain.toFixed(2)}`}
+                          >
+                            {item.correlations.rain.toFixed(2)}
+                          </div>
+                          <div 
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.humidity)}`}
+                            title={`습도: ${item.correlations.humidity.toFixed(2)}`}
+                          >
+                            {item.correlations.humidity.toFixed(2)}
+                          </div>
+                          <div 
+                            className={`w-16 h-8 rounded flex items-center justify-center text-xs font-medium text-white ${getHeatColor(item.correlations.sunshine)}`}
+                            title={`일조: ${item.correlations.sunshine.toFixed(2)}`}
+                          >
+                            {item.correlations.sunshine.toFixed(2)}
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+                
+                {/* 범례 */}
+                <div className="flex items-center justify-center gap-2 mt-4 text-xs">
+                  <span className="text-white/50">음의 상관</span>
+                  <div className="flex gap-0.5">
+                    <div className="w-6 h-4 bg-blue-500 rounded-l"></div>
+                    <div className="w-6 h-4 bg-blue-400"></div>
+                    <div className="w-6 h-4 bg-cyan-300/50"></div>
+                    <div className="w-6 h-4 bg-gray-500/30"></div>
+                    <div className="w-6 h-4 bg-orange-300/50"></div>
+                    <div className="w-6 h-4 bg-orange-400"></div>
+                    <div className="w-6 h-4 bg-red-400"></div>
+                    <div className="w-6 h-4 bg-red-500 rounded-r"></div>
+                  </div>
+                  <span className="text-white/50">양의 상관</span>
+                </div>
+              </div>
+            </div>
+
             {/* R² 설명력 차트 */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <h3 className="text-lg font-bold text-white mb-2">🏆 날씨 예측력 TOP 10</h3>

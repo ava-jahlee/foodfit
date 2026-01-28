@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T01:52:57.029Z",
+  "generatedAt": "2026-01-28T11:22:43.094Z",
   "regions": {
     "서울": {
       "code": "KR-11",
@@ -61,15 +61,15 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 21
             },
             {
               "month": 2,
-              "value": 50
+              "value": 27
             },
             {
               "month": 3,
-              "value": 50
+              "value": 31
             },
             {
               "month": 4,
@@ -77,534 +77,534 @@
             },
             {
               "month": 5,
-              "value": 50
+              "value": 73
             },
             {
               "month": 6,
-              "value": 50
+              "value": 75
             },
             {
               "month": 7,
-              "value": 50
+              "value": 78
             },
             {
               "month": 8,
-              "value": 50
+              "value": 74
             },
             {
               "month": 9,
-              "value": 50
+              "value": 45
             },
             {
               "month": 10,
-              "value": 50
+              "value": 28
             },
             {
               "month": 11,
-              "value": 50
+              "value": 25
             },
             {
               "month": 12,
-              "value": 50
+              "value": 27
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.85,
+          "correlationWithRain": 0.79
         },
         {
           "keyword": "빙수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 24
             },
             {
               "month": 2,
-              "value": 50
+              "value": 23
             },
             {
               "month": 3,
-              "value": 50
+              "value": 21
             },
             {
               "month": 4,
-              "value": 50
+              "value": 37
             },
             {
               "month": 5,
-              "value": 50
+              "value": 52
             },
             {
               "month": 6,
-              "value": 50
+              "value": 85
             },
             {
               "month": 7,
-              "value": 50
+              "value": 88
             },
             {
               "month": 8,
-              "value": 50
+              "value": 80
             },
             {
               "month": 9,
-              "value": 50
+              "value": 39
             },
             {
               "month": 10,
-              "value": 50
+              "value": 22
             },
             {
               "month": 11,
-              "value": 50
+              "value": 22
             },
             {
               "month": 12,
-              "value": 50
+              "value": 20
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.83,
+          "correlationWithRain": 0.87
         },
         {
           "keyword": "콩국수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 0
             },
             {
               "month": 2,
-              "value": 50
+              "value": 0
             },
             {
               "month": 3,
-              "value": 50
+              "value": 0
             },
             {
               "month": 4,
-              "value": 50
+              "value": 22
             },
             {
               "month": 5,
-              "value": 50
+              "value": 45
             },
             {
               "month": 6,
-              "value": 50
+              "value": 81
             },
             {
               "month": 7,
-              "value": 50
+              "value": 70
             },
             {
               "month": 8,
-              "value": 50
+              "value": 62
             },
             {
               "month": 9,
-              "value": 50
+              "value": 20
             },
             {
               "month": 10,
-              "value": 50
+              "value": 4
             },
             {
               "month": 11,
-              "value": 50
+              "value": 0
             },
             {
               "month": 12,
-              "value": 50
+              "value": 0
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.83,
+          "correlationWithRain": 0.79
         },
         {
           "keyword": "아이스아메리카노",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 15
             },
             {
               "month": 2,
-              "value": 50
+              "value": 12
             },
             {
               "month": 3,
-              "value": 50
+              "value": 19
             },
             {
               "month": 4,
-              "value": 50
+              "value": 29
             },
             {
               "month": 5,
-              "value": 50
+              "value": 40
             },
             {
               "month": 6,
-              "value": 50
+              "value": 47
             },
             {
               "month": 7,
-              "value": 50
+              "value": 57
             },
             {
               "month": 8,
-              "value": 50
+              "value": 65
             },
             {
               "month": 9,
-              "value": 50
+              "value": 37
             },
             {
               "month": 10,
-              "value": 50
+              "value": 49
             },
             {
               "month": 11,
-              "value": 50
+              "value": 47
             },
             {
               "month": 12,
-              "value": 50
+              "value": 28
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.84,
+          "correlationWithRain": 0.76
         },
         {
           "keyword": "김치찌개",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 84
             },
             {
               "month": 2,
-              "value": 50
+              "value": 76
             },
             {
               "month": 3,
-              "value": 50
+              "value": 76
             },
             {
               "month": 4,
-              "value": 50
+              "value": 75
             },
             {
               "month": 5,
-              "value": 50
+              "value": 68
             },
             {
               "month": 6,
-              "value": 50
+              "value": 64
             },
             {
               "month": 7,
-              "value": 50
+              "value": 68
             },
             {
               "month": 8,
-              "value": 50
+              "value": 68
             },
             {
               "month": 9,
-              "value": 50
+              "value": 81
             },
             {
               "month": 10,
-              "value": 50
+              "value": 65
             },
             {
               "month": 11,
-              "value": 50
+              "value": 85
             },
             {
               "month": 12,
-              "value": 50
+              "value": 83
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": -0.69,
+          "correlationWithRain": -0.5
         },
         {
           "keyword": "설렁탕",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 63
             },
             {
               "month": 2,
-              "value": 50
+              "value": 68
             },
             {
               "month": 3,
-              "value": 50
+              "value": 69
             },
             {
               "month": 4,
-              "value": 50
+              "value": 57
             },
             {
               "month": 5,
-              "value": 50
+              "value": 70
             },
             {
               "month": 6,
-              "value": 50
+              "value": 63
             },
             {
               "month": 7,
-              "value": 50
+              "value": 63
             },
             {
               "month": 8,
-              "value": 50
+              "value": 75
             },
             {
               "month": 9,
-              "value": 50
+              "value": 66
             },
             {
               "month": 10,
-              "value": 50
+              "value": 69
             },
             {
               "month": 11,
-              "value": 50
+              "value": 68
             },
             {
               "month": 12,
-              "value": 50
+              "value": 68
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.11,
+          "correlationWithRain": 0.11
         },
         {
           "keyword": "칼국수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 81
             },
             {
               "month": 2,
-              "value": 50
+              "value": 59
             },
             {
               "month": 3,
-              "value": 50
+              "value": 52
             },
             {
               "month": 4,
-              "value": 50
+              "value": 57
             },
             {
               "month": 5,
-              "value": 50
+              "value": 66
             },
             {
               "month": 6,
-              "value": 50
+              "value": 54
             },
             {
               "month": 7,
-              "value": 50
+              "value": 59
             },
             {
               "month": 8,
-              "value": 50
+              "value": 58
             },
             {
               "month": 9,
-              "value": 50
+              "value": 56
             },
             {
               "month": 10,
-              "value": 50
+              "value": 56
             },
             {
               "month": 11,
-              "value": 50
+              "value": 59
             },
             {
               "month": 12,
-              "value": 50
+              "value": 65
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": -0.49,
+          "correlationWithRain": -0.24
         },
         {
           "keyword": "라면",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 76
             },
             {
               "month": 2,
-              "value": 50
+              "value": 75
             },
             {
               "month": 3,
-              "value": 50
+              "value": 75
             },
             {
               "month": 4,
-              "value": 50
+              "value": 77
             },
             {
               "month": 5,
-              "value": 50
+              "value": 74
             },
             {
               "month": 6,
-              "value": 50
+              "value": 78
             },
             {
               "month": 7,
-              "value": 50
+              "value": 79
             },
             {
               "month": 8,
-              "value": 50
+              "value": 77
             },
             {
               "month": 9,
-              "value": 50
+              "value": 84
             },
             {
               "month": 10,
-              "value": 50
+              "value": 88
             },
             {
               "month": 11,
-              "value": 50
+              "value": 88
             },
             {
               "month": 12,
-              "value": 50
+              "value": 91
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": -0.1,
+          "correlationWithRain": -0.17
         },
         {
           "keyword": "파전",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 50
+              "value": 14
             },
             {
               "month": 2,
-              "value": 50
+              "value": 11
             },
             {
               "month": 3,
-              "value": 50
+              "value": 26
             },
             {
               "month": 4,
-              "value": 50
+              "value": 30
             },
             {
               "month": 5,
-              "value": 50
+              "value": 40
             },
             {
               "month": 6,
-              "value": 50
+              "value": 53
             },
             {
               "month": 7,
-              "value": 50
+              "value": 49
             },
             {
               "month": 8,
-              "value": 50
+              "value": 20
             },
             {
               "month": 9,
-              "value": 50
+              "value": 23
             },
             {
               "month": 10,
-              "value": 50
+              "value": 40
             },
             {
               "month": 11,
-              "value": 50
+              "value": 29
             },
             {
               "month": 12,
-              "value": 50
+              "value": 18
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.64,
+          "correlationWithRain": 0.41
         },
         {
           "keyword": "막걸리",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 69
+              "value": 67
             },
             {
               "month": 2,
-              "value": 85
+              "value": 86
             },
             {
               "month": 3,
-              "value": 78
+              "value": 79
             },
             {
               "month": 4,
-              "value": 91
+              "value": 92
             },
             {
               "month": 5,
-              "value": 84
-            },
-            {
-              "month": 6,
-              "value": 82
-            },
-            {
-              "month": 7,
-              "value": 86
-            },
-            {
-              "month": 8,
-              "value": 78
-            },
-            {
-              "month": 9,
-              "value": 86
-            },
-            {
-              "month": 10,
               "value": 83
             },
             {
+              "month": 6,
+              "value": 81
+            },
+            {
+              "month": 7,
+              "value": 82
+            },
+            {
+              "month": 8,
+              "value": 80
+            },
+            {
+              "month": 9,
+              "value": 85
+            },
+            {
+              "month": 10,
+              "value": 82
+            },
+            {
               "month": 11,
-              "value": 79
+              "value": 80
             },
             {
               "month": 12,
               "value": 82
             }
           ],
-          "correlationWithTemp": 0.39,
-          "correlationWithRain": 0.18
+          "correlationWithTemp": 0.3,
+          "correlationWithRain": 0.08
         },
         {
           "keyword": "밀면",
@@ -615,51 +615,51 @@
             },
             {
               "month": 2,
-              "value": 32
+              "value": 35
             },
             {
               "month": 3,
-              "value": 49
+              "value": 31
             },
             {
               "month": 4,
-              "value": 56
+              "value": 57
             },
             {
               "month": 5,
-              "value": 72
+              "value": 67
             },
             {
               "month": 6,
-              "value": 66
+              "value": 67
             },
             {
               "month": 7,
-              "value": 74
+              "value": 73
             },
             {
               "month": 8,
-              "value": 75
+              "value": 61
             },
             {
               "month": 9,
-              "value": 33
+              "value": 28
             },
             {
               "month": 10,
-              "value": 23
+              "value": 28
             },
             {
               "month": 11,
-              "value": 34
+              "value": 20
             },
             {
               "month": 12,
-              "value": 24
+              "value": 38
             }
           ],
-          "correlationWithTemp": 0.74,
-          "correlationWithRain": 0.72
+          "correlationWithTemp": 0.68,
+          "correlationWithRain": 0.67
         },
         {
           "keyword": "국밥",
@@ -670,7 +670,7 @@
             },
             {
               "month": 2,
-              "value": 35
+              "value": 37
             },
             {
               "month": 3,
@@ -678,7 +678,7 @@
             },
             {
               "month": 4,
-              "value": 36
+              "value": 35
             },
             {
               "month": 5,
@@ -702,7 +702,7 @@
             },
             {
               "month": 10,
-              "value": 37
+              "value": 38
             },
             {
               "month": 11,
@@ -713,31 +713,31 @@
               "value": 43
             }
           ],
-          "correlationWithTemp": 0.12,
-          "correlationWithRain": 0.03
+          "correlationWithTemp": 0.07,
+          "correlationWithRain": -0.01
         },
         {
           "keyword": "막창",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 41
+              "value": 32
             },
             {
               "month": 2,
-              "value": 18
+              "value": 32
             },
             {
               "month": 3,
-              "value": 36
+              "value": 38
             },
             {
               "month": 4,
-              "value": 36
+              "value": 37
             },
             {
               "month": 5,
-              "value": 37
+              "value": 39
             },
             {
               "month": 6,
@@ -745,11 +745,11 @@
             },
             {
               "month": 7,
-              "value": 42
+              "value": 32
             },
             {
               "month": 8,
-              "value": 32
+              "value": 40
             },
             {
               "month": 9,
@@ -761,15 +761,15 @@
             },
             {
               "month": 11,
-              "value": 38
+              "value": 44
             },
             {
               "month": 12,
-              "value": 39
+              "value": 35
             }
           ],
-          "correlationWithTemp": 0.4,
-          "correlationWithRain": 0.17
+          "correlationWithTemp": 0.44,
+          "correlationWithRain": 0.04
         },
         {
           "keyword": "치킨",
@@ -780,7 +780,7 @@
             },
             {
               "month": 2,
-              "value": 79
+              "value": 78
             },
             {
               "month": 3,
@@ -804,7 +804,7 @@
             },
             {
               "month": 8,
-              "value": 85
+              "value": 86
             },
             {
               "month": 9,
@@ -816,23 +816,37 @@
             },
             {
               "month": 11,
-              "value": 75
+              "value": 74
             },
             {
               "month": 12,
-              "value": 87
+              "value": 86
             }
           ],
-          "correlationWithTemp": 0.48,
-          "correlationWithRain": 0.58
+          "correlationWithTemp": 0.55,
+          "correlationWithRain": 0.63
         }
       ],
       "summary": {
         "hotWeatherFoods": [
-          "밀면"
+          "냉면",
+          "빙수",
+          "콩국수",
+          "아이스아메리카노",
+          "파전",
+          "밀면",
+          "치킨"
         ],
-        "coldWeatherFoods": [],
+        "coldWeatherFoods": [
+          "김치찌개",
+          "칼국수"
+        ],
         "rainyDayFoods": [
+          "냉면",
+          "빙수",
+          "콩국수",
+          "아이스아메리카노",
+          "파전",
           "밀면",
           "치킨"
         ]
@@ -898,66 +912,66 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 6
+              "value": 9
             },
             {
               "month": 2,
-              "value": 23
+              "value": 14
             },
             {
               "month": 3,
-              "value": 26
+              "value": 20
             },
             {
               "month": 4,
-              "value": 39
+              "value": 31
             },
             {
               "month": 5,
-              "value": 66
+              "value": 54
             },
             {
               "month": 6,
-              "value": 57
+              "value": 47
             },
             {
               "month": 7,
-              "value": 72
+              "value": 56
             },
             {
               "month": 8,
-              "value": 62
+              "value": 47
             },
             {
               "month": 9,
-              "value": 39
+              "value": 30
             },
             {
               "month": 10,
-              "value": 13
+              "value": 14
             },
             {
               "month": 11,
-              "value": 22
+              "value": 15
             },
             {
               "month": 12,
-              "value": 13
+              "value": 11
             }
           ],
           "correlationWithTemp": 0.8,
-          "correlationWithRain": 0.93
+          "correlationWithRain": 0.94
         },
         {
           "keyword": "빙수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 11
+              "value": 0
             },
             {
               "month": 2,
-              "value": 12
+              "value": 0
             },
             {
               "month": 3,
@@ -965,27 +979,27 @@
             },
             {
               "month": 4,
-              "value": 0
+              "value": 9
             },
             {
               "month": 5,
-              "value": 10
+              "value": 30
             },
             {
               "month": 6,
-              "value": 68
+              "value": 61
             },
             {
               "month": 7,
-              "value": 71
+              "value": 69
             },
             {
               "month": 8,
-              "value": 39
+              "value": 36
             },
             {
               "month": 9,
-              "value": 18
+              "value": 9
             },
             {
               "month": 10,
@@ -1000,8 +1014,8 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.63,
-          "correlationWithRain": 0.84
+          "correlationWithTemp": 0.72,
+          "correlationWithRain": 0.92
         },
         {
           "keyword": "콩국수",
@@ -1028,15 +1042,15 @@
             },
             {
               "month": 6,
-              "value": 36
+              "value": 50
             },
             {
               "month": 7,
-              "value": 22
+              "value": 25
             },
             {
               "month": 8,
-              "value": 0
+              "value": 20
             },
             {
               "month": 9,
@@ -1055,8 +1069,8 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.41,
-          "correlationWithRain": 0.63
+          "correlationWithTemp": 0.55,
+          "correlationWithRain": 0.7
         },
         {
           "keyword": "아이스아메리카노",
@@ -1118,7 +1132,7 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 34
+              "value": 38
             },
             {
               "month": 2,
@@ -1126,47 +1140,47 @@
             },
             {
               "month": 3,
-              "value": 39
+              "value": 33
             },
             {
               "month": 4,
-              "value": 53
+              "value": 42
             },
             {
               "month": 5,
-              "value": 13
+              "value": 28
             },
             {
               "month": 6,
-              "value": 11
+              "value": 30
             },
             {
               "month": 7,
-              "value": 18
+              "value": 27
             },
             {
               "month": 8,
-              "value": 50
+              "value": 56
             },
             {
               "month": 9,
-              "value": 48
+              "value": 33
             },
             {
               "month": 10,
-              "value": 53
+              "value": 28
             },
             {
               "month": 11,
-              "value": 54
+              "value": 46
             },
             {
               "month": 12,
-              "value": 64
+              "value": 49
             }
           ],
-          "correlationWithTemp": -0.23,
-          "correlationWithRain": -0.53
+          "correlationWithTemp": -0.09,
+          "correlationWithRain": -0.2
         },
         {
           "keyword": "설렁탕",
@@ -1228,7 +1242,7 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 72
+              "value": 73
             },
             {
               "month": 2,
@@ -1236,101 +1250,101 @@
             },
             {
               "month": 3,
-              "value": 48
+              "value": 54
             },
             {
               "month": 4,
-              "value": 52
-            },
-            {
-              "month": 5,
-              "value": 70
-            },
-            {
-              "month": 6,
-              "value": 49
-            },
-            {
-              "month": 7,
-              "value": 51
-            },
-            {
-              "month": 8,
-              "value": 52
-            },
-            {
-              "month": 9,
-              "value": 56
-            },
-            {
-              "month": 10,
               "value": 55
             },
             {
+              "month": 5,
+              "value": 72
+            },
+            {
+              "month": 6,
+              "value": 53
+            },
+            {
+              "month": 7,
+              "value": 56
+            },
+            {
+              "month": 8,
+              "value": 57
+            },
+            {
+              "month": 9,
+              "value": 60
+            },
+            {
+              "month": 10,
+              "value": 66
+            },
+            {
               "month": 11,
-              "value": 58
+              "value": 65
             },
             {
               "month": 12,
-              "value": 70
+              "value": 73
             }
           ],
-          "correlationWithTemp": -0.52,
-          "correlationWithRain": -0.5
+          "correlationWithTemp": -0.43,
+          "correlationWithRain": -0.54
         },
         {
           "keyword": "라면",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 66
-            },
-            {
-              "month": 2,
-              "value": 60
-            },
-            {
-              "month": 3,
-              "value": 66
-            },
-            {
-              "month": 4,
-              "value": 77
-            },
-            {
-              "month": 5,
-              "value": 69
-            },
-            {
-              "month": 6,
-              "value": 77
-            },
-            {
-              "month": 7,
               "value": 70
             },
             {
-              "month": 8,
-              "value": 62
+              "month": 2,
+              "value": 59
             },
             {
-              "month": 9,
+              "month": 3,
+              "value": 71
+            },
+            {
+              "month": 4,
+              "value": 80
+            },
+            {
+              "month": 5,
+              "value": 73
+            },
+            {
+              "month": 6,
+              "value": 80
+            },
+            {
+              "month": 7,
               "value": 74
             },
             {
+              "month": 8,
+              "value": 65
+            },
+            {
+              "month": 9,
+              "value": 79
+            },
+            {
               "month": 10,
-              "value": 76
+              "value": 82
             },
             {
               "month": 11,
-              "value": 81
+              "value": 88
             },
             {
               "month": 12,
-              "value": 86
+              "value": 90
             }
           ],
-          "correlationWithTemp": -0.03,
+          "correlationWithTemp": 0.01,
           "correlationWithRain": -0.16
         },
         {
@@ -1358,11 +1372,11 @@
             },
             {
               "month": 6,
-              "value": 0
+              "value": 33
             },
             {
               "month": 7,
-              "value": 25
+              "value": 15
             },
             {
               "month": 8,
@@ -1374,7 +1388,7 @@
             },
             {
               "month": 10,
-              "value": 0
+              "value": 16
             },
             {
               "month": 11,
@@ -1385,47 +1399,47 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.38,
-          "correlationWithRain": 0.64
+          "correlationWithTemp": 0.41,
+          "correlationWithRain": 0.45
         },
         {
           "keyword": "막걸리",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 36
+              "value": 33
             },
             {
               "month": 2,
-              "value": 64
+              "value": 60
             },
             {
               "month": 3,
-              "value": 64
+              "value": 55
             },
             {
               "month": 4,
-              "value": 67
+              "value": 61
             },
             {
               "month": 5,
-              "value": 76
+              "value": 80
             },
             {
               "month": 6,
-              "value": 57
+              "value": 62
             },
             {
               "month": 7,
-              "value": 51
+              "value": 46
             },
             {
               "month": 8,
-              "value": 48
+              "value": 42
             },
             {
               "month": 9,
-              "value": 53
+              "value": 59
             },
             {
               "month": 10,
@@ -1433,125 +1447,125 @@
             },
             {
               "month": 11,
-              "value": 75
+              "value": 72
             },
             {
               "month": 12,
-              "value": 22
+              "value": 49
             }
           ],
-          "correlationWithTemp": 0.2,
-          "correlationWithRain": 0.07
+          "correlationWithTemp": 0.13,
+          "correlationWithRain": -0.09
         },
         {
           "keyword": "밀면",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 12
+              "value": 6
             },
             {
               "month": 2,
-              "value": 30
+              "value": 24
             },
             {
               "month": 3,
-              "value": 29
+              "value": 26
             },
             {
               "month": 4,
-              "value": 48
+              "value": 50
             },
             {
               "month": 5,
-              "value": 47
+              "value": 51
             },
             {
               "month": 6,
-              "value": 67
+              "value": 74
             },
             {
               "month": 7,
-              "value": 61
+              "value": 66
             },
             {
               "month": 8,
-              "value": 79
+              "value": 77
             },
             {
               "month": 9,
-              "value": 44
+              "value": 50
             },
             {
               "month": 10,
-              "value": 24
+              "value": 22
             },
             {
               "month": 11,
-              "value": 24
+              "value": 27
             },
             {
               "month": 12,
-              "value": 31
+              "value": 22
             }
           ],
-          "correlationWithTemp": 0.82,
-          "correlationWithRain": 0.88
+          "correlationWithTemp": 0.87,
+          "correlationWithRain": 0.92
         },
         {
           "keyword": "국밥",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 44
-            },
-            {
-              "month": 2,
-              "value": 43
-            },
-            {
-              "month": 3,
-              "value": 43
-            },
-            {
-              "month": 4,
-              "value": 44
-            },
-            {
-              "month": 5,
-              "value": 41
-            },
-            {
-              "month": 6,
-              "value": 57
-            },
-            {
-              "month": 7,
-              "value": 40
-            },
-            {
-              "month": 8,
               "value": 46
             },
             {
+              "month": 2,
+              "value": 45
+            },
+            {
+              "month": 3,
+              "value": 46
+            },
+            {
+              "month": 4,
+              "value": 46
+            },
+            {
+              "month": 5,
+              "value": 43
+            },
+            {
+              "month": 6,
+              "value": 58
+            },
+            {
+              "month": 7,
+              "value": 42
+            },
+            {
+              "month": 8,
+              "value": 48
+            },
+            {
               "month": 9,
-              "value": 44
+              "value": 46
             },
             {
               "month": 10,
-              "value": 51
+              "value": 52
             },
             {
               "month": 11,
-              "value": 54
+              "value": 57
             },
             {
               "month": 12,
-              "value": 53
+              "value": 59
             }
           ],
-          "correlationWithTemp": -0.05,
-          "correlationWithRain": -0.25
+          "correlationWithTemp": -0.15,
+          "correlationWithRain": -0.32
         },
         {
           "keyword": "막창",
@@ -1562,11 +1576,11 @@
             },
             {
               "month": 2,
-              "value": 24
+              "value": 19
             },
             {
               "month": 3,
-              "value": 0
+              "value": 13
             },
             {
               "month": 4,
@@ -1574,27 +1588,27 @@
             },
             {
               "month": 5,
-              "value": 19
+              "value": 0
             },
             {
               "month": 6,
-              "value": 30
-            },
-            {
-              "month": 7,
-              "value": 19
-            },
-            {
-              "month": 8,
-              "value": 21
-            },
-            {
-              "month": 9,
               "value": 20
             },
             {
-              "month": 10,
+              "month": 7,
               "value": 0
+            },
+            {
+              "month": 8,
+              "value": 27
+            },
+            {
+              "month": 9,
+              "value": 13
+            },
+            {
+              "month": 10,
+              "value": 17
             },
             {
               "month": 11,
@@ -1605,43 +1619,43 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.55,
-          "correlationWithRain": 0.64
+          "correlationWithTemp": 0.35,
+          "correlationWithRain": 0.16
         },
         {
           "keyword": "치킨",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 70
+              "value": 69
             },
             {
               "month": 2,
-              "value": 65
+              "value": 63
             },
             {
               "month": 3,
-              "value": 72
+              "value": 70
             },
             {
               "month": 4,
-              "value": 75
+              "value": 71
             },
             {
               "month": 5,
-              "value": 73
+              "value": 70
             },
             {
               "month": 6,
-              "value": 84
+              "value": 81
             },
             {
               "month": 7,
-              "value": 76
+              "value": 77
             },
             {
               "month": 8,
-              "value": 75
+              "value": 72
             },
             {
               "month": 9,
@@ -1649,27 +1663,27 @@
             },
             {
               "month": 10,
-              "value": 77
+              "value": 74
             },
             {
               "month": 11,
-              "value": 80
+              "value": 79
             },
             {
               "month": 12,
-              "value": 90
+              "value": 89
             }
           ],
-          "correlationWithTemp": 0.13,
-          "correlationWithRain": 0.05
+          "correlationWithTemp": 0.12,
+          "correlationWithRain": 0.07
         }
       ],
       "summary": {
         "hotWeatherFoods": [
           "냉면",
           "빙수",
-          "밀면",
-          "막창"
+          "콩국수",
+          "밀면"
         ],
         "coldWeatherFoods": [
           "칼국수"
@@ -1679,8 +1693,7 @@
           "빙수",
           "콩국수",
           "파전",
-          "밀면",
-          "막창"
+          "밀면"
         ]
       }
     },
@@ -1744,7 +1757,7 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 0
+              "value": 7
             },
             {
               "month": 2,
@@ -1752,35 +1765,35 @@
             },
             {
               "month": 3,
-              "value": 14
+              "value": 11
             },
             {
               "month": 4,
-              "value": 25
+              "value": 39
             },
             {
               "month": 5,
-              "value": 62
+              "value": 50
             },
             {
               "month": 6,
-              "value": 57
+              "value": 51
             },
             {
               "month": 7,
-              "value": 41
+              "value": 62
             },
             {
               "month": 8,
-              "value": 41
+              "value": 51
             },
             {
               "month": 9,
-              "value": 0
+              "value": 12
             },
             {
               "month": 10,
-              "value": 0
+              "value": 9
             },
             {
               "month": 11,
@@ -1788,11 +1801,11 @@
             },
             {
               "month": 12,
-              "value": 17
+              "value": 0
             }
           ],
-          "correlationWithTemp": 0.63,
-          "correlationWithRain": 0.62
+          "correlationWithTemp": 0.81,
+          "correlationWithRain": 0.83
         },
         {
           "keyword": "빙수",
@@ -1815,7 +1828,7 @@
             },
             {
               "month": 5,
-              "value": 0
+              "value": 15
             },
             {
               "month": 6,
@@ -1823,11 +1836,11 @@
             },
             {
               "month": 7,
-              "value": 57
+              "value": 78
             },
             {
               "month": 8,
-              "value": 19
+              "value": 38
             },
             {
               "month": 9,
@@ -1846,8 +1859,8 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.63,
-          "correlationWithRain": 0.83
+          "correlationWithTemp": 0.7,
+          "correlationWithRain": 0.9
         },
         {
           "keyword": "콩국수",
@@ -1874,7 +1887,7 @@
             },
             {
               "month": 6,
-              "value": 20
+              "value": 0
             },
             {
               "month": 7,
@@ -1890,7 +1903,7 @@
             },
             {
               "month": 10,
-              "value": 0
+              "value": 25
             },
             {
               "month": 11,
@@ -1901,15 +1914,15 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.29,
-          "correlationWithRain": 0.24
+          "correlationWithTemp": 0.04,
+          "correlationWithRain": -0.2
         },
         {
           "keyword": "아이스아메리카노",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 0
+              "value": 19
             },
             {
               "month": 2,
@@ -1925,7 +1938,7 @@
             },
             {
               "month": 5,
-              "value": 0
+              "value": 25
             },
             {
               "month": 6,
@@ -1933,7 +1946,7 @@
             },
             {
               "month": 7,
-              "value": 0
+              "value": 21
             },
             {
               "month": 8,
@@ -1953,18 +1966,18 @@
             },
             {
               "month": 12,
-              "value": 17
+              "value": 0
             }
           ],
-          "correlationWithTemp": -0.4,
-          "correlationWithRain": -0.28
+          "correlationWithTemp": 0.1,
+          "correlationWithRain": 0.22
         },
         {
           "keyword": "김치찌개",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 44
+              "value": 18
             },
             {
               "month": 2,
@@ -1976,64 +1989,9 @@
             },
             {
               "month": 4,
-              "value": 0
-            },
-            {
-              "month": 5,
-              "value": 0
-            },
-            {
-              "month": 6,
-              "value": 0
-            },
-            {
-              "month": 7,
-              "value": 0
-            },
-            {
-              "month": 8,
-              "value": 0
-            },
-            {
-              "month": 9,
-              "value": 19
-            },
-            {
-              "month": 10,
-              "value": 0
-            },
-            {
-              "month": 11,
-              "value": 0
-            },
-            {
-              "month": 12,
-              "value": 0
-            }
-          ],
-          "correlationWithTemp": -0.33,
-          "correlationWithRain": -0.22
-        },
-        {
-          "keyword": "설렁탕",
-          "monthlyValues": [
-            {
-              "month": 1,
               "value": 25
             },
             {
-              "month": 2,
-              "value": 0
-            },
-            {
-              "month": 3,
-              "value": 0
-            },
-            {
-              "month": 4,
-              "value": 0
-            },
-            {
               "month": 5,
               "value": 0
             },
@@ -2047,7 +2005,7 @@
             },
             {
               "month": 8,
-              "value": 0
+              "value": 20
             },
             {
               "month": 9,
@@ -2063,124 +2021,14 @@
             },
             {
               "month": 12,
-              "value": 0
+              "value": 11
             }
           ],
-          "correlationWithTemp": -0.46,
-          "correlationWithRain": -0.28
+          "correlationWithTemp": -0.12,
+          "correlationWithRain": 0
         },
         {
-          "keyword": "칼국수",
-          "monthlyValues": [
-            {
-              "month": 1,
-              "value": 63
-            },
-            {
-              "month": 2,
-              "value": 44
-            },
-            {
-              "month": 3,
-              "value": 53
-            },
-            {
-              "month": 4,
-              "value": 39
-            },
-            {
-              "month": 5,
-              "value": 62
-            },
-            {
-              "month": 6,
-              "value": 27
-            },
-            {
-              "month": 7,
-              "value": 47
-            },
-            {
-              "month": 8,
-              "value": 49
-            },
-            {
-              "month": 9,
-              "value": 39
-            },
-            {
-              "month": 10,
-              "value": 45
-            },
-            {
-              "month": 11,
-              "value": 49
-            },
-            {
-              "month": 12,
-              "value": 53
-            }
-          ],
-          "correlationWithTemp": -0.43,
-          "correlationWithRain": -0.31
-        },
-        {
-          "keyword": "라면",
-          "monthlyValues": [
-            {
-              "month": 1,
-              "value": 56
-            },
-            {
-              "month": 2,
-              "value": 46
-            },
-            {
-              "month": 3,
-              "value": 60
-            },
-            {
-              "month": 4,
-              "value": 60
-            },
-            {
-              "month": 5,
-              "value": 57
-            },
-            {
-              "month": 6,
-              "value": 62
-            },
-            {
-              "month": 7,
-              "value": 69
-            },
-            {
-              "month": 8,
-              "value": 59
-            },
-            {
-              "month": 9,
-              "value": 69
-            },
-            {
-              "month": 10,
-              "value": 81
-            },
-            {
-              "month": 11,
-              "value": 79
-            },
-            {
-              "month": 12,
-              "value": 85
-            }
-          ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": -0.11
-        },
-        {
-          "keyword": "파전",
+          "keyword": "설렁탕",
           "monthlyValues": [
             {
               "month": 1,
@@ -2235,62 +2083,117 @@
           "correlationWithRain": 0.12
         },
         {
-          "keyword": "막걸리",
+          "keyword": "칼국수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 20
-            },
-            {
-              "month": 2,
-              "value": 57
-            },
-            {
-              "month": 3,
-              "value": 43
-            },
-            {
-              "month": 4,
-              "value": 36
-            },
-            {
-              "month": 5,
-              "value": 42
-            },
-            {
-              "month": 6,
-              "value": 11
-            },
-            {
-              "month": 7,
-              "value": 40
-            },
-            {
-              "month": 8,
-              "value": 33
-            },
-            {
-              "month": 9,
-              "value": 29
-            },
-            {
-              "month": 10,
               "value": 52
             },
             {
+              "month": 2,
+              "value": 52
+            },
+            {
+              "month": 3,
+              "value": 58
+            },
+            {
+              "month": 4,
+              "value": 56
+            },
+            {
+              "month": 5,
+              "value": 74
+            },
+            {
+              "month": 6,
+              "value": 23
+            },
+            {
+              "month": 7,
+              "value": 41
+            },
+            {
+              "month": 8,
+              "value": 51
+            },
+            {
+              "month": 9,
+              "value": 44
+            },
+            {
+              "month": 10,
+              "value": 65
+            },
+            {
               "month": 11,
-              "value": 42
+              "value": 66
             },
             {
               "month": 12,
-              "value": 51
+              "value": 62
             }
           ],
-          "correlationWithTemp": -0.34,
-          "correlationWithRain": -0.36
+          "correlationWithTemp": -0.4,
+          "correlationWithRain": -0.55
         },
         {
-          "keyword": "밀면",
+          "keyword": "라면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 58
+            },
+            {
+              "month": 2,
+              "value": 51
+            },
+            {
+              "month": 3,
+              "value": 63
+            },
+            {
+              "month": 4,
+              "value": 64
+            },
+            {
+              "month": 5,
+              "value": 62
+            },
+            {
+              "month": 6,
+              "value": 64
+            },
+            {
+              "month": 7,
+              "value": 67
+            },
+            {
+              "month": 8,
+              "value": 62
+            },
+            {
+              "month": 9,
+              "value": 74
+            },
+            {
+              "month": 10,
+              "value": 84
+            },
+            {
+              "month": 11,
+              "value": 82
+            },
+            {
+              "month": 12,
+              "value": 85
+            }
+          ],
+          "correlationWithTemp": -0.01,
+          "correlationWithRain": -0.18
+        },
+        {
+          "keyword": "파전",
           "monthlyValues": [
             {
               "month": 1,
@@ -2345,82 +2248,192 @@
           "correlationWithRain": 0
         },
         {
+          "keyword": "막걸리",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 19
+            },
+            {
+              "month": 2,
+              "value": 69
+            },
+            {
+              "month": 3,
+              "value": 43
+            },
+            {
+              "month": 4,
+              "value": 13
+            },
+            {
+              "month": 5,
+              "value": 12
+            },
+            {
+              "month": 6,
+              "value": 24
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 45
+            },
+            {
+              "month": 9,
+              "value": 13
+            },
+            {
+              "month": 10,
+              "value": 46
+            },
+            {
+              "month": 11,
+              "value": 47
+            },
+            {
+              "month": 12,
+              "value": 36
+            }
+          ],
+          "correlationWithTemp": -0.45,
+          "correlationWithRain": -0.43
+        },
+        {
+          "keyword": "밀면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 21
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 17
+            }
+          ],
+          "correlationWithTemp": 0.08,
+          "correlationWithRain": 0.23
+        },
+        {
           "keyword": "국밥",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 34
+              "value": 35
             },
             {
               "month": 2,
-              "value": 25
+              "value": 31
             },
             {
               "month": 3,
-              "value": 34
-            },
-            {
-              "month": 4,
-              "value": 32
-            },
-            {
-              "month": 5,
-              "value": 30
-            },
-            {
-              "month": 6,
-              "value": 44
-            },
-            {
-              "month": 7,
-              "value": 33
-            },
-            {
-              "month": 8,
-              "value": 33
-            },
-            {
-              "month": 9,
-              "value": 39
-            },
-            {
-              "month": 10,
-              "value": 41
-            },
-            {
-              "month": 11,
               "value": 38
             },
             {
+              "month": 4,
+              "value": 30
+            },
+            {
+              "month": 5,
+              "value": 31
+            },
+            {
+              "month": 6,
+              "value": 43
+            },
+            {
+              "month": 7,
+              "value": 35
+            },
+            {
+              "month": 8,
+              "value": 36
+            },
+            {
+              "month": 9,
+              "value": 36
+            },
+            {
+              "month": 10,
+              "value": 46
+            },
+            {
+              "month": 11,
+              "value": 39
+            },
+            {
               "month": 12,
-              "value": 44
+              "value": 45
             }
           ],
-          "correlationWithTemp": 0.08,
-          "correlationWithRain": -0.05
+          "correlationWithTemp": -0.05,
+          "correlationWithRain": -0.13
         },
         {
           "keyword": "막창",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 21
+              "value": 48
             },
             {
               "month": 2,
-              "value": 32
+              "value": 42
             },
             {
               "month": 3,
-              "value": 29
+              "value": 28
             },
             {
               "month": 4,
-              "value": 33
+              "value": 29
             },
             {
               "month": 5,
-              "value": 46
+              "value": 34
             },
             {
               "month": 6,
@@ -2428,11 +2441,414 @@
             },
             {
               "month": 7,
-              "value": 19
+              "value": 53
             },
             {
               "month": 8,
-              "value": 45
+              "value": 72
+            },
+            {
+              "month": 9,
+              "value": 57
+            },
+            {
+              "month": 10,
+              "value": 44
+            },
+            {
+              "month": 11,
+              "value": 26
+            },
+            {
+              "month": 12,
+              "value": 12
+            }
+          ],
+          "correlationWithTemp": 0.66,
+          "correlationWithRain": 0.71
+        },
+        {
+          "keyword": "치킨",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 55
+            },
+            {
+              "month": 2,
+              "value": 51
+            },
+            {
+              "month": 3,
+              "value": 58
+            },
+            {
+              "month": 4,
+              "value": 58
+            },
+            {
+              "month": 5,
+              "value": 57
+            },
+            {
+              "month": 6,
+              "value": 73
+            },
+            {
+              "month": 7,
+              "value": 67
+            },
+            {
+              "month": 8,
+              "value": 63
+            },
+            {
+              "month": 9,
+              "value": 61
+            },
+            {
+              "month": 10,
+              "value": 61
+            },
+            {
+              "month": 11,
+              "value": 65
+            },
+            {
+              "month": 12,
+              "value": 83
+            }
+          ],
+          "correlationWithTemp": 0.12,
+          "correlationWithRain": 0.19
+        }
+      ],
+      "summary": {
+        "hotWeatherFoods": [
+          "냉면",
+          "빙수",
+          "막창"
+        ],
+        "coldWeatherFoods": [
+          "칼국수",
+          "막걸리"
+        ],
+        "rainyDayFoods": [
+          "냉면",
+          "빙수",
+          "막창"
+        ]
+      }
+    },
+    "인천": {
+      "code": "KR-28",
+      "lat": 37.4563,
+      "lng": 126.7052,
+      "weather": {
+        "1": {
+          "temp": -2,
+          "rain": 20
+        },
+        "2": {
+          "temp": 0,
+          "rain": 25
+        },
+        "3": {
+          "temp": 6,
+          "rain": 40
+        },
+        "4": {
+          "temp": 12,
+          "rain": 60
+        },
+        "5": {
+          "temp": 17,
+          "rain": 85
+        },
+        "6": {
+          "temp": 22,
+          "rain": 120
+        },
+        "7": {
+          "temp": 26,
+          "rain": 320
+        },
+        "8": {
+          "temp": 27,
+          "rain": 280
+        },
+        "9": {
+          "temp": 22,
+          "rain": 130
+        },
+        "10": {
+          "temp": 15,
+          "rain": 50
+        },
+        "11": {
+          "temp": 7,
+          "rain": 50
+        },
+        "12": {
+          "temp": 0,
+          "rain": 25
+        }
+      },
+      "trends": [
+        {
+          "keyword": "냉면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 6
+            },
+            {
+              "month": 2,
+              "value": 14
+            },
+            {
+              "month": 3,
+              "value": 22
+            },
+            {
+              "month": 4,
+              "value": 40
+            },
+            {
+              "month": 5,
+              "value": 67
+            },
+            {
+              "month": 6,
+              "value": 74
+            },
+            {
+              "month": 7,
+              "value": 71
+            },
+            {
+              "month": 8,
+              "value": 69
+            },
+            {
+              "month": 9,
+              "value": 36
+            },
+            {
+              "month": 10,
+              "value": 20
+            },
+            {
+              "month": 11,
+              "value": 28
+            },
+            {
+              "month": 12,
+              "value": 4
+            }
+          ],
+          "correlationWithTemp": 0.88,
+          "correlationWithRain": 0.77
+        },
+        {
+          "keyword": "빙수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 41
+            },
+            {
+              "month": 6,
+              "value": 52
+            },
+            {
+              "month": 7,
+              "value": 55
+            },
+            {
+              "month": 8,
+              "value": 57
+            },
+            {
+              "month": 9,
+              "value": 20
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.84,
+          "correlationWithRain": 0.85
+        },
+        {
+          "keyword": "콩국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 29
+            },
+            {
+              "month": 7,
+              "value": 36
+            },
+            {
+              "month": 8,
+              "value": 49
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.72,
+          "correlationWithRain": 0.89
+        },
+        {
+          "keyword": "아이스아메리카노",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "김치찌개",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 78
+            },
+            {
+              "month": 2,
+              "value": 68
+            },
+            {
+              "month": 3,
+              "value": 32
+            },
+            {
+              "month": 4,
+              "value": 53
+            },
+            {
+              "month": 5,
+              "value": 53
+            },
+            {
+              "month": 6,
+              "value": 50
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 43
             },
             {
               "month": 9,
@@ -2440,91 +2856,530 @@
             },
             {
               "month": 10,
-              "value": 45
+              "value": 21
             },
             {
               "month": 11,
-              "value": 19
+              "value": 32
             },
             {
               "month": 12,
-              "value": 47
+              "value": 52
             }
           ],
-          "correlationWithTemp": 0.35,
-          "correlationWithRain": 0.11
+          "correlationWithTemp": -0.57,
+          "correlationWithRain": -0.57
+        },
+        {
+          "keyword": "설렁탕",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 20
+            },
+            {
+              "month": 10,
+              "value": 21
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.26,
+          "correlationWithRain": -0.05
+        },
+        {
+          "keyword": "칼국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 73
+            },
+            {
+              "month": 2,
+              "value": 55
+            },
+            {
+              "month": 3,
+              "value": 51
+            },
+            {
+              "month": 4,
+              "value": 46
+            },
+            {
+              "month": 5,
+              "value": 65
+            },
+            {
+              "month": 6,
+              "value": 49
+            },
+            {
+              "month": 7,
+              "value": 49
+            },
+            {
+              "month": 8,
+              "value": 47
+            },
+            {
+              "month": 9,
+              "value": 54
+            },
+            {
+              "month": 10,
+              "value": 59
+            },
+            {
+              "month": 11,
+              "value": 54
+            },
+            {
+              "month": 12,
+              "value": 63
+            }
+          ],
+          "correlationWithTemp": -0.57,
+          "correlationWithRain": -0.52
+        },
+        {
+          "keyword": "라면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 59
+            },
+            {
+              "month": 2,
+              "value": 53
+            },
+            {
+              "month": 3,
+              "value": 63
+            },
+            {
+              "month": 4,
+              "value": 67
+            },
+            {
+              "month": 5,
+              "value": 64
+            },
+            {
+              "month": 6,
+              "value": 70
+            },
+            {
+              "month": 7,
+              "value": 67
+            },
+            {
+              "month": 8,
+              "value": 61
+            },
+            {
+              "month": 9,
+              "value": 69
+            },
+            {
+              "month": 10,
+              "value": 78
+            },
+            {
+              "month": 11,
+              "value": 77
+            },
+            {
+              "month": 12,
+              "value": 81
+            }
+          ],
+          "correlationWithTemp": 0.06,
+          "correlationWithRain": -0.12
+        },
+        {
+          "keyword": "파전",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "막걸리",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 47
+            },
+            {
+              "month": 2,
+              "value": 65
+            },
+            {
+              "month": 3,
+              "value": 54
+            },
+            {
+              "month": 4,
+              "value": 48
+            },
+            {
+              "month": 5,
+              "value": 78
+            },
+            {
+              "month": 6,
+              "value": 40
+            },
+            {
+              "month": 7,
+              "value": 50
+            },
+            {
+              "month": 8,
+              "value": 51
+            },
+            {
+              "month": 9,
+              "value": 68
+            },
+            {
+              "month": 10,
+              "value": 55
+            },
+            {
+              "month": 11,
+              "value": 47
+            },
+            {
+              "month": 12,
+              "value": 66
+            }
+          ],
+          "correlationWithTemp": -0.11,
+          "correlationWithRain": -0.19
+        },
+        {
+          "keyword": "밀면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 50
+            },
+            {
+              "month": 2,
+              "value": 50
+            },
+            {
+              "month": 3,
+              "value": 50
+            },
+            {
+              "month": 4,
+              "value": 50
+            },
+            {
+              "month": 5,
+              "value": 50
+            },
+            {
+              "month": 6,
+              "value": 50
+            },
+            {
+              "month": 7,
+              "value": 50
+            },
+            {
+              "month": 8,
+              "value": 50
+            },
+            {
+              "month": 9,
+              "value": 50
+            },
+            {
+              "month": 10,
+              "value": 50
+            },
+            {
+              "month": 11,
+              "value": 50
+            },
+            {
+              "month": 12,
+              "value": 50
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "국밥",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 31
+            },
+            {
+              "month": 2,
+              "value": 31
+            },
+            {
+              "month": 3,
+              "value": 24
+            },
+            {
+              "month": 4,
+              "value": 34
+            },
+            {
+              "month": 5,
+              "value": 27
+            },
+            {
+              "month": 6,
+              "value": 41
+            },
+            {
+              "month": 7,
+              "value": 29
+            },
+            {
+              "month": 8,
+              "value": 28
+            },
+            {
+              "month": 9,
+              "value": 27
+            },
+            {
+              "month": 10,
+              "value": 25
+            },
+            {
+              "month": 11,
+              "value": 34
+            },
+            {
+              "month": 12,
+              "value": 39
+            }
+          ],
+          "correlationWithTemp": -0.19,
+          "correlationWithRain": -0.17
+        },
+        {
+          "keyword": "막창",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 50
+            },
+            {
+              "month": 2,
+              "value": 50
+            },
+            {
+              "month": 3,
+              "value": 50
+            },
+            {
+              "month": 4,
+              "value": 50
+            },
+            {
+              "month": 5,
+              "value": 50
+            },
+            {
+              "month": 6,
+              "value": 50
+            },
+            {
+              "month": 7,
+              "value": 50
+            },
+            {
+              "month": 8,
+              "value": 50
+            },
+            {
+              "month": 9,
+              "value": 50
+            },
+            {
+              "month": 10,
+              "value": 50
+            },
+            {
+              "month": 11,
+              "value": 50
+            },
+            {
+              "month": 12,
+              "value": 50
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
         },
         {
           "keyword": "치킨",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 57
+              "value": 76
             },
             {
               "month": 2,
-              "value": 54
+              "value": 79
             },
             {
               "month": 3,
-              "value": 60
-            },
-            {
-              "month": 4,
-              "value": 61
-            },
-            {
-              "month": 5,
-              "value": 59
-            },
-            {
-              "month": 6,
               "value": 75
             },
             {
+              "month": 4,
+              "value": 82
+            },
+            {
+              "month": 5,
+              "value": 79
+            },
+            {
+              "month": 6,
+              "value": 86
+            },
+            {
               "month": 7,
-              "value": 70
+              "value": 81
             },
             {
               "month": 8,
-              "value": 65
+              "value": 85
             },
             {
               "month": 9,
-              "value": 62
+              "value": 78
             },
             {
               "month": 10,
-              "value": 61
+              "value": 83
             },
             {
               "month": 11,
-              "value": 68
+              "value": 87
             },
             {
               "month": 12,
-              "value": 85
+              "value": 90
             }
           ],
-          "correlationWithTemp": 0.1,
-          "correlationWithRain": 0.2
+          "correlationWithTemp": 0.12,
+          "correlationWithRain": 0.11
         }
       ],
       "summary": {
         "hotWeatherFoods": [
           "냉면",
-          "빙수"
+          "빙수",
+          "콩국수"
         ],
         "coldWeatherFoods": [
-          "아이스아메리카노",
           "김치찌개",
-          "설렁탕",
-          "칼국수",
-          "막걸리"
+          "칼국수"
         ],
         "rainyDayFoods": [
           "냉면",
-          "빙수"
+          "빙수",
+          "콩국수"
         ]
       }
     },
@@ -2600,70 +3455,15 @@
             },
             {
               "month": 4,
-              "value": 0
+              "value": 9
             },
             {
               "month": 5,
-              "value": 57
+              "value": 41
             },
             {
               "month": 6,
-              "value": 57
-            },
-            {
-              "month": 7,
-              "value": 38
-            },
-            {
-              "month": 8,
-              "value": 15
-            },
-            {
-              "month": 9,
               "value": 0
-            },
-            {
-              "month": 10,
-              "value": 0
-            },
-            {
-              "month": 11,
-              "value": 0
-            },
-            {
-              "month": 12,
-              "value": 0
-            }
-          ],
-          "correlationWithTemp": 0.58,
-          "correlationWithRain": 0.59
-        },
-        {
-          "keyword": "빙수",
-          "monthlyValues": [
-            {
-              "month": 1,
-              "value": 0
-            },
-            {
-              "month": 2,
-              "value": 0
-            },
-            {
-              "month": 3,
-              "value": 0
-            },
-            {
-              "month": 4,
-              "value": 0
-            },
-            {
-              "month": 5,
-              "value": 0
-            },
-            {
-              "month": 6,
-              "value": 20
             },
             {
               "month": 7,
@@ -2671,11 +3471,11 @@
             },
             {
               "month": 8,
-              "value": 0
+              "value": 11
             },
             {
               "month": 9,
-              "value": 0
+              "value": 11
             },
             {
               "month": 10,
@@ -2691,58 +3491,113 @@
             }
           ],
           "correlationWithTemp": 0.51,
-          "correlationWithRain": 0.7
+          "correlationWithRain": 0.42
+        },
+        {
+          "keyword": "빙수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 50
+            },
+            {
+              "month": 2,
+              "value": 50
+            },
+            {
+              "month": 3,
+              "value": 50
+            },
+            {
+              "month": 4,
+              "value": 50
+            },
+            {
+              "month": 5,
+              "value": 50
+            },
+            {
+              "month": 6,
+              "value": 50
+            },
+            {
+              "month": 7,
+              "value": 50
+            },
+            {
+              "month": 8,
+              "value": 50
+            },
+            {
+              "month": 9,
+              "value": 50
+            },
+            {
+              "month": 10,
+              "value": 50
+            },
+            {
+              "month": 11,
+              "value": 50
+            },
+            {
+              "month": 12,
+              "value": 50
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
         },
         {
           "keyword": "콩국수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 0
+              "value": 50
             },
             {
               "month": 2,
-              "value": 0
+              "value": 50
             },
             {
               "month": 3,
-              "value": 0
+              "value": 50
             },
             {
               "month": 4,
-              "value": 0
+              "value": 50
             },
             {
               "month": 5,
-              "value": 0
+              "value": 50
             },
             {
               "month": 6,
-              "value": 0
+              "value": 50
             },
             {
               "month": 7,
-              "value": 0
+              "value": 50
             },
             {
               "month": 8,
-              "value": 0
+              "value": 50
             },
             {
               "month": 9,
-              "value": 0
+              "value": 50
             },
             {
               "month": 10,
-              "value": 0
+              "value": 50
             },
             {
               "month": 11,
-              "value": 0
+              "value": 50
             },
             {
               "month": 12,
-              "value": 0
+              "value": 50
             }
           ],
           "correlationWithTemp": 0,
@@ -2777,7 +3632,7 @@
             },
             {
               "month": 7,
-              "value": 0
+              "value": 25
             },
             {
               "month": 8,
@@ -2800,8 +3655,8 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.39,
+          "correlationWithRain": 0.64
         },
         {
           "keyword": "김치찌개",
@@ -2824,11 +3679,11 @@
             },
             {
               "month": 5,
-              "value": 0
+              "value": 16
             },
             {
               "month": 6,
-              "value": 0
+              "value": 15
             },
             {
               "month": 7,
@@ -2852,11 +3707,11 @@
             },
             {
               "month": 12,
-              "value": 0
+              "value": 17
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.01,
+          "correlationWithRain": -0.03
         },
         {
           "keyword": "설렁탕",
@@ -2899,7 +3754,7 @@
             },
             {
               "month": 10,
-              "value": 0
+              "value": 25
             },
             {
               "month": 11,
@@ -2910,15 +3765,15 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0,
-          "correlationWithRain": 0
+          "correlationWithTemp": 0.05,
+          "correlationWithRain": -0.23
         },
         {
           "keyword": "칼국수",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 28
+              "value": 55
             },
             {
               "month": 2,
@@ -2930,11 +3785,11 @@
             },
             {
               "month": 4,
-              "value": 10
+              "value": 33
             },
             {
               "month": 5,
-              "value": 0
+              "value": 25
             },
             {
               "month": 6,
@@ -2946,7 +3801,7 @@
             },
             {
               "month": 8,
-              "value": 13
+              "value": 18
             },
             {
               "month": 9,
@@ -2962,38 +3817,38 @@
             },
             {
               "month": 12,
-              "value": 17
+              "value": 0
             }
           ],
-          "correlationWithTemp": -0.44,
-          "correlationWithRain": -0.21
+          "correlationWithTemp": -0.23,
+          "correlationWithRain": -0.15
         },
         {
           "keyword": "라면",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 53
-            },
-            {
-              "month": 2,
               "value": 52
             },
             {
-              "month": 3,
-              "value": 49
-            },
-            {
-              "month": 4,
-              "value": 67
-            },
-            {
-              "month": 5,
+              "month": 2,
               "value": 50
             },
             {
+              "month": 3,
+              "value": 47
+            },
+            {
+              "month": 4,
+              "value": 65
+            },
+            {
+              "month": 5,
+              "value": 51
+            },
+            {
               "month": 6,
-              "value": 64
+              "value": 63
             },
             {
               "month": 7,
@@ -3001,27 +3856,27 @@
             },
             {
               "month": 8,
-              "value": 51
+              "value": 52
             },
             {
               "month": 9,
-              "value": 74
+              "value": 69
             },
             {
               "month": 10,
-              "value": 72
-            },
-            {
-              "month": 11,
               "value": 75
             },
             {
+              "month": 11,
+              "value": 69
+            },
+            {
               "month": 12,
-              "value": 76
+              "value": 80
             }
           ],
           "correlationWithTemp": 0.03,
-          "correlationWithRain": -0.14
+          "correlationWithRain": -0.12
         },
         {
           "keyword": "파전",
@@ -3083,11 +3938,11 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 14
+              "value": 0
             },
             {
               "month": 2,
-              "value": 19
+              "value": 0
             },
             {
               "month": 3,
@@ -3095,7 +3950,7 @@
             },
             {
               "month": 4,
-              "value": 15
+              "value": 0
             },
             {
               "month": 5,
@@ -3103,7 +3958,7 @@
             },
             {
               "month": 6,
-              "value": 27
+              "value": 16
             },
             {
               "month": 7,
@@ -3111,15 +3966,15 @@
             },
             {
               "month": 8,
-              "value": 19
+              "value": 0
             },
             {
               "month": 9,
-              "value": 13
+              "value": 19
             },
             {
               "month": 10,
-              "value": 18
+              "value": 24
             },
             {
               "month": 11,
@@ -3127,11 +3982,11 @@
             },
             {
               "month": 12,
-              "value": 17
+              "value": 27
             }
           ],
-          "correlationWithTemp": 0.01,
-          "correlationWithRain": -0.01
+          "correlationWithTemp": 0.02,
+          "correlationWithRain": -0.2
         },
         {
           "keyword": "밀면",
@@ -3193,55 +4048,55 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 28
+              "value": 54
             },
             {
               "month": 2,
-              "value": 33
-            },
-            {
-              "month": 3,
-              "value": 27
-            },
-            {
-              "month": 4,
-              "value": 18
-            },
-            {
-              "month": 5,
-              "value": 37
-            },
-            {
-              "month": 6,
-              "value": 44
-            },
-            {
-              "month": 7,
-              "value": 13
-            },
-            {
-              "month": 8,
-              "value": 27
-            },
-            {
-              "month": 9,
-              "value": 17
-            },
-            {
-              "month": 10,
               "value": 22
             },
             {
-              "month": 11,
+              "month": 3,
+              "value": 48
+            },
+            {
+              "month": 4,
+              "value": 22
+            },
+            {
+              "month": 5,
+              "value": 45
+            },
+            {
+              "month": 6,
               "value": 28
             },
             {
+              "month": 7,
+              "value": 51
+            },
+            {
+              "month": 8,
+              "value": 34
+            },
+            {
+              "month": 9,
+              "value": 21
+            },
+            {
+              "month": 10,
+              "value": 27
+            },
+            {
+              "month": 11,
+              "value": 41
+            },
+            {
               "month": 12,
-              "value": 44
+              "value": 53
             }
           ],
-          "correlationWithTemp": -0.33,
-          "correlationWithRain": -0.28
+          "correlationWithTemp": -0.3,
+          "correlationWithRain": -0.03
         },
         {
           "keyword": "막창",
@@ -3303,35 +4158,35 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 59
+              "value": 56
             },
             {
               "month": 2,
-              "value": 55
+              "value": 57
             },
             {
               "month": 3,
-              "value": 59
+              "value": 62
             },
             {
               "month": 4,
-              "value": 55
+              "value": 54
             },
             {
               "month": 5,
-              "value": 69
+              "value": 73
             },
             {
               "month": 6,
-              "value": 67
+              "value": 71
             },
             {
               "month": 7,
-              "value": 68
+              "value": 75
             },
             {
               "month": 8,
-              "value": 64
+              "value": 65
             },
             {
               "month": 9,
@@ -3343,29 +4198,25 @@
             },
             {
               "month": 11,
-              "value": 63
+              "value": 61
             },
             {
               "month": 12,
-              "value": 74
+              "value": 82
             }
           ],
-          "correlationWithTemp": 0.26,
-          "correlationWithRain": 0.33
+          "correlationWithTemp": 0.25,
+          "correlationWithRain": 0.36
         }
       ],
       "summary": {
         "hotWeatherFoods": [
-          "냉면",
-          "빙수"
+          "냉면"
         ],
-        "coldWeatherFoods": [
-          "칼국수",
-          "국밥"
-        ],
+        "coldWeatherFoods": [],
         "rainyDayFoods": [
           "냉면",
-          "빙수",
+          "아이스아메리카노",
           "치킨"
         ]
       }
@@ -3434,51 +4285,51 @@
             },
             {
               "month": 2,
-              "value": 9
+              "value": 10
             },
             {
               "month": 3,
-              "value": 10
-            },
-            {
-              "month": 4,
               "value": 19
             },
             {
+              "month": 4,
+              "value": 30
+            },
+            {
               "month": 5,
-              "value": 71
+              "value": 68
             },
             {
               "month": 6,
-              "value": 46
-            },
-            {
-              "month": 7,
               "value": 59
             },
             {
+              "month": 7,
+              "value": 69
+            },
+            {
               "month": 8,
-              "value": 77
+              "value": 73
             },
             {
               "month": 9,
-              "value": 43
+              "value": 23
             },
             {
               "month": 10,
-              "value": 10
+              "value": 0
             },
             {
               "month": 11,
-              "value": 0
+              "value": 9
             },
             {
               "month": 12,
-              "value": 0
+              "value": 8
             }
           ],
-          "correlationWithTemp": 0.88,
-          "correlationWithRain": 0.83
+          "correlationWithTemp": 0.82,
+          "correlationWithRain": 0.85
         },
         {
           "keyword": "빙수",
@@ -3505,19 +4356,74 @@
             },
             {
               "month": 6,
-              "value": 65
+              "value": 83
             },
             {
               "month": 7,
-              "value": 37
+              "value": 31
             },
             {
               "month": 8,
-              "value": 43
+              "value": 18
             },
             {
               "month": 9,
-              "value": 13
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 17
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.48,
+          "correlationWithRain": 0.52
+        },
+        {
+          "keyword": "콩국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 25
+            },
+            {
+              "month": 8,
+              "value": 22
+            },
+            {
+              "month": 9,
+              "value": 0
             },
             {
               "month": 10,
@@ -3532,8 +4438,796 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.71,
-          "correlationWithRain": 0.8
+          "correlationWithTemp": 0.6,
+          "correlationWithRain": 0.88
+        },
+        {
+          "keyword": "아이스아메리카노",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 25
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": -0.46,
+          "correlationWithRain": -0.27
+        },
+        {
+          "keyword": "김치찌개",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 18
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 20
+            },
+            {
+              "month": 6,
+              "value": 16
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 19
+            },
+            {
+              "month": 9,
+              "value": 17
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 25
+            },
+            {
+              "month": 12,
+              "value": 14
+            }
+          ],
+          "correlationWithTemp": 0.11,
+          "correlationWithRain": 0.03
+        },
+        {
+          "keyword": "설렁탕",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 49
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": -0.37,
+          "correlationWithRain": -0.26
+        },
+        {
+          "keyword": "칼국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 66
+            },
+            {
+              "month": 2,
+              "value": 70
+            },
+            {
+              "month": 3,
+              "value": 55
+            },
+            {
+              "month": 4,
+              "value": 71
+            },
+            {
+              "month": 5,
+              "value": 68
+            },
+            {
+              "month": 6,
+              "value": 59
+            },
+            {
+              "month": 7,
+              "value": 72
+            },
+            {
+              "month": 8,
+              "value": 65
+            },
+            {
+              "month": 9,
+              "value": 67
+            },
+            {
+              "month": 10,
+              "value": 41
+            },
+            {
+              "month": 11,
+              "value": 53
+            },
+            {
+              "month": 12,
+              "value": 73
+            }
+          ],
+          "correlationWithTemp": -0.02,
+          "correlationWithRain": 0.24
+        },
+        {
+          "keyword": "라면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 69
+            },
+            {
+              "month": 2,
+              "value": 63
+            },
+            {
+              "month": 3,
+              "value": 61
+            },
+            {
+              "month": 4,
+              "value": 73
+            },
+            {
+              "month": 5,
+              "value": 68
+            },
+            {
+              "month": 6,
+              "value": 69
+            },
+            {
+              "month": 7,
+              "value": 68
+            },
+            {
+              "month": 8,
+              "value": 58
+            },
+            {
+              "month": 9,
+              "value": 77
+            },
+            {
+              "month": 10,
+              "value": 87
+            },
+            {
+              "month": 11,
+              "value": 88
+            },
+            {
+              "month": 12,
+              "value": 83
+            }
+          ],
+          "correlationWithTemp": -0.22,
+          "correlationWithRain": -0.41
+        },
+        {
+          "keyword": "파전",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "막걸리",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 16
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 49
+            },
+            {
+              "month": 4,
+              "value": 36
+            },
+            {
+              "month": 5,
+              "value": 14
+            },
+            {
+              "month": 6,
+              "value": 38
+            },
+            {
+              "month": 7,
+              "value": 15
+            },
+            {
+              "month": 8,
+              "value": 29
+            },
+            {
+              "month": 9,
+              "value": 27
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 38
+            },
+            {
+              "month": 12,
+              "value": 15
+            }
+          ],
+          "correlationWithTemp": 0.19,
+          "correlationWithRain": 0.13
+        },
+        {
+          "keyword": "밀면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "국밥",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 35
+            },
+            {
+              "month": 2,
+              "value": 36
+            },
+            {
+              "month": 3,
+              "value": 35
+            },
+            {
+              "month": 4,
+              "value": 33
+            },
+            {
+              "month": 5,
+              "value": 29
+            },
+            {
+              "month": 6,
+              "value": 43
+            },
+            {
+              "month": 7,
+              "value": 37
+            },
+            {
+              "month": 8,
+              "value": 32
+            },
+            {
+              "month": 9,
+              "value": 29
+            },
+            {
+              "month": 10,
+              "value": 31
+            },
+            {
+              "month": 11,
+              "value": 33
+            },
+            {
+              "month": 12,
+              "value": 41
+            }
+          ],
+          "correlationWithTemp": -0.22,
+          "correlationWithRain": 0.05
+        },
+        {
+          "keyword": "막창",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 22
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 25
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.15,
+          "correlationWithRain": -0.18
+        },
+        {
+          "keyword": "치킨",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 68
+            },
+            {
+              "month": 2,
+              "value": 69
+            },
+            {
+              "month": 3,
+              "value": 73
+            },
+            {
+              "month": 4,
+              "value": 82
+            },
+            {
+              "month": 5,
+              "value": 79
+            },
+            {
+              "month": 6,
+              "value": 81
+            },
+            {
+              "month": 7,
+              "value": 80
+            },
+            {
+              "month": 8,
+              "value": 77
+            },
+            {
+              "month": 9,
+              "value": 81
+            },
+            {
+              "month": 10,
+              "value": 74
+            },
+            {
+              "month": 11,
+              "value": 80
+            },
+            {
+              "month": 12,
+              "value": 85
+            }
+          ],
+          "correlationWithTemp": 0.42,
+          "correlationWithRain": 0.31
+        }
+      ],
+      "summary": {
+        "hotWeatherFoods": [
+          "냉면",
+          "콩국수"
+        ],
+        "coldWeatherFoods": [
+          "아이스아메리카노",
+          "설렁탕"
+        ],
+        "rainyDayFoods": [
+          "냉면",
+          "빙수",
+          "콩국수",
+          "치킨"
+        ]
+      }
+    },
+    "울산": {
+      "code": "KR-31",
+      "lat": 35.5384,
+      "lng": 129.3114,
+      "weather": {
+        "1": {
+          "temp": 2,
+          "rain": 30
+        },
+        "2": {
+          "temp": 4,
+          "rain": 40
+        },
+        "3": {
+          "temp": 9,
+          "rain": 70
+        },
+        "4": {
+          "temp": 14,
+          "rain": 100
+        },
+        "5": {
+          "temp": 18,
+          "rain": 120
+        },
+        "6": {
+          "temp": 21,
+          "rain": 180
+        },
+        "7": {
+          "temp": 25,
+          "rain": 250
+        },
+        "8": {
+          "temp": 27,
+          "rain": 200
+        },
+        "9": {
+          "temp": 23,
+          "rain": 140
+        },
+        "10": {
+          "temp": 17,
+          "rain": 50
+        },
+        "11": {
+          "temp": 11,
+          "rain": 45
+        },
+        "12": {
+          "temp": 5,
+          "rain": 25
+        }
+      },
+      "trends": [
+        {
+          "keyword": "냉면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 23
+            },
+            {
+              "month": 6,
+              "value": 37
+            },
+            {
+              "month": 7,
+              "value": 33
+            },
+            {
+              "month": 8,
+              "value": 29
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.7,
+          "correlationWithRain": 0.85
+        },
+        {
+          "keyword": "빙수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 25
+            },
+            {
+              "month": 9,
+              "value": 20
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.57,
+          "correlationWithRain": 0.43
         },
         {
           "keyword": "콩국수",
@@ -3654,11 +5348,11 @@
             },
             {
               "month": 2,
-              "value": 13
+              "value": 0
             },
             {
               "month": 3,
-              "value": 30
+              "value": 0
             },
             {
               "month": 4,
@@ -3670,19 +5364,19 @@
             },
             {
               "month": 6,
-              "value": 11
+              "value": 0
             },
             {
               "month": 7,
-              "value": 14
+              "value": 0
             },
             {
               "month": 8,
-              "value": 15
+              "value": 0
             },
             {
               "month": 9,
-              "value": 33
+              "value": 0
             },
             {
               "month": 10,
@@ -3690,15 +5384,15 @@
             },
             {
               "month": 11,
-              "value": 29
+              "value": 0
             },
             {
               "month": 12,
-              "value": 11
+              "value": 0
             }
           ],
-          "correlationWithTemp": 0.09,
-          "correlationWithRain": 0.12
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
         },
         {
           "keyword": "설렁탕",
@@ -3760,55 +5454,896 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 67
+              "value": 21
             },
             {
               "month": 2,
-              "value": 68
+              "value": 0
             },
             {
               "month": 3,
-              "value": 50
+              "value": 36
             },
             {
               "month": 4,
-              "value": 65
+              "value": 21
             },
             {
               "month": 5,
-              "value": 68
+              "value": 0
             },
             {
               "month": 6,
-              "value": 58
+              "value": 0
             },
             {
               "month": 7,
-              "value": 61
+              "value": 0
             },
             {
               "month": 8,
-              "value": 63
+              "value": 0
             },
             {
               "month": 9,
-              "value": 68
+              "value": 19
             },
             {
               "month": 10,
-              "value": 40
+              "value": 0
             },
             {
               "month": 11,
-              "value": 54
+              "value": 0
             },
             {
               "month": 12,
-              "value": 66
+              "value": 16
             }
           ],
-          "correlationWithTemp": -0.07,
-          "correlationWithRain": 0.1
+          "correlationWithTemp": -0.41,
+          "correlationWithRain": -0.34
+        },
+        {
+          "keyword": "라면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 55
+            },
+            {
+              "month": 2,
+              "value": 49
+            },
+            {
+              "month": 3,
+              "value": 62
+            },
+            {
+              "month": 4,
+              "value": 54
+            },
+            {
+              "month": 5,
+              "value": 53
+            },
+            {
+              "month": 6,
+              "value": 52
+            },
+            {
+              "month": 7,
+              "value": 63
+            },
+            {
+              "month": 8,
+              "value": 57
+            },
+            {
+              "month": 9,
+              "value": 63
+            },
+            {
+              "month": 10,
+              "value": 65
+            },
+            {
+              "month": 11,
+              "value": 66
+            },
+            {
+              "month": 12,
+              "value": 84
+            }
+          ],
+          "correlationWithTemp": -0.14,
+          "correlationWithRain": -0.25
+        },
+        {
+          "keyword": "파전",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "막걸리",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 25
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 18
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.12,
+          "correlationWithRain": 0.18
+        },
+        {
+          "keyword": "밀면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 21
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 18
+            },
+            {
+              "month": 7,
+              "value": 25
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 19
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.27,
+          "correlationWithRain": 0.49
+        },
+        {
+          "keyword": "국밥",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 24
+            },
+            {
+              "month": 2,
+              "value": 21
+            },
+            {
+              "month": 3,
+              "value": 23
+            },
+            {
+              "month": 4,
+              "value": 10
+            },
+            {
+              "month": 5,
+              "value": 9
+            },
+            {
+              "month": 6,
+              "value": 41
+            },
+            {
+              "month": 7,
+              "value": 20
+            },
+            {
+              "month": 8,
+              "value": 25
+            },
+            {
+              "month": 9,
+              "value": 33
+            },
+            {
+              "month": 10,
+              "value": 20
+            },
+            {
+              "month": 11,
+              "value": 21
+            },
+            {
+              "month": 12,
+              "value": 36
+            }
+          ],
+          "correlationWithTemp": 0.04,
+          "correlationWithRain": 0.08
+        },
+        {
+          "keyword": "막창",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 25
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": -0.14,
+          "correlationWithRain": -0.25
+        },
+        {
+          "keyword": "치킨",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 59
+            },
+            {
+              "month": 2,
+              "value": 54
+            },
+            {
+              "month": 3,
+              "value": 52
+            },
+            {
+              "month": 4,
+              "value": 63
+            },
+            {
+              "month": 5,
+              "value": 60
+            },
+            {
+              "month": 6,
+              "value": 61
+            },
+            {
+              "month": 7,
+              "value": 66
+            },
+            {
+              "month": 8,
+              "value": 64
+            },
+            {
+              "month": 9,
+              "value": 63
+            },
+            {
+              "month": 10,
+              "value": 60
+            },
+            {
+              "month": 11,
+              "value": 60
+            },
+            {
+              "month": 12,
+              "value": 77
+            }
+          ],
+          "correlationWithTemp": 0.17,
+          "correlationWithRain": 0.16
+        }
+      ],
+      "summary": {
+        "hotWeatherFoods": [
+          "냉면",
+          "빙수"
+        ],
+        "coldWeatherFoods": [
+          "칼국수"
+        ],
+        "rainyDayFoods": [
+          "냉면",
+          "빙수",
+          "밀면"
+        ]
+      }
+    },
+    "경기": {
+      "code": "KR-41",
+      "lat": 37.4138,
+      "lng": 127.5183,
+      "weather": {
+        "1": {
+          "temp": -3,
+          "rain": 20
+        },
+        "2": {
+          "temp": 0,
+          "rain": 25
+        },
+        "3": {
+          "temp": 6,
+          "rain": 45
+        },
+        "4": {
+          "temp": 13,
+          "rain": 65
+        },
+        "5": {
+          "temp": 18,
+          "rain": 90
+        },
+        "6": {
+          "temp": 23,
+          "rain": 135
+        },
+        "7": {
+          "temp": 26,
+          "rain": 340
+        },
+        "8": {
+          "temp": 27,
+          "rain": 300
+        },
+        "9": {
+          "temp": 22,
+          "rain": 145
+        },
+        "10": {
+          "temp": 15,
+          "rain": 50
+        },
+        "11": {
+          "temp": 7,
+          "rain": 50
+        },
+        "12": {
+          "temp": 0,
+          "rain": 25
+        }
+      },
+      "trends": [
+        {
+          "keyword": "냉면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 16
+            },
+            {
+              "month": 2,
+              "value": 21
+            },
+            {
+              "month": 3,
+              "value": 22
+            },
+            {
+              "month": 4,
+              "value": 42
+            },
+            {
+              "month": 5,
+              "value": 62
+            },
+            {
+              "month": 6,
+              "value": 65
+            },
+            {
+              "month": 7,
+              "value": 68
+            },
+            {
+              "month": 8,
+              "value": 70
+            },
+            {
+              "month": 9,
+              "value": 37
+            },
+            {
+              "month": 10,
+              "value": 26
+            },
+            {
+              "month": 11,
+              "value": 23
+            },
+            {
+              "month": 12,
+              "value": 22
+            }
+          ],
+          "correlationWithTemp": 0.88,
+          "correlationWithRain": 0.82
+        },
+        {
+          "keyword": "빙수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 21
+            },
+            {
+              "month": 2,
+              "value": 20
+            },
+            {
+              "month": 3,
+              "value": 16
+            },
+            {
+              "month": 4,
+              "value": 32
+            },
+            {
+              "month": 5,
+              "value": 37
+            },
+            {
+              "month": 6,
+              "value": 67
+            },
+            {
+              "month": 7,
+              "value": 83
+            },
+            {
+              "month": 8,
+              "value": 66
+            },
+            {
+              "month": 9,
+              "value": 41
+            },
+            {
+              "month": 10,
+              "value": 18
+            },
+            {
+              "month": 11,
+              "value": 23
+            },
+            {
+              "month": 12,
+              "value": 21
+            }
+          ],
+          "correlationWithTemp": 0.83,
+          "correlationWithRain": 0.92
+        },
+        {
+          "keyword": "콩국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 10
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 24
+            },
+            {
+              "month": 5,
+              "value": 35
+            },
+            {
+              "month": 6,
+              "value": 83
+            },
+            {
+              "month": 7,
+              "value": 69
+            },
+            {
+              "month": 8,
+              "value": 69
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 8
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.75,
+          "correlationWithRain": 0.77
+        },
+        {
+          "keyword": "아이스아메리카노",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 25
+            },
+            {
+              "month": 5,
+              "value": 18
+            },
+            {
+              "month": 6,
+              "value": 44
+            },
+            {
+              "month": 7,
+              "value": 39
+            },
+            {
+              "month": 8,
+              "value": 22
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 13
+            }
+          ],
+          "correlationWithTemp": 0.63,
+          "correlationWithRain": 0.63
+        },
+        {
+          "keyword": "김치찌개",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 76
+            },
+            {
+              "month": 2,
+              "value": 75
+            },
+            {
+              "month": 3,
+              "value": 75
+            },
+            {
+              "month": 4,
+              "value": 68
+            },
+            {
+              "month": 5,
+              "value": 62
+            },
+            {
+              "month": 6,
+              "value": 66
+            },
+            {
+              "month": 7,
+              "value": 60
+            },
+            {
+              "month": 8,
+              "value": 77
+            },
+            {
+              "month": 9,
+              "value": 75
+            },
+            {
+              "month": 10,
+              "value": 69
+            },
+            {
+              "month": 11,
+              "value": 71
+            },
+            {
+              "month": 12,
+              "value": 83
+            }
+          ],
+          "correlationWithTemp": -0.56,
+          "correlationWithRain": -0.38
+        },
+        {
+          "keyword": "설렁탕",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 69
+            },
+            {
+              "month": 2,
+              "value": 73
+            },
+            {
+              "month": 3,
+              "value": 83
+            },
+            {
+              "month": 4,
+              "value": 61
+            },
+            {
+              "month": 5,
+              "value": 40
+            },
+            {
+              "month": 6,
+              "value": 63
+            },
+            {
+              "month": 7,
+              "value": 53
+            },
+            {
+              "month": 8,
+              "value": 76
+            },
+            {
+              "month": 9,
+              "value": 60
+            },
+            {
+              "month": 10,
+              "value": 63
+            },
+            {
+              "month": 11,
+              "value": 72
+            },
+            {
+              "month": 12,
+              "value": 80
+            }
+          ],
+          "correlationWithTemp": -0.51,
+          "correlationWithRain": -0.28
+        },
+        {
+          "keyword": "칼국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 84
+            },
+            {
+              "month": 2,
+              "value": 56
+            },
+            {
+              "month": 3,
+              "value": 54
+            },
+            {
+              "month": 4,
+              "value": 51
+            },
+            {
+              "month": 5,
+              "value": 65
+            },
+            {
+              "month": 6,
+              "value": 54
+            },
+            {
+              "month": 7,
+              "value": 58
+            },
+            {
+              "month": 8,
+              "value": 56
+            },
+            {
+              "month": 9,
+              "value": 59
+            },
+            {
+              "month": 10,
+              "value": 63
+            },
+            {
+              "month": 11,
+              "value": 57
+            },
+            {
+              "month": 12,
+              "value": 72
+            }
+          ],
+          "correlationWithTemp": -0.5,
+          "correlationWithRain": -0.32
         },
         {
           "keyword": "라면",
@@ -3819,54 +6354,684 @@
             },
             {
               "month": 2,
-              "value": 61
+              "value": 60
             },
             {
               "month": 3,
-              "value": 57
+              "value": 61
             },
             {
               "month": 4,
-              "value": 67
+              "value": 71
             },
             {
               "month": 5,
-              "value": 64
-            },
-            {
-              "month": 6,
-              "value": 63
-            },
-            {
-              "month": 7,
               "value": 69
             },
             {
+              "month": 6,
+              "value": 70
+            },
+            {
+              "month": 7,
+              "value": 70
+            },
+            {
               "month": 8,
-              "value": 59
+              "value": 66
             },
             {
               "month": 9,
-              "value": 79
+              "value": 75
             },
             {
               "month": 10,
-              "value": 83
+              "value": 82
             },
             {
               "month": 11,
-              "value": 85
+              "value": 79
             },
             {
               "month": 12,
-              "value": 84
+              "value": 87
             }
           ],
-          "correlationWithTemp": -0.16,
-          "correlationWithRain": -0.28
+          "correlationWithTemp": 0.01,
+          "correlationWithRain": -0.14
         },
         {
           "keyword": "파전",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 16
+            },
+            {
+              "month": 2,
+              "value": 15
+            },
+            {
+              "month": 3,
+              "value": 20
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 22
+            },
+            {
+              "month": 6,
+              "value": 15
+            },
+            {
+              "month": 7,
+              "value": 34
+            },
+            {
+              "month": 8,
+              "value": 29
+            },
+            {
+              "month": 9,
+              "value": 23
+            },
+            {
+              "month": 10,
+              "value": 64
+            },
+            {
+              "month": 11,
+              "value": 52
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.27,
+          "correlationWithRain": 0.17
+        },
+        {
+          "keyword": "막걸리",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 56
+            },
+            {
+              "month": 2,
+              "value": 67
+            },
+            {
+              "month": 3,
+              "value": 76
+            },
+            {
+              "month": 4,
+              "value": 75
+            },
+            {
+              "month": 5,
+              "value": 76
+            },
+            {
+              "month": 6,
+              "value": 77
+            },
+            {
+              "month": 7,
+              "value": 70
+            },
+            {
+              "month": 8,
+              "value": 70
+            },
+            {
+              "month": 9,
+              "value": 76
+            },
+            {
+              "month": 10,
+              "value": 77
+            },
+            {
+              "month": 11,
+              "value": 69
+            },
+            {
+              "month": 12,
+              "value": 78
+            }
+          ],
+          "correlationWithTemp": 0.4,
+          "correlationWithRain": 0.03
+        },
+        {
+          "keyword": "밀면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 11
+            },
+            {
+              "month": 2,
+              "value": 19
+            },
+            {
+              "month": 3,
+              "value": 40
+            },
+            {
+              "month": 4,
+              "value": 70
+            },
+            {
+              "month": 5,
+              "value": 69
+            },
+            {
+              "month": 6,
+              "value": 56
+            },
+            {
+              "month": 7,
+              "value": 74
+            },
+            {
+              "month": 8,
+              "value": 48
+            },
+            {
+              "month": 9,
+              "value": 9
+            },
+            {
+              "month": 10,
+              "value": 24
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 10
+            }
+          ],
+          "correlationWithTemp": 0.6,
+          "correlationWithRain": 0.53
+        },
+        {
+          "keyword": "국밥",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 32
+            },
+            {
+              "month": 2,
+              "value": 29
+            },
+            {
+              "month": 3,
+              "value": 34
+            },
+            {
+              "month": 4,
+              "value": 29
+            },
+            {
+              "month": 5,
+              "value": 31
+            },
+            {
+              "month": 6,
+              "value": 45
+            },
+            {
+              "month": 7,
+              "value": 30
+            },
+            {
+              "month": 8,
+              "value": 32
+            },
+            {
+              "month": 9,
+              "value": 31
+            },
+            {
+              "month": 10,
+              "value": 32
+            },
+            {
+              "month": 11,
+              "value": 35
+            },
+            {
+              "month": 12,
+              "value": 39
+            }
+          ],
+          "correlationWithTemp": 0.02,
+          "correlationWithRain": -0.11
+        },
+        {
+          "keyword": "막창",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 38
+            },
+            {
+              "month": 2,
+              "value": 47
+            },
+            {
+              "month": 3,
+              "value": 25
+            },
+            {
+              "month": 4,
+              "value": 33
+            },
+            {
+              "month": 5,
+              "value": 37
+            },
+            {
+              "month": 6,
+              "value": 48
+            },
+            {
+              "month": 7,
+              "value": 55
+            },
+            {
+              "month": 8,
+              "value": 49
+            },
+            {
+              "month": 9,
+              "value": 36
+            },
+            {
+              "month": 10,
+              "value": 51
+            },
+            {
+              "month": 11,
+              "value": 34
+            },
+            {
+              "month": 12,
+              "value": 25
+            }
+          ],
+          "correlationWithTemp": 0.55,
+          "correlationWithRain": 0.6
+        },
+        {
+          "keyword": "치킨",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 67
+            },
+            {
+              "month": 2,
+              "value": 68
+            },
+            {
+              "month": 3,
+              "value": 69
+            },
+            {
+              "month": 4,
+              "value": 77
+            },
+            {
+              "month": 5,
+              "value": 74
+            },
+            {
+              "month": 6,
+              "value": 80
+            },
+            {
+              "month": 7,
+              "value": 76
+            },
+            {
+              "month": 8,
+              "value": 75
+            },
+            {
+              "month": 9,
+              "value": 76
+            },
+            {
+              "month": 10,
+              "value": 77
+            },
+            {
+              "month": 11,
+              "value": 73
+            },
+            {
+              "month": 12,
+              "value": 86
+            }
+          ],
+          "correlationWithTemp": 0.32,
+          "correlationWithRain": 0.17
+        }
+      ],
+      "summary": {
+        "hotWeatherFoods": [
+          "냉면",
+          "빙수",
+          "콩국수",
+          "아이스아메리카노",
+          "밀면",
+          "막창"
+        ],
+        "coldWeatherFoods": [
+          "김치찌개",
+          "설렁탕",
+          "칼국수"
+        ],
+        "rainyDayFoods": [
+          "냉면",
+          "빙수",
+          "콩국수",
+          "아이스아메리카노",
+          "밀면",
+          "막창"
+        ]
+      }
+    },
+    "제주": {
+      "code": "KR-49",
+      "lat": 33.4996,
+      "lng": 126.5312,
+      "weather": {
+        "1": {
+          "temp": 6,
+          "rain": 70
+        },
+        "2": {
+          "temp": 7,
+          "rain": 65
+        },
+        "3": {
+          "temp": 10,
+          "rain": 95
+        },
+        "4": {
+          "temp": 14,
+          "rain": 90
+        },
+        "5": {
+          "temp": 18,
+          "rain": 95
+        },
+        "6": {
+          "temp": 22,
+          "rain": 180
+        },
+        "7": {
+          "temp": 27,
+          "rain": 210
+        },
+        "8": {
+          "temp": 28,
+          "rain": 260
+        },
+        "9": {
+          "temp": 24,
+          "rain": 180
+        },
+        "10": {
+          "temp": 19,
+          "rain": 85
+        },
+        "11": {
+          "temp": 13,
+          "rain": 80
+        },
+        "12": {
+          "temp": 8,
+          "rain": 55
+        }
+      },
+      "trends": [
+        {
+          "keyword": "냉면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 13
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 18
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 17
+            }
+          ],
+          "correlationWithTemp": -0.31,
+          "correlationWithRain": -0.37
+        },
+        {
+          "keyword": "빙수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 21
+            },
+            {
+              "month": 8,
+              "value": 25
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.67,
+          "correlationWithRain": 0.8
+        },
+        {
+          "keyword": "콩국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 25
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0.07,
+          "correlationWithRain": -0.13
+        },
+        {
+          "keyword": "아이스아메리카노",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "김치찌개",
           "monthlyValues": [
             {
               "month": 1,
@@ -3917,8 +7082,228 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.04,
-          "correlationWithRain": -0.19
+          "correlationWithTemp": 0.11,
+          "correlationWithRain": -0.17
+        },
+        {
+          "keyword": "설렁탕",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
+        },
+        {
+          "keyword": "칼국수",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 22
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 25
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 17
+            }
+          ],
+          "correlationWithTemp": -0.39,
+          "correlationWithRain": -0.41
+        },
+        {
+          "keyword": "라면",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 41
+            },
+            {
+              "month": 2,
+              "value": 29
+            },
+            {
+              "month": 3,
+              "value": 36
+            },
+            {
+              "month": 4,
+              "value": 20
+            },
+            {
+              "month": 5,
+              "value": 53
+            },
+            {
+              "month": 6,
+              "value": 55
+            },
+            {
+              "month": 7,
+              "value": 42
+            },
+            {
+              "month": 8,
+              "value": 45
+            },
+            {
+              "month": 9,
+              "value": 45
+            },
+            {
+              "month": 10,
+              "value": 62
+            },
+            {
+              "month": 11,
+              "value": 45
+            },
+            {
+              "month": 12,
+              "value": 68
+            }
+          ],
+          "correlationWithTemp": 0.17,
+          "correlationWithRain": 0.01
+        },
+        {
+          "keyword": "파전",
+          "monthlyValues": [
+            {
+              "month": 1,
+              "value": 0
+            },
+            {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
+              "month": 7,
+              "value": 0
+            },
+            {
+              "month": 8,
+              "value": 0
+            },
+            {
+              "month": 9,
+              "value": 0
+            },
+            {
+              "month": 10,
+              "value": 0
+            },
+            {
+              "month": 11,
+              "value": 0
+            },
+            {
+              "month": 12,
+              "value": 0
+            }
+          ],
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
         },
         {
           "keyword": "막걸리",
@@ -3933,11 +7318,11 @@
             },
             {
               "month": 3,
-              "value": 34
+              "value": 0
             },
             {
               "month": 4,
-              "value": 34
+              "value": 0
             },
             {
               "month": 5,
@@ -3945,7 +7330,7 @@
             },
             {
               "month": 6,
-              "value": 42
+              "value": 0
             },
             {
               "month": 7,
@@ -3957,7 +7342,7 @@
             },
             {
               "month": 9,
-              "value": 29
+              "value": 0
             },
             {
               "month": 10,
@@ -3965,15 +7350,15 @@
             },
             {
               "month": 11,
-              "value": 14
+              "value": 0
             },
             {
               "month": 12,
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.2,
-          "correlationWithRain": -0.01
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
         },
         {
           "keyword": "밀면",
@@ -4035,55 +7420,55 @@
           "monthlyValues": [
             {
               "month": 1,
-              "value": 27
-            },
-            {
-              "month": 2,
-              "value": 33
-            },
-            {
-              "month": 3,
-              "value": 28
-            },
-            {
-              "month": 4,
-              "value": 30
-            },
-            {
-              "month": 5,
-              "value": 31
-            },
-            {
-              "month": 6,
               "value": 45
             },
             {
+              "month": 2,
+              "value": 0
+            },
+            {
+              "month": 3,
+              "value": 0
+            },
+            {
+              "month": 4,
+              "value": 0
+            },
+            {
+              "month": 5,
+              "value": 0
+            },
+            {
+              "month": 6,
+              "value": 0
+            },
+            {
               "month": 7,
-              "value": 39
+              "value": 0
             },
             {
               "month": 8,
-              "value": 32
+              "value": 0
             },
             {
               "month": 9,
-              "value": 34
+              "value": 36
             },
             {
               "month": 10,
-              "value": 35
+              "value": 0
             },
             {
               "month": 11,
-              "value": 42
+              "value": 0
             },
             {
               "month": 12,
-              "value": 37
+              "value": 0
             }
           ],
-          "correlationWithTemp": 0.31,
-          "correlationWithRain": 0.3
+          "correlationWithTemp": -0.14,
+          "correlationWithRain": -0.02
         },
         {
           "keyword": "막창",
@@ -4102,7 +7487,7 @@
             },
             {
               "month": 4,
-              "value": 25
+              "value": 0
             },
             {
               "month": 5,
@@ -4137,75 +7522,75 @@
               "value": 0
             }
           ],
-          "correlationWithTemp": 0.01,
-          "correlationWithRain": -0.1
+          "correlationWithTemp": 0,
+          "correlationWithRain": 0
         },
         {
           "keyword": "치킨",
           "monthlyValues": [
             {
               "month": 1,
-              "value": 67
+              "value": 66
             },
             {
               "month": 2,
-              "value": 67
+              "value": 49
             },
             {
               "month": 3,
-              "value": 74
+              "value": 64
             },
             {
               "month": 4,
-              "value": 82
+              "value": 56
             },
             {
               "month": 5,
-              "value": 78
+              "value": 60
             },
             {
               "month": 6,
-              "value": 81
+              "value": 62
             },
             {
               "month": 7,
-              "value": 80
+              "value": 74
             },
             {
               "month": 8,
-              "value": 79
+              "value": 51
             },
             {
               "month": 9,
-              "value": 76
+              "value": 43
             },
             {
               "month": 10,
-              "value": 76
+              "value": 47
             },
             {
               "month": 11,
-              "value": 76
+              "value": 63
             },
             {
               "month": 12,
-              "value": 84
+              "value": 80
             }
           ],
-          "correlationWithTemp": 0.5,
-          "correlationWithRain": 0.41
+          "correlationWithTemp": -0.28,
+          "correlationWithRain": -0.19
         }
       ],
       "summary": {
         "hotWeatherFoods": [
-          "냉면",
           "빙수"
         ],
-        "coldWeatherFoods": [],
-        "rainyDayFoods": [
+        "coldWeatherFoods": [
           "냉면",
-          "빙수",
-          "치킨"
+          "칼국수"
+        ],
+        "rainyDayFoods": [
+          "빙수"
         ]
       }
     }
@@ -4213,118 +7598,198 @@
   "comparison": {
     "냉면": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 46,
+        "tempCorrelation": 0.85
       },
       "부산": {
-        "avgSearchVolume": 37,
+        "avgSearchVolume": 29,
         "tempCorrelation": 0.8
       },
       "대구": {
-        "avgSearchVolume": 21,
-        "tempCorrelation": 0.63
+        "avgSearchVolume": 24,
+        "tempCorrelation": 0.81
+      },
+      "인천": {
+        "avgSearchVolume": 38,
+        "tempCorrelation": 0.88
       },
       "광주": {
-        "avgSearchVolume": 14,
-        "tempCorrelation": 0.58
+        "avgSearchVolume": 8,
+        "tempCorrelation": 0.51
       },
       "대전": {
-        "avgSearchVolume": 29,
+        "avgSearchVolume": 31,
+        "tempCorrelation": 0.82
+      },
+      "울산": {
+        "avgSearchVolume": 10,
+        "tempCorrelation": 0.7
+      },
+      "경기": {
+        "avgSearchVolume": 40,
         "tempCorrelation": 0.88
+      },
+      "제주": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": -0.31
       }
     },
     "빙수": {
       "서울": {
+        "avgSearchVolume": 43,
+        "tempCorrelation": 0.83
+      },
+      "부산": {
+        "avgSearchVolume": 18,
+        "tempCorrelation": 0.72
+      },
+      "대구": {
+        "avgSearchVolume": 14,
+        "tempCorrelation": 0.7
+      },
+      "인천": {
+        "avgSearchVolume": 19,
+        "tempCorrelation": 0.84
+      },
+      "광주": {
         "avgSearchVolume": 50,
         "tempCorrelation": 0
       },
-      "부산": {
-        "avgSearchVolume": 19,
-        "tempCorrelation": 0.63
-      },
-      "대구": {
-        "avgSearchVolume": 10,
-        "tempCorrelation": 0.63
-      },
-      "광주": {
-        "avgSearchVolume": 3,
-        "tempCorrelation": 0.51
-      },
       "대전": {
-        "avgSearchVolume": 13,
-        "tempCorrelation": 0.71
+        "avgSearchVolume": 12,
+        "tempCorrelation": 0.48
+      },
+      "울산": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": 0.57
+      },
+      "경기": {
+        "avgSearchVolume": 37,
+        "tempCorrelation": 0.83
+      },
+      "제주": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": 0.67
       }
     },
     "콩국수": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 25,
+        "tempCorrelation": 0.83
       },
       "부산": {
-        "avgSearchVolume": 5,
-        "tempCorrelation": 0.41
+        "avgSearchVolume": 8,
+        "tempCorrelation": 0.55
       },
       "대구": {
         "avgSearchVolume": 2,
-        "tempCorrelation": 0.29
+        "tempCorrelation": 0.04
+      },
+      "인천": {
+        "avgSearchVolume": 10,
+        "tempCorrelation": 0.72
       },
       "광주": {
-        "avgSearchVolume": 0,
+        "avgSearchVolume": 50,
         "tempCorrelation": 0
       },
       "대전": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": 0.6
+      },
+      "울산": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
+      },
+      "경기": {
+        "avgSearchVolume": 25,
+        "tempCorrelation": 0.75
+      },
+      "제주": {
+        "avgSearchVolume": 2,
+        "tempCorrelation": 0.07
       }
     },
     "아이스아메리카노": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 37,
+        "tempCorrelation": 0.84
       },
       "부산": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       },
       "대구": {
-        "avgSearchVolume": 1,
-        "tempCorrelation": -0.4
+        "avgSearchVolume": 5,
+        "tempCorrelation": 0.1
       },
-      "광주": {
+      "인천": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       },
+      "광주": {
+        "avgSearchVolume": 2,
+        "tempCorrelation": 0.39
+      },
       "대전": {
+        "avgSearchVolume": 2,
+        "tempCorrelation": -0.46
+      },
+      "울산": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
+      },
+      "경기": {
+        "avgSearchVolume": 13,
+        "tempCorrelation": 0.63
+      },
+      "제주": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       }
     },
     "김치찌개": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 74,
+        "tempCorrelation": -0.69
       },
       "부산": {
-        "avgSearchVolume": 39,
-        "tempCorrelation": -0.23
+        "avgSearchVolume": 37,
+        "tempCorrelation": -0.09
       },
       "대구": {
-        "avgSearchVolume": 5,
-        "tempCorrelation": -0.33
+        "avgSearchVolume": 6,
+        "tempCorrelation": -0.12
+      },
+      "인천": {
+        "avgSearchVolume": 44,
+        "tempCorrelation": -0.57
       },
       "광주": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": 0.01
+      },
+      "대전": {
+        "avgSearchVolume": 11,
+        "tempCorrelation": 0.11
+      },
+      "울산": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       },
-      "대전": {
-        "avgSearchVolume": 13,
-        "tempCorrelation": 0.09
+      "경기": {
+        "avgSearchVolume": 71,
+        "tempCorrelation": -0.56
+      },
+      "제주": {
+        "avgSearchVolume": 2,
+        "tempCorrelation": 0.11
       }
     },
     "설렁탕": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 67,
+        "tempCorrelation": 0.11
       },
       "부산": {
         "avgSearchVolume": 0,
@@ -4332,116 +7797,200 @@
       },
       "대구": {
         "avgSearchVolume": 2,
-        "tempCorrelation": -0.46
+        "tempCorrelation": 0.26
+      },
+      "인천": {
+        "avgSearchVolume": 3,
+        "tempCorrelation": 0.26
       },
       "광주": {
+        "avgSearchVolume": 2,
+        "tempCorrelation": 0.05
+      },
+      "대전": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": -0.37
+      },
+      "울산": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       },
-      "대전": {
+      "경기": {
+        "avgSearchVolume": 66,
+        "tempCorrelation": -0.51
+      },
+      "제주": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       }
     },
     "칼국수": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 60,
+        "tempCorrelation": -0.49
       },
       "부산": {
-        "avgSearchVolume": 58,
-        "tempCorrelation": -0.52
-      },
-      "대구": {
-        "avgSearchVolume": 48,
+        "avgSearchVolume": 62,
         "tempCorrelation": -0.43
       },
+      "대구": {
+        "avgSearchVolume": 54,
+        "tempCorrelation": -0.4
+      },
+      "인천": {
+        "avgSearchVolume": 55,
+        "tempCorrelation": -0.57
+      },
       "광주": {
-        "avgSearchVolume": 6,
-        "tempCorrelation": -0.44
+        "avgSearchVolume": 11,
+        "tempCorrelation": -0.23
       },
       "대전": {
+        "avgSearchVolume": 63,
+        "tempCorrelation": -0.02
+      },
+      "울산": {
+        "avgSearchVolume": 9,
+        "tempCorrelation": -0.41
+      },
+      "경기": {
         "avgSearchVolume": 61,
-        "tempCorrelation": -0.07
+        "tempCorrelation": -0.5
+      },
+      "제주": {
+        "avgSearchVolume": 5,
+        "tempCorrelation": -0.39
       }
     },
     "라면": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 80,
+        "tempCorrelation": -0.1
       },
       "부산": {
-        "avgSearchVolume": 72,
-        "tempCorrelation": -0.03
+        "avgSearchVolume": 76,
+        "tempCorrelation": 0.01
       },
       "대구": {
-        "avgSearchVolume": 65,
-        "tempCorrelation": 0
+        "avgSearchVolume": 68,
+        "tempCorrelation": -0.01
+      },
+      "인천": {
+        "avgSearchVolume": 67,
+        "tempCorrelation": 0.06
       },
       "광주": {
-        "avgSearchVolume": 62,
+        "avgSearchVolume": 61,
         "tempCorrelation": 0.03
       },
       "대전": {
-        "avgSearchVolume": 70,
-        "tempCorrelation": -0.16
+        "avgSearchVolume": 72,
+        "tempCorrelation": -0.22
+      },
+      "울산": {
+        "avgSearchVolume": 60,
+        "tempCorrelation": -0.14
+      },
+      "경기": {
+        "avgSearchVolume": 71,
+        "tempCorrelation": 0.01
+      },
+      "제주": {
+        "avgSearchVolume": 45,
+        "tempCorrelation": 0.17
       }
     },
     "파전": {
       "서울": {
-        "avgSearchVolume": 50,
-        "tempCorrelation": 0
+        "avgSearchVolume": 29,
+        "tempCorrelation": 0.64
       },
       "부산": {
-        "avgSearchVolume": 2,
-        "tempCorrelation": 0.38
+        "avgSearchVolume": 5,
+        "tempCorrelation": 0.41
       },
       "대구": {
-        "avgSearchVolume": 2,
-        "tempCorrelation": 0.26
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
+      },
+      "인천": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
       },
       "광주": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       },
       "대전": {
-        "avgSearchVolume": 2,
-        "tempCorrelation": 0.04
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
+      },
+      "울산": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
+      },
+      "경기": {
+        "avgSearchVolume": 24,
+        "tempCorrelation": 0.27
+      },
+      "제주": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
       }
     },
     "막걸리": {
       "서울": {
         "avgSearchVolume": 82,
-        "tempCorrelation": 0.39
+        "tempCorrelation": 0.3
       },
       "부산": {
-        "avgSearchVolume": 57,
-        "tempCorrelation": 0.2
+        "avgSearchVolume": 58,
+        "tempCorrelation": 0.13
       },
       "대구": {
-        "avgSearchVolume": 38,
-        "tempCorrelation": -0.34
+        "avgSearchVolume": 31,
+        "tempCorrelation": -0.45
+      },
+      "인천": {
+        "avgSearchVolume": 56,
+        "tempCorrelation": -0.11
       },
       "광주": {
-        "avgSearchVolume": 12,
-        "tempCorrelation": 0.01
+        "avgSearchVolume": 7,
+        "tempCorrelation": 0.02
       },
       "대전": {
-        "avgSearchVolume": 13,
-        "tempCorrelation": 0.2
+        "avgSearchVolume": 23,
+        "tempCorrelation": 0.19
+      },
+      "울산": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": 0.12
+      },
+      "경기": {
+        "avgSearchVolume": 72,
+        "tempCorrelation": 0.4
+      },
+      "제주": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
       }
     },
     "밀면": {
       "서울": {
-        "avgSearchVolume": 46,
-        "tempCorrelation": 0.74
+        "avgSearchVolume": 44,
+        "tempCorrelation": 0.68
       },
       "부산": {
         "avgSearchVolume": 41,
-        "tempCorrelation": 0.82
+        "tempCorrelation": 0.87
       },
       "대구": {
-        "avgSearchVolume": 0,
+        "avgSearchVolume": 3,
+        "tempCorrelation": 0.08
+      },
+      "인천": {
+        "avgSearchVolume": 50,
         "tempCorrelation": 0
       },
       "광주": {
@@ -4449,6 +7998,18 @@
         "tempCorrelation": 0
       },
       "대전": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
+      },
+      "울산": {
+        "avgSearchVolume": 7,
+        "tempCorrelation": 0.27
+      },
+      "경기": {
+        "avgSearchVolume": 36,
+        "tempCorrelation": 0.6
+      },
+      "제주": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       }
@@ -4456,67 +8017,115 @@
     "국밥": {
       "서울": {
         "avgSearchVolume": 39,
-        "tempCorrelation": 0.12
+        "tempCorrelation": 0.07
       },
       "부산": {
-        "avgSearchVolume": 47,
-        "tempCorrelation": -0.05
+        "avgSearchVolume": 49,
+        "tempCorrelation": -0.15
       },
       "대구": {
-        "avgSearchVolume": 36,
-        "tempCorrelation": 0.08
+        "avgSearchVolume": 37,
+        "tempCorrelation": -0.05
+      },
+      "인천": {
+        "avgSearchVolume": 31,
+        "tempCorrelation": -0.19
       },
       "광주": {
-        "avgSearchVolume": 28,
-        "tempCorrelation": -0.33
+        "avgSearchVolume": 37,
+        "tempCorrelation": -0.3
       },
       "대전": {
-        "avgSearchVolume": 34,
-        "tempCorrelation": 0.31
+        "avgSearchVolume": 35,
+        "tempCorrelation": -0.22
+      },
+      "울산": {
+        "avgSearchVolume": 24,
+        "tempCorrelation": 0.04
+      },
+      "경기": {
+        "avgSearchVolume": 33,
+        "tempCorrelation": 0.02
+      },
+      "제주": {
+        "avgSearchVolume": 7,
+        "tempCorrelation": -0.14
       }
     },
     "막창": {
       "서울": {
-        "avgSearchVolume": 39,
-        "tempCorrelation": 0.4
+        "avgSearchVolume": 40,
+        "tempCorrelation": 0.44
       },
       "부산": {
-        "avgSearchVolume": 11,
-        "tempCorrelation": 0.55
+        "avgSearchVolume": 9,
+        "tempCorrelation": 0.35
       },
       "대구": {
-        "avgSearchVolume": 36,
-        "tempCorrelation": 0.35
+        "avgSearchVolume": 42,
+        "tempCorrelation": 0.66
+      },
+      "인천": {
+        "avgSearchVolume": 50,
+        "tempCorrelation": 0
       },
       "광주": {
         "avgSearchVolume": 0,
         "tempCorrelation": 0
       },
       "대전": {
+        "avgSearchVolume": 4,
+        "tempCorrelation": 0.15
+      },
+      "울산": {
         "avgSearchVolume": 2,
-        "tempCorrelation": 0.01
+        "tempCorrelation": -0.14
+      },
+      "경기": {
+        "avgSearchVolume": 40,
+        "tempCorrelation": 0.55
+      },
+      "제주": {
+        "avgSearchVolume": 0,
+        "tempCorrelation": 0
       }
     },
     "치킨": {
       "서울": {
         "avgSearchVolume": 82,
-        "tempCorrelation": 0.48
+        "tempCorrelation": 0.55
       },
       "부산": {
-        "avgSearchVolume": 76,
-        "tempCorrelation": 0.13
+        "avgSearchVolume": 74,
+        "tempCorrelation": 0.12
       },
       "대구": {
-        "avgSearchVolume": 65,
-        "tempCorrelation": 0.1
+        "avgSearchVolume": 63,
+        "tempCorrelation": 0.12
+      },
+      "인천": {
+        "avgSearchVolume": 82,
+        "tempCorrelation": 0.12
       },
       "광주": {
-        "avgSearchVolume": 63,
-        "tempCorrelation": 0.26
+        "avgSearchVolume": 65,
+        "tempCorrelation": 0.25
       },
       "대전": {
         "avgSearchVolume": 77,
-        "tempCorrelation": 0.5
+        "tempCorrelation": 0.42
+      },
+      "울산": {
+        "avgSearchVolume": 62,
+        "tempCorrelation": 0.17
+      },
+      "경기": {
+        "avgSearchVolume": 75,
+        "tempCorrelation": 0.32
+      },
+      "제주": {
+        "avgSearchVolume": 60,
+        "tempCorrelation": -0.28
       }
     }
   }

@@ -16,8 +16,12 @@ const REGIONS = [
   { code: 'KR-11', name: '서울', lat: 37.5665, lng: 126.9780 },
   { code: 'KR-26', name: '부산', lat: 35.1796, lng: 129.0756 },
   { code: 'KR-27', name: '대구', lat: 35.8714, lng: 128.6014 },
+  { code: 'KR-28', name: '인천', lat: 37.4563, lng: 126.7052 },
   { code: 'KR-29', name: '광주', lat: 35.1595, lng: 126.8526 },
   { code: 'KR-30', name: '대전', lat: 36.3504, lng: 127.3845 },
+  { code: 'KR-31', name: '울산', lat: 35.5384, lng: 129.3114 },
+  { code: 'KR-41', name: '경기', lat: 37.4138, lng: 127.5183 },  // 수원 기준
+  { code: 'KR-49', name: '제주', lat: 33.4996, lng: 126.5312 },
 ];
 
 // ========================================
@@ -56,6 +60,12 @@ const REGIONAL_WEATHER: Record<string, Record<number, { temp: number; rain: numb
     7: { temp: 27, rain: 250 }, 8: { temp: 28, rain: 220 }, 9: { temp: 23, rain: 120 },
     10: { temp: 16, rain: 40 }, 11: { temp: 9, rain: 35 }, 12: { temp: 2, rain: 20 },
   },
+  '인천': {
+    1: { temp: -2, rain: 20 }, 2: { temp: 0, rain: 25 }, 3: { temp: 6, rain: 40 },
+    4: { temp: 12, rain: 60 }, 5: { temp: 17, rain: 85 }, 6: { temp: 22, rain: 120 },
+    7: { temp: 26, rain: 320 }, 8: { temp: 27, rain: 280 }, 9: { temp: 22, rain: 130 },
+    10: { temp: 15, rain: 50 }, 11: { temp: 7, rain: 50 }, 12: { temp: 0, rain: 25 },
+  },
   '광주': {
     1: { temp: 1, rain: 35 }, 2: { temp: 4, rain: 50 }, 3: { temp: 9, rain: 70 },
     4: { temp: 14, rain: 95 }, 5: { temp: 19, rain: 110 }, 6: { temp: 23, rain: 200 },
@@ -67,6 +77,24 @@ const REGIONAL_WEATHER: Record<string, Record<number, { temp: number; rain: numb
     4: { temp: 14, rain: 80 }, 5: { temp: 19, rain: 100 }, 6: { temp: 23, rain: 180 },
     7: { temp: 26, rain: 320 }, 8: { temp: 27, rain: 280 }, 9: { temp: 22, rain: 140 },
     10: { temp: 15, rain: 50 }, 11: { temp: 8, rain: 45 }, 12: { temp: 1, rain: 30 },
+  },
+  '울산': {
+    1: { temp: 2, rain: 30 }, 2: { temp: 4, rain: 40 }, 3: { temp: 9, rain: 70 },
+    4: { temp: 14, rain: 100 }, 5: { temp: 18, rain: 120 }, 6: { temp: 21, rain: 180 },
+    7: { temp: 25, rain: 250 }, 8: { temp: 27, rain: 200 }, 9: { temp: 23, rain: 140 },
+    10: { temp: 17, rain: 50 }, 11: { temp: 11, rain: 45 }, 12: { temp: 5, rain: 25 },
+  },
+  '경기': {
+    1: { temp: -3, rain: 20 }, 2: { temp: 0, rain: 25 }, 3: { temp: 6, rain: 45 },
+    4: { temp: 13, rain: 65 }, 5: { temp: 18, rain: 90 }, 6: { temp: 23, rain: 135 },
+    7: { temp: 26, rain: 340 }, 8: { temp: 27, rain: 300 }, 9: { temp: 22, rain: 145 },
+    10: { temp: 15, rain: 50 }, 11: { temp: 7, rain: 50 }, 12: { temp: 0, rain: 25 },
+  },
+  '제주': {
+    1: { temp: 6, rain: 70 }, 2: { temp: 7, rain: 65 }, 3: { temp: 10, rain: 95 },
+    4: { temp: 14, rain: 90 }, 5: { temp: 18, rain: 95 }, 6: { temp: 22, rain: 180 },
+    7: { temp: 27, rain: 210 }, 8: { temp: 28, rain: 260 }, 9: { temp: 24, rain: 180 },
+    10: { temp: 19, rain: 85 }, 11: { temp: 13, rain: 80 }, 12: { temp: 8, rain: 55 },
   },
 };
 

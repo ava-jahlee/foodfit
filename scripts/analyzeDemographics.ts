@@ -39,6 +39,16 @@ const DEMOGRAPHICS = {
     maleRatio: 49.1,
     avgIncome: 3200,
   },
+  '인천': {
+    population: 2940000,
+    density: 2800,
+    medianAge: 43.5,
+    youthRatio: 12.1,
+    elderlyRatio: 16.8,
+    singleHousehold: 31.5,
+    maleRatio: 49.8,
+    avgIncome: 3500,
+  },
   '광주': {
     population: 1420000,
     density: 2800,
@@ -58,6 +68,36 @@ const DEMOGRAPHICS = {
     singleHousehold: 32.1,
     maleRatio: 49.5,
     avgIncome: 3300,
+  },
+  '울산': {
+    population: 1100000,
+    density: 1050,
+    medianAge: 43.8,
+    youthRatio: 11.8,
+    elderlyRatio: 15.2,
+    singleHousehold: 28.5,
+    maleRatio: 51.2,          // 산업도시 특성상 남성 비율 높음
+    avgIncome: 3800,          // 산업도시라 소득 높음
+  },
+  '경기': {
+    population: 13600000,     // 경기도 전체
+    density: 1300,
+    medianAge: 42.1,
+    youthRatio: 13.5,
+    elderlyRatio: 14.8,
+    singleHousehold: 30.2,
+    maleRatio: 50.1,
+    avgIncome: 3700,
+  },
+  '제주': {
+    population: 680000,
+    density: 370,             // 인구밀도 낮음
+    medianAge: 42.5,
+    youthRatio: 12.8,
+    elderlyRatio: 17.2,
+    singleHousehold: 29.8,
+    maleRatio: 49.5,
+    avgIncome: 3000,
   },
 };
 

@@ -413,16 +413,56 @@ export default function InsightsPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                   <div className="p-2 bg-blue-50 rounded-lg text-center">
                     <span>🌊 부산</span><br/>
-                    <span className="text-blue-600 font-medium">밀면 +0.82</span>
+                    <span className="text-blue-600 font-medium">밀면 +0.87</span>
                   </div>
                   <div className="p-2 bg-orange-50 rounded-lg text-center">
                     <span>🔥 대구</span><br/>
-                    <span className="text-orange-600 font-medium">추운날 음식↑</span>
+                    <span className="text-orange-600 font-medium">막창 +0.66</span>
                   </div>
                   <div className="p-2 bg-green-50 rounded-lg text-center">
                     <span>🌿 대전</span><br/>
-                    <span className="text-green-600 font-medium">냉면 +0.88</span>
+                    <span className="text-green-600 font-medium">냉면 +0.82</span>
                   </div>
+                  <div className="p-2 bg-teal-50 rounded-lg text-center">
+                    <span>🏝️ 제주</span><br/>
+                    <span className="text-teal-600 font-medium">냉면 -0.31!</span>
+                  </div>
+                  <div className="p-2 bg-indigo-50 rounded-lg text-center">
+                    <span>🏭 울산</span><br/>
+                    <span className="text-indigo-600 font-medium">상관↓ (산업)</span>
+                  </div>
+                  <div className="p-2 bg-violet-50 rounded-lg text-center">
+                    <span>🏙️ 경기</span><br/>
+                    <span className="text-violet-600 font-medium">서울과 유사</span>
+                  </div>
+                </div>
+                
+                {/* 제주 특이점 - 토글 */}
+                <div className="bg-teal-50 rounded-lg overflow-hidden mt-3">
+                  <button 
+                    onClick={() => setExpandedInsight(expandedInsight === 'jeju' ? null : 'jeju')}
+                    className="w-full flex items-center gap-3 p-3 text-left hover:bg-teal-100 transition-colors"
+                  >
+                    <span className="text-xl">🏝️</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-800">제주만 냉면이 반대?!</p>
+                      <p className="text-xs text-gray-500">냉면 -0.31 (다른 지역은 +0.8 이상)</p>
+                    </div>
+                    <span className={`text-gray-400 transition-transform text-xs ${expandedInsight === 'jeju' ? 'rotate-180' : ''}`}>▼</span>
+                  </button>
+                  {expandedInsight === 'jeju' && (
+                    <div className="px-4 pb-3 text-xs text-gray-600 border-t border-teal-200">
+                      <p className="font-medium text-gray-700 mt-2">🔍 왜 제주만 반대일까?</p>
+                      <div className="space-y-1 pl-2 mt-1">
+                        <p><strong>1. 따뜻한 겨울</strong>: 1월 평균 6°C (서울 -2°C)</p>
+                        <p><strong>2. 관광객 특성</strong>: 겨울 관광객이 &ldquo;제주 냉면&rdquo; 검색?</p>
+                        <p><strong>3. 연중 가능</strong>: 따뜻해서 겨울에도 냉면 OK</p>
+                      </div>
+                      <div className="bg-teal-100 rounded p-2 mt-2">
+                        <p className="text-teal-700">💡 <strong>유일하게 음의 상관!</strong> 제주의 독특한 기후가 식문화에 영향</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 
                 {/* 인구통계 인사이트 - 토글 */}

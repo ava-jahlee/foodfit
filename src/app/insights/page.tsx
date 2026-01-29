@@ -725,7 +725,7 @@ export default function InsightsPage() {
                   </div>
                   
                   {/* 히트맵 */}
-                  <div className="bg-gradient-to-b from-blue-50 to-purple-50 rounded-xl p-6">
+                  <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
                     <KoreaHeatmap 
                       data={Object.keys(regionalData.regions).map(region => {
                         const trend = regionalData.regions[region].trends.find(

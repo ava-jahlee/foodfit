@@ -287,7 +287,7 @@ export default function InsightsPage() {
                       <span className="text-2xl">🔥</span>
                       <div className="flex-1">
                         <p className="text-sm font-bold text-gray-800">&ldquo;비 오면 파전&rdquo; = 실제로 맞음! 🎯</p>
-                        <p className="text-xs text-orange-600 font-medium">일별 분석 결과: 비 오는 날 +345.4% 증가! (월별 분석의 함정)</p>
+                        <p className="text-xs text-orange-600 font-medium">비 오는 날 검색량 +345.4% 증가!</p>
                       </div>
                       <span className={`text-gray-400 transition-transform ${expandedInsight === 'pajeon' ? 'rotate-180' : ''}`}>
                         ▼
@@ -295,37 +295,26 @@ export default function InsightsPage() {
                     </button>
                     {expandedInsight === 'pajeon' && (
                       <div className="px-4 pb-4 pt-1 border-t border-yellow-200 text-xs text-gray-600 space-y-3">
-                        <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg p-3">
-                          <p className="font-bold text-orange-800 mb-2">🎉 게임 체인저: 일별 데이터!</p>
-                          <div className="space-y-1">
-                            <p><span className="font-medium">❌ 월별 평균</span>: +0.06 (무관) - 잘못된 결론!</p>
-                            <p><span className="font-medium">✅ 일별 데이터</span>: <span className="text-orange-700 font-bold">+345.4%</span> - 실제 증가!</p>
-                            <p className="text-gray-600 mt-2 text-[11px]">→ 월별 평균은 급격한 일일 변화를 희석시킴</p>
-                          </div>
-                        </div>
-                        
                         <div className="bg-blue-50 rounded-lg p-3">
-                          <p className="font-medium text-blue-800 mb-1">💧 비 오는 날 효과 (366일 분석)</p>
+                          <p className="font-medium text-blue-800 mb-1">💧 비 오는 날 효과</p>
                           <div className="space-y-1 text-[11px]">
-                            <p>• 평소: 검색량 100 기준</p>
-                            <p>• 비 오는 날: <strong className="text-blue-700">345.4</strong> (+245.4%p)</p>
-                            <p>• 비 오기 전날: 120.6 (+20.6%)</p>
-                            <p>• 비 온 다음날: 57.8 (-42.2%) ← Lag 효과!</p>
+                            <p>• 평소 대비 <strong className="text-blue-700">+345.4%</strong> 검색량 증가</p>
+                            <p>• 비 오기 전날: +20.6% (미리 준비하는 사람들)</p>
+                            <p>• 비 온 다음날: -42.2% (이미 먹어서!)</p>
                           </div>
                         </div>
                         
                         <div className="bg-purple-50 rounded-lg p-3">
                           <p className="font-medium text-purple-800 mb-1">📅 주말 효과</p>
                           <div className="space-y-1 text-[11px]">
-                            <p>• 평일: 검색량 100 기준</p>
-                            <p>• 주말: <strong className="text-purple-700">238.4</strong> (+138.4%)</p>
-                            <p className="text-gray-600">→ 주말에 파전 먹는 문화 확실!</p>
+                            <p>• 평일 대비 <strong className="text-purple-700">+138.4%</strong> 증가</p>
+                            <p className="text-gray-600">→ 주말엔 특히 파전이 생각나는군요!</p>
                           </div>
                         </div>
                         
                         <div className="bg-green-50 rounded-lg p-2 mt-2">
-                          <p className="font-medium text-green-800">✅ 최종 결론:</p>
-                          <p className="text-green-700">&ldquo;비 오면 파전&rdquo;은 <strong>실제 존재하는 현상</strong>! 월별 평균 분석은 이를 숨겼을 뿐. 일별 데이터가 진실을 밝혀냄! 🎯</p>
+                          <p className="font-medium text-green-800">📊 데이터 출처:</p>
+                          <p className="text-green-700">366일 일별 검색 데이터 분석 (Google Trends)</p>
                         </div>
                       </div>
                     )}

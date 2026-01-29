@@ -48,9 +48,17 @@ export default function Home() {
             <span className="text-2xl">🍽️</span>
             <span>FoodFit</span>
           </h1>
-          <div className="flex items-center gap-2 text-sm text-gray-500">
-            <span>{getTimeSlotEmoji(timeSlot)}</span>
-            <span>{getTimeSlotLabel(timeSlot)}</span>
+          <div className="flex items-center gap-3">
+            <Link 
+              href="/insights"
+              className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 font-medium hover:from-blue-100 hover:to-purple-100 transition-all border border-blue-200"
+            >
+              📊 인사이트
+            </Link>
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <span>{getTimeSlotEmoji(timeSlot)}</span>
+              <span className="hidden sm:inline">{getTimeSlotLabel(timeSlot)}</span>
+            </div>
           </div>
         </div>
       </header>

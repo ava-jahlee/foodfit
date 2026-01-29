@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-01-29T09:03:14.432Z",
+  "analysisType": "daily",
+  "year": 2024,
+  "totalDays": 366,
+  "trends": [],
+  "summary": {
+    "hotWeatherFoods": [],
+    "coldWeatherFoods": [],
+    "rainyDayFoods": [],
+    "humidDayFoods": []
+  }
+}

@@ -33,7 +33,11 @@ const trendQueries = {
 const menuNamePatterns = {
   '파전': 'pajeon',
   '부침개': 'buchimgae',
-  '전': 'buchimgae',
+  '해물전': 'buchimgae',
+  '김치전': 'buchimgae',
+  '녹두전': 'buchimgae',
+  '호박전': 'buchimgae',
+  // '전': 'buchimgae',  // 제거: 너무 일반적 (전통, 전체, 이전 등과 혼동)
   '칼국수': 'kalguksu',
   '수제비': 'sujebi',
   '라면': 'ramyun',
@@ -50,7 +54,11 @@ const menuNamePatterns = {
   '콩국수': 'kongguksu',
   '물회': 'mulhoe',
   '초밥': 'sushi',
-  '회': 'sashimi',
+  '회덮밥': 'sashimi',
+  '생선회': 'sashimi',
+  '광어회': 'sashimi',
+  '연어회': 'sashimi',
+  // '회': 'sashimi',  // 제거: 너무 일반적 (회사, 회의, 한 회 등과 혼동)
   '떡볶이': 'tteokbokki',
   '치킨': 'chicken',
   '삼겹살': 'samgyeopsal',

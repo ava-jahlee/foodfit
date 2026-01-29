@@ -1,7 +1,7 @@
 {
   "dataSource": {
-    "description": "네이버 블로그/커뮤니티 분석 + 음식 트렌드 데이터 기반",
-    "lastUpdated": "2026-01-28",
+    "description": "네이버 블로그/커뮤니티 자동 분석 (주간 업데이트)",
+    "lastUpdated": "2026-01-29",
     "references": [
       "네이버 블로그 '비오는날 먹고싶은 음식' 검색결과",
       "네이버 블로그 '스트레스 음식' 검색결과",
@@ -170,8 +170,8 @@
       "protein": "high",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 92,
-      "trendNote": "여름 보양식 1위! 피곤할때 찾는 음식 TOP3",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 더운날 TOP4, 보양식 TOP2",
       "searchKeywords": [
         "삼계탕",
         "닭한마리"
@@ -214,8 +214,8 @@
       "protein": "medium",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 85,
-      "trendNote": "건강식으로 인기, 다이어트 식단에 자주 등장",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 위로 음식 TOP4",
       "searchKeywords": [
         "비빔밥",
         "전주비빔밥"
@@ -255,8 +255,8 @@
       "protein": "low",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 98,
-      "trendNote": "더운날 먹고싶은 음식 1위! 삼겹살 후 냉면 조합 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 더운날 TOP1",
       "searchKeywords": [
         "냉면",
         "물냉면",
@@ -299,8 +299,8 @@
       "protein": "high",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 85,
-      "trendNote": "여름 별미 TOP5, 건강식으로 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 더운날 TOP2",
       "searchKeywords": [
         "콩국수",
         "콩국"
@@ -387,8 +387,8 @@
       "protein": "high",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 99,
-      "trendNote": "야식 1위! 비오는날 치맥 조합 인기, 우울할때 먹는 음식 TOP5",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 스트레스 해소 TOP2, 위로 음식 TOP3, 기분좋을때 TOP3",
       "searchKeywords": [
         "치킨",
         "후라이드",
@@ -430,8 +430,8 @@
       "protein": "high",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 93,
-      "trendNote": "피곤할때/추운날 가장 많이 찾는 음식 중 하나",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 추운날 TOP3, 보양식 TOP4",
       "searchKeywords": [
         "국밥",
         "돼지국밥",
@@ -635,8 +635,8 @@
       "protein": "medium",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 90,
-      "trendNote": "추운날 국물 + 매운맛 조합으로 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 비오는날 TOP4",
       "searchKeywords": [
         "짬뽕",
         "중국집"
@@ -676,8 +676,8 @@
       "carbs": "medium",
       "controversial": true,
       "controversialReason": "마라 향신료",
-      "popularityScore": 96,
-      "trendNote": "스트레스 해소 음식 TOP3! MZ세대 인기 메뉴",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 스트레스 해소 TOP5",
       "searchKeywords": [
         "마라탕",
         "마라샹궈"
@@ -916,8 +916,8 @@
       "protein": "medium",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 87,
-      "trendNote": "데이트/특별한 날 메뉴로 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 더운날 TOP5, 스트레스 해소 TOP3, 기분좋을때 TOP1",
       "searchKeywords": [
         "파스타",
         "스파게티",
@@ -1036,8 +1036,8 @@
       "protein": "medium",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 90,
-      "trendNote": "함께 나눠먹는 메뉴로 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 스트레스 해소 TOP4",
       "searchKeywords": [
         "피자",
         "피자집"
@@ -1082,8 +1082,8 @@
       "protein": "low",
       "carbs": "low",
       "controversial": false,
-      "popularityScore": 78,
-      "trendNote": "다이어트/건강 식단으로 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 위로 음식 TOP2",
       "searchKeywords": [
         "샐러드",
         "샐러디"
@@ -1216,8 +1216,8 @@
       "protein": "low",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 96,
-      "trendNote": "스트레스 해소 음식 TOP5! 우울할때/비오는날 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 스트레스 해소 TOP1, 기분좋을때 TOP4",
       "searchKeywords": [
         "떡볶이",
         "분식"
@@ -1297,8 +1297,8 @@
       "protein": "low",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 95,
-      "trendNote": "비오는날/우울할때 찾는 위로 음식 TOP3",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 비오는날 TOP5, 추운날 TOP4, 더운날 TOP3, 위로 음식 TOP1, 보양식 TOP3, 기분좋을때 TOP2",
       "searchKeywords": [
         "라면",
         "라면집",
@@ -1335,8 +1335,8 @@
       "protein": "medium",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 99,
-      "trendNote": "비오는날 먹고싶은 음식 부동의 1위!! 파전+막걸리 조합",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 비오는날 TOP2",
       "searchKeywords": [
         "파전",
         "해물파전",
@@ -1374,8 +1374,8 @@
       "protein": "medium",
       "carbs": "medium",
       "controversial": false,
-      "popularityScore": 94,
-      "trendNote": "비오는날 필수 메뉴 TOP2",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 비오는날 TOP1",
       "searchKeywords": [
         "부침개",
         "김치전",
@@ -1418,8 +1418,8 @@
       "protein": "medium",
       "carbs": "high",
       "controversial": false,
-      "popularityScore": 93,
-      "trendNote": "비오는날 먹고싶은 음식 TOP3! 국물요리 대표",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 비오는날 TOP3, 추운날 TOP2, 보양식 TOP5",
       "searchKeywords": [
         "칼국수",
         "손칼국수",
@@ -1504,8 +1504,8 @@
       "protein": "medium",
       "carbs": "low",
       "controversial": false,
-      "popularityScore": 83,
-      "trendNote": "건강하게 먹고싶을때, 데이트 메뉴",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 추운날 TOP5",
       "searchKeywords": [
         "샤브샤브",
         "샤브"
@@ -1545,8 +1545,8 @@
       "carbs": "low",
       "controversial": true,
       "controversialReason": "내장류",
-      "popularityScore": 87,
-      "trendNote": "스트레스 해소 야식 메뉴로 인기",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 추운날 TOP1",
       "searchKeywords": [
         "곱창",
         "막창",
@@ -1588,8 +1588,8 @@
       "carbs": "low",
       "controversial": true,
       "controversialReason": "날생선",
-      "popularityScore": 88,
-      "trendNote": "더운날 시원하게 먹기 좋은 메뉴",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 더운날 TOP5, 스트레스 해소 TOP3, 위로 음식 TOP2, 보양식 TOP1, 기분좋을때 TOP2",
       "searchKeywords": [
         "회",
         "횟집",
@@ -1800,8 +1800,8 @@
       "protein": "high",
       "carbs": "low",
       "controversial": false,
-      "popularityScore": 84,
-      "trendNote": "피곤할때 찾는 보양식 TOP3, 복날 인기메뉴",
+      "popularityScore": 50,
+      "trendNote": "📊 이번주 트렌드: 위로 음식 TOP5, 보양식 TOP1, 기분좋을때 TOP5",
       "searchKeywords": [
         "장어",
         "민물장어",

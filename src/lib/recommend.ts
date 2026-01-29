@@ -79,18 +79,32 @@ interface RecommendParams {
 }
 
 // ========================================
-// 주말/평일 가중치 (예상 선호도 기반)
+// 주말/평일 가중치 (2024년 일별 분석 결과 기반)
 // 양수: 주말 선호 / 음수: 평일 선호
 // ========================================
 const WEEKEND_PREFERENCE: Record<string, number> = {
-  // 주말에 더 인기 (외식, 여유, 특별한 날)
-  '삼겹살': 0.4,
+  // 주말에 압도적으로 인기 (일별 분석 결과)
+  '파전': 1.38,      // +138.4% 🔥
+  '빙수': 0.31,      // +30.8%
+  '피자': 0.26,      // +25.6%
+  '냉면': 0.25,      // +24.7%
+  '짬뽕': 0.23,      // +23.0%
+  '칼국수': 0.21,    // +21.4%
+  '김치찌개': 0.21,  // +20.8%
+  '치킨': 0.19,      // +19.2%
+  '국밥': 0.17,      // +17.4%
+  '삼겹살': 0.14,    // +14.0%
+  '떡볶이': 0.14,    // +13.6%
+  '설렁탕': 0.13,    // +13.1%
+  '삼겹살': 0.12,    // +12.2%
+  '막걸리': 0.12,    // +11.5%
+  '라면': 0.08,      // +8.1%
+  
+  // 주말 선호 (예상 기반)
   '스테이크': 0.5,
   '회': 0.5,
   '초밥': 0.4,
   '파스타': 0.3,
-  '피자': 0.3,
-  '치킨': 0.25,
   '족발': 0.35,
   '보쌈': 0.35,
   '곱창': 0.4,
@@ -99,15 +113,10 @@ const WEEKEND_PREFERENCE: Record<string, number> = {
   '샤브샤브': 0.3,
   '뷔페': 0.5,
   '브런치': 0.4,
-  '파전': 0.3,      // 주말에 막걸리와 함께
-  '막걸리': 0.35,
   
   // 평일에 더 인기 (빠른 식사, 간편)
+  '삼계탕': -0.06,  // -6.3% (일별 분석)
   '김밥': -0.3,
-  '라면': -0.2,
-  '국밥': -0.25,
-  '김치찌개': -0.15,
-  '된장찌개': -0.15,
   '백반': -0.3,
   '비빔밥': -0.2,
   '제육볶음': -0.15,
@@ -115,46 +124,47 @@ const WEEKEND_PREFERENCE: Record<string, number> = {
   '우동': -0.2,
   '샌드위치': -0.25,
   '샐러드': -0.2,
-  
-  // 중립 (계절/날씨 영향이 더 큼)
-  '냉면': 0,
-  '빙수': 0.1,
-  '설렁탕': -0.1,
-  '칼국수': 0,
+  '된장찌개': -0.15,
 }
 
-// 공휴일 가중치 (공휴일에 더 인기인 음식)
+// 공휴일 가중치 (2024년 일별 분석 결과)
 const HOLIDAY_PREFERENCE: Record<string, number> = {
+  '파전': 0.21,      // +20.6% (일별 분석 결과)
+  '삼겹살': 0.08,    // +7.8%
+  '설렁탕': 0.02,    // +2.0%
+  '막걸리': 0.02,    // +1.8%
+  // 기타 (예상 기반)
   '치킨': 0.4,
   '피자': 0.35,
-  '삼겹살': 0.3,
   '족발': 0.35,
   '보쌈': 0.35,
-  '파전': 0.3,
-  '막걸리': 0.3,
-  '라면': 0.2,    // 집콕할 때
+  '라면': 0.2,
 }
 
-// 다변량 분석 기반 날씨 가중치 (구글 트렌드 분석 결과)
+// 날씨 가중치 (2024년 일별 분석 결과 기반)
+// rainCoef: 비 오는 날 검색 증가율 (0~1 정규화)
 const WEATHER_CORRELATION: Record<string, { tempCoef: number; humidityCoef: number; rainCoef: number }> = {
-  // 시원한 음식 (더울수록, 습할수록 인기)
-  '냉면': { tempCoef: 0.86, humidityCoef: 0.83, rainCoef: 0.87 },
-  '빙수': { tempCoef: 0.84, humidityCoef: 0.93, rainCoef: 0.92 },
+  // 🌧️ 비 오는 날 효과 (일별 분석 결과)
+  '파전': { tempCoef: 0.42, humidityCoef: 0.17, rainCoef: 3.45 },      // +345.4% 🔥🔥🔥
+  '설렁탕': { tempCoef: -0.43, humidityCoef: -0.18, rainCoef: 0.32 },  // +32.4%
+  '빙수': { tempCoef: 0.84, humidityCoef: 0.93, rainCoef: 0.27 },      // +27.1% (장마철)
+  '국밥': { tempCoef: -0.38, humidityCoef: 0.18, rainCoef: 0.13 },     // +12.7%
+  '떡볶이': { tempCoef: 0.20, humidityCoef: 0.15, rainCoef: 0.10 },    // +9.9%
+  '막걸리': { tempCoef: 0.26, humidityCoef: -0.01, rainCoef: 0.10 },   // +9.5%
+  '짬뽕': { tempCoef: 0.15, humidityCoef: 0.20, rainCoef: 0.06 },      // +6.4%
+  '냉면': { tempCoef: 0.86, humidityCoef: 0.83, rainCoef: 0.06 },      // +5.9%
+  '칼국수': { tempCoef: -0.55, humidityCoef: -0.38, rainCoef: 0.05 },  // +4.7%
+  '피자': { tempCoef: 0.30, humidityCoef: 0.25, rainCoef: 0.04 },      // +3.5%
+  '치킨': { tempCoef: 0.20, humidityCoef: 0.28, rainCoef: 0.01 },      // +0.5%
+  '라면': { tempCoef: -0.28, humidityCoef: -0.07, rainCoef: -0.02 },   // -1.5%
+  '김치찌개': { tempCoef: -0.62, humidityCoef: -0.50, rainCoef: -0.04 }, // -3.6%
+  '삼계탕': { tempCoef: 0.70, humidityCoef: 0.86, rainCoef: -0.14 },   // -13.5% (비 오면 감소)
+  
+  // 🌡️ 기온 효과 (기존 데이터 유지)
   '콩국수': { tempCoef: 0.82, humidityCoef: 0.87, rainCoef: 0.88 },
   '아이스아메리카노': { tempCoef: 0.85, humidityCoef: 0.81, rainCoef: 0.89 },
   '막국수': { tempCoef: 0.90, humidityCoef: 0.88, rainCoef: 0.88 },
   '밀면': { tempCoef: 0.85, humidityCoef: 0.80, rainCoef: 0.87 },
-  '삼계탕': { tempCoef: 0.70, humidityCoef: 0.86, rainCoef: 0.85 },
-  // 국물 음식 (추울수록 인기)
-  '김치찌개': { tempCoef: -0.62, humidityCoef: -0.50, rainCoef: -0.51 },
-  '설렁탕': { tempCoef: -0.43, humidityCoef: -0.18, rainCoef: -0.21 },
-  '칼국수': { tempCoef: -0.55, humidityCoef: -0.38, rainCoef: -0.39 },
-  '국밥': { tempCoef: -0.38, humidityCoef: 0.18, rainCoef: 0.18 },
-  '라면': { tempCoef: -0.28, humidityCoef: -0.07, rainCoef: -0.12 },
-  // 기타
-  '파전': { tempCoef: 0.42, humidityCoef: 0.17, rainCoef: 0.06 },
-  '막걸리': { tempCoef: 0.26, humidityCoef: -0.01, rainCoef: 0.01 },
-  '치킨': { tempCoef: 0.20, humidityCoef: 0.28, rainCoef: 0.31 },
   '아메리카노': { tempCoef: 0.75, humidityCoef: 0.59, rainCoef: 0.50 },
   '라떼': { tempCoef: -0.41, humidityCoef: -0.42, rainCoef: -0.41 },
 }

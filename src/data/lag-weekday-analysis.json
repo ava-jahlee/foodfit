@@ -1,0 +1,454 @@
+{
+  "generatedAt": "2026-01-29T08:51:18.835Z",
+  "year": 2024,
+  "totalDays": 366,
+  "rainyDays": 107,
+  "results": [
+    {
+      "keyword": "파전",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 11.19626168224299,
+        "beforeRainAvg": 9.327102803738319,
+        "afterRainAvg": 6.4672897196261685,
+        "noRainAvg": 2.5135135135135136,
+        "rainDayLift": 345.4,
+        "beforeToRainLift": 20,
+        "rainToAfterLift": -42.2
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 3.6259541984732824,
+        "weekdayMedian": 0,
+        "weekendAvg": 8.64423076923077,
+        "weekendMedian": 0,
+        "weekendLift": 138.4,
+        "mondayAvg": 0.9056603773584906,
+        "fridayAvg": 2.9423076923076925,
+        "saturdayAvg": 6.846153846153846,
+        "sundayAvg": 10.442307692307692
+      }
+    },
+    {
+      "keyword": "막걸리",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 65.51401869158879,
+        "beforeRainAvg": 63.953271028037385,
+        "afterRainAvg": 61.5607476635514,
+        "noRainAvg": 59.857142857142854,
+        "rainDayLift": 9.5,
+        "beforeToRainLift": 2.4,
+        "rainToAfterLift": -6
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 59.56106870229008,
+        "weekdayMedian": 59,
+        "weekendAvg": 66.42307692307692,
+        "weekendMedian": 66.5,
+        "weekendLift": 11.5,
+        "mondayAvg": 57.509433962264154,
+        "fridayAvg": 65.71153846153847,
+        "saturdayAvg": 73.21153846153847,
+        "sundayAvg": 59.63461538461539
+      }
+    },
+    {
+      "keyword": "칼국수",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 56.046728971962615,
+        "beforeRainAvg": 54.88785046728972,
+        "afterRainAvg": 54.90654205607477,
+        "noRainAvg": 53.53281853281853,
+        "rainDayLift": 4.7,
+        "beforeToRainLift": 2.1,
+        "rainToAfterLift": -2
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 51.152671755725194,
+        "weekdayMedian": 51,
+        "weekendAvg": 62.11538461538461,
+        "weekendMedian": 66,
+        "weekendLift": 21.4,
+        "mondayAvg": 49.716981132075475,
+        "fridayAvg": 51.98076923076923,
+        "saturdayAvg": 62.26923076923077,
+        "sundayAvg": 61.96153846153846
+      }
+    },
+    {
+      "keyword": "라면",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 77.29906542056075,
+        "beforeRainAvg": 76.62616822429906,
+        "afterRainAvg": 76.4766355140187,
+        "noRainAvg": 78.44401544401545,
+        "rainDayLift": -1.5,
+        "beforeToRainLift": 0.9,
+        "rainToAfterLift": -1.1
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 76.3473282442748,
+        "weekdayMedian": 75,
+        "weekendAvg": 82.54807692307692,
+        "weekendMedian": 81,
+        "weekendLift": 8.1,
+        "mondayAvg": 76.32075471698113,
+        "fridayAvg": 78.09615384615384,
+        "saturdayAvg": 82.63461538461539,
+        "sundayAvg": 82.46153846153847
+      }
+    },
+    {
+      "keyword": "냉면",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 47.149532710280376,
+        "beforeRainAvg": 47.26168224299065,
+        "afterRainAvg": 47.26168224299065,
+        "noRainAvg": 44.536679536679536,
+        "rainDayLift": 5.9,
+        "beforeToRainLift": -0.2,
+        "rainToAfterLift": 0.2
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 42.32824427480916,
+        "weekdayMedian": 43,
+        "weekendAvg": 52.78846153846154,
+        "weekendMedian": 52.5,
+        "weekendLift": 24.7,
+        "mondayAvg": 40.339622641509436,
+        "fridayAvg": 44.17307692307692,
+        "saturdayAvg": 54.03846153846154,
+        "sundayAvg": 51.53846153846154
+      }
+    },
+    {
+      "keyword": "빙수",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 45.12149532710281,
+        "beforeRainAvg": 45.598130841121495,
+        "afterRainAvg": 45.74766355140187,
+        "noRainAvg": 35.5019305019305,
+        "rainDayLift": 27.1,
+        "beforeToRainLift": -1,
+        "rainToAfterLift": 1.4
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 35.229007633587784,
+        "weekdayMedian": 40,
+        "weekendAvg": 46.08653846153846,
+        "weekendMedian": 51,
+        "weekendLift": 30.8,
+        "mondayAvg": 32.886792452830186,
+        "fridayAvg": 36.36538461538461,
+        "saturdayAvg": 47.76923076923077,
+        "sundayAvg": 44.40384615384615
+      }
+    },
+    {
+      "keyword": "삼계탕",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 25.88785046728972,
+        "beforeRainAvg": 25.186915887850468,
+        "afterRainAvg": 25.49532710280374,
+        "noRainAvg": 29.915057915057915,
+        "rainDayLift": -13.5,
+        "beforeToRainLift": 2.8,
+        "rainToAfterLift": -1.5
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 29.259541984732824,
+        "weekdayMedian": 26.5,
+        "weekendAvg": 27.423076923076923,
+        "weekendMedian": 26,
+        "weekendLift": -6.3,
+        "mondayAvg": 28.9811320754717,
+        "fridayAvg": 31.73076923076923,
+        "saturdayAvg": 24.23076923076923,
+        "sundayAvg": 30.615384615384617
+      }
+    },
+    {
+      "keyword": "설렁탕",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 40.28971962616822,
+        "beforeRainAvg": 37.85981308411215,
+        "afterRainAvg": 36.08411214953271,
+        "noRainAvg": 30.428571428571427,
+        "rainDayLift": 32.4,
+        "beforeToRainLift": 6.4,
+        "rainToAfterLift": -10.4
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 32.11450381679389,
+        "weekdayMedian": 37,
+        "weekendAvg": 36.32692307692308,
+        "weekendMedian": 44,
+        "weekendLift": 13.1,
+        "mondayAvg": 31.830188679245282,
+        "fridayAvg": 31.346153846153847,
+        "saturdayAvg": 43.98076923076923,
+        "sundayAvg": 28.673076923076923
+      }
+    },
+    {
+      "keyword": "치킨",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 67.60747663551402,
+        "beforeRainAvg": 66.78504672897196,
+        "afterRainAvg": 67.28971962616822,
+        "noRainAvg": 67.28185328185329,
+        "rainDayLift": 0.5,
+        "beforeToRainLift": 1.2,
+        "rainToAfterLift": -0.5
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 63.896946564885496,
+        "weekdayMedian": 62,
+        "weekendAvg": 76.14423076923077,
+        "weekendMedian": 77,
+        "weekendLift": 19.2,
+        "mondayAvg": 59.56603773584906,
+        "fridayAvg": 69,
+        "saturdayAvg": 79.15384615384616,
+        "sundayAvg": 73.13461538461539
+      }
+    },
+    {
+      "keyword": "피자",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 63.78504672897196,
+        "beforeRainAvg": 63.38317757009346,
+        "afterRainAvg": 63.80373831775701,
+        "noRainAvg": 61.625482625482626,
+        "rainDayLift": 3.5,
+        "beforeToRainLift": 0.6,
+        "rainToAfterLift": 0
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 58.030534351145036,
+        "weekdayMedian": 57,
+        "weekendAvg": 72.90384615384616,
+        "weekendMedian": 73.5,
+        "weekendLift": 25.6,
+        "mondayAvg": 53.9811320754717,
+        "fridayAvg": 63.07692307692308,
+        "saturdayAvg": 73.90384615384616,
+        "sundayAvg": 71.90384615384616
+      }
+    },
+    {
+      "keyword": "삼겹살",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 51.06542056074766,
+        "beforeRainAvg": 50.177570093457945,
+        "afterRainAvg": 50.953271028037385,
+        "noRainAvg": 48.38996138996139,
+        "rainDayLift": 5.5,
+        "beforeToRainLift": 1.8,
+        "rainToAfterLift": -0.2
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 47.52290076335878,
+        "weekdayMedian": 50.5,
+        "weekendAvg": 53.32692307692308,
+        "weekendMedian": 55,
+        "weekendLift": 12.2,
+        "mondayAvg": 47.60377358490566,
+        "fridayAvg": 49.13461538461539,
+        "saturdayAvg": 55.55769230769231,
+        "sundayAvg": 51.09615384615385
+      }
+    },
+    {
+      "keyword": "김치찌개",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 59.90654205607477,
+        "beforeRainAvg": 58.598130841121495,
+        "afterRainAvg": 59.4392523364486,
+        "noRainAvg": 62.15830115830116,
+        "rainDayLift": -3.6,
+        "beforeToRainLift": 2.2,
+        "rainToAfterLift": -0.8
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 58.06870229007634,
+        "weekdayMedian": 57,
+        "weekendAvg": 70.14423076923077,
+        "weekendMedian": 71,
+        "weekendLift": 20.8,
+        "mondayAvg": 58.716981132075475,
+        "fridayAvg": 56.61538461538461,
+        "saturdayAvg": 68.65384615384616,
+        "sundayAvg": 71.63461538461539
+      }
+    },
+    {
+      "keyword": "떡볶이",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 68.97196261682242,
+        "beforeRainAvg": 68.59813084112149,
+        "afterRainAvg": 68.74766355140187,
+        "noRainAvg": 62.74131274131274,
+        "rainDayLift": 9.9,
+        "beforeToRainLift": 0.5,
+        "rainToAfterLift": -0.3
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 62.152671755725194,
+        "weekdayMedian": 66,
+        "weekendAvg": 70.63461538461539,
+        "weekendMedian": 73.5,
+        "weekendLift": 13.6,
+        "mondayAvg": 61.301886792452834,
+        "fridayAvg": 65,
+        "saturdayAvg": 71.90384615384616,
+        "sundayAvg": 69.36538461538461
+      }
+    },
+    {
+      "keyword": "국밥",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 56.925233644859816,
+        "beforeRainAvg": 56.691588785046726,
+        "afterRainAvg": 57.5607476635514,
+        "noRainAvg": 50.5019305019305,
+        "rainDayLift": 12.7,
+        "beforeToRainLift": 0.4,
+        "rainToAfterLift": 1.1
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 49.908396946564885,
+        "weekdayMedian": 57,
+        "weekendAvg": 58.60576923076923,
+        "weekendMedian": 67,
+        "weekendLift": 17.4,
+        "mondayAvg": 48.660377358490564,
+        "fridayAvg": 52.94230769230769,
+        "saturdayAvg": 58.03846153846154,
+        "sundayAvg": 59.17307692307692
+      }
+    },
+    {
+      "keyword": "짬뽕",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 60.57943925233645,
+        "beforeRainAvg": 59.97196261682243,
+        "afterRainAvg": 59.8411214953271,
+        "noRainAvg": 56.95366795366795,
+        "rainDayLift": 6.4,
+        "beforeToRainLift": 1,
+        "rainToAfterLift": -1.2
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 54.45038167938932,
+        "weekdayMedian": 59,
+        "weekendAvg": 66.99038461538461,
+        "weekendMedian": 75.5,
+        "weekendLift": 23,
+        "mondayAvg": 51.62264150943396,
+        "fridayAvg": 57.53846153846154,
+        "saturdayAvg": 66.0576923076923,
+        "sundayAvg": 67.92307692307692
+      }
+    },
+    {
+      "keyword": "삼겹살",
+      "totalDays": 366,
+      "rainEffect": {
+        "sampleSize": 107,
+        "rainDayAvg": 50.467289719626166,
+        "beforeRainAvg": 50.11214953271028,
+        "afterRainAvg": 50.44859813084112,
+        "noRainAvg": 46.4015444015444,
+        "rainDayLift": 8.8,
+        "beforeToRainLift": 0.7,
+        "rainToAfterLift": 0
+      },
+      "weekdayEffect": {
+        "weekdayAvg": 45.767175572519086,
+        "weekdayMedian": 47.5,
+        "weekendAvg": 52.18269230769231,
+        "weekendMedian": 52,
+        "weekendLift": 14,
+        "mondayAvg": 45.905660377358494,
+        "fridayAvg": 47.48076923076923,
+        "saturdayAvg": 54.44230769230769,
+        "sundayAvg": 49.92307692307692
+      }
+    }
+  ],
+  "insights": {
+    "topRainEffect": [
+      {
+        "keyword": "파전",
+        "lift": 345.4
+      },
+      {
+        "keyword": "설렁탕",
+        "lift": 32.4
+      },
+      {
+        "keyword": "빙수",
+        "lift": 27.1
+      },
+      {
+        "keyword": "국밥",
+        "lift": 12.7
+      },
+      {
+        "keyword": "떡볶이",
+        "lift": 9.9
+      }
+    ],
+    "topWeekendEffect": [
+      {
+        "keyword": "파전",
+        "lift": 138.4
+      },
+      {
+        "keyword": "빙수",
+        "lift": 30.8
+      },
+      {
+        "keyword": "피자",
+        "lift": 25.6
+      },
+      {
+        "keyword": "냉면",
+        "lift": 24.7
+      },
+      {
+        "keyword": "짬뽕",
+        "lift": 23
+      }
+    ]
+  }
+}

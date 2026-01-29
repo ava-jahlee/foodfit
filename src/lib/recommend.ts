@@ -140,6 +140,57 @@ const HOLIDAY_PREFERENCE: Record<string, number> = {
   '라면': 0.2,
 }
 
+// 시간대별 선호도 (합리적 추정 기반, 향후 실제 데이터로 교체 예정)
+// 값: -1.0 (매우 부적합) ~ +1.0 (매우 적합)
+// TimeSlot: 'breakfast' | 'lunch' | 'dinner' | 'latenight'
+const TIME_OF_DAY_PREFERENCE: Record<string, Record<TimeSlot, number>> = {
+  // 아침 메뉴
+  '샌드위치': { breakfast: 0.8, lunch: 0.3, dinner: 0, latenight: 0 },
+  '토스트': { breakfast: 0.9, lunch: 0.2, dinner: 0, latenight: 0 },
+  '계란말이': { breakfast: 0.7, lunch: 0.2, dinner: 0, latenight: 0 },
+  '브런치': { breakfast: 0.9, lunch: 0.4, dinner: 0, latenight: 0 },
+  '샐러드': { breakfast: 0.5, lunch: 0.7, dinner: 0.4, latenight: 0 },
+  
+  // 점심 메뉴 (빠르고 든든한)
+  '김밥': { breakfast: 0.3, lunch: 0.9, dinner: 0.2, latenight: 0.3 },
+  '라면': { breakfast: 0.2, lunch: 0.6, dinner: 0.5, latenight: 0.8 },
+  '국밥': { breakfast: 0.6, lunch: 0.9, dinner: 0.6, latenight: 0.2 },
+  '김치찌개': { breakfast: 0.5, lunch: 0.9, dinner: 0.7, latenight: 0.3 },
+  '비빔밥': { breakfast: 0.4, lunch: 0.9, dinner: 0.7, latenight: 0.2 },
+  '백반': { breakfast: 0.4, lunch: 0.9, dinner: 0.6, latenight: 0.1 },
+  '돈까스': { breakfast: 0.2, lunch: 0.8, dinner: 0.7, latenight: 0.3 },
+  '제육볶음': { breakfast: 0.3, lunch: 0.9, dinner: 0.8, latenight: 0.2 },
+  
+  // 저녁 메뉴 (외식, 특별한 식사)
+  '삼겹살': { breakfast: 0, lunch: 0.3, dinner: 0.9, latenight: 0.6 },
+  '회': { breakfast: 0, lunch: 0.4, dinner: 0.9, latenight: 0.3 },
+  '스테이크': { breakfast: 0, lunch: 0.3, dinner: 1.0, latenight: 0.2 },
+  '파스타': { breakfast: 0.1, lunch: 0.6, dinner: 0.9, latenight: 0.3 },
+  '초밥': { breakfast: 0, lunch: 0.5, dinner: 0.9, latenight: 0.3 },
+  '갈비': { breakfast: 0, lunch: 0.4, dinner: 0.9, latenight: 0.4 },
+  '족발': { breakfast: 0, lunch: 0.2, dinner: 0.8, latenight: 0.9 },
+  '보쌈': { breakfast: 0, lunch: 0.3, dinner: 0.9, latenight: 0.7 },
+  
+  // 야식/배달 메뉴
+  '치킨': { breakfast: 0, lunch: 0.3, dinner: 0.8, latenight: 1.0 },
+  '피자': { breakfast: 0, lunch: 0.4, dinner: 0.8, latenight: 0.9 },
+  '떡볶이': { breakfast: 0.1, lunch: 0.5, dinner: 0.6, latenight: 0.8 },
+  '짬뽕': { breakfast: 0.2, lunch: 0.8, dinner: 0.7, latenight: 0.6 },
+  '짜장면': { breakfast: 0.1, lunch: 0.9, dinner: 0.7, latenight: 0.7 },
+  
+  // 국물 요리 (아무 때나 괜찮지만 저녁/야식은 좀 덜)
+  '설렁탕': { breakfast: 0.7, lunch: 0.9, dinner: 0.7, latenight: 0.4 },
+  '칼국수': { breakfast: 0.5, lunch: 0.9, dinner: 0.7, latenight: 0.5 },
+  '우동': { breakfast: 0.4, lunch: 0.9, dinner: 0.7, latenight: 0.5 },
+  '쌀국수': { breakfast: 0.4, lunch: 0.8, dinner: 0.7, latenight: 0.4 },
+  
+  // 시원한 음식 (점심~저녁)
+  '냉면': { breakfast: 0.1, lunch: 0.8, dinner: 0.7, latenight: 0.2 },
+  '빙수': { breakfast: 0.1, lunch: 0.4, dinner: 0.4, latenight: 0.2 },
+  '밀면': { breakfast: 0.1, lunch: 0.8, dinner: 0.7, latenight: 0.2 },
+  '콩국수': { breakfast: 0.2, lunch: 0.9, dinner: 0.6, latenight: 0.1 },
+}
+
 // 날씨 가중치 (2024년 일별 분석 결과 기반)
 // rainCoef: 비 오는 날 검색 증가율 (0~1 정규화)
 const WEATHER_CORRELATION: Record<string, { tempCoef: number; humidityCoef: number; rainCoef: number }> = {
@@ -419,6 +470,25 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
           reasons.push('⚡ 평일 점심으로 딱!')
         }
       }
+    }
+    
+    // ⏰ 시간대별 점수 (최대 ±15점)
+    const timeOfDayPref = TIME_OF_DAY_PREFERENCE[menu.name]
+    if (timeOfDayPref) {
+      const timeScore = timeOfDayPref[timeSlot] * 15
+      score += timeScore
+      
+      // 시간대에 매우 적합한 경우 (0.7 이상)
+      if (timeOfDayPref[timeSlot] >= 0.7) {
+        const timeLabels = {
+          breakfast: '아침',
+          lunch: '점심',
+          dinner: '저녁',
+          latenight: '야식',
+        }
+        reasons.push(`⏰ ${timeLabels[timeSlot]} 시간대 최적 메뉴!`)
+      }
+      // 시간대에 부적합한 경우 (0.2 미만)는 감점만 (이유 표시 안함)
     }
     
     // 기분 점수 (0-20점)

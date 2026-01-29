@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-01-29T09:26:41.555Z",
+  "period": {
+    "start": "2026-01-22",
+    "end": "2026-01-29"
+  },
+  "results": [
+    {
+      "keyword": "치킨",
+      "expectedTime": "latenight",
+      "totalHours": 8,
+      "timeSlotAverages": {
+        "breakfast": 81.3,
+        "lunch": 0,
+        "afternoon": 0,
+        "dinner": 0,
+        "latenight": 0
+      },
+      "peakTimeSlot": "breakfast",
+      "peakHour": 9,
+      "ratios": {
+        "breakfastToLunch": 81.25,
+        "dinnerToLunch": 0,
+        "latenightToLunch": 0
+      }
+    },
+    {
+      "keyword": "피자",
+      "expectedTime": "latenight",
+      "totalHours": 8,
+      "timeSlotAverages": {
+        "breakfast": 78.3,
+        "lunch": 0,
+        "afternoon": 0,
+        "dinner": 0,
+        "latenight": 0
+      },
+      "peakTimeSlot": "breakfast",
+      "peakHour": 9,
+      "ratios": {
+        "breakfastToLunch": 78.25,
+        "dinnerToLunch": 0,
+        "latenightToLunch": 0
+      }
+    },
+    {
+      "keyword": "햄버거",
+      "expectedTime": "latenight",
+      "totalHours": 8,
+      "timeSlotAverages": {
+        "breakfast": 89.5,
+        "lunch": 0,
+        "afternoon": 0,
+        "dinner": 0,
+        "latenight": 0
+      },
+      "peakTimeSlot": "breakfast",
+      "peakHour": 9,
+      "ratios": {
+        "breakfastToLunch": 89.5,
+        "dinnerToLunch": 0,
+        "latenightToLunch": 0
+      }
+    },
+    {
+      "keyword": "보쌈",
+      "expectedTime": "latenight",
+      "totalHours": 8,
+      "timeSlotAverages": {
+        "breakfast": 82.6,
+        "lunch": 0,
+        "afternoon": 0,
+        "dinner": 0,
+        "latenight": 0
+      },
+      "peakTimeSlot": "breakfast",
+      "peakHour": 9,
+      "ratios": {
+        "breakfastToLunch": 82.63,
+        "dinnerToLunch": 0,
+        "latenightToLunch": 0
+      }
+    }
+  ],
+  "insights": {
+    "topBreakfastFoods": [
+      "햄버거",
+      "보쌈",
+      "치킨",
+      "피자"
+    ],
+    "topDinnerFoods": [],
+    "topLatenightFoods": []
+  }
+}

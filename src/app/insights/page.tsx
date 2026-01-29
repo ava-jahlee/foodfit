@@ -102,10 +102,44 @@ interface RegionalData {
   comparison: Record<string, Record<string, { avgSearchVolume: number; tempCorrelation: number }>>
 }
 
+// Lag + 주말 효과 분석 데이터 타입
+interface LagWeekdayResult {
+  keyword: string
+  totalDays: number
+  rainEffect: {
+    sampleSize: number
+    rainDayAvg: number
+    beforeRainAvg: number
+    afterRainAvg: number
+    noRainAvg: number
+    rainDayLift: number
+    beforeToRainLift: number
+    rainToAfterLift: number
+  }
+  weekdayEffect: {
+    weekdayAvg: number
+    weekendAvg: number
+    weekendLift: number
+    mondayAvg: number
+    fridayAvg: number
+    saturdayAvg: number
+    sundayAvg: number
+  }
+}
+
+interface LagWeekdayData {
+  generatedAt: string
+  year: number
+  totalDays: number
+  rainyDays: number
+  results: LagWeekdayResult[]
+}
+
 export default function InsightsPage() {
   const [data, setData] = useState<TrendData | null>(null)
   const [multiData, setMultiData] = useState<MultivariateData | null>(null)
   const [regionalData, setRegionalData] = useState<RegionalData | null>(null)
+  const [lagWeekdayData, setLagWeekdayData] = useState<LagWeekdayData | null>(null)
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([])
   const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights'>('insights')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
@@ -144,6 +178,16 @@ export default function InsightsPage() {
         }
       })
       .catch(err => console.error('Failed to load regional data:', err))
+    
+    // Lag + 주말 효과 분석 데이터 로드
+    fetch('/api/insights?type=lag-weekday')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          setLagWeekdayData(data)
+        }
+      })
+      .catch(err => console.error('Failed to load lag-weekday data:', err))
   }, [])
 
   if (!data) {
@@ -319,6 +363,98 @@ export default function InsightsPage() {
                       </div>
                     )}
                   </div>
+
+                  {/* 📊 데이터 시각화 - 파전 효과 차트 */}
+                  {lagWeekdayData && lagWeekdayData.results.find(r => r.keyword === '파전') && (
+                    <div className="mt-4 space-y-4">
+                      {(() => {
+                        const pajeonData = lagWeekdayData.results.find(r => r.keyword === '파전')!
+                        
+                        // 비 오는 날 효과 차트 데이터
+                        const rainChartData = [
+                          { name: '평소', value: pajeonData.rainEffect.noRainAvg, fill: '#94a3b8' },
+                          { name: '전날', value: pajeonData.rainEffect.beforeRainAvg, fill: '#60a5fa' },
+                          { name: '비 오는 날', value: pajeonData.rainEffect.rainDayAvg, fill: '#f59e0b' },
+                          { name: '다음날', value: pajeonData.rainEffect.afterRainAvg, fill: '#38bdf8' },
+                        ]
+                        
+                        // 요일별 효과 차트 데이터
+                        const weekdayChartData = [
+                          { name: '월', value: pajeonData.weekdayEffect.mondayAvg, fill: '#cbd5e1' },
+                          { name: '화', value: (pajeonData.weekdayEffect.weekdayAvg * 5 - pajeonData.weekdayEffect.mondayAvg - pajeonData.weekdayEffect.fridayAvg) / 3, fill: '#cbd5e1' },
+                          { name: '수', value: (pajeonData.weekdayEffect.weekdayAvg * 5 - pajeonData.weekdayEffect.mondayAvg - pajeonData.weekdayEffect.fridayAvg) / 3, fill: '#cbd5e1' },
+                          { name: '목', value: (pajeonData.weekdayEffect.weekdayAvg * 5 - pajeonData.weekdayEffect.mondayAvg - pajeonData.weekdayEffect.fridayAvg) / 3, fill: '#cbd5e1' },
+                          { name: '금', value: pajeonData.weekdayEffect.fridayAvg, fill: '#94a3b8' },
+                          { name: '토', value: pajeonData.weekdayEffect.saturdayAvg, fill: '#f59e0b' },
+                          { name: '일', value: pajeonData.weekdayEffect.sundayAvg, fill: '#f97316' },
+                        ]
+                        
+                        return (
+                          <>
+                            {/* 비 오는 날 vs 평소 */}
+                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-200">
+                              <h3 className="text-sm font-bold text-gray-800 mb-3">💧 비 오는 날 파전 검색량 변화</h3>
+                              <div className="h-[200px]">
+                                <ResponsiveContainer width="100%" height="100%">
+                                  <BarChart data={rainChartData}>
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                                    <XAxis dataKey="name" stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
+                                    <YAxis stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
+                                    <Tooltip
+                                      contentStyle={{
+                                        backgroundColor: 'rgba(255,255,255,0.95)',
+                                        border: '1px solid #e5e7eb',
+                                        borderRadius: '8px',
+                                      }}
+                                      formatter={(value) => [value ? Number(value).toFixed(1) : '0', '검색량']}
+                                    />
+                                    <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                                      {rainChartData.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                                      ))}
+                                    </Bar>
+                                  </BarChart>
+                                </ResponsiveContainer>
+                              </div>
+                              <p className="text-xs text-gray-500 text-center mt-2">
+                                🔥 비 오는 날은 평소의 <span className="font-bold text-orange-600">4.5배</span>!
+                              </p>
+                            </div>
+
+                            {/* 요일별 효과 */}
+                            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200">
+                              <h3 className="text-sm font-bold text-gray-800 mb-3">📅 요일별 파전 검색량</h3>
+                              <div className="h-[200px]">
+                                <ResponsiveContainer width="100%" height="100%">
+                                  <BarChart data={weekdayChartData}>
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                                    <XAxis dataKey="name" stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
+                                    <YAxis stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
+                                    <Tooltip
+                                      contentStyle={{
+                                        backgroundColor: 'rgba(255,255,255,0.95)',
+                                        border: '1px solid #e5e7eb',
+                                        borderRadius: '8px',
+                                      }}
+                                      formatter={(value) => [value ? Number(value).toFixed(1) : '0', '검색량']}
+                                    />
+                                    <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                                      {weekdayChartData.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                                      ))}
+                                    </Bar>
+                                  </BarChart>
+                                </ResponsiveContainer>
+                              </div>
+                              <p className="text-xs text-gray-500 text-center mt-2">
+                                🎉 주말은 평일의 <span className="font-bold text-purple-600">2.4배</span>! 특히 일요일이 최고!
+                              </p>
+                            </div>
+                          </>
+                        )
+                      })()}
+                    </div>
+                  )}
                   
                   {/* 커피 - 토글 */}
                   <div className="bg-blue-50 rounded-lg overflow-hidden">

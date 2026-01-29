@@ -173,8 +173,8 @@ function analyzeTimePatterns(hourlyData: Map<string, Map<number, number>>): Time
   }
   
   // 모든 데이터 수집
-  for (const [_, dayData] of hourlyData) {
-    for (const [hour, value] of dayData) {
+  for (const [_, dayData] of Array.from(hourlyData.entries())) {
+    for (const [hour, value] of Array.from(dayData.entries())) {
       allHourValues.get(hour)?.push(value);
       
       // 시간대 분류

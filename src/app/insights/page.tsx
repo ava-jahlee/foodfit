@@ -1172,22 +1172,22 @@ export default function InsightsPage() {
 
             {/* 의외의 발견 */}
             <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-md rounded-2xl p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-gray-700 mb-4">🤔 의외의 발견!</h3>
+              <h3 className="text-lg font-bold text-gray-700 mb-4">💡 재밌는 발견!</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-black/20 rounded-xl p-4">
-                  <h4 className="text-yellow-300 font-semibold mb-2">&ldquo;비 오면 파전&rdquo;은 마케팅?</h4>
+                  <h4 className="text-yellow-300 font-semibold mb-2">&ldquo;비 오면 파전&rdquo; 실제로 맞음!</h4>
                   <p className="text-gray-500 text-sm">
-                    파전의 강수량 상관계수: <span className="text-yellow-300 font-bold">+0.06</span><br/>
-                    파전의 기온 상관계수: <span className="text-red-300 font-bold">+0.42</span><br/>
-                    → 실제로는 &ldquo;따뜻한 날&rdquo;에 더 많이 검색!
+                    비 오는 날 검색량: <span className="text-yellow-300 font-bold">+345%</span><br/>
+                    주말 검색량: <span className="text-orange-300 font-bold">+138%</span><br/>
+                    → 비 오는 날 + 주말이면 대박! 🔥
                   </p>
                 </div>
                 <div className="bg-black/20 rounded-xl p-4">
-                  <h4 className="text-cyan-300 font-semibold mb-2">라떼는 추운 날 인기</h4>
+                  <h4 className="text-cyan-300 font-semibold mb-2">커피 선호도가 정반대</h4>
                   <p className="text-gray-500 text-sm">
-                    라떼의 기온 상관계수: <span className="text-blue-300 font-bold">-0.41</span><br/>
-                    아메리카노 기온 상관계수: <span className="text-red-300 font-bold">+0.75</span><br/>
-                    → 따뜻한 라떼 vs 시원한 아메리카노!
+                    라떼: <span className="text-blue-300 font-bold">추운 날 인기</span><br/>
+                    아메리카노: <span className="text-red-300 font-bold">더운 날 인기</span><br/>
+                    → 계절별 메뉴 전략의 핵심!
                   </p>
                 </div>
               </div>

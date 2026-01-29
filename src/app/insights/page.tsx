@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import KoreaHeatmap from '@/components/charts/KoreaHeatmap'
 import {
   LineChart,
   Line,
@@ -141,10 +142,11 @@ export default function InsightsPage() {
   const [regionalData, setRegionalData] = useState<RegionalData | null>(null)
   const [lagWeekdayData, setLagWeekdayData] = useState<LagWeekdayData | null>(null)
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([])
-  const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights'>('insights')
+  const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights' | 'heatmap'>('insights')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedRegion, setSelectedRegion] = useState<string>('서울')
   const [expandedInsight, setExpandedInsight] = useState<string | null>(null)
+  const [heatmapKeyword, setHeatmapKeyword] = useState<string>('냉면')
 
   useEffect(() => {
     // 분석 데이터 로드
@@ -244,8 +246,9 @@ export default function InsightsPage() {
   // 탭 정보 - 직관적인 이름으로!
   const tabs = [
     { id: 'insights', icon: '💡', label: '재밌는 발견' },
+    { id: 'heatmap', icon: '🗺️', label: '지역 히트맵' },
     { id: 'correlation', icon: '🌡️', label: '날씨 영향' },
-    { id: 'regional', icon: '🗺️', label: '지역 차이' },
+    { id: 'regional', icon: '📍', label: '지역 차이' },
     { id: 'trend', icon: '📈', label: '월별 변화' },
     { id: 'monthly', icon: '🏆', label: '월별 1위' },
     { id: 'multivariate', icon: '🔬', label: '심층 분석' },
@@ -684,7 +687,104 @@ export default function InsightsPage() {
               </div>
             )}
 
-            {/* 🗺️ 지역별 분석 탭 */}
+            {/* 🗺️ 지역 히트맵 탭 */}
+            {activeTab === 'heatmap' && regionalData && (
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl p-4 shadow-sm">
+                  <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                    <span>🗺️</span>
+                    <span>지역별 인기도 히트맵</span>
+                  </h2>
+                  <p className="text-xs text-gray-500 mb-4">
+                    메뉴를 선택하면 전국 주요 도시의 검색량을 색상으로 확인할 수 있어요!
+                  </p>
+                  
+                  {/* 메뉴 선택 */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      🍽️ 메뉴 선택
+                    </label>
+                    <select
+                      value={heatmapKeyword}
+                      onChange={(e) => setHeatmapKeyword(e.target.value)}
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                      {Object.keys(regionalData.regions)
+                        .flatMap(region => 
+                          regionalData.regions[region].trends.map(t => t.keyword)
+                        )
+                        .filter((keyword, index, self) => self.indexOf(keyword) === index)
+                        .sort()
+                        .map(keyword => (
+                          <option key={keyword} value={keyword}>
+                            {keyword}
+                          </option>
+                        ))
+                      }
+                    </select>
+                  </div>
+                  
+                  {/* 히트맵 */}
+                  <div className="bg-gradient-to-b from-blue-50 to-purple-50 rounded-xl p-6">
+                    <KoreaHeatmap 
+                      data={Object.keys(regionalData.regions).map(region => {
+                        const trend = regionalData.regions[region].trends.find(
+                          t => t.keyword === heatmapKeyword
+                        )
+                        const avgValue = trend 
+                          ? trend.monthlyValues.reduce((sum, v) => sum + v.value, 0) / trend.monthlyValues.length
+                          : 0
+                        return {
+                          name: region,
+                          value: avgValue,
+                        }
+                      })}
+                    />
+                  </div>
+                  
+                  {/* 설명 */}
+                  <div className="mt-4 bg-blue-50 rounded-lg p-3 text-xs text-gray-600">
+                    <p className="font-medium text-blue-800 mb-1">💡 히트맵 설명</p>
+                    <ul className="space-y-1 pl-4">
+                      <li>• <span className="text-blue-600 font-medium">파란색</span>: 검색량이 적은 지역</li>
+                      <li>• <span className="text-yellow-600 font-medium">노란색</span>: 검색량이 보통인 지역</li>
+                      <li>• <span className="text-red-600 font-medium">빨간색</span>: 검색량이 많은 지역</li>
+                      <li>• 원 위에 마우스를 올리면 정확한 수치를 볼 수 있어요!</li>
+                    </ul>
+                  </div>
+                  
+                  {/* 재밌는 발견 */}
+                  {heatmapKeyword === '밀면' && (
+                    <div className="mt-4 bg-gradient-to-r from-orange-50 to-pink-50 rounded-lg p-3 border border-orange-200">
+                      <p className="text-sm font-bold text-orange-800 mb-1">🔥 부산의 자랑!</p>
+                      <p className="text-xs text-gray-600">
+                        밀면은 부산이 압도적! 다른 지역 대비 <span className="font-bold text-orange-600">3배 이상</span> 검색량이 높아요.
+                      </p>
+                    </div>
+                  )}
+                  
+                  {heatmapKeyword === '냉면' && (
+                    <div className="mt-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-3 border border-blue-200">
+                      <p className="text-sm font-bold text-blue-800 mb-1">❄️ 여름의 국민 메뉴!</p>
+                      <p className="text-xs text-gray-600">
+                        냉면은 전국적으로 고른 인기! 특히 <span className="font-bold text-blue-600">여름(6-8월)</span>에 폭발적으로 증가해요.
+                      </p>
+                    </div>
+                  )}
+                  
+                  {heatmapKeyword === '막걸리' && (
+                    <div className="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3 border border-purple-200">
+                      <p className="text-sm font-bold text-purple-800 mb-1">🍶 전통주의 귀환!</p>
+                      <p className="text-xs text-gray-600">
+                        막걸리는 주말과 공휴일에 인기 폭발! 특히 <span className="font-bold text-purple-600">파전</span>과 찰떡궁합이에요.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* 📍 지역별 분석 탭 */}
             {activeTab === 'regional' && regionalData && (
               <div className="space-y-4">
                 {/* 신뢰도 주의 문구 */}

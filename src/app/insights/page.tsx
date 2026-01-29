@@ -278,16 +278,16 @@ export default function InsightsPage() {
                 
                 {/* 인사이트 카드들 */}
                 <div className="space-y-3">
-                  {/* 파전 - 토글 */}
-                  <div className="bg-yellow-50 rounded-lg overflow-hidden">
+                  {/* 파전 - 토글 (일별 데이터로 업데이트) */}
+                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg overflow-hidden border-2 border-yellow-200">
                     <button 
                       onClick={() => setExpandedInsight(expandedInsight === 'pajeon' ? null : 'pajeon')}
                       className="w-full flex items-center gap-4 p-3 text-left hover:bg-yellow-100 transition-colors"
                     >
-                      <span className="text-2xl">🤔</span>
+                      <span className="text-2xl">🔥</span>
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-800">&ldquo;비 오면 파전&rdquo; = 마케팅?!</p>
-                        <p className="text-xs text-gray-500">강수량 상관 +0.06 (무관) vs 기온 상관 +0.42 (양의 상관)</p>
+                        <p className="text-sm font-bold text-gray-800">&ldquo;비 오면 파전&rdquo; = 실제로 맞음! 🎯</p>
+                        <p className="text-xs text-orange-600 font-medium">일별 분석 결과: 비 오는 날 +345.4% 증가! (월별 분석의 함정)</p>
                       </div>
                       <span className={`text-gray-400 transition-transform ${expandedInsight === 'pajeon' ? 'rotate-180' : ''}`}>
                         ▼
@@ -295,24 +295,37 @@ export default function InsightsPage() {
                     </button>
                     {expandedInsight === 'pajeon' && (
                       <div className="px-4 pb-4 pt-1 border-t border-yellow-200 text-xs text-gray-600 space-y-3">
-                        <p className="font-medium text-gray-700">🔍 유래 추측들:</p>
-                        <div className="space-y-2 pl-2">
-                          <div>
-                            <span className="font-medium">1. 소리 유사성 설</span>
-                            <p className="text-gray-500">빗소리 🌧️ ≈ 지글지글 기름 소리 🍳 → 무의식적 연상?</p>
-                          </div>
-                          <div>
-                            <span className="font-medium">2. 농경사회 설</span>
-                            <p className="text-gray-500">비 오면 농사 못함 → 집에서 파, 밀가루로 부침개</p>
-                          </div>
-                          <div>
-                            <span className="font-medium">3. 마케팅 설 🎯</span>
-                            <p className="text-gray-500">90~2000년대 막걸리/파전 프랜차이즈 광고로 각인</p>
+                        <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg p-3">
+                          <p className="font-bold text-orange-800 mb-2">🎉 게임 체인저: 일별 데이터!</p>
+                          <div className="space-y-1">
+                            <p><span className="font-medium">❌ 월별 평균</span>: +0.06 (무관) - 잘못된 결론!</p>
+                            <p><span className="font-medium">✅ 일별 데이터</span>: <span className="text-orange-700 font-bold">+345.4%</span> - 실제 증가!</p>
+                            <p className="text-gray-600 mt-2 text-[11px]">→ 월별 평균은 급격한 일일 변화를 희석시킴</p>
                           </div>
                         </div>
-                        <div className="bg-yellow-100 rounded p-2 mt-2">
-                          <p className="font-medium text-yellow-800">📊 데이터 결론:</p>
-                          <p className="text-yellow-700">비 때문이 아니라 <strong>따뜻한 계절</strong>에 더 먹음! → 마케팅 + 문화적 각인 가능성 ↑</p>
+                        
+                        <div className="bg-blue-50 rounded-lg p-3">
+                          <p className="font-medium text-blue-800 mb-1">💧 비 오는 날 효과 (366일 분석)</p>
+                          <div className="space-y-1 text-[11px]">
+                            <p>• 평소: 검색량 100 기준</p>
+                            <p>• 비 오는 날: <strong className="text-blue-700">345.4</strong> (+245.4%p)</p>
+                            <p>• 비 오기 전날: 120.6 (+20.6%)</p>
+                            <p>• 비 온 다음날: 57.8 (-42.2%) ← Lag 효과!</p>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-purple-50 rounded-lg p-3">
+                          <p className="font-medium text-purple-800 mb-1">📅 주말 효과</p>
+                          <div className="space-y-1 text-[11px]">
+                            <p>• 평일: 검색량 100 기준</p>
+                            <p>• 주말: <strong className="text-purple-700">238.4</strong> (+138.4%)</p>
+                            <p className="text-gray-600">→ 주말에 파전 먹는 문화 확실!</p>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-green-50 rounded-lg p-2 mt-2">
+                          <p className="font-medium text-green-800">✅ 최종 결론:</p>
+                          <p className="text-green-700">&ldquo;비 오면 파전&rdquo;은 <strong>실제 존재하는 현상</strong>! 월별 평균 분석은 이를 숨겼을 뿐. 일별 데이터가 진실을 밝혀냄! 🎯</p>
                         </div>
                       </div>
                     )}
@@ -1217,9 +1230,10 @@ export default function InsightsPage() {
             <span className="text-sm font-medium text-gray-700">데이터 출처</span>
           </div>
           <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-500">
-            <span className="bg-white/60 px-3 py-1 rounded-full">📊 Google Trends API</span>
+            <span className="bg-white/60 px-3 py-1 rounded-full">📊 Google Trends API (일별)</span>
             <span className="bg-white/60 px-3 py-1 rounded-full">🌡️ Open-Meteo API</span>
-            <span className="bg-white/60 px-3 py-1 rounded-full">🗓️ 2024~2025 데이터</span>
+            <span className="bg-white/60 px-3 py-1 rounded-full">📅 366일 일별 데이터</span>
+            <span className="bg-gradient-to-r from-yellow-100 to-orange-100 px-3 py-1 rounded-full font-medium text-orange-600">🔥 NEW: 일별 분석!</span>
           </div>
           <p className="text-center text-[10px] text-gray-400 mt-3">
             이 분석은 참고용이며, 실제 소비 패턴과 다를 수 있습니다.

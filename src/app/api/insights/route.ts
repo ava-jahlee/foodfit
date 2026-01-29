@@ -27,6 +27,26 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'Regional data not found' }, { status: 404 })
     }
     
+    if (type === 'daily') {
+      // 일별 트렌드 분석 데이터
+      const filePath = path.join(process.cwd(), 'src/data/trend-analysis-daily.json')
+      if (fs.existsSync(filePath)) {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+        return NextResponse.json(data)
+      }
+      return NextResponse.json({ error: 'Daily data not found' }, { status: 404 })
+    }
+    
+    if (type === 'lag-weekday') {
+      // Lag + 주말 효과 분석 데이터
+      const filePath = path.join(process.cwd(), 'src/data/lag-weekday-analysis.json')
+      if (fs.existsSync(filePath)) {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+        return NextResponse.json(data)
+      }
+      return NextResponse.json({ error: 'Lag-weekday data not found' }, { status: 404 })
+    }
+    
     // 기본 단순 상관관계 데이터
     const filePath = path.join(process.cwd(), 'src/data/trend-analysis.json')
     

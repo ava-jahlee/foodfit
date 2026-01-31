@@ -96,14 +96,14 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
   return (
     <div className="relative">
       {/* 한국 지도 - 9개 주요 도시 원형 표시 */}
-      <svg viewBox="0 0 400 500" className="w-full h-auto" style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)' }}>
+      <svg viewBox="0 0 400 420" className="w-full h-auto max-h-[500px]" style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)' }}>
         {/* 한국 지도 윤곽선 (간략화된 버전) */}
         <defs>
           <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-            <feOffset dx="0" dy="2" result="offsetblur"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+            <feOffset dx="0" dy="0" result="offsetblur"/>
             <feComponentTransfer>
-              <feFuncA type="linear" slope="0.2"/>
+              <feFuncA type="linear" slope="0.15"/>
             </feComponentTransfer>
             <feMerge>
               <feMergeNode/>
@@ -127,7 +127,7 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
         {/* 제주도 윤곽 */}
         <ellipse
           cx="180"
-          cy="450"
+          cy="380"
           rx="50"
           ry="25"
           fill="#ffffff"
@@ -143,14 +143,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="150"
           r="60"
           fill={colorMap['경기'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '경기')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 서울 (경기 안쪽) */}
@@ -159,13 +158,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="150"
           r="35"
           fill={colorMap['서울'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '서울')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 인천 (서울 왼쪽) */}
@@ -174,14 +173,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="140"
           r="28"
           fill={colorMap['인천'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '인천')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 대전 (중앙) */}
@@ -190,14 +188,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="250"
           r="32"
           fill={colorMap['대전'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '대전')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 대구 (중앙 우측 하단) */}
@@ -206,14 +203,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="290"
           r="35"
           fill={colorMap['대구'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '대구')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 광주 (좌측 하단) */}
@@ -222,14 +218,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="330"
           r="30"
           fill={colorMap['광주'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '광주')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 울산 (우측 하단) */}
@@ -238,14 +233,13 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="320"
           r="28"
           fill={colorMap['울산'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '울산')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 부산 (우측 최하단) */}
@@ -254,30 +248,28 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           cy="370"
           r="38"
           fill={colorMap['부산'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '부산')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 제주 (최하단 중앙) */}
         <circle
           cx="180"
-          cy="450"
+          cy="380"
           r="32"
           fill={colorMap['제주'] || '#e5e7eb'}
-          stroke="#fff"
-          strokeWidth="3"
-          opacity="0.85"
+          stroke="none"
+          opacity="0.2"
           filter="url(#shadow)"
           onMouseMove={(e) => handleMouseMove(e, '제주')}
           onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-100 transition-all hover:stroke-gray-400"
-          style={{ transition: 'all 0.2s ease' }}
+          className="cursor-pointer hover:opacity-40 transition-all"
+          style={{ transition: 'all 0.3s ease' }}
         />
         
         {/* 지역명 라벨 - 그림자 효과 추가 */}
@@ -289,7 +281,7 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
         <text x="120" y="335" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">광주</text>
         <text x="300" y="325" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">울산</text>
         <text x="280" y="375" textAnchor="middle" className="text-sm font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="3" paintOrder="stroke">부산</text>
-        <text x="180" y="455" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">제주</text>
+        <text x="180" y="385" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">제주</text>
       </svg>
       
       {/* 호버 툴팁 - 마우스 커서 근처에 표시 */}

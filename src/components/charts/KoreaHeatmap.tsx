@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 
 interface RegionData {
   name: string
@@ -14,6 +14,19 @@ interface KoreaHeatmapProps {
 interface TooltipPosition {
   x: number
   y: number
+}
+
+// 지역별 애니메이션 딜레이 (순차적으로 나타나기)
+const REGION_DELAYS: Record<string, number> = {
+  '서울': 0,
+  '경기': 50,
+  '인천': 100,
+  '대전': 150,
+  '대구': 200,
+  '광주': 250,
+  '울산': 300,
+  '부산': 350,
+  '제주': 400,
 }
 
 // 지역명 매핑 (데이터 키 → 표시명)
@@ -53,13 +66,30 @@ function getHeatmapColor(value: number, min: number, max: number): string {
 export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null)
   const [tooltipPos, setTooltipPos] = useState<TooltipPosition>({ x: 0, y: 0 })
+  const [isAnimating, setIsAnimating] = useState(true)
+  const [prevDataKey, setPrevDataKey] = useState<string>('')
+  
+  // 데이터 변경 감지 → 애니메이션 트리거
+  const dataKey = useMemo(() => data.map(d => `${d.name}:${d.value}`).join(','), [data])
+  
+  useEffect(() => {
+    if (dataKey !== prevDataKey) {
+      setIsAnimating(true)
+      setPrevDataKey(dataKey)
+      const timer = setTimeout(() => setIsAnimating(false), 600)
+      return () => clearTimeout(timer)
+    }
+  }, [dataKey, prevDataKey])
   
   // 최소/최대값 계산
-  const { min, max } = useMemo(() => {
+  const { min, max, topRegion } = useMemo(() => {
     const values = data.map(d => d.value)
+    const maxVal = Math.max(...values)
+    const top = data.find(d => d.value === maxVal)?.name || ''
     return {
       min: Math.min(...values),
-      max: Math.max(...values),
+      max: maxVal,
+      topRegion: top,
     }
   }, [data])
   
@@ -81,6 +111,19 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
     return map
   }, [data])
   
+  // 지역별 위치/크기 정보
+  const regions = [
+    { name: '경기', cx: 200, cy: 150, r: 60, labelY: 100, fontSize: 'text-xs' },
+    { name: '서울', cx: 200, cy: 150, r: 35, labelY: 155, fontSize: 'text-sm font-bold' },
+    { name: '인천', cx: 140, cy: 140, r: 28, labelY: 145, fontSize: 'text-xs' },
+    { name: '대전', cx: 180, cy: 250, r: 32, labelY: 255, fontSize: 'text-xs' },
+    { name: '대구', cx: 260, cy: 290, r: 35, labelY: 295, fontSize: 'text-xs' },
+    { name: '광주', cx: 120, cy: 330, r: 30, labelY: 335, fontSize: 'text-xs' },
+    { name: '울산', cx: 300, cy: 320, r: 28, labelY: 325, fontSize: 'text-xs' },
+    { name: '부산', cx: 280, cy: 370, r: 38, labelY: 375, fontSize: 'text-sm' },
+    { name: '제주', cx: 180, cy: 380, r: 32, labelY: 385, fontSize: 'text-xs' },
+  ]
+
   const handleMouseMove = (e: React.MouseEvent<SVGElement>, region: string) => {
     const svg = e.currentTarget.ownerSVGElement
     if (svg) {
@@ -95,6 +138,37 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
   
   return (
     <div className="relative">
+      {/* CSS 애니메이션 정의 */}
+      <style jsx>{`
+        @keyframes pulse-glow {
+          0%, 100% { 
+            filter: url(#shadow) drop-shadow(0 0 8px currentColor);
+            transform: scale(1);
+          }
+          50% { 
+            filter: url(#shadow) drop-shadow(0 0 20px currentColor);
+            transform: scale(1.05);
+          }
+        }
+        @keyframes fade-scale-in {
+          0% { 
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          100% { 
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .region-circle {
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+        .pulse-animation {
+          animation: pulse-glow 2s ease-in-out infinite;
+        }
+      `}</style>
+      
       {/* 한국 지도 - 9개 주요 도시 원형 표시 */}
       <svg viewBox="0 0 400 420" className="w-full h-auto max-h-[500px]" style={{ background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)' }}>
         {/* 한국 지도 윤곽선 (간략화된 버전) */}
@@ -110,6 +184,14 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
+          {/* 글로우 효과 */}
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
         
         {/* 한국 지도 배경 (대략적인 윤곽) */}
@@ -122,6 +204,7 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           stroke="#cbd5e1"
           strokeWidth="1.5"
           strokeDasharray="4,4"
+          className="transition-opacity duration-500"
         />
         
         {/* 제주도 윤곽 */}
@@ -137,151 +220,76 @@ export default function KoreaHeatmap({ data }: KoreaHeatmapProps) {
           strokeDasharray="4,4"
         />
         
-        {/* 경기 (가장 큰 원, 중앙 상단) */}
-        <circle
-          cx="200"
-          cy="150"
-          r="60"
-          fill={colorMap['경기'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '경기')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
+        {/* 지역 원들 - 애니메이션 적용 */}
+        {regions.map((region) => {
+          const isTop = region.name === topRegion
+          const isHovered = hoveredRegion === region.name
+          const delay = REGION_DELAYS[region.name] || 0
+          
+          return (
+            <g key={region.name}>
+              {/* 메인 원 */}
+              <circle
+                cx={region.cx}
+                cy={region.cy}
+                r={region.r}
+                fill={colorMap[region.name] || '#e5e7eb'}
+                stroke={isTop ? '#fff' : 'none'}
+                strokeWidth={isTop ? 3 : 0}
+                filter={isHovered ? 'url(#glow)' : 'url(#shadow)'}
+                onMouseMove={(e) => handleMouseMove(e, region.name)}
+                onMouseLeave={() => setHoveredRegion(null)}
+                className="region-circle cursor-pointer"
+                style={{
+                  opacity: isHovered ? 0.9 : 0.75,
+                  transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transitionDelay: isAnimating ? `${delay}ms` : '0ms',
+                  animation: isTop && !isHovered ? 'pulse-glow 2.5s ease-in-out infinite' : 'none',
+                }}
+              />
+              
+              {/* 1등 왕관 표시 */}
+              {isTop && (
+                <text
+                  x={region.cx}
+                  y={region.cy - region.r - 8}
+                  textAnchor="middle"
+                  className="text-lg pointer-events-none"
+                  style={{
+                    opacity: isAnimating ? 0 : 1,
+                    transition: 'opacity 0.5s ease',
+                    transitionDelay: '500ms',
+                  }}
+                >
+                  👑
+                </text>
+              )}
+            </g>
+          )
+        })}
         
-        {/* 서울 (경기 안쪽) */}
-        <circle
-          cx="200"
-          cy="150"
-          r="35"
-          fill={colorMap['서울'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '서울')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 인천 (서울 왼쪽) */}
-        <circle
-          cx="140"
-          cy="140"
-          r="28"
-          fill={colorMap['인천'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '인천')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 대전 (중앙) */}
-        <circle
-          cx="180"
-          cy="250"
-          r="32"
-          fill={colorMap['대전'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '대전')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 대구 (중앙 우측 하단) */}
-        <circle
-          cx="260"
-          cy="290"
-          r="35"
-          fill={colorMap['대구'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '대구')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 광주 (좌측 하단) */}
-        <circle
-          cx="120"
-          cy="330"
-          r="30"
-          fill={colorMap['광주'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '광주')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 울산 (우측 하단) */}
-        <circle
-          cx="300"
-          cy="320"
-          r="28"
-          fill={colorMap['울산'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '울산')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 부산 (우측 최하단) */}
-        <circle
-          cx="280"
-          cy="370"
-          r="38"
-          fill={colorMap['부산'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '부산')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 제주 (최하단 중앙) */}
-        <circle
-          cx="180"
-          cy="380"
-          r="32"
-          fill={colorMap['제주'] || '#e5e7eb'}
-          stroke="none"
-          opacity="0.2"
-          filter="url(#shadow)"
-          onMouseMove={(e) => handleMouseMove(e, '제주')}
-          onMouseLeave={() => setHoveredRegion(null)}
-          className="cursor-pointer hover:opacity-40 transition-all"
-          style={{ transition: 'all 0.3s ease' }}
-        />
-        
-        {/* 지역명 라벨 - 그림자 효과 추가 */}
-        <text x="200" y="155" textAnchor="middle" className="text-sm font-bold pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="3" paintOrder="stroke">서울</text>
-        <text x="140" y="145" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">인천</text>
-        <text x="200" y="100" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">경기</text>
-        <text x="180" y="255" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">대전</text>
-        <text x="260" y="295" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">대구</text>
-        <text x="120" y="335" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">광주</text>
-        <text x="300" y="325" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">울산</text>
-        <text x="280" y="375" textAnchor="middle" className="text-sm font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="3" paintOrder="stroke">부산</text>
-        <text x="180" y="385" textAnchor="middle" className="text-xs font-medium pointer-events-none" fill="white" stroke="rgba(0,0,0,0.3)" strokeWidth="2" paintOrder="stroke">제주</text>
+        {/* 지역명 라벨 */}
+        {regions.map((region) => (
+          <text
+            key={`label-${region.name}`}
+            x={region.cx}
+            y={region.labelY}
+            textAnchor="middle"
+            className={`${region.fontSize} font-medium pointer-events-none`}
+            fill="white"
+            stroke="rgba(0,0,0,0.4)"
+            strokeWidth={region.name === '서울' || region.name === '부산' ? 3 : 2}
+            paintOrder="stroke"
+            style={{
+              opacity: isAnimating ? 0 : 1,
+              transition: 'opacity 0.3s ease',
+              transitionDelay: `${(REGION_DELAYS[region.name] || 0) + 200}ms`,
+            }}
+          >
+            {region.name}
+          </text>
+        ))}
       </svg>
       
       {/* 호버 툴팁 - 마우스 커서 근처에 표시 */}

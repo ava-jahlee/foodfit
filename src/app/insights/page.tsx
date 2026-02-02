@@ -297,7 +297,7 @@ export default function InsightsPage() {
     { id: 'insights', icon: '💡', label: '재밌는 발견' },
     { id: 'realtime', icon: '🔥', label: '실시간 트렌드' },
     { id: 'correlation', icon: '🌡️', label: '날씨 영향' },
-    { id: 'regional', icon: '📍', label: '지역 차이' },
+    // { id: 'regional', icon: '📍', label: '지역 차이' },  // TODO: 데이터 신뢰도 문제로 임시 비활성화 - 사용자 늘면 selection_logs 기반으로 부활 예정
     { id: 'trend', icon: '📈', label: '월별 변화' },
     { id: 'monthly', icon: '🏆', label: '월별 1위' },
     { id: 'multivariate', icon: '🔬', label: '심층 분석' },

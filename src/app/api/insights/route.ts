@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 import { createClient } from '@supabase/supabase-js'
+import { getContextualPopularMenus, getRealtimePopularMenus } from '@/lib/supabase'
 
 // Supabase 클라이언트
 const supabase = createClient(
@@ -55,6 +56,36 @@ export async function GET(request: Request) {
         source: 'naver',
         lastUpdated: latestDate,
         trends,
+      })
+    }
+    
+    // 🆕 사용자 선택 기반 실시간 인기 메뉴
+    if (type === 'user-trends') {
+      const weatherCondition = searchParams.get('weather') || ''
+      const timeSlot = searchParams.get('timeSlot') || ''
+      
+      // 날씨+시간대 조건이 있으면 컨텍스트별 인기 메뉴
+      if (weatherCondition && timeSlot) {
+        const contextual = await getContextualPopularMenus(weatherCondition, timeSlot, 10)
+        
+        if (contextual && contextual.totalSelections > 0) {
+          return NextResponse.json({
+            type: 'contextual',
+            ...contextual,
+          })
+        }
+      }
+      
+      // 조건 없거나 데이터 없으면 전체 실시간 인기 메뉴
+      const realtime = await getRealtimePopularMenus(10)
+      
+      return NextResponse.json({
+        type: 'realtime',
+        weatherCondition: weatherCondition || 'all',
+        timeSlot: timeSlot || 'all',
+        totalSelections: realtime.reduce((sum, m) => sum + m.count, 0),
+        topMenus: realtime,
+        lastUpdated: new Date().toISOString(),
       })
     }
     

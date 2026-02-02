@@ -63,6 +63,13 @@ export interface NaverTrendData {
   currentValue: number
 }
 
+// 🆕 사용자 선택 기반 인기 메뉴 타입
+export interface UserTrendData {
+  menu: string
+  count: number
+  percentage: number
+}
+
 interface RecommendParams {
   weatherCondition: string
   temperature: number       // 기온 (°C)
@@ -83,6 +90,7 @@ interface RecommendParams {
   isWeekend?: boolean       // 주말 여부
   isHoliday?: boolean       // 공휴일 여부
   naverTrends?: NaverTrendData[]  // 🆕 네이버 실시간 트렌드 (선택)
+  userTrends?: UserTrendData[]    // 🆕 FoodFit 사용자 선택 기반 인기 메뉴 (선택)
 }
 
 // ========================================
@@ -278,6 +286,7 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     foodCategory,
     adventureMode,
     naverTrends,
+    userTrends,
   } = params
   
   const menus: Menu[] = menusData.menus as Menu[]
@@ -288,6 +297,14 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
   if (naverTrends && naverTrends.length > 0) {
     naverTrends.forEach(trend => {
       naverTrendMap.set(trend.keyword, trend.currentValue)
+    })
+  }
+  
+  // 🆕 사용자 선택 트렌드 맵 생성
+  const userTrendMap = new Map<string, { count: number; percentage: number }>()
+  if (userTrends && userTrends.length > 0) {
+    userTrends.forEach(trend => {
+      userTrendMap.set(trend.menu, { count: trend.count, percentage: trend.percentage })
     })
   }
   
@@ -407,6 +424,9 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
                               return Math.max(max, val)
                             }, 0) || 0
     
+    // 🆕 FoodFit 사용자 선택 데이터 (같은 날씨+시간대에 다른 사람들이 선택한 메뉴)
+    const userTrend = userTrendMap.get(menu.name)
+    
     // 모험 모드: 인기도 낮은 메뉴에 보너스!
     if (adventureMode) {
       // 인기도가 낮을수록 점수 높음 (희귀템 발굴)
@@ -419,22 +439,31 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
         score += 10
       }
     } else {
-      // 일반 모드: 🆕 네이버 트렌드 > 기존 인기도 순으로 적용
-      if (naverTrendValue > 0) {
-        // 네이버 트렌드 데이터 있음 → 실시간 인기도 반영
+      // 🆕 사용자 선택 데이터가 최우선! (같은 상황에서 실제로 선택된 메뉴)
+      if (userTrend && userTrend.count >= 2) {
+        // 선택 비율에 따라 점수 부여 (최대 35점)
+        const userBonus = Math.floor((userTrend.percentage / 100) * 35)
+        score += userBonus + 10  // 기본 보너스 10점
+        
+        if (userTrend.percentage >= 15) {
+          reasons.push(`👥 이 날씨에 ${userTrend.percentage}%가 선택!`)
+        }
+      } 
+      // 네이버 트렌드 (전국 검색량)
+      else if (naverTrendValue > 0) {
         const trendBonus = Math.floor((naverTrendValue / 100) * 30)
         score += trendBonus
         
-        // 상위 5위 안에 들면 추가 보너스
         if (naverTrendValue >= 70) {
           score += 10
           reasons.push(`🔥 지금 네이버 검색 TOP! (${naverTrendValue}점)`)
         }
-      } else {
-        // 기존 인기도 사용
+      } 
+      // 기존 인기도
+      else {
         const popularityBonus = menu.popularityScore 
           ? Math.floor((menu.popularityScore / 100) * 30) 
-          : 15 // 기본값
+          : 15
         score += popularityBonus
       }
     }

@@ -88,3 +88,104 @@ export async function getMoodMenuStats() {
 
   return stats
 }
+
+// 🆕 날씨+시간대별 실시간 인기 메뉴 (최근 7일)
+export interface PopularMenuItem {
+  menu: string
+  count: number
+  percentage: number
+}
+
+export interface ContextualPopularity {
+  weatherCondition: string
+  timeSlot: string
+  totalSelections: number
+  topMenus: PopularMenuItem[]
+  lastUpdated: string
+}
+
+export async function getContextualPopularMenus(
+  weatherCondition: string,
+  timeSlot: string,
+  limit: number = 10
+): Promise<ContextualPopularity | null> {
+  // 최근 7일 데이터만 조회
+  const sevenDaysAgo = new Date()
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7)
+  
+  const { data, error } = await supabase
+    .from('selection_logs')
+    .select('selected_menu, created_at')
+    .eq('weather_condition', weatherCondition)
+    .eq('time_slot', timeSlot)
+    .gte('created_at', sevenDaysAgo.toISOString())
+  
+  if (error) {
+    console.error('Error fetching contextual popularity:', error)
+    return null
+  }
+
+  if (!data || data.length === 0) {
+    return null
+  }
+
+  // 메뉴별 선택 횟수 집계
+  const menuCounts: Record<string, number> = {}
+  data.forEach(log => {
+    menuCounts[log.selected_menu] = (menuCounts[log.selected_menu] || 0) + 1
+  })
+
+  // 정렬 및 상위 N개 추출
+  const totalSelections = data.length
+  const topMenus: PopularMenuItem[] = Object.entries(menuCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([menu, count]) => ({
+      menu,
+      count,
+      percentage: Math.round((count / totalSelections) * 100)
+    }))
+
+  return {
+    weatherCondition,
+    timeSlot,
+    totalSelections,
+    topMenus,
+    lastUpdated: new Date().toISOString()
+  }
+}
+
+// 🆕 전체 실시간 인기 메뉴 (최근 24시간)
+export async function getRealtimePopularMenus(limit: number = 10): Promise<PopularMenuItem[]> {
+  const oneDayAgo = new Date()
+  oneDayAgo.setHours(oneDayAgo.getHours() - 24)
+  
+  const { data, error } = await supabase
+    .from('selection_logs')
+    .select('selected_menu, created_at')
+    .gte('created_at', oneDayAgo.toISOString())
+  
+  if (error) {
+    console.error('Error fetching realtime popularity:', error)
+    return []
+  }
+
+  if (!data || data.length === 0) {
+    return []
+  }
+
+  const menuCounts: Record<string, number> = {}
+  data.forEach(log => {
+    menuCounts[log.selected_menu] = (menuCounts[log.selected_menu] || 0) + 1
+  })
+
+  const totalSelections = data.length
+  return Object.entries(menuCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([menu, count]) => ({
+      menu,
+      count,
+      percentage: Math.round((count / totalSelections) * 100)
+    }))
+}

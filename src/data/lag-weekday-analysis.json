@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-29T08:51:18.835Z",
+  "generatedAt": "2026-01-31T00:17:26.288Z",
   "year": 2024,
   "totalDays": 366,
   "rainyDays": 107,
@@ -9,24 +9,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 11.19626168224299,
-        "beforeRainAvg": 9.327102803738319,
-        "afterRainAvg": 6.4672897196261685,
-        "noRainAvg": 2.5135135135135136,
-        "rainDayLift": 345.4,
-        "beforeToRainLift": 20,
-        "rainToAfterLift": -42.2
+        "rainDayAvg": 14.02803738317757,
+        "beforeRainAvg": 13.271028037383177,
+        "afterRainAvg": 9.83177570093458,
+        "noRainAvg": 5.301158301158301,
+        "rainDayLift": 164.6,
+        "beforeToRainLift": 5.7,
+        "rainToAfterLift": -29.9
       },
       "weekdayEffect": {
-        "weekdayAvg": 3.6259541984732824,
+        "weekdayAvg": 6.427480916030534,
         "weekdayMedian": 0,
-        "weekendAvg": 8.64423076923077,
+        "weekendAvg": 11.442307692307692,
         "weekendMedian": 0,
-        "weekendLift": 138.4,
-        "mondayAvg": 0.9056603773584906,
-        "fridayAvg": 2.9423076923076925,
-        "saturdayAvg": 6.846153846153846,
-        "sundayAvg": 10.442307692307692
+        "weekendLift": 78,
+        "mondayAvg": 7.773584905660377,
+        "fridayAvg": 5.115384615384615,
+        "saturdayAvg": 7.923076923076923,
+        "sundayAvg": 14.961538461538462
       }
     },
     {
@@ -34,24 +34,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 65.51401869158879,
-        "beforeRainAvg": 63.953271028037385,
-        "afterRainAvg": 61.5607476635514,
-        "noRainAvg": 59.857142857142854,
-        "rainDayLift": 9.5,
-        "beforeToRainLift": 2.4,
-        "rainToAfterLift": -6
+        "rainDayAvg": 65.61682242990655,
+        "beforeRainAvg": 63.78504672897196,
+        "afterRainAvg": 61.33644859813084,
+        "noRainAvg": 60.50965250965251,
+        "rainDayLift": 8.4,
+        "beforeToRainLift": 2.9,
+        "rainToAfterLift": -6.5
       },
       "weekdayEffect": {
-        "weekdayAvg": 59.56106870229008,
-        "weekdayMedian": 59,
-        "weekendAvg": 66.42307692307692,
-        "weekendMedian": 66.5,
-        "weekendLift": 11.5,
-        "mondayAvg": 57.509433962264154,
-        "fridayAvg": 65.71153846153847,
-        "saturdayAvg": 73.21153846153847,
-        "sundayAvg": 59.63461538461539
+        "weekdayAvg": 60.05725190839695,
+        "weekdayMedian": 58,
+        "weekendAvg": 66.90384615384616,
+        "weekendMedian": 67,
+        "weekendLift": 11.4,
+        "mondayAvg": 57.83018867924528,
+        "fridayAvg": 65.78846153846153,
+        "saturdayAvg": 74.13461538461539,
+        "sundayAvg": 59.67307692307692
       }
     },
     {
@@ -59,24 +59,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 56.046728971962615,
-        "beforeRainAvg": 54.88785046728972,
-        "afterRainAvg": 54.90654205607477,
-        "noRainAvg": 53.53281853281853,
-        "rainDayLift": 4.7,
-        "beforeToRainLift": 2.1,
-        "rainToAfterLift": -2
+        "rainDayAvg": 54.03738317757009,
+        "beforeRainAvg": 52.39252336448598,
+        "afterRainAvg": 53.271028037383175,
+        "noRainAvg": 52.293436293436294,
+        "rainDayLift": 3.3,
+        "beforeToRainLift": 3.1,
+        "rainToAfterLift": -1.4
       },
       "weekdayEffect": {
-        "weekdayAvg": 51.152671755725194,
-        "weekdayMedian": 51,
-        "weekendAvg": 62.11538461538461,
-        "weekendMedian": 66,
+        "weekdayAvg": 49.782442748091604,
+        "weekdayMedian": 48,
+        "weekendAvg": 60.41346153846154,
+        "weekendMedian": 63,
         "weekendLift": 21.4,
-        "mondayAvg": 49.716981132075475,
-        "fridayAvg": 51.98076923076923,
-        "saturdayAvg": 62.26923076923077,
-        "sundayAvg": 61.96153846153846
+        "mondayAvg": 48.81132075471698,
+        "fridayAvg": 50.07692307692308,
+        "saturdayAvg": 60.48076923076923,
+        "sundayAvg": 60.34615384615385
       }
     },
     {
@@ -84,24 +84,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 77.29906542056075,
-        "beforeRainAvg": 76.62616822429906,
-        "afterRainAvg": 76.4766355140187,
-        "noRainAvg": 78.44401544401545,
-        "rainDayLift": -1.5,
-        "beforeToRainLift": 0.9,
+        "rainDayAvg": 76.92523364485982,
+        "beforeRainAvg": 76.57943925233644,
+        "afterRainAvg": 76.11214953271028,
+        "noRainAvg": 77.7876447876448,
+        "rainDayLift": -1.1,
+        "beforeToRainLift": 0.5,
         "rainToAfterLift": -1.1
       },
       "weekdayEffect": {
-        "weekdayAvg": 76.3473282442748,
-        "weekdayMedian": 75,
-        "weekendAvg": 82.54807692307692,
+        "weekdayAvg": 75.78625954198473,
+        "weekdayMedian": 74.5,
+        "weekendAvg": 81.9423076923077,
         "weekendMedian": 81,
         "weekendLift": 8.1,
-        "mondayAvg": 76.32075471698113,
-        "fridayAvg": 78.09615384615384,
-        "saturdayAvg": 82.63461538461539,
-        "sundayAvg": 82.46153846153847
+        "mondayAvg": 75.37735849056604,
+        "fridayAvg": 77.5576923076923,
+        "saturdayAvg": 82.07692307692308,
+        "sundayAvg": 81.8076923076923
       }
     },
     {
@@ -109,24 +109,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 47.149532710280376,
-        "beforeRainAvg": 47.26168224299065,
-        "afterRainAvg": 47.26168224299065,
-        "noRainAvg": 44.536679536679536,
-        "rainDayLift": 5.9,
-        "beforeToRainLift": -0.2,
-        "rainToAfterLift": 0.2
+        "rainDayAvg": 45.5607476635514,
+        "beforeRainAvg": 45.3177570093458,
+        "afterRainAvg": 46.21495327102804,
+        "noRainAvg": 42.76061776061776,
+        "rainDayLift": 6.5,
+        "beforeToRainLift": 0.5,
+        "rainToAfterLift": 1.4
       },
       "weekdayEffect": {
-        "weekdayAvg": 42.32824427480916,
-        "weekdayMedian": 43,
-        "weekendAvg": 52.78846153846154,
-        "weekendMedian": 52.5,
-        "weekendLift": 24.7,
-        "mondayAvg": 40.339622641509436,
-        "fridayAvg": 44.17307692307692,
-        "saturdayAvg": 54.03846153846154,
-        "sundayAvg": 51.53846153846154
+        "weekdayAvg": 40.38549618320611,
+        "weekdayMedian": 41,
+        "weekendAvg": 51.625,
+        "weekendMedian": 50,
+        "weekendLift": 27.8,
+        "mondayAvg": 38.37735849056604,
+        "fridayAvg": 42.11538461538461,
+        "saturdayAvg": 53,
+        "sundayAvg": 50.25
       }
     },
     {
@@ -134,24 +134,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 45.12149532710281,
-        "beforeRainAvg": 45.598130841121495,
-        "afterRainAvg": 45.74766355140187,
-        "noRainAvg": 35.5019305019305,
-        "rainDayLift": 27.1,
-        "beforeToRainLift": -1,
-        "rainToAfterLift": 1.4
+        "rainDayAvg": 45.18691588785047,
+        "beforeRainAvg": 43.60747663551402,
+        "afterRainAvg": 43.05607476635514,
+        "noRainAvg": 36.625482625482626,
+        "rainDayLift": 23.4,
+        "beforeToRainLift": 3.6,
+        "rainToAfterLift": -4.7
       },
       "weekdayEffect": {
-        "weekdayAvg": 35.229007633587784,
-        "weekdayMedian": 40,
-        "weekendAvg": 46.08653846153846,
-        "weekendMedian": 51,
-        "weekendLift": 30.8,
-        "mondayAvg": 32.886792452830186,
-        "fridayAvg": 36.36538461538461,
-        "saturdayAvg": 47.76923076923077,
-        "sundayAvg": 44.40384615384615
+        "weekdayAvg": 34.97709923664122,
+        "weekdayMedian": 39,
+        "weekendAvg": 49.58653846153846,
+        "weekendMedian": 53,
+        "weekendLift": 41.8,
+        "mondayAvg": 33.301886792452834,
+        "fridayAvg": 34.86538461538461,
+        "saturdayAvg": 48.82692307692308,
+        "sundayAvg": 50.34615384615385
       }
     },
     {
@@ -159,24 +159,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 25.88785046728972,
-        "beforeRainAvg": 25.186915887850468,
-        "afterRainAvg": 25.49532710280374,
-        "noRainAvg": 29.915057915057915,
-        "rainDayLift": -13.5,
-        "beforeToRainLift": 2.8,
-        "rainToAfterLift": -1.5
+        "rainDayAvg": 25.672897196261683,
+        "beforeRainAvg": 24.42056074766355,
+        "afterRainAvg": 24.39252336448598,
+        "noRainAvg": 30.64864864864865,
+        "rainDayLift": -16.2,
+        "beforeToRainLift": 5.1,
+        "rainToAfterLift": -5
       },
       "weekdayEffect": {
-        "weekdayAvg": 29.259541984732824,
-        "weekdayMedian": 26.5,
-        "weekendAvg": 27.423076923076923,
-        "weekendMedian": 26,
-        "weekendLift": -6.3,
-        "mondayAvg": 28.9811320754717,
-        "fridayAvg": 31.73076923076923,
-        "saturdayAvg": 24.23076923076923,
-        "sundayAvg": 30.615384615384617
+        "weekdayAvg": 30.671755725190838,
+        "weekdayMedian": 27,
+        "weekendAvg": 25.471153846153847,
+        "weekendMedian": 17.5,
+        "weekendLift": -17,
+        "mondayAvg": 30.20754716981132,
+        "fridayAvg": 28.653846153846153,
+        "saturdayAvg": 21.73076923076923,
+        "sundayAvg": 29.21153846153846
       }
     },
     {
@@ -184,24 +184,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 40.28971962616822,
-        "beforeRainAvg": 37.85981308411215,
-        "afterRainAvg": 36.08411214953271,
-        "noRainAvg": 30.428571428571427,
-        "rainDayLift": 32.4,
-        "beforeToRainLift": 6.4,
-        "rainToAfterLift": -10.4
+        "rainDayAvg": 36.467289719626166,
+        "beforeRainAvg": 35.08411214953271,
+        "afterRainAvg": 31.682242990654206,
+        "noRainAvg": 31.254826254826256,
+        "rainDayLift": 16.7,
+        "beforeToRainLift": 3.9,
+        "rainToAfterLift": -13.1
       },
       "weekdayEffect": {
-        "weekdayAvg": 32.11450381679389,
-        "weekdayMedian": 37,
-        "weekendAvg": 36.32692307692308,
-        "weekendMedian": 44,
-        "weekendLift": 13.1,
-        "mondayAvg": 31.830188679245282,
-        "fridayAvg": 31.346153846153847,
-        "saturdayAvg": 43.98076923076923,
-        "sundayAvg": 28.673076923076923
+        "weekdayAvg": 32.12213740458015,
+        "weekdayMedian": 43.5,
+        "weekendAvg": 34.43269230769231,
+        "weekendMedian": 50.5,
+        "weekendLift": 7.2,
+        "mondayAvg": 35.45283018867924,
+        "fridayAvg": 25.21153846153846,
+        "saturdayAvg": 34.65384615384615,
+        "sundayAvg": 34.21153846153846
       }
     },
     {
@@ -209,24 +209,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 67.60747663551402,
-        "beforeRainAvg": 66.78504672897196,
-        "afterRainAvg": 67.28971962616822,
-        "noRainAvg": 67.28185328185329,
-        "rainDayLift": 0.5,
-        "beforeToRainLift": 1.2,
+        "rainDayAvg": 66.65420560747664,
+        "beforeRainAvg": 65.96261682242991,
+        "afterRainAvg": 66.29906542056075,
+        "noRainAvg": 66.73745173745174,
+        "rainDayLift": -0.1,
+        "beforeToRainLift": 1,
         "rainToAfterLift": -0.5
       },
       "weekdayEffect": {
-        "weekdayAvg": 63.896946564885496,
-        "weekdayMedian": 62,
-        "weekendAvg": 76.14423076923077,
-        "weekendMedian": 77,
-        "weekendLift": 19.2,
-        "mondayAvg": 59.56603773584906,
-        "fridayAvg": 69,
-        "saturdayAvg": 79.15384615384616,
-        "sundayAvg": 73.13461538461539
+        "weekdayAvg": 63.32824427480916,
+        "weekdayMedian": 61,
+        "weekendAvg": 75.24038461538461,
+        "weekendMedian": 75,
+        "weekendLift": 18.8,
+        "mondayAvg": 59.37735849056604,
+        "fridayAvg": 68.23076923076923,
+        "saturdayAvg": 78.25,
+        "sundayAvg": 72.23076923076923
       }
     },
     {
@@ -234,24 +234,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 63.78504672897196,
-        "beforeRainAvg": 63.38317757009346,
-        "afterRainAvg": 63.80373831775701,
-        "noRainAvg": 61.625482625482626,
-        "rainDayLift": 3.5,
-        "beforeToRainLift": 0.6,
-        "rainToAfterLift": 0
+        "rainDayAvg": 65.05607476635514,
+        "beforeRainAvg": 64.58878504672897,
+        "afterRainAvg": 64.90654205607477,
+        "noRainAvg": 62.16216216216216,
+        "rainDayLift": 4.7,
+        "beforeToRainLift": 0.7,
+        "rainToAfterLift": -0.2
       },
       "weekdayEffect": {
-        "weekdayAvg": 58.030534351145036,
-        "weekdayMedian": 57,
-        "weekendAvg": 72.90384615384616,
-        "weekendMedian": 73.5,
+        "weekdayAvg": 58.732824427480914,
+        "weekdayMedian": 58,
+        "weekendAvg": 73.77884615384616,
+        "weekendMedian": 74,
         "weekendLift": 25.6,
-        "mondayAvg": 53.9811320754717,
-        "fridayAvg": 63.07692307692308,
-        "saturdayAvg": 73.90384615384616,
-        "sundayAvg": 71.90384615384616
+        "mondayAvg": 54.528301886792455,
+        "fridayAvg": 63.71153846153846,
+        "saturdayAvg": 74.8076923076923,
+        "sundayAvg": 72.75
       }
     },
     {
@@ -259,24 +259,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 51.06542056074766,
-        "beforeRainAvg": 50.177570093457945,
-        "afterRainAvg": 50.953271028037385,
-        "noRainAvg": 48.38996138996139,
-        "rainDayLift": 5.5,
-        "beforeToRainLift": 1.8,
-        "rainToAfterLift": -0.2
+        "rainDayAvg": 48.57943925233645,
+        "beforeRainAvg": 48.467289719626166,
+        "afterRainAvg": 48.93457943925234,
+        "noRainAvg": 45.664092664092664,
+        "rainDayLift": 6.4,
+        "beforeToRainLift": 0.2,
+        "rainToAfterLift": 0.7
       },
       "weekdayEffect": {
-        "weekdayAvg": 47.52290076335878,
-        "weekdayMedian": 50.5,
-        "weekendAvg": 53.32692307692308,
-        "weekendMedian": 55,
-        "weekendLift": 12.2,
-        "mondayAvg": 47.60377358490566,
-        "fridayAvg": 49.13461538461539,
-        "saturdayAvg": 55.55769230769231,
-        "sundayAvg": 51.09615384615385
+        "weekdayAvg": 44.786259541984734,
+        "weekdayMedian": 49.5,
+        "weekendAvg": 50.875,
+        "weekendMedian": 53.5,
+        "weekendLift": 13.6,
+        "mondayAvg": 44.301886792452834,
+        "fridayAvg": 46.84615384615385,
+        "saturdayAvg": 53.63461538461539,
+        "sundayAvg": 48.11538461538461
       }
     },
     {
@@ -284,24 +284,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 59.90654205607477,
-        "beforeRainAvg": 58.598130841121495,
-        "afterRainAvg": 59.4392523364486,
-        "noRainAvg": 62.15830115830116,
-        "rainDayLift": -3.6,
-        "beforeToRainLift": 2.2,
-        "rainToAfterLift": -0.8
+        "rainDayAvg": 60.33644859813084,
+        "beforeRainAvg": 58.87850467289719,
+        "afterRainAvg": 59.626168224299064,
+        "noRainAvg": 61.40926640926641,
+        "rainDayLift": -1.7,
+        "beforeToRainLift": 2.5,
+        "rainToAfterLift": -1.2
       },
       "weekdayEffect": {
-        "weekdayAvg": 58.06870229007634,
+        "weekdayAvg": 57.98091603053435,
         "weekdayMedian": 57,
-        "weekendAvg": 70.14423076923077,
-        "weekendMedian": 71,
-        "weekendLift": 20.8,
-        "mondayAvg": 58.716981132075475,
-        "fridayAvg": 56.61538461538461,
-        "saturdayAvg": 68.65384615384616,
-        "sundayAvg": 71.63461538461539
+        "weekendAvg": 68.9423076923077,
+        "weekendMedian": 68,
+        "weekendLift": 18.9,
+        "mondayAvg": 60.490566037735846,
+        "fridayAvg": 55.5,
+        "saturdayAvg": 67.40384615384616,
+        "sundayAvg": 70.48076923076923
       }
     },
     {
@@ -309,24 +309,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 68.97196261682242,
-        "beforeRainAvg": 68.59813084112149,
-        "afterRainAvg": 68.74766355140187,
-        "noRainAvg": 62.74131274131274,
-        "rainDayLift": 9.9,
-        "beforeToRainLift": 0.5,
-        "rainToAfterLift": -0.3
+        "rainDayAvg": 70.14018691588785,
+        "beforeRainAvg": 69.70093457943925,
+        "afterRainAvg": 69.38317757009345,
+        "noRainAvg": 63.94980694980695,
+        "rainDayLift": 9.7,
+        "beforeToRainLift": 0.6,
+        "rainToAfterLift": -1.1
       },
       "weekdayEffect": {
-        "weekdayAvg": 62.152671755725194,
-        "weekdayMedian": 66,
-        "weekendAvg": 70.63461538461539,
-        "weekendMedian": 73.5,
-        "weekendLift": 13.6,
-        "mondayAvg": 61.301886792452834,
-        "fridayAvg": 65,
-        "saturdayAvg": 71.90384615384616,
-        "sundayAvg": 69.36538461538461
+        "weekdayAvg": 63.534351145038165,
+        "weekdayMedian": 68,
+        "weekendAvg": 71.36538461538461,
+        "weekendMedian": 76,
+        "weekendLift": 12.3,
+        "mondayAvg": 62.18867924528302,
+        "fridayAvg": 66.4423076923077,
+        "saturdayAvg": 73.1923076923077,
+        "sundayAvg": 69.53846153846153
       }
     },
     {
@@ -334,24 +334,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 56.925233644859816,
-        "beforeRainAvg": 56.691588785046726,
-        "afterRainAvg": 57.5607476635514,
-        "noRainAvg": 50.5019305019305,
-        "rainDayLift": 12.7,
-        "beforeToRainLift": 0.4,
-        "rainToAfterLift": 1.1
+        "rainDayAvg": 56.7196261682243,
+        "beforeRainAvg": 56.822429906542055,
+        "afterRainAvg": 57.953271028037385,
+        "noRainAvg": 51.24324324324324,
+        "rainDayLift": 10.7,
+        "beforeToRainLift": -0.2,
+        "rainToAfterLift": 2.2
       },
       "weekdayEffect": {
-        "weekdayAvg": 49.908396946564885,
-        "weekdayMedian": 57,
-        "weekendAvg": 58.60576923076923,
-        "weekendMedian": 67,
-        "weekendLift": 17.4,
-        "mondayAvg": 48.660377358490564,
-        "fridayAvg": 52.94230769230769,
-        "saturdayAvg": 58.03846153846154,
-        "sundayAvg": 59.17307692307692
+        "weekdayAvg": 50.42748091603053,
+        "weekdayMedian": 58,
+        "weekendAvg": 58.93269230769231,
+        "weekendMedian": 68,
+        "weekendLift": 16.9,
+        "mondayAvg": 49.39622641509434,
+        "fridayAvg": 53.80769230769231,
+        "saturdayAvg": 58.25,
+        "sundayAvg": 59.61538461538461
       }
     },
     {
@@ -359,24 +359,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 60.57943925233645,
-        "beforeRainAvg": 59.97196261682243,
-        "afterRainAvg": 59.8411214953271,
-        "noRainAvg": 56.95366795366795,
-        "rainDayLift": 6.4,
-        "beforeToRainLift": 1,
-        "rainToAfterLift": -1.2
+        "rainDayAvg": 60.73831775700935,
+        "beforeRainAvg": 60.074766355140184,
+        "afterRainAvg": 59.06542056074766,
+        "noRainAvg": 57.69111969111969,
+        "rainDayLift": 5.3,
+        "beforeToRainLift": 1.1,
+        "rainToAfterLift": -2.8
       },
       "weekdayEffect": {
-        "weekdayAvg": 54.45038167938932,
+        "weekdayAvg": 54.93893129770992,
         "weekdayMedian": 59,
-        "weekendAvg": 66.99038461538461,
-        "weekendMedian": 75.5,
-        "weekendLift": 23,
-        "mondayAvg": 51.62264150943396,
-        "fridayAvg": 57.53846153846154,
-        "saturdayAvg": 66.0576923076923,
-        "sundayAvg": 67.92307692307692
+        "weekendAvg": 67.75961538461539,
+        "weekendMedian": 76,
+        "weekendLift": 23.3,
+        "mondayAvg": 51.716981132075475,
+        "fridayAvg": 58.25,
+        "saturdayAvg": 67.53846153846153,
+        "sundayAvg": 67.98076923076923
       }
     },
     {
@@ -384,24 +384,24 @@
       "totalDays": 366,
       "rainEffect": {
         "sampleSize": 107,
-        "rainDayAvg": 50.467289719626166,
-        "beforeRainAvg": 50.11214953271028,
-        "afterRainAvg": 50.44859813084112,
-        "noRainAvg": 46.4015444015444,
-        "rainDayLift": 8.8,
-        "beforeToRainLift": 0.7,
-        "rainToAfterLift": 0
+        "rainDayAvg": 48.57943925233645,
+        "beforeRainAvg": 48.467289719626166,
+        "afterRainAvg": 48.93457943925234,
+        "noRainAvg": 45.664092664092664,
+        "rainDayLift": 6.4,
+        "beforeToRainLift": 0.2,
+        "rainToAfterLift": 0.7
       },
       "weekdayEffect": {
-        "weekdayAvg": 45.767175572519086,
-        "weekdayMedian": 47.5,
-        "weekendAvg": 52.18269230769231,
-        "weekendMedian": 52,
-        "weekendLift": 14,
-        "mondayAvg": 45.905660377358494,
-        "fridayAvg": 47.48076923076923,
-        "saturdayAvg": 54.44230769230769,
-        "sundayAvg": 49.92307692307692
+        "weekdayAvg": 44.786259541984734,
+        "weekdayMedian": 49.5,
+        "weekendAvg": 50.875,
+        "weekendMedian": 53.5,
+        "weekendLift": 13.6,
+        "mondayAvg": 44.301886792452834,
+        "fridayAvg": 46.84615384615385,
+        "saturdayAvg": 53.63461538461539,
+        "sundayAvg": 48.11538461538461
       }
     }
   ],
@@ -409,45 +409,45 @@
     "topRainEffect": [
       {
         "keyword": "파전",
-        "lift": 345.4
-      },
-      {
-        "keyword": "설렁탕",
-        "lift": 32.4
+        "lift": 164.6
       },
       {
         "keyword": "빙수",
-        "lift": 27.1
+        "lift": 23.4
+      },
+      {
+        "keyword": "설렁탕",
+        "lift": 16.7
       },
       {
         "keyword": "국밥",
-        "lift": 12.7
+        "lift": 10.7
       },
       {
         "keyword": "떡볶이",
-        "lift": 9.9
+        "lift": 9.7
       }
     ],
     "topWeekendEffect": [
       {
         "keyword": "파전",
-        "lift": 138.4
+        "lift": 78
       },
       {
         "keyword": "빙수",
-        "lift": 30.8
+        "lift": 41.8
+      },
+      {
+        "keyword": "냉면",
+        "lift": 27.8
       },
       {
         "keyword": "피자",
         "lift": 25.6
       },
       {
-        "keyword": "냉면",
-        "lift": 24.7
-      },
-      {
         "keyword": "짬뽕",
-        "lift": 23
+        "lift": 23.3
       }
     ]
   }

@@ -57,7 +57,8 @@
 - [ ] Google Trends API로 **최근 7일** 데이터 수집
 - [ ] 매일 자동 업데이트 스크립트 (cron job or Vercel Cron)
 - [ ] "마지막 업데이트: X시간 전" UI 표시
-- [ ] 데이터 캐싱으로 API Rate Limit 회피
+- [ ] 데이터 캐싱으로 API Rate Limi
+t 회피
   - Redis or Vercel KV 활용
   - 1시간마다 업데이트
 

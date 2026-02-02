@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-01-29T09:26:41.555Z",
+  "generatedAt": "2026-01-31T00:20:59.208Z",
   "period": {
-    "start": "2026-01-22",
-    "end": "2026-01-29"
+    "start": "2026-01-24",
+    "end": "2026-01-31"
   },
   "results": [
     {
-      "keyword": "치킨",
+      "keyword": "라면",
       "expectedTime": "latenight",
       "totalHours": 8,
       "timeSlotAverages": {
-        "breakfast": 81.3,
+        "breakfast": 86.4,
         "lunch": 0,
         "afternoon": 0,
         "dinner": 0,
@@ -19,7 +19,26 @@
       "peakTimeSlot": "breakfast",
       "peakHour": 9,
       "ratios": {
-        "breakfastToLunch": 81.25,
+        "breakfastToLunch": 86.38,
+        "dinnerToLunch": 0,
+        "latenightToLunch": 0
+      }
+    },
+    {
+      "keyword": "치킨",
+      "expectedTime": "latenight",
+      "totalHours": 8,
+      "timeSlotAverages": {
+        "breakfast": 79.4,
+        "lunch": 0,
+        "afternoon": 0,
+        "dinner": 0,
+        "latenight": 0
+      },
+      "peakTimeSlot": "breakfast",
+      "peakHour": 9,
+      "ratios": {
+        "breakfastToLunch": 79.38,
         "dinnerToLunch": 0,
         "latenightToLunch": 0
       }
@@ -29,7 +48,7 @@
       "expectedTime": "latenight",
       "totalHours": 8,
       "timeSlotAverages": {
-        "breakfast": 78.3,
+        "breakfast": 77.1,
         "lunch": 0,
         "afternoon": 0,
         "dinner": 0,
@@ -38,7 +57,7 @@
       "peakTimeSlot": "breakfast",
       "peakHour": 9,
       "ratios": {
-        "breakfastToLunch": 78.25,
+        "breakfastToLunch": 77.13,
         "dinnerToLunch": 0,
         "latenightToLunch": 0
       }
@@ -48,7 +67,7 @@
       "expectedTime": "latenight",
       "totalHours": 8,
       "timeSlotAverages": {
-        "breakfast": 89.5,
+        "breakfast": 78.4,
         "lunch": 0,
         "afternoon": 0,
         "dinner": 0,
@@ -57,7 +76,26 @@
       "peakTimeSlot": "breakfast",
       "peakHour": 9,
       "ratios": {
-        "breakfastToLunch": 89.5,
+        "breakfastToLunch": 78.38,
+        "dinnerToLunch": 0,
+        "latenightToLunch": 0
+      }
+    },
+    {
+      "keyword": "족발",
+      "expectedTime": "latenight",
+      "totalHours": 8,
+      "timeSlotAverages": {
+        "breakfast": 68.4,
+        "lunch": 0,
+        "afternoon": 0,
+        "dinner": 0,
+        "latenight": 0
+      },
+      "peakTimeSlot": "breakfast",
+      "peakHour": 9,
+      "ratios": {
+        "breakfastToLunch": 68.38,
         "dinnerToLunch": 0,
         "latenightToLunch": 0
       }
@@ -67,7 +105,7 @@
       "expectedTime": "latenight",
       "totalHours": 8,
       "timeSlotAverages": {
-        "breakfast": 82.6,
+        "breakfast": 71.1,
         "lunch": 0,
         "afternoon": 0,
         "dinner": 0,
@@ -76,7 +114,7 @@
       "peakTimeSlot": "breakfast",
       "peakHour": 9,
       "ratios": {
-        "breakfastToLunch": 82.63,
+        "breakfastToLunch": 71.13,
         "dinnerToLunch": 0,
         "latenightToLunch": 0
       }
@@ -84,10 +122,11 @@
   ],
   "insights": {
     "topBreakfastFoods": [
-      "햄버거",
-      "보쌈",
+      "라면",
       "치킨",
-      "피자"
+      "햄버거",
+      "피자",
+      "보쌈"
     ],
     "topDinnerFoods": [],
     "topLatenightFoods": []

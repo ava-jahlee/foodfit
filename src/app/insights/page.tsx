@@ -229,27 +229,26 @@ export default function InsightsPage() {
 
         {/* 📁 폴더 탭 + 컨텐츠 카드 */}
         <div className="relative">
-          {/* 폴더 탭 */}
-          <div className="flex -mb-px relative z-10">
-            {tabs.map((tab, i) => (
+          {/* 폴더 탭 - 모바일 스크롤 가능 */}
+          <div className="flex -mb-px relative z-10 overflow-x-auto pb-px">
+            {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`relative px-4 py-2 text-xs font-medium transition-all rounded-t-xl border-t border-l border-r ${
+                className={`flex-shrink-0 relative px-3 sm:px-4 py-2 text-xs font-medium transition-all rounded-t-xl border-t border-l border-r ${
                   activeTab === tab.id
                     ? 'bg-white text-gray-800 border-gray-200 z-20'
-                    : 'bg-gray-100 text-gray-500 border-transparent hover:bg-gray-50 -ml-1'
+                    : 'bg-gray-100 text-gray-500 border-transparent hover:bg-gray-50'
                 }`}
-                style={{ marginLeft: i > 0 && activeTab !== tab.id ? '-4px' : '0' }}
               >
                 <span className="mr-1">{tab.icon}</span>
-                <span className="hidden sm:inline">{tab.label}</span>
+                <span>{tab.label}</span>
               </button>
             ))}
           </div>
           
           {/* 컨텐츠 카드 */}
-          <div className="bg-white rounded-b-2xl rounded-tr-2xl border border-gray-200 shadow-sm p-5">
+          <div className="bg-white rounded-b-2xl rounded-tr-2xl border border-gray-200 shadow-sm p-3 sm:p-5">
 
             {/* 💡 핵심 발견 탭 */}
             {activeTab === 'insights' && (
@@ -509,8 +508,8 @@ export default function InsightsPage() {
                     </div>
                   ) : (
                     <>
-                      {/* TOP 5 카드 */}
-                      <div className="grid grid-cols-5 gap-2 mb-6">
+                      {/* TOP 5 카드 - 모바일 스크롤 */}
+                      <div className="flex gap-2 mb-6 overflow-x-auto pb-2 -mx-1 px-1">
                         {naverTrends.trends.slice(0, 5).map((trend, idx) => {
                           const medals = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣']
                           const bgColors = [
@@ -523,11 +522,11 @@ export default function InsightsPage() {
                           return (
                             <div 
                               key={trend.keyword}
-                              className={`rounded-xl p-3 text-center border-2 ${bgColors[idx]} transition-transform hover:scale-105`}
+                              className={`flex-shrink-0 w-20 sm:w-auto sm:flex-1 rounded-xl p-2 sm:p-3 text-center border-2 ${bgColors[idx]} transition-transform hover:scale-105`}
                             >
-                              <div className="text-xl mb-1">{medals[idx]}</div>
-                              <div className="text-sm font-bold text-gray-800 truncate">{trend.keyword}</div>
-                              <div className="text-lg font-black text-blue-600">{trend.currentValue}</div>
+                              <div className="text-lg sm:text-xl mb-1">{medals[idx]}</div>
+                              <div className="text-xs sm:text-sm font-bold text-gray-800 truncate">{trend.keyword}</div>
+                              <div className="text-base sm:text-lg font-black text-blue-600">{trend.currentValue}</div>
                             </div>
                           )
                         })}
@@ -535,7 +534,7 @@ export default function InsightsPage() {
                       
                       {/* 전체 순위 바차트 */}
                       <h3 className="text-sm font-bold text-gray-700 mb-3">📊 전체 검색량 순위</h3>
-                      <div className="h-[400px]">
+                      <div className="h-[350px] sm:h-[400px]">
                         <ResponsiveContainer width="100%" height="100%">
                           <BarChart 
                             data={naverTrends.trends.slice(0, 15)} 
@@ -643,18 +642,18 @@ export default function InsightsPage() {
             </div>
 
             {/* 기온 상관관계 */}
-            <div className="glass-card p-5">
-              <h2 className="text-lg font-bold text-gray-700 mb-3">🌡️ 기온 × 음식</h2>
-              <p className="text-gray-400 text-xs mb-4">
+            <div className="glass-card p-4 sm:p-5">
+              <h2 className="text-base sm:text-lg font-bold text-gray-700 mb-2 sm:mb-3">🌡️ 기온 × 음식</h2>
+              <p className="text-gray-400 text-[10px] sm:text-xs mb-3 sm:mb-4">
                 양수 = 더울수록 검색↑ | 음수 = 추울수록 검색↑
               </p>
               
-              <div className="h-[400px]">
+              <div className="h-[300px] sm:h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={correlationData} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" stroke="#d1d5db" />
-                    <XAxis type="number" domain={[-1, 1]} stroke="#d1d5db" />
-                    <YAxis dataKey="keyword" type="category" stroke="#d1d5db" width={80} />
+                    <XAxis type="number" domain={[-1, 1]} stroke="#d1d5db" tick={{ fontSize: 10 }} />
+                    <YAxis dataKey="keyword" type="category" stroke="#d1d5db" width={60} tick={{ fontSize: 11 }} />
                     <Tooltip
                       contentStyle={{
                         backgroundColor: 'rgba(255,255,255,0.95)',
@@ -677,18 +676,18 @@ export default function InsightsPage() {
             </div>
 
             {/* 강수량 상관관계 */}
-            <div className="glass-card p-5">
-              <h2 className="text-lg font-bold text-gray-700 mb-3">🌧️ 비 × 음식</h2>
-              <p className="text-gray-400 text-xs mb-4">
+            <div className="glass-card p-4 sm:p-5">
+              <h2 className="text-base sm:text-lg font-bold text-gray-700 mb-2 sm:mb-3">🌧️ 비 × 음식</h2>
+              <p className="text-gray-400 text-[10px] sm:text-xs mb-3 sm:mb-4">
                 양수 = 비 올수록 검색↑ | 0에 가까움 = 관계 없음
               </p>
               
-              <div className="h-[400px]">
+              <div className="h-[300px] sm:h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={[...correlationData].sort((a, b) => b.rain - a.rain)} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" stroke="#d1d5db" />
-                    <XAxis type="number" domain={[-1, 1]} stroke="#d1d5db" />
-                    <YAxis dataKey="keyword" type="category" stroke="#d1d5db" width={80} />
+                    <XAxis type="number" domain={[-1, 1]} stroke="#d1d5db" tick={{ fontSize: 10 }} />
+                    <YAxis dataKey="keyword" type="category" stroke="#d1d5db" width={60} tick={{ fontSize: 11 }} />
                     <Tooltip
                       contentStyle={{
                         backgroundColor: 'rgba(255,255,255,0.95)',
@@ -713,9 +712,9 @@ export default function InsightsPage() {
         {activeTab === 'monthly' && (
           <div className="space-y-6">
             {/* 월별 TOP 3 그리드 */}
-            <div className="glass-card p-5">
-              <h2 className="text-lg font-bold text-gray-700 mb-4">🏆 월별 검색량 TOP 3</h2>
-              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <div className="glass-card p-4 sm:p-5">
+              <h2 className="text-base sm:text-lg font-bold text-gray-700 mb-3 sm:mb-4">🏆 월별 검색량 TOP 3</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
                 {MONTH_NAMES.map((monthName, monthIndex) => {
                   const month = monthIndex + 1
                   const temp = data.monthlyTemp[String(month)]

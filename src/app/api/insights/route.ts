@@ -1,12 +1,63 @@
 import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
+import { createClient } from '@supabase/supabase-js'
+
+// Supabase 클라이언트
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const type = searchParams.get('type') || 'simple'
   
   try {
+    // 🆕 네이버 실시간 트렌드 데이터 (Supabase)
+    if (type === 'naver-trends') {
+      const { data, error } = await supabase
+        .from('food_trends')
+        .select('*')
+        .eq('source', 'naver')
+        .order('collected_date', { ascending: false })
+        .limit(100)
+      
+      if (error) {
+        console.error('Supabase error:', error)
+        return NextResponse.json({ error: 'Failed to fetch trends' }, { status: 500 })
+      }
+      
+      // 키워드별로 그룹화
+      const grouped: Record<string, { keyword: string; value: number; date: string }[]> = {}
+      data?.forEach((row) => {
+        if (!grouped[row.keyword]) {
+          grouped[row.keyword] = []
+        }
+        grouped[row.keyword].push({
+          keyword: row.keyword,
+          value: row.search_value,
+          date: row.collected_date,
+        })
+      })
+      
+      // 최신 값으로 정렬
+      const trends = Object.entries(grouped).map(([keyword, values]) => ({
+        keyword,
+        currentValue: values[0]?.value || 0,
+        history: values,
+      })).sort((a, b) => b.currentValue - a.currentValue)
+      
+      const latestDate = data?.[0]?.collected_date || new Date().toISOString().split('T')[0]
+      
+      return NextResponse.json({
+        generatedAt: new Date().toISOString(),
+        source: 'naver',
+        lastUpdated: latestDate,
+        trends,
+      })
+    }
+    
     if (type === 'multivariate') {
       // 다변량 분석 데이터
       const filePath = path.join(process.cwd(), 'src/data/multivariate-analysis.json')

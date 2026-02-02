@@ -1,16 +1,28 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer className="pt-8 pb-4 text-center">
-      <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
-        <Link 
-          href="/insights" 
-          className="hover:text-orange-500 transition-colors flex items-center gap-1"
-        >
-          <span>📊</span> 날씨-음식 인사이트
-        </Link>
-        <span className="text-gray-300">·</span>
+      {/* 회사 로고 */}
+      <a 
+        href="https://www.ean.kr" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-600 transition-colors"
+      >
+        <Image 
+          src="/images/ean-logo.png" 
+          alt="EAN Technology" 
+          width={24} 
+          height={24}
+          className="opacity-70"
+        />
+        <span className="text-xs">(주)이에이엔테크놀로지</span>
+      </a>
+      
+      {/* 링크들 */}
+      <div className="mt-3 flex items-center justify-center gap-4 text-sm text-gray-400">
         <Link 
           href="/privacy" 
           className="hover:text-gray-600 transition-colors"
@@ -27,6 +39,7 @@ export default function Footer() {
           GitHub
         </a>
       </div>
+      
       <p className="mt-2 text-xs text-gray-300">
         © 2026 FoodFit
       </p>

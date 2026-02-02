@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useUserInputStore } from '@/store/userInputStore'
-import { getRecommendations, weatherCodeToCondition, RecommendationResult } from '@/lib/recommend'
+import { getRecommendations, weatherCodeToCondition, RecommendationResult, NaverTrendData } from '@/lib/recommend'
 import { SelectionLog } from '@/lib/supabase'
 import Link from 'next/link'
 import Footer from '@/components/common/Footer'
@@ -88,6 +88,21 @@ export default function ResultPage() {
         .filter(m => m.exclude)
         .map(m => m.name)
 
+      // 🆕 네이버 트렌드 데이터 가져오기
+      let naverTrends: NaverTrendData[] = []
+      try {
+        const trendRes = await fetch('/api/insights?type=naver-trends')
+        const trendJson = await trendRes.json()
+        if (trendJson.trends) {
+          naverTrends = trendJson.trends.map((t: { keyword: string; currentValue: number }) => ({
+            keyword: t.keyword,
+            currentValue: t.currentValue,
+          }))
+        }
+      } catch (trendError) {
+        console.log('네이버 트렌드 로드 실패, 기본값 사용:', trendError)
+      }
+
       // 🔥 다변량 분석 파라미터 포함
       // 주말/공휴일 체크
       const today = new Date()
@@ -123,6 +138,7 @@ export default function ResultPage() {
         adventureMode: userInput.adventureMode,
         isWeekend,
         isHoliday,
+        naverTrends,  // 🆕 네이버 실시간 트렌드
       })
 
       setRecommendations(results)

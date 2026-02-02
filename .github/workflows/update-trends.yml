@@ -8,14 +8,24 @@ on:
   # 수동 실행 가능
   workflow_dispatch:
     inputs:
-      run_recent:
-        description: '최근 7일 데이터 수집 실행'
+      run_naver:
+        description: '🆕 네이버 트렌드 수집 (추천)'
         type: boolean
         default: true
+      run_recent:
+        description: '최근 7일 Google 데이터 수집'
+        type: boolean
+        default: false
       run_full:
         description: '전체 트렌드 분석 실행'
         type: boolean
         default: false
+
+env:
+  NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+  NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
 jobs:
   update-trends:
@@ -36,15 +46,22 @@ jobs:
       - name: 📦 의존성 설치
         run: npm ci
 
-      - name: 🗺️ 최근 7일 지역별 트렌드 수집 (히트맵용)
-        if: ${{ github.event.inputs.run_recent != 'false' }}
+      - name: 🆕 네이버 데이터랩 트렌드 수집 (메인)
+        if: ${{ github.event.inputs.run_naver != 'false' }}
         run: |
-          echo "🚀 최근 7일 지역별 트렌드 데이터 수집 시작..."
+          echo "🚀 네이버 데이터랩 트렌드 수집 시작..."
+          npx ts-node scripts/collectNaverTrends.ts
+        continue-on-error: true
+
+      - name: 🗺️ Google 최근 7일 지역별 트렌드 수집 (보조)
+        if: ${{ github.event.inputs.run_recent == 'true' }}
+        run: |
+          echo "🚀 Google 최근 7일 지역별 트렌드 데이터 수집 시작..."
           npx ts-node scripts/collectRecentTrends.ts || echo "⚠️ 최근 데이터 수집 실패 (Rate limit일 수 있음)"
         continue-on-error: true
 
-      - name: 🔬 전체 트렌드 분석 실행
-        if: ${{ github.event.inputs.run_full == 'true' || github.event_name == 'schedule' }}
+      - name: 🔬 전체 트렌드 분석 실행 (월 1회 권장)
+        if: ${{ github.event.inputs.run_full == 'true' }}
         run: |
           echo "🚀 전체 구글 트렌드 데이터 수집 시작..."
           npx ts-node scripts/analyzeTrends.ts || echo "⚠️ 분석 스크립트 실패 (Rate limit일 수 있음)"
@@ -52,11 +69,15 @@ jobs:
 
       - name: 📊 분석 결과 확인
         run: |
-          echo "=== 최근 7일 데이터 ==="
+          echo "=== 📊 데이터 수집 결과 ==="
+          echo ""
+          echo "🆕 네이버 데이터: Supabase DB에 저장됨"
+          echo ""
+          
+          echo "=== 최근 7일 Google 데이터 ==="
           if [ -f src/data/recent-regional-trends.json ]; then
             echo "✅ recent-regional-trends.json 생성됨"
             echo "📅 생성 시간: $(cat src/data/recent-regional-trends.json | jq -r '.generatedAt')"
-            echo "📍 지역 수: $(cat src/data/recent-regional-trends.json | jq '.regions | keys | length')"
           else
             echo "⚠️ recent-regional-trends.json 파일 없음"
           fi
@@ -64,9 +85,7 @@ jobs:
           echo ""
           echo "=== 전체 트렌드 데이터 ==="
           if [ -f src/data/trend-analysis.json ]; then
-            echo "✅ trend-analysis.json 생성됨"
-            echo "📅 생성 시간: $(cat src/data/trend-analysis.json | jq -r '.generatedAt')"
-            echo "📊 분석된 메뉴 수: $(cat src/data/trend-analysis.json | jq '.trends | length')"
+            echo "✅ trend-analysis.json 존재"
           else
             echo "⚠️ trend-analysis.json 파일 없음"
           fi
@@ -78,7 +97,7 @@ jobs:
           
           # 변경된 파일이 있는지 확인
           if git diff --quiet src/data/; then
-            echo "📭 변경사항 없음"
+            echo "📭 변경사항 없음 (네이버 데이터는 Supabase에 저장됨)"
           else
             git add src/data/
             git commit -m "🔄 트렌드 데이터 자동 업데이트 ($(date +'%Y-%m-%d'))"
@@ -94,3 +113,7 @@ jobs:
           echo ""
           echo "📅 실행 시간: $(TZ='Asia/Seoul' date)"
           echo "🔗 다음 실행: 내일 09:00 (KST)"
+          echo ""
+          echo "📊 데이터 소스:"
+          echo "  - 네이버 데이터랩 → Supabase DB"
+          echo "  - Google Trends → JSON 파일 (보조)"

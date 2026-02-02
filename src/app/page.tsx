@@ -47,6 +47,7 @@ export default function Home() {
           <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
             <span className="text-2xl">🍽️</span>
             <span>FoodFit</span>
+            <span className="text-[10px] font-normal text-gray-400 ml-1">by EAN</span>
           </h1>
           <div className="flex items-center gap-3">
             <Link 

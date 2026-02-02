@@ -148,14 +148,29 @@ interface RecentRegionalData {
   message?: string
 }
 
+// 🆕 네이버 실시간 트렌드 데이터 타입
+interface NaverTrendItem {
+  keyword: string
+  currentValue: number
+  history: { keyword: string; value: number; date: string }[]
+}
+
+interface NaverTrendsData {
+  generatedAt: string
+  source: string
+  lastUpdated: string
+  trends: NaverTrendItem[]
+}
+
 export default function InsightsPage() {
   const [data, setData] = useState<TrendData | null>(null)
   const [multiData, setMultiData] = useState<MultivariateData | null>(null)
   const [regionalData, setRegionalData] = useState<RegionalData | null>(null)
   const [lagWeekdayData, setLagWeekdayData] = useState<LagWeekdayData | null>(null)
   const [recentRegionalData, setRecentRegionalData] = useState<RecentRegionalData | null>(null)
+  const [naverTrends, setNaverTrends] = useState<NaverTrendsData | null>(null)
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([])
-  const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights' | 'heatmap'>('insights')
+  const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights' | 'realtime'>('insights')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedRegion, setSelectedRegion] = useState<string>('서울')
   const [expandedInsight, setExpandedInsight] = useState<string | null>(null)
@@ -214,6 +229,16 @@ export default function InsightsPage() {
         }
       })
       .catch(err => console.error('Failed to load recent regional data:', err))
+    
+    // 🆕 네이버 실시간 트렌드 데이터 로드
+    fetch('/api/insights?type=naver-trends')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          setNaverTrends(data)
+        }
+      })
+      .catch(err => console.error('Failed to load naver trends:', err))
   }, [])
 
   if (!data) {
@@ -270,7 +295,7 @@ export default function InsightsPage() {
   // 탭 정보 - 직관적인 이름으로!
   const tabs = [
     { id: 'insights', icon: '💡', label: '재밌는 발견' },
-    { id: 'heatmap', icon: '🗺️', label: '지역 히트맵' },
+    { id: 'realtime', icon: '🔥', label: '실시간 트렌드' },
     { id: 'correlation', icon: '🌡️', label: '날씨 영향' },
     { id: 'regional', icon: '📍', label: '지역 차이' },
     { id: 'trend', icon: '📈', label: '월별 변화' },
@@ -711,187 +736,146 @@ export default function InsightsPage() {
               </div>
             )}
 
-            {/* 🗺️ 지역 히트맵 탭 */}
-            {activeTab === 'heatmap' && regionalData && (
+            {/* 🔥 실시간 트렌드 탭 (네이버 데이터랩) */}
+            {activeTab === 'realtime' && (
               <div className="space-y-4">
                 <div className="bg-white rounded-xl p-4 shadow-sm">
                   <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-                    <span>🗺️</span>
-                    <span>지역별 인기도 히트맵</span>
+                    <span>🔥</span>
+                    <span>실시간 음식 트렌드</span>
                   </h2>
                   
-                  {/* 마지막 업데이트 시간 & 데이터 소스 토글 */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                  {/* 데이터 소스 & 업데이트 시간 */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-gray-500">
-                        {useRecentData && recentRegionalData ? (
-                          <>
-                            <span className="inline-flex items-center gap-1">
-                              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                              최근 데이터
-                            </span>
-                            <span className="mx-2 text-gray-300">|</span>
-                            <span>
-                              📅 {recentRegionalData.period.start} ~ {recentRegionalData.period.end}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <span className="inline-flex items-center gap-1">
-                              <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-                              연간 평균 데이터
-                            </span>
-                          </>
-                        )}
-                      </span>
+                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                      <span className="text-xs font-medium text-green-700">네이버 데이터랩 기준</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-gray-500">
-                        🕐 업데이트: {(() => {
-                          const dataSource = useRecentData && recentRegionalData ? recentRegionalData : regionalData
-                          const updatedAt = new Date(dataSource.generatedAt)
-                          const now = new Date()
-                          const diffMs = now.getTime() - updatedAt.getTime()
-                          const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
-                          const diffDays = Math.floor(diffHours / 24)
-                          
-                          if (diffDays > 0) return `${diffDays}일 전`
-                          if (diffHours > 0) return `${diffHours}시간 전`
-                          return '방금 전'
-                        })()}
-                      </span>
-                      {recentRegionalData && (
-                        <button
-                          onClick={() => setUseRecentData(!useRecentData)}
-                          className={`px-3 py-1 text-xs font-medium rounded-full transition-colors ${
-                            useRecentData 
-                              ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' 
-                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                          }`}
-                        >
-                          {useRecentData ? '📈 실시간' : '📊 연간'}
-                        </button>
-                      )}
-                    </div>
+                    <span className="text-xs text-green-600">
+                      📅 {naverTrends?.lastUpdated || '로딩 중...'}
+                    </span>
                   </div>
                   
-                  {/* 최근 데이터 안내 (데이터가 없을 때) */}
-                  {useRecentData && !recentRegionalData && (
-                    <div className="mb-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
-                      <p className="text-xs text-amber-700">
-                        ⚠️ 최근 데이터가 아직 없어요. 연간 평균 데이터를 표시합니다.
-                      </p>
+                  {!naverTrends ? (
+                    <div className="text-center py-8">
+                      <div className="w-12 h-12 border-4 border-green-200 border-t-green-500 rounded-full animate-spin mx-auto mb-3" />
+                      <p className="text-sm text-gray-500">트렌드 데이터 로딩 중...</p>
                     </div>
-                  )}
-                  
-                  {recentRegionalData?.isHistorical && useRecentData && (
-                    <div className="mb-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
-                      <p className="text-xs text-amber-700">
-                        ⚠️ {recentRegionalData.message || '최근 데이터가 없어 과거 데이터를 표시합니다.'}
-                      </p>
+                  ) : naverTrends.trends.length === 0 ? (
+                    <div className="text-center py-8 bg-gray-50 rounded-lg">
+                      <p className="text-gray-500">아직 수집된 데이터가 없어요.</p>
+                      <p className="text-xs text-gray-400 mt-1">데이터 수집 스크립트를 실행해주세요!</p>
                     </div>
-                  )}
-                  
-                  <p className="text-xs text-gray-500 mb-4">
-                    메뉴를 선택하면 전국 주요 도시의 검색량을 색상으로 확인할 수 있어요!
-                  </p>
-                  
-                  {/* 메뉴 선택 */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      🍽️ 메뉴 선택
-                    </label>
-                    <select
-                      value={heatmapKeyword}
-                      onChange={(e) => setHeatmapKeyword(e.target.value)}
-                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      {Object.keys(regionalData.regions)
-                        .flatMap(region => 
-                          regionalData.regions[region].trends.map(t => t.keyword)
-                        )
-                        .filter((keyword, index, self) => self.indexOf(keyword) === index)
-                        .sort()
-                        .map(keyword => (
-                          <option key={keyword} value={keyword}>
-                            {keyword}
-                          </option>
-                        ))
-                      }
-                    </select>
-                  </div>
-                  
-                  {/* 히트맵 */}
-                  <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
-                    <KoreaHeatmap 
-                      data={(() => {
-                        // 최근 데이터 사용 여부에 따라 데이터 소스 선택
-                        if (useRecentData && recentRegionalData && !recentRegionalData.isHistorical) {
-                          // 최근 7일 데이터 사용
-                          return Object.keys(recentRegionalData.regions).map(region => {
-                            const regionData = recentRegionalData.regions[region]
-                            const trend = regionData?.trends.find(t => t.keyword === heatmapKeyword)
-                            return {
-                              name: region,
-                              value: trend?.average || 0,
+                  ) : (
+                    <>
+                      {/* TOP 5 카드 */}
+                      <div className="grid grid-cols-5 gap-2 mb-6">
+                        {naverTrends.trends.slice(0, 5).map((trend, idx) => {
+                          const medals = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣']
+                          const bgColors = [
+                            'bg-gradient-to-br from-yellow-100 to-amber-100 border-yellow-300',
+                            'bg-gradient-to-br from-gray-100 to-slate-100 border-gray-300',
+                            'bg-gradient-to-br from-orange-100 to-amber-50 border-orange-300',
+                            'bg-white border-gray-200',
+                            'bg-white border-gray-200',
+                          ]
+                          return (
+                            <div 
+                              key={trend.keyword}
+                              className={`rounded-xl p-3 text-center border-2 ${bgColors[idx]} transition-transform hover:scale-105`}
+                            >
+                              <div className="text-xl mb-1">{medals[idx]}</div>
+                              <div className="text-sm font-bold text-gray-800 truncate">{trend.keyword}</div>
+                              <div className="text-lg font-black text-blue-600">{trend.currentValue}</div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                      
+                      {/* 전체 순위 바차트 */}
+                      <h3 className="text-sm font-bold text-gray-700 mb-3">📊 전체 검색량 순위</h3>
+                      <div className="h-[400px]">
+                        <ResponsiveContainer width="100%" height="100%">
+                          <BarChart 
+                            data={naverTrends.trends.slice(0, 15)} 
+                            layout="vertical"
+                            margin={{ left: 10, right: 30 }}
+                          >
+                            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                            <XAxis type="number" domain={[0, 100]} stroke="#9ca3af" tick={{ fill: '#6b7280', fontSize: 12 }} />
+                            <YAxis 
+                              dataKey="keyword" 
+                              type="category" 
+                              stroke="#9ca3af" 
+                              width={70}
+                              tick={{ fill: '#374151', fontSize: 12, fontWeight: 500 }} 
+                            />
+                            <Tooltip
+                              contentStyle={{
+                                backgroundColor: 'rgba(255,255,255,0.95)',
+                                border: '1px solid #e5e7eb',
+                                borderRadius: '12px',
+                              }}
+                              formatter={(value) => [value, '검색량']}
+                            />
+                            <Bar dataKey="currentValue" radius={[0, 8, 8, 0]}>
+                              {naverTrends.trends.slice(0, 15).map((_, index) => {
+                                // 순위별 그라데이션 색상
+                                const colors = [
+                                  '#ef4444', '#f97316', '#f59e0b', '#eab308', '#84cc16',
+                                  '#22c55e', '#10b981', '#14b8a6', '#06b6d4', '#0ea5e9',
+                                  '#3b82f6', '#6366f1', '#8b5cf6', '#a855f7', '#d946ef'
+                                ]
+                                return <Cell key={`cell-${index}`} fill={colors[index]} />
+                              })}
+                            </Bar>
+                          </BarChart>
+                        </ResponsiveContainer>
+                      </div>
+                      
+                      {/* 계절 인사이트 */}
+                      <div className="mt-6 grid grid-cols-2 gap-3">
+                        <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-4 border border-red-200">
+                          <h4 className="text-sm font-bold text-red-800 mb-2">🔥 겨울 인기 메뉴</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {naverTrends.trends
+                              .filter(t => ['김치찌개', '칼국수', '국밥', '설렁탕', '라면'].includes(t.keyword))
+                              .slice(0, 4)
+                              .map(t => (
+                                <span key={t.keyword} className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-medium">
+                                  {t.keyword} {t.currentValue}
+                                </span>
+                              ))
                             }
-                          })
-                        } else {
-                          // 연간 평균 데이터 사용
-                          return Object.keys(regionalData.regions).map(region => {
-                            const trend = regionalData.regions[region].trends.find(
-                              t => t.keyword === heatmapKeyword
-                            )
-                            const avgValue = trend 
-                              ? trend.monthlyValues.reduce((sum, v) => sum + v.value, 0) / trend.monthlyValues.length
-                              : 0
-                            return {
-                              name: region,
-                              value: avgValue,
+                          </div>
+                        </div>
+                        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-200">
+                          <h4 className="text-sm font-bold text-blue-800 mb-2">❄️ 여름 메뉴 (현재)</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {naverTrends.trends
+                              .filter(t => ['냉면', '빙수', '콩국수', '아이스아메리카노'].includes(t.keyword))
+                              .slice(0, 4)
+                              .map(t => (
+                                <span key={t.keyword} className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">
+                                  {t.keyword} {t.currentValue}
+                                </span>
+                              ))
                             }
-                          })
-                        }
-                      })()}
-                    />
-                  </div>
-                  
-                  {/* 설명 */}
-                  <div className="mt-4 bg-blue-50 rounded-lg p-3 text-xs text-gray-600">
-                    <p className="font-medium text-blue-800 mb-1">💡 히트맵 설명</p>
-                    <ul className="space-y-1 pl-4">
-                      <li>• <span className="text-blue-600 font-medium">파란색</span>: 검색량이 적은 지역</li>
-                      <li>• <span className="text-yellow-600 font-medium">노란색</span>: 검색량이 보통인 지역</li>
-                      <li>• <span className="text-red-600 font-medium">빨간색</span>: 검색량이 많은 지역</li>
-                      <li>• 원 위에 마우스를 올리면 정확한 수치를 볼 수 있어요!</li>
-                    </ul>
-                  </div>
-                  
-                  {/* 재밌는 발견 */}
-                  {heatmapKeyword === '밀면' && (
-                    <div className="mt-4 bg-gradient-to-r from-orange-50 to-pink-50 rounded-lg p-3 border border-orange-200">
-                      <p className="text-sm font-bold text-orange-800 mb-1">🔥 부산의 자랑!</p>
-                      <p className="text-xs text-gray-600">
-                        밀면은 부산이 압도적! 다른 지역 대비 <span className="font-bold text-orange-600">3배 이상</span> 검색량이 높아요.
-                      </p>
-                    </div>
-                  )}
-                  
-                  {heatmapKeyword === '냉면' && (
-                    <div className="mt-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-3 border border-blue-200">
-                      <p className="text-sm font-bold text-blue-800 mb-1">❄️ 여름의 국민 메뉴!</p>
-                      <p className="text-xs text-gray-600">
-                        냉면은 전국적으로 고른 인기! 특히 <span className="font-bold text-blue-600">여름(6-8월)</span>에 폭발적으로 증가해요.
-                      </p>
-                    </div>
-                  )}
-                  
-                  {heatmapKeyword === '막걸리' && (
-                    <div className="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3 border border-purple-200">
-                      <p className="text-sm font-bold text-purple-800 mb-1">🍶 전통주의 귀환!</p>
-                      <p className="text-xs text-gray-600">
-                        막걸리는 주말과 공휴일에 인기 폭발! 특히 <span className="font-bold text-purple-600">파전</span>과 찰떡궁합이에요.
-                      </p>
-                    </div>
+                          </div>
+                          <p className="text-xs text-blue-600 mt-2">겨울이라 검색량이 낮아요!</p>
+                        </div>
+                      </div>
+                      
+                      {/* 데이터 설명 */}
+                      <div className="mt-4 bg-gray-50 rounded-lg p-3 text-xs text-gray-600">
+                        <p className="font-medium text-gray-700 mb-1">📊 데이터 설명</p>
+                        <ul className="space-y-1 pl-4">
+                          <li>• 검색량은 <span className="font-medium">상대값 (0~100)</span>으로, 가장 많이 검색된 키워드가 100</li>
+                          <li>• 네이버 데이터랩 기준 최근 7일 평균 검색량</li>
+                          <li>• 매일 자동 업데이트됩니다</li>
+                        </ul>
+                      </div>
+                    </>
                   )}
                 </div>
               </div>
@@ -1568,10 +1552,10 @@ export default function InsightsPage() {
             <span className="text-sm font-medium text-gray-700">데이터 출처</span>
           </div>
           <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-500">
-            <span className="bg-white/60 px-3 py-1 rounded-full">📊 Google Trends API (일별)</span>
+            <span className="bg-gradient-to-r from-green-100 to-emerald-100 px-3 py-1 rounded-full font-medium text-green-700">🆕 네이버 데이터랩 API</span>
             <span className="bg-white/60 px-3 py-1 rounded-full">🌡️ Open-Meteo API</span>
-            <span className="bg-white/60 px-3 py-1 rounded-full">📅 366일 일별 데이터</span>
-            <span className="bg-gradient-to-r from-yellow-100 to-orange-100 px-3 py-1 rounded-full font-medium text-orange-600">🔥 NEW: 일별 분석!</span>
+            <span className="bg-white/60 px-3 py-1 rounded-full">📅 일별 자동 업데이트</span>
+            <span className="bg-white/60 px-3 py-1 rounded-full">💾 Supabase DB</span>
           </div>
           <p className="text-center text-[10px] text-gray-400 mt-3">
             이 분석은 참고용이며, 실제 소비 패턴과 다를 수 있습니다.

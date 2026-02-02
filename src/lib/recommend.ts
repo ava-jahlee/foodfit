@@ -57,6 +57,12 @@ export interface RecommendationResult {
   dataConfidence: DataConfidence  // 추천 신뢰도
 }
 
+// 🆕 네이버 실시간 트렌드 데이터 타입
+export interface NaverTrendData {
+  keyword: string
+  currentValue: number
+}
+
 interface RecommendParams {
   weatherCondition: string
   temperature: number       // 기온 (°C)
@@ -76,6 +82,7 @@ interface RecommendParams {
   adventureMode: boolean
   isWeekend?: boolean       // 주말 여부
   isHoliday?: boolean       // 공휴일 여부
+  naverTrends?: NaverTrendData[]  // 🆕 네이버 실시간 트렌드 (선택)
 }
 
 // ========================================
@@ -270,10 +277,19 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     excludeMenuIds,
     foodCategory,
     adventureMode,
+    naverTrends,
   } = params
   
   const menus: Menu[] = menusData.menus as Menu[]
   const results: RecommendationResult[] = []
+  
+  // 🆕 네이버 트렌드 맵 생성 (빠른 조회용)
+  const naverTrendMap = new Map<string, number>()
+  if (naverTrends && naverTrends.length > 0) {
+    naverTrends.forEach(trend => {
+      naverTrendMap.set(trend.keyword, trend.currentValue)
+    })
+  }
   
   // 기분 분석
   const effectiveMoods = mood ? [mood] : analyzeMoodKeywords(moodCustom)
@@ -384,12 +400,18 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
     const reasons: string[] = []
     
     // 🔥 인기도 점수 (0-30점)
+    // 🆕 네이버 실시간 트렌드 우선 적용
+    const naverTrendValue = naverTrendMap.get(menu.name) || 
+                            menu.searchKeywords?.reduce((max, kw) => {
+                              const val = naverTrendMap.get(kw) || 0
+                              return Math.max(max, val)
+                            }, 0) || 0
+    
     // 모험 모드: 인기도 낮은 메뉴에 보너스!
     if (adventureMode) {
       // 인기도가 낮을수록 점수 높음 (희귀템 발굴)
-      const rarityBonus = menu.popularityScore 
-        ? Math.floor((100 - menu.popularityScore) / 100 * 30) + 15 // 낮은 인기도 = 높은 점수
-        : 25 // 인기도 없는 메뉴는 새로운 메뉴일 가능성
+      const effectivePopularity = naverTrendValue || menu.popularityScore || 50
+      const rarityBonus = Math.floor((100 - effectivePopularity) / 100 * 30) + 15
       score += rarityBonus
       
       // 이국적 카테고리 추가 보너스
@@ -397,11 +419,24 @@ export function getRecommendations(params: RecommendParams): RecommendationResul
         score += 10
       }
     } else {
-      // 일반 모드: 블로그/커뮤니티 분석 결과 반영
-    const popularityBonus = menu.popularityScore 
-      ? Math.floor((menu.popularityScore / 100) * 30) 
-      : 15 // 기본값
-    score += popularityBonus
+      // 일반 모드: 🆕 네이버 트렌드 > 기존 인기도 순으로 적용
+      if (naverTrendValue > 0) {
+        // 네이버 트렌드 데이터 있음 → 실시간 인기도 반영
+        const trendBonus = Math.floor((naverTrendValue / 100) * 30)
+        score += trendBonus
+        
+        // 상위 5위 안에 들면 추가 보너스
+        if (naverTrendValue >= 70) {
+          score += 10
+          reasons.push(`🔥 지금 네이버 검색 TOP! (${naverTrendValue}점)`)
+        }
+      } else {
+        // 기존 인기도 사용
+        const popularityBonus = menu.popularityScore 
+          ? Math.floor((menu.popularityScore / 100) * 30) 
+          : 15 // 기본값
+        score += popularityBonus
+      }
     }
     
     // 🔥 다변량 날씨 점수 (구글 트렌드 분석 기반)

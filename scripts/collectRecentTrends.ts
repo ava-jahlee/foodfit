@@ -54,11 +54,16 @@ function formatDate(date: Date): string {
 }
 
 // ========================================
-// 📊 Google Trends 데이터 가져오기 (최근 7일)
+// 📊 Google Trends 데이터 가져오기 (최근 7일) + 재시도 로직
 // ========================================
+const MAX_RETRIES = 3;
+const BASE_DELAY = 2000; // 기본 대기 시간 2초
+const RATE_LIMIT_DELAY = 10000; // Rate Limit 시 10초 대기
+
 async function getRecentTrendData(
   keyword: string, 
-  regionCode: string
+  regionCode: string,
+  retryCount: number = 0
 ): Promise<{ daily: { date: string; value: number }[]; average: number }> {
   const { startDate, endDate } = getDateRange(7);
   
@@ -74,6 +79,12 @@ async function getRecentTrendData(
     const timelineData = data.default?.timelineData || [];
 
     if (timelineData.length === 0) {
+      // 데이터가 없으면 재시도
+      if (retryCount < MAX_RETRIES) {
+        console.log(`  ⚠️ 데이터 없음 - 재시도 ${retryCount + 1}/${MAX_RETRIES}...`);
+        await sleep(BASE_DELAY * (retryCount + 1));
+        return getRecentTrendData(keyword, regionCode, retryCount + 1);
+      }
       return { daily: [], average: 0 };
     }
 
@@ -88,12 +99,32 @@ async function getRecentTrendData(
       ? Math.round(daily.reduce((sum: number, d: any) => sum + d.value, 0) / daily.length)
       : 0;
 
+    // 평균이 0이면 재시도 (실제 데이터가 아닐 수 있음)
+    if (average === 0 && retryCount < MAX_RETRIES) {
+      console.log(`  ⚠️ 평균 0 - 재시도 ${retryCount + 1}/${MAX_RETRIES}...`);
+      await sleep(BASE_DELAY * (retryCount + 1));
+      return getRecentTrendData(keyword, regionCode, retryCount + 1);
+    }
+
     return { daily, average };
   } catch (error: any) {
-    if (error.message?.includes('302') || error.message?.includes('ETIMEDOUT')) {
-      console.log(`  ⚠️ Rate limit - ${keyword}@${regionCode}`);
-      await sleep(5000);
+    const isRateLimit = error.message?.includes('302') || 
+                        error.message?.includes('ETIMEDOUT') ||
+                        error.message?.includes('Too Many Requests') ||
+                        error.message?.includes('quota');
+    
+    if (isRateLimit) {
+      if (retryCount < MAX_RETRIES) {
+        const waitTime = RATE_LIMIT_DELAY * (retryCount + 1);
+        console.log(`  🚫 Rate Limit! ${waitTime/1000}초 대기 후 재시도 ${retryCount + 1}/${MAX_RETRIES}...`);
+        await sleep(waitTime);
+        return getRecentTrendData(keyword, regionCode, retryCount + 1);
+      }
+      console.log(`  ❌ Rate Limit - 최대 재시도 초과`);
+    } else {
+      console.log(`  ❌ Error: ${error.message?.slice(0, 50)}`);
     }
+    
     return { daily: [], average: 0 };
   }
 }
@@ -153,8 +184,8 @@ async function collectRecentTrends() {
       const bar = '█'.repeat(Math.ceil(average / 10)) + '░'.repeat(10 - Math.ceil(average / 10));
       console.log(` ${bar} ${average}`);
       
-      // Rate limit 방지 (1.5초 대기)
-      await sleep(1500);
+      // Rate limit 방지 (2.5초 대기)
+      await sleep(2500);
     }
 
     results.regions[region.name] = {

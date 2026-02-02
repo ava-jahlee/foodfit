@@ -47,6 +47,26 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'Lag-weekday data not found' }, { status: 404 })
     }
     
+    if (type === 'recent-regional') {
+      // 최근 7일 지역별 트렌드 데이터 (실시간 히트맵용)
+      const filePath = path.join(process.cwd(), 'src/data/recent-regional-trends.json')
+      if (fs.existsSync(filePath)) {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+        return NextResponse.json(data)
+      }
+      // 파일이 없으면 기존 regional 데이터로 폴백
+      const fallbackPath = path.join(process.cwd(), 'src/data/regional-analysis.json')
+      if (fs.existsSync(fallbackPath)) {
+        const data = JSON.parse(fs.readFileSync(fallbackPath, 'utf-8'))
+        return NextResponse.json({ 
+          ...data, 
+          isHistorical: true,
+          message: '최근 데이터가 없어 과거 데이터를 표시합니다.'
+        })
+      }
+      return NextResponse.json({ error: 'Recent regional data not found' }, { status: 404 })
+    }
+    
     // 기본 단순 상관관계 데이터
     const filePath = path.join(process.cwd(), 'src/data/trend-analysis.json')
     

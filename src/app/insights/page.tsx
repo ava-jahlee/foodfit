@@ -136,17 +136,31 @@ interface LagWeekdayData {
   results: LagWeekdayResult[]
 }
 
+// 최근 지역별 트렌드 데이터 타입
+interface RecentRegionalData {
+  generatedAt: string
+  period: { start: string; end: string }
+  regions: Record<string, {
+    code: string
+    trends: { keyword: string; average: number; daily: { date: string; value: number }[] }[]
+  }>
+  isHistorical?: boolean
+  message?: string
+}
+
 export default function InsightsPage() {
   const [data, setData] = useState<TrendData | null>(null)
   const [multiData, setMultiData] = useState<MultivariateData | null>(null)
   const [regionalData, setRegionalData] = useState<RegionalData | null>(null)
   const [lagWeekdayData, setLagWeekdayData] = useState<LagWeekdayData | null>(null)
+  const [recentRegionalData, setRecentRegionalData] = useState<RecentRegionalData | null>(null)
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([])
   const [activeTab, setActiveTab] = useState<'trend' | 'correlation' | 'monthly' | 'multivariate' | 'regional' | 'insights' | 'heatmap'>('insights')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedRegion, setSelectedRegion] = useState<string>('서울')
   const [expandedInsight, setExpandedInsight] = useState<string | null>(null)
   const [heatmapKeyword, setHeatmapKeyword] = useState<string>('냉면')
+  const [useRecentData, setUseRecentData] = useState<boolean>(true)
 
   useEffect(() => {
     // 분석 데이터 로드
@@ -190,6 +204,16 @@ export default function InsightsPage() {
         }
       })
       .catch(err => console.error('Failed to load lag-weekday data:', err))
+    
+    // 최근 지역별 트렌드 데이터 로드 (실시간 히트맵용)
+    fetch('/api/insights?type=recent-regional')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          setRecentRegionalData(data)
+        }
+      })
+      .catch(err => console.error('Failed to load recent regional data:', err))
   }, [])
 
   if (!data) {
@@ -695,6 +719,79 @@ export default function InsightsPage() {
                     <span>🗺️</span>
                     <span>지역별 인기도 히트맵</span>
                   </h2>
+                  
+                  {/* 마지막 업데이트 시간 & 데이터 소스 토글 */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-gray-500">
+                        {useRecentData && recentRegionalData ? (
+                          <>
+                            <span className="inline-flex items-center gap-1">
+                              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                              최근 데이터
+                            </span>
+                            <span className="mx-2 text-gray-300">|</span>
+                            <span>
+                              📅 {recentRegionalData.period.start} ~ {recentRegionalData.period.end}
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="inline-flex items-center gap-1">
+                              <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
+                              연간 평균 데이터
+                            </span>
+                          </>
+                        )}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-gray-500">
+                        🕐 업데이트: {(() => {
+                          const dataSource = useRecentData && recentRegionalData ? recentRegionalData : regionalData
+                          const updatedAt = new Date(dataSource.generatedAt)
+                          const now = new Date()
+                          const diffMs = now.getTime() - updatedAt.getTime()
+                          const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
+                          const diffDays = Math.floor(diffHours / 24)
+                          
+                          if (diffDays > 0) return `${diffDays}일 전`
+                          if (diffHours > 0) return `${diffHours}시간 전`
+                          return '방금 전'
+                        })()}
+                      </span>
+                      {recentRegionalData && (
+                        <button
+                          onClick={() => setUseRecentData(!useRecentData)}
+                          className={`px-3 py-1 text-xs font-medium rounded-full transition-colors ${
+                            useRecentData 
+                              ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' 
+                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          }`}
+                        >
+                          {useRecentData ? '📈 실시간' : '📊 연간'}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* 최근 데이터 안내 (데이터가 없을 때) */}
+                  {useRecentData && !recentRegionalData && (
+                    <div className="mb-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
+                      <p className="text-xs text-amber-700">
+                        ⚠️ 최근 데이터가 아직 없어요. 연간 평균 데이터를 표시합니다.
+                      </p>
+                    </div>
+                  )}
+                  
+                  {recentRegionalData?.isHistorical && useRecentData && (
+                    <div className="mb-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
+                      <p className="text-xs text-amber-700">
+                        ⚠️ {recentRegionalData.message || '최근 데이터가 없어 과거 데이터를 표시합니다.'}
+                      </p>
+                    </div>
+                  )}
+                  
                   <p className="text-xs text-gray-500 mb-4">
                     메뉴를 선택하면 전국 주요 도시의 검색량을 색상으로 확인할 수 있어요!
                   </p>
@@ -727,18 +824,34 @@ export default function InsightsPage() {
                   {/* 히트맵 */}
                   <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
                     <KoreaHeatmap 
-                      data={Object.keys(regionalData.regions).map(region => {
-                        const trend = regionalData.regions[region].trends.find(
-                          t => t.keyword === heatmapKeyword
-                        )
-                        const avgValue = trend 
-                          ? trend.monthlyValues.reduce((sum, v) => sum + v.value, 0) / trend.monthlyValues.length
-                          : 0
-                        return {
-                          name: region,
-                          value: avgValue,
+                      data={(() => {
+                        // 최근 데이터 사용 여부에 따라 데이터 소스 선택
+                        if (useRecentData && recentRegionalData && !recentRegionalData.isHistorical) {
+                          // 최근 7일 데이터 사용
+                          return Object.keys(recentRegionalData.regions).map(region => {
+                            const regionData = recentRegionalData.regions[region]
+                            const trend = regionData?.trends.find(t => t.keyword === heatmapKeyword)
+                            return {
+                              name: region,
+                              value: trend?.average || 0,
+                            }
+                          })
+                        } else {
+                          // 연간 평균 데이터 사용
+                          return Object.keys(regionalData.regions).map(region => {
+                            const trend = regionalData.regions[region].trends.find(
+                              t => t.keyword === heatmapKeyword
+                            )
+                            const avgValue = trend 
+                              ? trend.monthlyValues.reduce((sum, v) => sum + v.value, 0) / trend.monthlyValues.length
+                              : 0
+                            return {
+                              name: region,
+                              value: avgValue,
+                            }
+                          })
                         }
-                      })}
+                      })()}
                     />
                   </div>
                   

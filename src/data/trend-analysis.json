@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-01T02:54:09.242Z",
+  "generatedAt": "2026-02-02T02:43:22.159Z",
   "monthlyTemp": {
     "1": -2,
     "2": 1,
@@ -34,19 +34,19 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 49
+          "value": 53
         },
         {
           "month": 2,
-          "value": 50
+          "value": 52
         },
         {
           "month": 3,
-          "value": 64
+          "value": 65
         },
         {
           "month": 4,
-          "value": 57
+          "value": 56
         },
         {
           "month": 5,
@@ -62,50 +62,50 @@
         },
         {
           "month": 8,
-          "value": 52
+          "value": 53
         },
         {
           "month": 9,
-          "value": 56
+          "value": 61
         },
         {
           "month": 10,
-          "value": 77
+          "value": 75
         },
         {
           "month": 11,
-          "value": 66
+          "value": 75
         },
         {
           "month": 12,
-          "value": 55
+          "value": 57
         }
       ],
-      "correlationWithTemp": 0.3,
-      "correlationWithRain": 0
+      "correlationWithTemp": 0.19,
+      "correlationWithRain": -0.07
     },
     {
       "keyword": "막걸리",
       "monthlyValues": [
         {
           "month": 1,
-          "value": 61
+          "value": 63
         },
         {
           "month": 2,
-          "value": 76
+          "value": 77
         },
         {
           "month": 3,
-          "value": 76
+          "value": 77
         },
         {
           "month": 4,
-          "value": 83
+          "value": 82
         },
         {
           "month": 5,
-          "value": 80
+          "value": 81
         },
         {
           "month": 6,
@@ -113,7 +113,7 @@
         },
         {
           "month": 7,
-          "value": 75
+          "value": 77
         },
         {
           "month": 8,
@@ -121,34 +121,34 @@
         },
         {
           "month": 9,
-          "value": 83
+          "value": 82
         },
         {
           "month": 10,
-          "value": 83
+          "value": 84
         },
         {
           "month": 11,
-          "value": 78
+          "value": 79
         },
         {
           "month": 12,
           "value": 84
         }
       ],
-      "correlationWithTemp": 0.27,
-      "correlationWithRain": 0
+      "correlationWithTemp": 0.25,
+      "correlationWithRain": -0.01
     },
     {
       "keyword": "칼국수",
       "monthlyValues": [
         {
           "month": 1,
-          "value": 85
+          "value": 86
         },
         {
           "month": 2,
-          "value": 61
+          "value": 62
         },
         {
           "month": 3,
@@ -160,7 +160,7 @@
         },
         {
           "month": 5,
-          "value": 71
+          "value": 72
         },
         {
           "month": 6,
@@ -172,7 +172,7 @@
         },
         {
           "month": 8,
-          "value": 61
+          "value": 62
         },
         {
           "month": 9,
@@ -180,7 +180,7 @@
         },
         {
           "month": 10,
-          "value": 65
+          "value": 66
         },
         {
           "month": 11,
@@ -188,11 +188,11 @@
         },
         {
           "month": 12,
-          "value": 77
+          "value": 78
         }
       ],
       "correlationWithTemp": -0.53,
-      "correlationWithRain": -0.37
+      "correlationWithRain": -0.38
     },
     {
       "keyword": "냉면",
@@ -203,15 +203,15 @@
         },
         {
           "month": 2,
-          "value": 21
+          "value": 22
         },
         {
           "month": 3,
-          "value": 25
+          "value": 24
         },
         {
           "month": 4,
-          "value": 39
+          "value": 40
         },
         {
           "month": 5,
@@ -219,7 +219,7 @@
         },
         {
           "month": 6,
-          "value": 63
+          "value": 64
         },
         {
           "month": 7,
@@ -227,7 +227,7 @@
         },
         {
           "month": 8,
-          "value": 64
+          "value": 65
         },
         {
           "month": 9,
@@ -235,7 +235,7 @@
         },
         {
           "month": 10,
-          "value": 24
+          "value": 25
         },
         {
           "month": 11,
@@ -243,7 +243,7 @@
         },
         {
           "month": 12,
-          "value": 22
+          "value": 23
         }
       ],
       "correlationWithTemp": 0.86,
@@ -254,35 +254,35 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 23
+          "value": 25
         },
         {
           "month": 2,
-          "value": 22
+          "value": 23
         },
         {
           "month": 3,
-          "value": 22
+          "value": 23
         },
         {
           "month": 4,
-          "value": 34
+          "value": 35
         },
         {
           "month": 5,
-          "value": 47
+          "value": 48
         },
         {
           "month": 6,
-          "value": 85
+          "value": 88
         },
         {
           "month": 7,
-          "value": 92
+          "value": 94
         },
         {
           "month": 8,
-          "value": 78
+          "value": 80
         },
         {
           "month": 9,
@@ -290,7 +290,7 @@
         },
         {
           "month": 10,
-          "value": 27
+          "value": 28
         },
         {
           "month": 11,
@@ -301,7 +301,7 @@
           "value": 26
         }
       ],
-      "correlationWithTemp": 0.85,
+      "correlationWithTemp": 0.84,
       "correlationWithRain": 0.92
     },
     {
@@ -309,19 +309,19 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 6
+          "value": 4
         },
         {
           "month": 2,
-          "value": 5
+          "value": 4
         },
         {
           "month": 3,
-          "value": 7
+          "value": 6
         },
         {
           "month": 4,
-          "value": 22
+          "value": 23
         },
         {
           "month": 5,
@@ -329,15 +329,15 @@
         },
         {
           "month": 6,
-          "value": 83
+          "value": 84
         },
         {
           "month": 7,
-          "value": 74
+          "value": 76
         },
         {
           "month": 8,
-          "value": 66
+          "value": 65
         },
         {
           "month": 9,
@@ -345,18 +345,18 @@
         },
         {
           "month": 10,
-          "value": 8
-        },
-        {
-          "month": 11,
           "value": 10
         },
         {
+          "month": 11,
+          "value": 11
+        },
+        {
           "month": 12,
-          "value": 12
+          "value": 8
         }
       ],
-      "correlationWithTemp": 0.8,
+      "correlationWithTemp": 0.82,
       "correlationWithRain": 0.87
     },
     {
@@ -364,11 +364,11 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 48
+          "value": 44
         },
         {
           "month": 2,
-          "value": 39
+          "value": 49
         },
         {
           "month": 3,
@@ -376,50 +376,50 @@
         },
         {
           "month": 4,
-          "value": 59
+          "value": 63
         },
         {
           "month": 5,
-          "value": 72
+          "value": 71
         },
         {
           "month": 6,
-          "value": 78
+          "value": 77
         },
         {
           "month": 7,
-          "value": 82
+          "value": 86
         },
         {
           "month": 8,
-          "value": 70
+          "value": 75
         },
         {
           "month": 9,
-          "value": 73
+          "value": 68
         },
         {
           "month": 10,
-          "value": 56
+          "value": 62
         },
         {
           "month": 11,
-          "value": 52
+          "value": 55
         },
         {
           "month": 12,
-          "value": 55
+          "value": 57
         }
       ],
-      "correlationWithTemp": 0.88,
-      "correlationWithRain": 0.84
+      "correlationWithTemp": 0.93,
+      "correlationWithRain": 0.89
     },
     {
       "keyword": "국밥",
       "monthlyValues": [
         {
           "month": 1,
-          "value": 33
+          "value": 34
         },
         {
           "month": 2,
@@ -427,7 +427,7 @@
         },
         {
           "month": 3,
-          "value": 35
+          "value": 36
         },
         {
           "month": 4,
@@ -435,15 +435,15 @@
         },
         {
           "month": 5,
-          "value": 32
+          "value": 33
         },
         {
           "month": 6,
-          "value": 46
+          "value": 45
         },
         {
           "month": 7,
-          "value": 33
+          "value": 34
         },
         {
           "month": 8,
@@ -459,14 +459,14 @@
         },
         {
           "month": 11,
-          "value": 40
+          "value": 39
         },
         {
           "month": 12,
           "value": 43
         }
       ],
-      "correlationWithTemp": -0.01,
+      "correlationWithTemp": -0.03,
       "correlationWithRain": 0.01
     },
     {
@@ -474,55 +474,55 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 73
+          "value": 79
         },
         {
           "month": 2,
-          "value": 76
+          "value": 85
         },
         {
           "month": 3,
-          "value": 70
-        },
-        {
-          "month": 4,
-          "value": 67
-        },
-        {
-          "month": 5,
-          "value": 60
-        },
-        {
-          "month": 6,
-          "value": 64
-        },
-        {
-          "month": 7,
-          "value": 66
-        },
-        {
-          "month": 8,
-          "value": 71
-        },
-        {
-          "month": 9,
           "value": 76
         },
         {
+          "month": 4,
+          "value": 73
+        },
+        {
+          "month": 5,
+          "value": 65
+        },
+        {
+          "month": 6,
+          "value": 71
+        },
+        {
+          "month": 7,
+          "value": 73
+        },
+        {
+          "month": 8,
+          "value": 77
+        },
+        {
+          "month": 9,
+          "value": 81
+        },
+        {
           "month": 10,
-          "value": 67
+          "value": 70
         },
         {
           "month": 11,
-          "value": 68
+          "value": 73
         },
         {
           "month": 12,
-          "value": 79
+          "value": 88
         }
       ],
-      "correlationWithTemp": -0.49,
-      "correlationWithRain": -0.34
+      "correlationWithTemp": -0.5,
+      "correlationWithRain": -0.29
     },
     {
       "keyword": "삼계탕",
@@ -537,7 +537,7 @@
         },
         {
           "month": 3,
-          "value": 12
+          "value": 13
         },
         {
           "month": 4,
@@ -545,15 +545,15 @@
         },
         {
           "month": 5,
-          "value": 16
+          "value": 15
         },
         {
           "month": 6,
-          "value": 27
+          "value": 26
         },
         {
           "month": 7,
-          "value": 63
+          "value": 62
         },
         {
           "month": 8,
@@ -561,7 +561,7 @@
         },
         {
           "month": 9,
-          "value": 23
+          "value": 22
         },
         {
           "month": 10,
@@ -576,7 +576,7 @@
           "value": 15
         }
       ],
-      "correlationWithTemp": 0.71,
+      "correlationWithTemp": 0.7,
       "correlationWithRain": 0.84
     },
     {
@@ -584,7 +584,7 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 80
+          "value": 81
         },
         {
           "month": 2,
@@ -600,11 +600,11 @@
         },
         {
           "month": 5,
-          "value": 68
+          "value": 69
         },
         {
           "month": 6,
-          "value": 66
+          "value": 68
         },
         {
           "month": 7,
@@ -612,7 +612,7 @@
         },
         {
           "month": 8,
-          "value": 72
+          "value": 73
         },
         {
           "month": 9,
@@ -628,22 +628,22 @@
         },
         {
           "month": 12,
-          "value": 91
+          "value": 92
         }
       ],
-      "correlationWithTemp": -0.65,
-      "correlationWithRain": -0.53
+      "correlationWithTemp": -0.64,
+      "correlationWithRain": -0.52
     },
     {
       "keyword": "라면",
       "monthlyValues": [
         {
           "month": 1,
-          "value": 67
+          "value": 68
         },
         {
           "month": 2,
-          "value": 62
+          "value": 63
         },
         {
           "month": 3,
@@ -671,23 +671,23 @@
         },
         {
           "month": 9,
-          "value": 81
+          "value": 79
         },
         {
           "month": 10,
-          "value": 85
+          "value": 87
         },
         {
           "month": 11,
-          "value": 84
+          "value": 85
         },
         {
           "month": 12,
           "value": 93
         }
       ],
-      "correlationWithTemp": -0.01,
-      "correlationWithRain": -0.08
+      "correlationWithTemp": -0.06,
+      "correlationWithRain": -0.13
     },
     {
       "keyword": "삼겹살",
@@ -706,7 +706,7 @@
         },
         {
           "month": 4,
-          "value": 49
+          "value": 48
         },
         {
           "month": 5,
@@ -726,7 +726,7 @@
         },
         {
           "month": 9,
-          "value": 29
+          "value": 28
         },
         {
           "month": 10,
@@ -734,14 +734,14 @@
         },
         {
           "month": 11,
-          "value": 32
+          "value": 31
         },
         {
           "month": 12,
-          "value": 32
+          "value": 31
         }
       ],
-      "correlationWithTemp": -0.07,
+      "correlationWithTemp": -0.06,
       "correlationWithRain": -0.1
     },
     {
@@ -749,35 +749,35 @@
       "monthlyValues": [
         {
           "month": 1,
-          "value": 69
+          "value": 72
         },
         {
           "month": 2,
-          "value": 76
+          "value": 72
         },
         {
           "month": 3,
-          "value": 74
-        },
-        {
-          "month": 4,
-          "value": 77
-        },
-        {
-          "month": 5,
           "value": 75
         },
         {
+          "month": 4,
+          "value": 81
+        },
+        {
+          "month": 5,
+          "value": 74
+        },
+        {
           "month": 6,
-          "value": 80
+          "value": 83
         },
         {
           "month": 7,
-          "value": 80
+          "value": 81
         },
         {
           "month": 8,
-          "value": 78
+          "value": 79
         },
         {
           "month": 9,
@@ -785,74 +785,74 @@
         },
         {
           "month": 10,
-          "value": 79
+          "value": 80
         },
         {
           "month": 11,
-          "value": 77
+          "value": 79
         },
         {
           "month": 12,
-          "value": 91
+          "value": 93
         }
       ],
       "correlationWithTemp": 0.15,
-      "correlationWithRain": 0.18
+      "correlationWithRain": 0.23
     },
     {
       "keyword": "피자",
       "monthlyValues": [
         {
           "month": 1,
-          "value": 56
+          "value": 59
         },
         {
           "month": 2,
-          "value": 58
+          "value": 62
         },
         {
           "month": 3,
-          "value": 55
-        },
-        {
-          "month": 4,
           "value": 58
         },
         {
-          "month": 5,
+          "month": 4,
           "value": 60
         },
         {
+          "month": 5,
+          "value": 64
+        },
+        {
           "month": 6,
-          "value": 65
+          "value": 67
         },
         {
           "month": 7,
-          "value": 65
-        },
-        {
-          "month": 8,
           "value": 68
         },
         {
+          "month": 8,
+          "value": 71
+        },
+        {
           "month": 9,
-          "value": 63
+          "value": 66
         },
         {
           "month": 10,
-          "value": 63
+          "value": 66
         },
         {
           "month": 11,
-          "value": 69
+          "value": 72
         },
         {
           "month": 12,
-          "value": 81
+          "value": 84
         }
       ],
-      "correlationWithTemp": 0.09,
-      "correlationWithRain": 0.22
+      "correlationWithTemp": 0.07,
+      "correlationWithRain": 0.2
     }
   ]
 }
